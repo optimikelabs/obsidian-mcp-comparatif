@@ -1,0 +1,1602 @@
+[
+  {
+    "order": 1,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C05-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 2,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C05-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 3,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C05-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 4,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C05-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 5,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C05-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 6,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C05-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 7,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C05-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 8,
+    "series": 1,
+    "candidate": "C05",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C05-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 9,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C08-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 10,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C08-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 11,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C08-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 12,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C08-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 13,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C08-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 14,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C08-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 15,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C08-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 16,
+    "series": 1,
+    "candidate": "C08",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C08-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 17,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C01-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 18,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C01-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 19,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C01-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 20,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C01-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 21,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C01-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 22,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C01-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 23,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C01-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 24,
+    "series": 1,
+    "candidate": "C01",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C01-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 25,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C04-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 26,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C04-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 27,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C04-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 28,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C04-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 29,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C04-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 30,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C04-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 31,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C04-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 32,
+    "series": 1,
+    "candidate": "C04",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C04-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 33,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C09-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 34,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C09-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 35,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C09-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 36,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C09-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 37,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C09-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 38,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C09-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 39,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C09-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 40,
+    "series": 1,
+    "candidate": "C09",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C09-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 41,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C03-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 42,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C03-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 43,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C03-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 44,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C03-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 45,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C03-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 46,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C03-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 47,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C03-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 48,
+    "series": 1,
+    "candidate": "C03",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C03-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 49,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C02-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 50,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C02-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 51,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C02-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 52,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C02-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 53,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C02-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 54,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C02-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 55,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C02-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 56,
+    "series": 1,
+    "candidate": "C02",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C02-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 57,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C06-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 58,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C06-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 59,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C06-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 60,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C06-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 61,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C06-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 62,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C06-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 63,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C06-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 64,
+    "series": 1,
+    "candidate": "C06",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C06-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 65,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C10-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 66,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C10-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 67,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C10-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 68,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C10-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 69,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C10-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 70,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C10-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 71,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C10-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 72,
+    "series": 1,
+    "candidate": "C10",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C10-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 73,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T1",
+    "repetition": 1,
+    "cell_id": "C07-T1-r1",
+    "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 74,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T2",
+    "repetition": 1,
+    "cell_id": "C07-T2-r1",
+    "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 75,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T3",
+    "repetition": 1,
+    "cell_id": "C07-T3-r1",
+    "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 76,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T4",
+    "repetition": 1,
+    "cell_id": "C07-T4-r1",
+    "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 77,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T5",
+    "repetition": 1,
+    "cell_id": "C07-T5-r1",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 78,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T6",
+    "repetition": 1,
+    "cell_id": "C07-T6-r1",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 79,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T7",
+    "repetition": 1,
+    "cell_id": "C07-T7-r1",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 80,
+    "series": 1,
+    "candidate": "C07",
+    "task": "T8",
+    "repetition": 1,
+    "cell_id": "C07-T8-r1",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 81,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C10-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 82,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C10-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 83,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C10-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 84,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C10-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 85,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C04-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 86,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C04-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 87,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C04-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 88,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C04-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 89,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C06-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 90,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C06-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 91,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C06-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 92,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C06-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 93,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C07-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 94,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C07-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 95,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C07-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 96,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C07-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 97,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C03-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 98,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C03-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 99,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C03-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 100,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C03-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 101,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C09-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 102,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C09-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 103,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C09-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 104,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C09-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 105,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C08-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 106,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C08-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 107,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C08-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 108,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C08-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 109,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C05-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 110,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C05-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 111,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C05-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 112,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C05-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 113,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C02-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 114,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C02-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 115,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C02-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 116,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C02-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 117,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T5",
+    "repetition": 2,
+    "cell_id": "C01-T5-r2",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 118,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T6",
+    "repetition": 2,
+    "cell_id": "C01-T6-r2",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 119,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T7",
+    "repetition": 2,
+    "cell_id": "C01-T7-r2",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 120,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T8",
+    "repetition": 2,
+    "cell_id": "C01-T8-r2",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 121,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C02-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 122,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C02-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 123,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C02-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 124,
+    "series": 2,
+    "candidate": "C02",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C02-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 125,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C08-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 126,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C08-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 127,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C08-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 128,
+    "series": 2,
+    "candidate": "C08",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C08-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 129,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C05-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 130,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C05-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 131,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C05-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 132,
+    "series": 2,
+    "candidate": "C05",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C05-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 133,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C04-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 134,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C04-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 135,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C04-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 136,
+    "series": 2,
+    "candidate": "C04",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C04-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 137,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C07-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 138,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C07-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 139,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C07-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 140,
+    "series": 2,
+    "candidate": "C07",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C07-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 141,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C01-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 142,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C01-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 143,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C01-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 144,
+    "series": 2,
+    "candidate": "C01",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C01-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 145,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C06-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 146,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C06-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 147,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C06-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 148,
+    "series": 2,
+    "candidate": "C06",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C06-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 149,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C09-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 150,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C09-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 151,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C09-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 152,
+    "series": 2,
+    "candidate": "C09",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C09-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 153,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C03-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 154,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C03-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 155,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C03-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 156,
+    "series": 2,
+    "candidate": "C03",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C03-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 157,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T7",
+    "repetition": 3,
+    "cell_id": "C10-T7-r3",
+    "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 158,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T8",
+    "repetition": 3,
+    "cell_id": "C10-T8-r3",
+    "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 159,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T5",
+    "repetition": 3,
+    "cell_id": "C10-T5-r3",
+    "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
+    "status": "NON_JOUE"
+  },
+  {
+    "order": 160,
+    "series": 2,
+    "candidate": "C10",
+    "task": "T6",
+    "repetition": 3,
+    "cell_id": "C10-T6-r3",
+    "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
+    "status": "NON_JOUE"
+  }
+]

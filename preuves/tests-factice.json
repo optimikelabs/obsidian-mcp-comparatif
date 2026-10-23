@@ -1,0 +1,384 @@
+{
+  "success": true,
+  "unittest_groups": 5,
+  "failures": 0,
+  "errors": 0,
+  "checks": [
+    {
+      "test": "http-T3-date-format-source",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "dates_and_format_memory_snapshots",
+      "crlf_separate": true,
+      "unattributed_date_rejected": true,
+      "out_of_window_rejected": true
+    },
+    {
+      "test": "http-T6-deferred",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-deferred",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-deferred",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T1-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T2-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T3-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T4-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T5-negative-base",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T6-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-negative-base",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "mauvaise_note",
+      "expected_error": "REPONSE_CIBLE",
+      "observed_errors": [
+        "REPONSE_CIBLE"
+      ]
+    },
+    {
+      "test": "mauvaise_fixture",
+      "expected_error": "FIXTURE_EMPREINTE",
+      "observed_errors": [
+        "FIXTURE_EMPREINTE"
+      ]
+    },
+    {
+      "test": "snapshot_hash_mensonger",
+      "expected_error": "SNAPSHOT_INTEGRITE",
+      "observed_errors": [
+        "SNAPSHOT_INTEGRITE",
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "masque_note_metier",
+      "expected_error": "MASQUE_TECHNIQUE_INVALIDE",
+      "observed_errors": [
+        "MASQUE_TECHNIQUE_INVALIDE"
+      ]
+    },
+    {
+      "test": "relecture_declaree_non_prouvee",
+      "expected_error": "RELECTURE_MCP_ABSENTE",
+      "observed_errors": [
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "faux_succes",
+      "expected_error": "SUCCES_MENSONGER",
+      "observed_errors": [
+        "SUCCES_MENSONGER"
+      ]
+    },
+    {
+      "test": "injection_trop_tard",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "arguments_modifies",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "reponse_perdue_non_prouvee",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "reponse_en_fait_livree",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "perte_temporaire_reparee",
+      "expected_error": "PREMIERE_MUTATION_PERTE",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "PREMIERE_MUTATION_PERTE",
+        "PREMIERE_MUTATION_ECART"
+      ]
+    },
+    {
+      "test": "etat_coupure_sans_effet",
+      "expected_error": "COUPURE_EFFET",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "COUPURE_EFFET"
+      ]
+    },
+    {
+      "test": "entier_devenu_chaine",
+      "expected_error": "RANG_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RANG_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "entier_devenu_booleen",
+      "expected_error": "RANG_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RANG_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "cle_yaml_dupliquee",
+      "expected_error": "YAML_OU_UTF8_INVALIDE:Clé YAML dupliquée : rang",
+      "observed_errors": [
+        "YAML_OU_UTF8_INVALIDE:Clé YAML dupliquée : rang"
+      ]
+    },
+    {
+      "test": "champ_inconnu_perdu",
+      "expected_error": "YAML_VALEUR_OU_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "doublon_evenement",
+      "expected_error": "CORPS_INATTENDU",
+      "observed_errors": [
+        "CORPS_INATTENDU",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "retouche_humaine_ecrasee",
+      "expected_error": "HUMAIN_PERDU",
+      "observed_errors": [
+        "HUMAIN_PERDU",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "autre_note_modifiee",
+      "expected_error": "HORS_CIBLE",
+      "observed_errors": [
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "suffixe_creation",
+      "expected_error": "HORS_CIBLE",
+      "observed_errors": [
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "stdio-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "stdio-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "stdio-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "sse-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "sse-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    }
+  ],
+  "root": "<CHEMIN_PRIVE>",
+  "utc": 1792723261.3067803
+}

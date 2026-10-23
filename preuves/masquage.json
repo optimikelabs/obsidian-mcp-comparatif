@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "canaries": 8,
+  "nested_json": true,
+  "json_escaped_paths": true,
+  "generic_absolute_paths": true,
+  "absolute_path_cases": 6,
+  "relative_paths_and_urls_preserved": true,
+  "unicode_and_measurements_preserved": true,
+  "source_unchanged": true,
+  "scope": "Secrets nommés, Bearer, IDs UUID, emails et chemins personnels ; liste blanche du paquet. Aucun anonymat parfait des mécanismes."
+}

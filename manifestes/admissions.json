@@ -1,0 +1,82 @@
+[
+  {
+    "candidate": "C01",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C02",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C03",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C04",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C05",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C06",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C07",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C08",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C09",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  },
+  {
+    "candidate": "C10",
+    "status": "NON_ADMIS_NON_INSTALLE",
+    "artifact_sha256": null,
+    "catalog_sha256": null,
+    "adapter_sha256": null,
+    "reason": "Préparation sans installation ; qualification à admission après publication du gel."
+  }
+]

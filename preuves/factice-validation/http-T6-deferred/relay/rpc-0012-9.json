@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 9,
+    "method": "tools/call",
+    "params": {
+      "name": "status",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 9,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\": \"pending\", \"operation_id\": \"fake-operation\"}"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 154283250000000, "utc": 1792723242.129918, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 154283250000000, "utc": 1792723242.1339183, "id": 2}
+{"event": "mutation_dispatch", "seq": 3, "monotonic_ns": 154283250000000, "utc": 1792723242.1359174, "id": 3, "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716"}
+{"event": "response_delivered", "seq": 4, "monotonic_ns": 154283265000000, "utc": 1792723242.1399179, "id": 3}
+{"event": "mcp_read_response", "seq": 5, "monotonic_ns": 154283265000000, "utc": 1792723242.1455035, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "content_sha256": "8dc6c5eea913830e5d13015611e85c68c68b22f5881ffc5de6f602b80258b6f4", "response_received": true}
+{"event": "response_delivered", "seq": 6, "monotonic_ns": 154283265000000, "utc": 1792723242.1475031, "id": 4}

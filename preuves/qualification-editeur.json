@@ -1,0 +1,105 @@
+{
+  "qualified": true,
+  "method": "CDP MarkdownView.editor",
+  "results": [
+    {
+      "task": "T5",
+      "proof": {
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "method": "MarkdownView.editor.setValue",
+        "vault": "<CHEMIN_PRIVE>",
+        "before_tree": "4d01522d38ff36b53cf0f2f427d0a7c7d120aa392058aaef29e5c718c8b884c4",
+        "after_tree": "e947d05cdbdce76407c263ac108b68c5105064e11e31d5f38841ebbf2b7467cf",
+        "expected_sha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d",
+        "disk_save_observed": true,
+        "utc": 1792721976.3243988
+      }
+    },
+    {
+      "task": "T6",
+      "proof": {
+        "vault": "<CHEMIN_PRIVE>",
+        "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "method": "MarkdownView.editor.replaceRange",
+        "editorConfirmed": true,
+        "positionUTF16": 463,
+        "deletedUTF16": 33,
+        "beforeSha256": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46",
+        "afterSha256": "e42b99a651e98a970b13620a7a586de3f9f67227b720a59b7ce0017256197638",
+        "diskConfirmed": true,
+        "utc": "2026-10-23T02:19:36.604Z",
+        "label": "retouche saisie dans l’éditeur d’Obsidian (saisie simulée par un script, pas par une personne)"
+      }
+    },
+    {
+      "task": "T7",
+      "proof": {
+        "vault": "<CHEMIN_PRIVE>",
+        "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "method": "MarkdownView.editor.replaceRange",
+        "editorConfirmed": true,
+        "positionUTF16": 421,
+        "deletedUTF16": 39,
+        "beforeSha256": "e42b99a651e98a970b13620a7a586de3f9f67227b720a59b7ce0017256197638",
+        "afterSha256": "00bc39f6730a02dd0a90bd84ba81c2d3ef3b8caf6d5ab860fbd885f5344839f7",
+        "diskConfirmed": true,
+        "utc": "2026-10-23T02:19:36.778Z",
+        "label": "retouche saisie dans l’éditeur d’Obsidian (saisie simulée par un script, pas par une personne)"
+      }
+    },
+    {
+      "position": "end",
+      "proof": {
+        "vault": "<CHEMIN_PRIVE>",
+        "note": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "method": "MarkdownView.editor.replaceRange",
+        "editorConfirmed": true,
+        "positionUTF16": 25,
+        "deletedUTF16": 0,
+        "beforeSha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d",
+        "afterSha256": "c175a6811cb2335d0265cfd8a35e7da7b697d79a048dbbe63a16af19d1d0070a",
+        "diskConfirmed": true,
+        "utc": "2026-10-23T02:19:37.007Z",
+        "label": "retouche saisie dans l’éditeur d’Obsidian (saisie simulée par un script, pas par une personne)"
+      }
+    },
+    {
+      "position": "start",
+      "proof": {
+        "vault": "<CHEMIN_PRIVE>",
+        "note": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "method": "MarkdownView.editor.replaceRange",
+        "editorConfirmed": true,
+        "positionUTF16": 0,
+        "deletedUTF16": 0,
+        "beforeSha256": "c175a6811cb2335d0265cfd8a35e7da7b697d79a048dbbe63a16af19d1d0070a",
+        "afterSha256": "38bddb182105b29ce2f3a63322f4560ed6ddbd04410871bd166c2b53e09bf1d5",
+        "diskConfirmed": true,
+        "utc": "2026-10-23T02:19:37.213Z",
+        "label": "retouche saisie dans l’éditeur d’Obsidian (saisie simulée par un script, pas par une personne)"
+      }
+    },
+    {
+      "negative": "stale_before_hash",
+      "rejected": true,
+      "no_write": true
+    }
+  ],
+  "plugins": {
+    "plugins": [
+      "quickadd",
+      "templater-obsidian",
+      "journals",
+      "notebook-navigator",
+      "frontmatter-date-manager"
+    ],
+    "fdm": "1.6.0"
+  },
+  "identity": {
+    "base": "<CHEMIN_PRIVE>",
+    "name": "Margelle-qualification-1792721932248842900",
+    "electron": "43.3.0",
+    "plugins": []
+  },
+  "limits": "Une instance Windows isolée ; retouche simulée. Chaque injection de campagne doit confirmer sa sauvegarde disque."
+}

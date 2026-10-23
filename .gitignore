@@ -1,0 +1,8 @@
+reference/
+fixtures/Margelle-*/
+runtime/
+preuves/factice/
+ARRET-MEMOIRE.json
+FIN-SURVEILLANCE
+__pycache__/
+*.pyc

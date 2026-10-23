@@ -1,0 +1,4 @@
+{
+  "task_target_bytes_equal": true,
+  "equivalence_limit": "P, Q, leurres et binaire identiques ; règles, plugins, FDM et environnement Margelle non équivalents."
+}

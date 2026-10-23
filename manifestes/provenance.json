@@ -1,0 +1,8 @@
+{
+  "archive_name": "ELYSIA-OS-V1-1.0.6.zip",
+  "archive_sha256": "b69c70dcefe3908e14b1489d90bc748e45d7bb51caeb414c1b7a4e181d44e8ce",
+  "archive_bytes": 4385139,
+  "commit": "8ca5bdb729b5aa2c5b2cd84a8a0e611f7ad2ec72",
+  "reference_tree_sha256": "7a43d84373bb5b6eb3e3e35370d55b000d4cfc994db1aebf77dfc0e06893b37d",
+  "redistribution": "archive commerciale exclue du paquet public"
+}

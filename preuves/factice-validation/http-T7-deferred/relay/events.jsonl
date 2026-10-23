@@ -1,0 +1,18 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 154279750000000, "utc": 1792723238.6243021, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 154279750000000, "utc": 1792723238.638265, "id": 2}
+{"event": "request_held", "seq": 3, "monotonic_ns": 154279765000000, "utc": 1792723238.6412637, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6"}
+{"event": "ui_disk_verified", "seq": 4, "monotonic_ns": 154279765000000, "utc": 1792723238.647859, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "dispatch", "seq": 5, "monotonic_ns": 154279765000000, "utc": 1792723238.647859, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6"}
+{"event": "first_mutation_pending", "seq": 6, "monotonic_ns": 154279765000000, "utc": 1792723238.6508594, "id": 3}
+{"event": "response_delivered", "seq": 7, "monotonic_ns": 154279765000000, "utc": 1792723238.6518662, "id": 3}
+{"event": "response_delivered", "seq": 8, "monotonic_ns": 154279781000000, "utc": 1792723238.6555471, "id": 4}
+{"event": "response_delivered", "seq": 9, "monotonic_ns": 154279781000000, "utc": 1792723238.6706939, "id": 5}
+{"event": "response_delivered", "seq": 10, "monotonic_ns": 154279796000000, "utc": 1792723238.685948, "id": 6}
+{"event": "response_delivered", "seq": 11, "monotonic_ns": 154279812000000, "utc": 1792723238.7014825, "id": 7}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 154279828000000, "utc": 1792723238.7166383, "id": 8}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 154279843000000, "utc": 1792723238.731589, "id": 9}
+{"event": "response_delivered", "seq": 14, "monotonic_ns": 154279859000000, "utc": 1792723238.7469149, "id": 10}
+{"event": "first_snapshot", "seq": 15, "monotonic_ns": 154279890000000, "utc": 1792723238.7656813, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "response_delivered", "seq": 16, "monotonic_ns": 154279890000000, "utc": 1792723238.7656813, "id": 11}
+{"event": "mcp_read_response", "seq": 17, "monotonic_ns": 154279890000000, "utc": 1792723238.7708385, "id": 12, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "690001cd9e4adb567dfaef49ca938c1ccea273eaa98ff19d645da098cc8f8973", "response_received": true}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 154279890000000, "utc": 1792723238.7708385, "id": 12}

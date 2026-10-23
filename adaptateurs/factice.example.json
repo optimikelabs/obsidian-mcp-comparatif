@@ -1,0 +1,46 @@
+{
+  "transport": "stdio",
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "scripts/fake_server.py",
+    "--vault",
+    "fixtures/synthetique"
+  ],
+  "cwd": "<chemin absolu du kit>",
+  "vault": "<chemin absolu de la copie synthétique jetable>",
+  "task": "T8",
+  "out": "<chemin absolu de preuves dans le run>",
+  "port": 27347,
+  "adapter": {
+    "mutation_tools": [
+      "create",
+      "write",
+      "patch",
+      "append",
+      "rank",
+      "refuse",
+      "deferred_patch",
+      "deferred_refuse",
+      "deferred_append"
+    ],
+    "read_tools": [
+      "read"
+    ],
+    "status_tools": [
+      "status"
+    ],
+    "status_state_key": "state",
+    "terminal_states": [
+      "committed",
+      "verified",
+      "conflict",
+      "rejected",
+      "failed"
+    ],
+    "read_format": "json",
+    "read_content_key": "content",
+    "path_key": "path"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "client": "codex-cli",
+  "version": "0.160.1",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "high",
+  "serviceTier": "default",
+  "speed": "normal",
+  "context": "fresh-per-cell; T8 history retained",
+  "provider": "à figer à admission, identique pour tous",
+  "candidate_results": 0
+}
