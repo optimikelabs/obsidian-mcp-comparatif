@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T09:50:22.175258+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T09:51:55.680056+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "7c47e3ddc8e430630b0be18f02d9e705a7a6900d", "remote_verified": true, "utc": "2026-10-23T09:38:09.517935+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "d0bc3eb8c03f065d8eb666f750625bd5525e772a", "remote_verified": true, "utc": "2026-10-23T09:51:34.471552+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -94,50 +94,24 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ATTENTE_MEMOIRE_4GIO_APRES_QUALIFICATION_V12",
-  "utc": "2026-10-23T09:47:54.891226+00:00",
-  "last_cell": "C05-T4-r1",
-  "last_order": 4,
-  "last_status": "JOUE",
-  "last_verdict": "EFFET_NON_VOULU",
+  "state": "ATTENTE_MEMOIRE",
+  "utc": "2026-10-23T09:51:55.649050+00:00",
   "next_cell": "C05-T5-r1",
-  "next_order": 5,
-  "series1_played": 3,
-  "series1_unplayed": 77,
-  "series2_played": 0,
-  "series2_unplayed": 110,
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
+  "command": "python -X utf8 scripts/campaign_run.py",
+  "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "memory": {
-    "utc": "2026-10-23T09:47:54.891226+00:00",
-    "commitFreeBytes": 3076468736,
-    "availableBytes": 2158723072,
+    "utc": "2026-10-23T09:51:55.649050+00:00",
+    "commitFreeBytes": 1778806784,
+    "availableBytes": 1036632064,
     "admitted": false,
-    "stop": false
-  },
-  "reason": "Seuil mémoire de démarrage non atteint ; aucun programme de Mike fermé",
-  "required_before_resume": [
-    "Publication v1.2 vérifiée sur main",
-    "Marge engagement ET RAM disponible au moins 4 Gio",
-    "Verrou absent et ports propres au run libres, dont 27349"
-  ],
-  "existing_guard": "campaign_run refuse de passer C05-T4-r1 sans amendement public ; aucun amendement dérogatoire créé.",
-  "preserved_cell_folders": [
-    "C05-T1-r1",
-    "C05-T2-r1",
-    "C05-T3-r1",
-    "C05-T4-r1"
-  ],
-  "other_preserved_state": "Les dix dossiers d’admission, leurs incidents et les qualifications factices restent conservés. Aucun autre dossier de cellule créé.",
-  "source_freeze": "e3477a8b02441f73ac3d22b19d78766428887bbd",
-  "amendment_v11": "1e698f62401034c74dd70a1019146e45c8dc821f",
-  "last_result_publication": "598263d36bda8aef24e1bea177ea803207ba8624",
-  "next_action": "publier et vérifier v1.2 puis attendre les deux marges de 4 Gio avant C05-T5-r1",
-  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1"
+    "stop": true
+  }
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ATTENTE_MEMOIRE_4GIO_APRES_QUALIFICATION_V12. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : publier et vérifier v1.2 puis attendre les deux marges de 4 Gio avant C05-T5-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ATTENTE_MEMOIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C05-T5-r1. Aucune tâche du coffre modifiée.
