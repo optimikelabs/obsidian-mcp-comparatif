@@ -21,7 +21,7 @@ order,series,candidate,task,repetition,cell_id,status,verdict,reason
 20,1,C01,T4,1,C01-T4-r1,JOUE,REUSSI_VERIFIE,
 21,1,C01,T5,1,C01-T5-r1,JOUE,PROTEGE_NON_ACCOMPLI,
 22,1,C01,T6,1,C01-T6-r1,JOUE,REUSSI_VERIFIE,
-23,1,C01,T7,1,C01-T7-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
+23,1,C01,T7,1,C01-T7-r1,JOUE,PROTEGE_NON_ACCOMPLI,
 24,1,C01,T8,1,C01-T8-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 25,1,C04,T1,1,C04-T1-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 26,1,C04,T2,1,C04-T2-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.

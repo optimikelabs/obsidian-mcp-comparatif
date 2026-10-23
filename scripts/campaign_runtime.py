@@ -108,6 +108,7 @@ def prepare(out,plugin_sources=()):
     writej(out/'obsidian.json',cfg);return cfg
 
 def launch(cfg):
+    if (RUN/'PAUSE-C5.json').exists() and readj(RUN/'PAUSE-C5.json').get('active'):raise RuntimeError('PAUSE_C5 : aucune instance autorisée')
     out=Path(cfg['out']);gate(out,'before_obsidian')
     token='Campagne comparatif | '+memory()['utc']+' | CDP 27346 REST 27341 natif 27344 | '+secrets.token_hex(12)
     with LOCK.open('x',encoding='utf-8') as f:f.write(token+'\n')
@@ -169,7 +170,13 @@ def _close_sequence(observe,request,clock=time.monotonic,sleep=time.sleep,wait_s
     attempts=[];remaining=observe()
     for attempt in range(1,max_attempts+1):
         if not remaining:break
-        attempts.append(request(attempt))
+        try:
+            attempts.append(request(attempt))
+        except Exception as exc:
+            # La commande peut expirer après l'envoi de Browser.close.
+            # Observer la disparition avant l'unique nouvelle demande propre.
+            attempts.append({'attempt':attempt,'request_outcome':'unknown',
+                             'error_type':type(exc).__name__,'error':str(exc)})
         deadline=clock()+wait_seconds
         while remaining and clock()<deadline:
             sleep(min(.5,max(0,deadline-clock())));remaining=observe()

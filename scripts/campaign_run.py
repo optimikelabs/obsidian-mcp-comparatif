@@ -57,6 +57,7 @@ def wait_resources(row):
     return True
 
 def main():
+    if (RUN/'PAUSE-C5.json').exists() and readj(RUN/'PAUSE-C5.json').get('active'):raise RuntimeError('PAUSE_C5 : nouveau message de C5 requis')
     parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);parser.add_argument('--after-incident');parser.add_argument('--series',type=int,choices=(1,2));a=parser.parse_args()
     rows=readj(KIT/'manifestes/cellules-190.json');done=0
     assert readj(RUN/'CLIENT-QUALIFICATION.json')['qualified'] and readj(RUN/'CLIENT-T8-QUALIFICATION.json')['qualified'] and readj(RUN/'FDM-QUALIFICATION.json')['qualified']

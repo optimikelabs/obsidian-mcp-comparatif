@@ -5,7 +5,7 @@ from campaign_runtime import *
 from campaign_runtime import _close_sequence,_owns_process,_request_owned_close
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--ui',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--ui',action='store_true');parser.add_argument('--label',default='fermeture',choices=['fermeture','fermeture-timeout']);args=parser.parse_args()
     root=RUN/'qualification-fermeture'/str(time.time_ns());root.mkdir(parents=True)
     checks=[]
     for name,ends_at,expected_attempts,remaining in [('already_closed',0,0,False),('slow_8s',8,1,False),('retry_22s',22,2,False),('still_active',100,2,True)]:
@@ -15,6 +15,17 @@ def main():
         def sleep(n):now[0]+=n
         proof=_close_sequence(observe,request,clock=lambda:now[0],sleep=sleep)
         assert len(requests)==expected_attempts and bool(proof['remaining'])==remaining
+        writej(root/(name+'.json'),proof);checks.append({'case':name,'passed':True,'requests':len(requests),'elapsed_simulated_s':now[0]})
+    for name,ends_at,expected_attempts,remaining in [('timeout_then_closed',8,1,False),('timeout_then_retry_closed',22,2,False),('timeout_still_active',100,2,True)]:
+        now=[0];requests=[]
+        def observe():return [{'ProcessId':101}] if now[0]<ends_at else []
+        def request(n):
+            requests.append(n)
+            raise TimeoutError('Commande expirée après envoi possible')
+        def sleep(n):now[0]+=n
+        proof=_close_sequence(observe,request,clock=lambda:now[0],sleep=sleep)
+        assert len(requests)==expected_attempts and bool(proof['remaining'])==remaining
+        assert len(proof['attempts'])==expected_attempts and all(a['request_outcome']=='unknown' for a in proof['attempts'])
         writej(root/(name+'.json'),proof);checks.append({'case':name,'passed':True,'requests':len(requests),'elapsed_simulated_s':now[0]})
     cfg={'profile':str(root/'profile')}
     row={'ProcessId':101,'ExecutablePath':str(EXE),'CommandLine':'Obsidian.exe --user-data-dir="'+cfg['profile']+'" --remote-debugging-port=27346'}
@@ -60,7 +71,7 @@ def main():
             try:
                 if not closed_ok and cfg.get('pid'):stop(cfg)
             finally:mon.close()
-    writej(root/'qualification.json',meta);writej(KIT/'preuves'/('tests-fermeture-ui.json' if args.ui else 'tests-fermeture.json'),meta)
+    writej(root/'qualification.json',meta);writej(KIT/'preuves'/('tests-'+args.label+('-ui' if args.ui else '')+'.json'),meta)
     print(json.dumps({k:v for k,v in meta.items() if k not in ('before_inventory','after_inventory')},ensure_ascii=False),flush=True)
 
 if __name__=='__main__':main()

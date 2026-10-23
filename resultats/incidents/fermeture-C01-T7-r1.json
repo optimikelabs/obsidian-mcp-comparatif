@@ -1,0 +1,10 @@
+{
+  "cell_id": "C01-T7-r1",
+  "reason": "Vérification et unique reprise propre permise après timeout de la première demande.",
+  "before_processes": [],
+  "first_error": "file:///<CHEMIN_PRIVE>\n const timer=setTimeout(()=>finish(Error('CDP close timeout')),5000);\n                                   ^\n\nError: CDP close timeout\n    at Timeout.<anonymous> (file:///<CHEMIN_PRIVE>\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)\n\nNode.js v24.17.0\n",
+  "retry_completed": true,
+  "after_processes": [],
+  "lock_present": false,
+  "requests_used": 1
+}

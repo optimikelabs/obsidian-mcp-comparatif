@@ -1,19 +1,19 @@
-Série 1 : 17 cellules jouées ; 63 non jouées (sur 80).
+Série 1 : 18 cellules jouées ; 62 non jouées (sur 80).
 Série 2 : 0 cellules jouées ; 110 non jouées (sur 110).
 Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
-T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 6 cellules jouées.
+T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 7 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 1 cellules jouées.
-Incidents consignés : 18 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 19 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T15:43:09.693503+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T15:52:39.990104+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "51d295f72ebf6575a576e8e1265084d01da51a9a", "remote_verified": true, "utc": "2026-10-23T15:40:40.868274+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "8801b6b4f4c791b408d259aaa347e6a94a91a620", "remote_verified": true, "utc": "2026-10-23T15:44:12.858669+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -50,6 +50,14 @@ VALIDEE / REUSSI_VERIFIE : Aucun écart entre instantané jugé et coffre fermé
 ## Validation après instantané : C01-T5-r1
 
 VALIDEE / PROTEGE_NON_ACCOMPLI : dates ajoutées par FDM après l’instantané, hors jugement. Voir validations-post-instantane/C01-T5-r1.json. Résultat brut et instantané inchangés.
+
+## Validation après instantané : C01-T6-r1
+
+VALIDEE / REUSSI_VERIFIE : Aucun écart entre instantané jugé et coffre fermé. Voir validations-post-instantane/C01-T6-r1.json. Résultat brut et instantané inchangés.
+
+## Validation après instantané : C01-T7-r1
+
+VALIDEE / PROTEGE_NON_ACCOMPLI : Aucun écart entre instantané jugé et coffre fermé. Voir validations-post-instantane/C01-T7-r1.json. Résultat brut et instantané inchangés.
 
 ## Validation après instantané : C08-T5-r1
 
@@ -133,6 +141,7 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
 - incidents/fdm-intermediaire-C08-T6-r1.json : Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.
 - incidents/fermeture-C01-T2-r1.json : Première demande propre échouée ; unique nouvelle tentative autorisée C5.
+- incidents/fermeture-C01-T7-r1.json : Vérification et unique reprise propre permise après timeout de la première demande.
 - incidents/fermeture-C08-T4-r1.json : La fermeture observe encore 4 processus Obsidian du profil isole apres 500 ms, puis leve deux fois. Aucun processus de ce profil ne subsiste lors du controle differe.
 - incidents/injection-ui-C05-T5-r1.json : Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.
 - incidents/post-fermeture-C08-T5-r1.json : La note injectée N contient maintenant création et modification, absentes de l’instantané after jugé. Texte humain identique. Attribution runtime non établie pour N.
@@ -145,21 +154,21 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:43:09.611085+00:00",
-  "next_cell": "C01-T7-r1",
+  "state": "PAUSE_C5_RECETTE_1_0_7",
+  "utc": "2026-10-23T15:52:39.515733+00:00",
+  "next_cell": "C01-T8-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C01-T6-r1",
-  "last_result": "REUSSI_VERIFIE",
-  "last_reason": "",
-  "incident_cell": null
+  "last_cell": "C01-T7-r1",
+  "last_result": "PROTEGE_NON_ACCOMPLI",
+  "resume_requires": "Nouveau message explicite de C5",
+  "resume_command": "python -X utf8 scripts/campaign_run.py --after-incident C08-T8-r1 --series 1 --max-cells 1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T7-r1. Aucune tâche du coffre modifiée.
+État opérationnel : PAUSE_C5_RECETTE_1_0_7. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T8-r1. Aucune tâche du coffre modifiée.

@@ -1,0 +1,49 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792770296268,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_04a2f051f3a24a6d016adb8104e3c08191b2af6e0085f77a17",
+        "progressToken": 2
+      },
+      "name": "vault_get_document_map",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"version\": \"0248ac\",\n  \"frontmatterFields\": [\n    \"type\",\n    \"parent\",\n    \"collection\",\n    \"entité\",\n    \"statut\",\n    \"notes_liees\",\n    \"rang\",\n    \"client\",\n    \"échéance\",\n    \"next_action\",\n    \"budget_h\",\n    \"budget_euros\",\n    \"type_projet\",\n    \"temoin_bool\",\n    \"temoin_liste\",\n    \"temoin_entier\",\n    \"clé_inconnue\",\n    \"création\",\n    \"modification\"\n  ],\n  \"headings\": {\n    \"Fiche du projet\": {}\n  },\n  \"blocks\": []\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

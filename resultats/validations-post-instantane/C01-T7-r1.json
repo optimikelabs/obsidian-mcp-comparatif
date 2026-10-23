@@ -1,0 +1,12 @@
+{
+  "cell_id": "C01-T7-r1",
+  "result_sha256": "db8cb47b7a18f489e47f6b25b6f73937ba7dc91b5f145ca8175e5d1c28f2b2f2",
+  "judged_tree_sha256": "0197942a8d019c32e75e6446f691167a22665196b0b2426181299182c27ff412",
+  "closed_tree_sha256": "0197942a8d019c32e75e6446f691167a22665196b0b2426181299182c27ff412",
+  "differences": [],
+  "decision": {
+    "validation": "VALIDEE",
+    "verdict": "PROTEGE_NON_ACCOMPLI",
+    "note": "Aucun écart entre instantané jugé et coffre fermé"
+  }
+}
