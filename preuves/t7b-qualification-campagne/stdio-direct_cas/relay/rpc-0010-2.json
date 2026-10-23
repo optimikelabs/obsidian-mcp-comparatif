@@ -1,0 +1,28 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "write",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "etag": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46",
+        "content": "---\ntype: projet\nparent: null\ncollection:\n- '[[Projets]]'\nentité: null\nstatut: actif\nnotes_liees: null\nrang: 1\nclient: false\néchéance: null\nnext_action: Trier trois captures.\nbudget_h: null\nbudget_euros: null\ntype_projet: null\ntemoin_bool: true\ntemoin_liste:\n- café\n- œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : essai prévu vendredi.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "isError": true,
+      "content": [
+        {
+          "type": "text",
+          "text": "REVISION_CONFLICT"
+        }
+      ]
+    }
+  }
+}

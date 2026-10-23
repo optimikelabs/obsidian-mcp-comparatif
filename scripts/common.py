@@ -130,3 +130,11 @@ def read_matches(event, blob):
 def field(obj, key):
     for part in (key if isinstance(key,list) else [key]):obj=obj[part]
     return obj
+
+def decode_numbered(text):
+    lines=text.split('\n');decoded=[]
+    for i,line in enumerate(lines,1):
+        prefix=str(i)+': '
+        if not line.startswith(prefix):raise ValueError('Vue numérotée non reconnue ou partielle')
+        decoded.append(line[len(prefix):])
+    return '\n'.join(decoded)

@@ -1,0 +1,16 @@
+{
+  "candidate": "C09",
+  "status": "ADMIS",
+  "nonceVerified": true,
+  "backend_nonce_verified": true,
+  "reason": "Nonce via candidat et backend isolé, création, remplacement et lecture complète qualifiés. Package ISC / LICENSE MIT : divergence déclarée, aucun code redistribué.",
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>"
+  ],
+  "mode": "stdio Node vers REST HTTP 5.5.2 ; chemin fichier borné au bac",
+  "artifact_sha256": "3065a9e9f75ff2eb6e95665fec5f78f34819ea1574d293dacdb062cd43b0b16f",
+  "catalog_sha256": "fcb128e37c756deaa99beec43b3e68e9d54a38f93517358d3012b7d9d24eeec8",
+  "adapter_sha256": "791e9abf70fc1981eb904495e52f450bd4bcaa3ba9df4931f46c540e0c87e75c",
+  "utc": "2026-10-23T08:32:48.641140+00:00"
+}

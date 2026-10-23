@@ -102,12 +102,17 @@ class LegacySSE:
         threading.Thread(target=self.response.close,daemon=True).start()
 
 class Relay:
-    def __init__(self,upstream,vault,task,out,adapter,ui=None):
+    def __init__(self,upstream,vault,task,out,adapter,ui=None,initialization=None):
         self.upstream=upstream;self.vault=scoped(vault);self.task=task;self.out=scoped(out);self.out.mkdir(parents=True,exist_ok=True)
         self.adapter=adapter;self.ui=ui;self.events=[];self.injected=False;self.lost=False;self.lock=threading.Lock();self.first_done=False;self.pending_first=False;self.first_lock=threading.Lock()
         self.before=snapshot(vault);writej(self.out/'before.json',self.before)
         self.human=self.first=self.cut=None
         self.initial_read=None
+        self.initialization=initialization
+        self.safety_check=lambda:None
+        self.held_since=None;self.held_seconds=0
+    def budget_extension(self):
+        return min(60,self.held_seconds+(time.monotonic()-self.held_since if self.held_since is not None else 0))
     def event(self,name,**fields):
         value={'event':name,'seq':len(self.events)+1,'monotonic_ns':time.monotonic_ns(),'utc':time.time(),**fields};self.events.append(value)
         with (self.out/'events.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps(value,ensure_ascii=False)+'\n')
@@ -130,23 +135,29 @@ class Relay:
     def process(self,req,disconnect=None):
         with self.lock:
             guard()
+            self.safety_check()
+            if self.initialization is not None and req.get('method')=='initialize':
+                reply=dict(self.initialization,id=req.get('id'));self.event('bootstrap_response',id=req.get('id'))
+                self.event('response_delivered',id=req.get('id'));return reply,False
+            if self.initialization is not None and req.get('method')=='notifications/initialized':return None,False
             if self.lost:
                 self.event('client_reconnected',id=req.get('id'));self.lost=False
             call=req.get('method')=='tools/call';params=req.get('params',{});name=params.get('name');args=params.get('arguments',{})
+            if call:self.event('tool_request',id=req.get('id'),tool=name,arguments_sha256=sha(json.dumps(args,ensure_ascii=False,sort_keys=True).encode()))
             def matches(rules):
                 for rule in rules:
                     try:
                         if rule['tool']==name and field(args,rule['key']) in rule['values']:return True
                     except (KeyError,TypeError):continue
                 return False
-            mutation=call and (name in self.adapter['mutation_tools'] or matches(self.adapter.get('mutation_rules',[])))
+            preparation=call and (name in self.adapter.get('preparation_tools',[]) or matches(self.adapter.get('preparation_rules',[])))
+            mutation=call and not preparation and (name in self.adapter['mutation_tools'] or matches(self.adapter.get('mutation_rules',[])))
             read=call and (name in self.adapter['read_tools'] or matches(self.adapter.get('read_rules',[])))
             if self.pending_first and mutation:
                 rel=N if self.task=='T5' else P
                 if (self.vault/rel).read_bytes()!=data(self.human,rel):self.first_snapshot()
                 else:raise RuntimeError('Première mutation différée non réglée : ne pas permettre une réparation sans preuve')
             digest=sha(json.dumps(req,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
-            preparation=call and name in self.adapter.get('preparation_tools',[])
             selected=(mutation and not self.injected and self.task in ('T5','T6','T7','T8')) or (
                 self.task=='T7b' and not self.injected and (preparation or mutation))
             if selected:
@@ -157,8 +168,11 @@ class Relay:
                 if self.task!='T8':
                     self.event('request_held',id=req.get('id'),request_sha256=digest)
                     if self.ui is None:raise RuntimeError('Aucune retouche UI qualifiée configurée')
-                    self.ui(self.task)
+                    self.held_since=time.monotonic()
+                    try:self.ui(self.task)
+                    finally:self.held_seconds+=time.monotonic()-self.held_since;self.held_since=None
                     self.human=self.capture('human');self.event('ui_disk_verified',snapshot_sha256=manifest(self.human)['tree_sha256'])
+                self.safety_check()
                 self.event('dispatch',id=req.get('id'),request_sha256=digest,kind='preparation' if preparation else 'mutation')
             elif mutation:self.event('mutation_dispatch',id=req.get('id'),request_sha256=digest)
             observe_mutation=mutation and self.injected and self.first is None and not self.pending_first and self.task in ('T5','T6','T7','T7b')
@@ -169,14 +183,34 @@ class Relay:
                 def observe_effect():
                     try:
                         expected=data(self.before,P)+EVENT.encode()+b'\n'
-                        wait_bytes(self.vault/P,expected)
+                        # Détecter l'effet métier ; les dates restent jugées séparément
+                        # par l'oracle avec attribution FDM et hash de cette coupure.
+                        deadline=time.monotonic()+60
+                        while True:
+                            guard();actual=(self.vault/P).read_bytes()
+                            if actual==expected:break
+                            try:
+                                a,ab=split(actual);e,eb=split(expected)
+                                for key in ('création','modification'):a.pop(key,None);e.pop(key,None)
+                                if a==e and ab==eb:break
+                            except (ValueError,yaml.YAMLError,UnicodeError):pass
+                            if time.monotonic()>=deadline:raise TimeoutError('Effet T8 non observé')
+                            time.sleep(.005)
                         self.cut=self.capture('cut');self.event('effect_disk_verified',snapshot_sha256=manifest(self.cut)['tree_sha256'])
                         if disconnect:disconnect()
                         self.event('client_disconnected',id=req.get('id'));self.lost=True
                     except BaseException as e:lost_errors.append(e)
                 observer=threading.Thread(target=observe_effect,daemon=True);observer.start()
-            reply=self.upstream.rpc(req)
+            upstream_start=time.monotonic();reply=self.upstream.rpc(req)
+            if call:self.event('upstream_response',id=req.get('id'),tool=name,duration_s=time.monotonic()-upstream_start,
+                               bytes=len(json.dumps(reply,ensure_ascii=False).encode()),is_error=bool(reply.get('error') or reply.get('result',{}).get('isError')) if reply else None)
             writej(self.out/f'rpc-{len(self.events):04}-{req.get("id","notification")}.json',{'request':req,'response':reply})
+            if mutation and self.adapter.get('technical_receipts_policy')=='c08-transactions-v1':
+                try:
+                    obj=reply['result']['structuredContent']['data']
+                    self.event('technical_transaction_receipt',id=req.get('id'),path=args['path'],
+                               transaction_id_sha256=sha(obj['transaction_id'].encode()))
+                except (KeyError,TypeError,AttributeError):pass
             if selected and self.task=='T8':
                 observer.join(timeout=61)
                 if observer.is_alive():raise TimeoutError('Observation effet T8 non terminée')
@@ -196,9 +230,10 @@ class Relay:
                     mapping=self.adapter.get('read_mappings',{}).get(name,{})
                     form=mapping.get('format',self.adapter.get('read_format','json'))
                     raw=reply['result']['content'][0]['text']
-                    obj=reply['result']['structuredContent'] if mapping.get('source')=='structuredContent' else json.loads(raw) if form!='raw' else None
+                    obj=reply['result']['structuredContent'] if mapping.get('source')=='structuredContent' else json.loads(raw) if form not in ('raw','numbered_lines') else None
                     # Mapping explicite ; jamais lecture disque fabriquée comme relecture MCP.
                     content=raw if obj is None else obj if form=='json_string' else field(obj,mapping.get('content_key',self.adapter.get('read_content_key','content')))
+                    if form=='numbered_lines':content=decode_numbered(content)
                     rel=field(args,mapping.get('path_key',self.adapter.get('path_key','path')))
                     projection=({'projection':'body_frontmatter','properties':field(obj,mapping['frontmatter_key']),'body_sha256':sha(content.encode())}
                                 if form=='body_frontmatter' else {'content_sha256':sha(content.encode())})

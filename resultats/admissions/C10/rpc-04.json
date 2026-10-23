@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "create",
+      "arguments": {
+        "path": "Admission — schémas C10.md",
+        "file_text": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Successfully created file: Admission — schémas C10.md"
+        }
+      ]
+    }
+  }
+}

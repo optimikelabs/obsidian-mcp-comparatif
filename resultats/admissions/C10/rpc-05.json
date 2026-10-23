@@ -1,0 +1,27 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "name": "str_replace",
+      "arguments": {
+        "path": "Admission — schémas C10.md",
+        "old_str": "Essai A.",
+        "new_str": "Essai B."
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Successfully replaced text at exactly one location."
+        }
+      ]
+    }
+  }
+}

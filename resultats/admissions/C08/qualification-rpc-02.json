@@ -1,0 +1,37 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_read_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Admission — schémas C08.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Read Obsidian Note succeeded.\n{\n  \"path\": \"Admission — schémas C08.md\",\n  \"content\": \"---\\nrang: 1\\ninconnu: café\\n---\\nEssai A.\\n\",\n  \"etag\": \"91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e\",\n  \"total_characters\": 39,\n  \"offset\": 0,\n  \"has_more\": false\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Admission — schémas C08.md",
+          "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n",
+          "etag": "91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e",
+          "total_characters": 39,
+          "offset": 0,
+          "has_more": false
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

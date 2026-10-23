@@ -288,3 +288,8 @@ Le schéma documentaire `response.schema.json` inclut T7b dans son enum task_id 
 - Les états différés reconnus sont déclarés par adaptateur (pending_states). Un état inconnu n’est jamais certifié par une annonce de réussite. C07 est encore en qualification plan/apply/status à cette rédaction ; son nonce et son profil operational sont acquis.
 - C06 est non admis au titre de l’environnement : l’isolation de la CLI n’est pas démontrée, aucun nonce lu par ce chemin. Le test ne conclut rien sur ses écritures concurrentes.
 - Le client commun est configuré mais non qualifié runtime. Sa préparation seule ne prouve ni l’absence d’outils de secours dans le catalogue réellement chargé, ni une mesure de tokens, ni une réussite de cellule.
+
+
+## Complément pré-mesure — admissions et client
+
+L’amendement `AMENDEMENT-ADMISSIONS-ET-CLIENT.md` fait foi pour les admissions achevées, le client réel qualifié sur factice, l’attribution des dates par snapshot et les reçus techniques C08. Il est publié avant la première cellule. Les paragraphes précédents « à qualifier » décrivent l’état historique, pas une qualification présumée. Aucun score n’a servi à modifier ces règles.

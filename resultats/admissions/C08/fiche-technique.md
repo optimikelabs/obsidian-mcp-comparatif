@@ -1,0 +1,3 @@
+C08 — StevenStavrakis/obsidian-mcp 2.0.1
+
+Serveur fichiers stdio, vault=test. obsidian_read_note retourne data.content, etag et pagination ; lire depuis offset 0 jusqu’à has_more=false. obsidian_create_note crée exclusivement. obsidian_edit_note propose append/prepend/replace ; if_match reprend l’etag lu pour éviter une révision périmée. Pas d’outil arbitraire de propriétés : remplacement exact du YAML possible, en préservant les autres champs. Les mutations journalisent transaction_id dans .obsidian-mcp ; reçus et snapshots techniques sont observés séparément du contenu métier. Aucun statut durable MCP de réponse perdue présumé ; une lecture peut établir l’effet sans réécriture.

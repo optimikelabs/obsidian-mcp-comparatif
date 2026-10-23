@@ -116,7 +116,12 @@ def launch(cfg):
         for port in PORTS.values():
             with socket.socket() as s:s.bind(('127.0.0.1',port))
         args=['--user-data-dir="'+cfg['profile']+'"','--remote-debugging-port='+str(PORTS['cdp']),'--remote-debugging-address=127.0.0.1']
-        ps="$p=Start-Process -FilePath '"+str(EXE).replace("'","''")+"' -ArgumentList @("+','.join("'"+a.replace("'","''")+"'" for a in args)+") -WindowStyle Hidden -PassThru; $p.Id"
+        import re
+        env_prefix=''
+        for name,value in cfg.get('process_env',{}).items():
+            assert re.fullmatch('[A-Z][A-Z0-9_]*',name)
+            env_prefix+="$env:"+name+"='"+str(value).replace("'","''")+"'; "
+        ps=env_prefix+"$p=Start-Process -FilePath '"+str(EXE).replace("'","''")+"' -ArgumentList @("+','.join("'"+a.replace("'","''")+"'" for a in args)+") -WindowStyle Hidden -PassThru; $p.Id"
         cfg['pid']=int(command(['powershell','-NoProfile','-Command',ps],out,'launch',timeout=30).strip());writej(out/'obsidian.json',cfg)
         deadline=time.monotonic()+90;last=''
         while time.monotonic()<deadline:

@@ -1,0 +1,26 @@
+{
+  "candidate": "C10",
+  "transport": "sse",
+  "mutation_tools": [
+    "str_replace",
+    "create",
+    "insert"
+  ],
+  "preparation_tools": [],
+  "read_tools": [
+    "view"
+  ],
+  "read_format": "numbered_lines",
+  "path_key": "path",
+  "enabled_tools": [
+    "view",
+    "str_replace",
+    "create",
+    "insert"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/claude-code-mcp/data.json"
+  ]
+}

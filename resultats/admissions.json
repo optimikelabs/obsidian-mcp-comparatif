@@ -123,7 +123,8 @@
     ],
     "catalog_sha256": "87bfd16cf453c57ec929349d517d92c62e11765d1d176cd0b82c94d7340644de",
     "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
-    "utc": "2026-10-23T07:49:25.585210+00:00"
+    "utc": "2026-10-23T07:49:25.585210+00:00",
+    "view_file_raw_qualified": true
   },
   {
     "candidate": "C06",
@@ -138,25 +139,138 @@
   },
   {
     "candidate": "C07",
-    "status": "SCHEMAS_A_QUALIFIER",
+    "status": "ADMIS",
     "nonceVerified": true,
     "source_commit": "8696687e1a449f5f74550331ac902b0b358b4ccf",
     "mode": "Proxy stdio operational / backend HTTP full propre au run, REST 5.5.2 + Atomic 0.8.1",
-    "backend_port": 27349
+    "backend_port": 27349,
+    "reason": "Nonce, plan/apply différé, statut terminal committed/verified et relecture complète acquis. Incident du contrôleur conservé : mauvais champ state, polling excessif puis 429 à la requête 98.",
+    "catalog_sha256": "9d7bbe53212f3f4eb5419bc3bf35bfd0232dfa0b93aee01c83d5c3feee2d742a",
+    "adapter_sha256": "a8cda2497823b745a8735d0ab8534063fa097f6e0742603538cea7fc245cb62e",
+    "qualification_terminal_receipts": [
+      "qualification-rpc-41.json",
+      "qualification-rpc-42.json",
+      "qualification-rpc-43.json",
+      "qualification-rpc-44.json",
+      "qualification-rpc-45.json",
+      "qualification-rpc-46.json",
+      "qualification-rpc-47.json",
+      "qualification-rpc-48.json",
+      "qualification-rpc-49.json",
+      "qualification-rpc-50.json",
+      "qualification-rpc-51.json",
+      "qualification-rpc-52.json",
+      "qualification-rpc-53.json",
+      "qualification-rpc-54.json",
+      "qualification-rpc-55.json",
+      "qualification-rpc-56.json",
+      "qualification-rpc-57.json",
+      "qualification-rpc-58.json",
+      "qualification-rpc-59.json",
+      "qualification-rpc-60.json",
+      "qualification-rpc-61.json",
+      "qualification-rpc-62.json",
+      "qualification-rpc-63.json",
+      "qualification-rpc-64.json",
+      "qualification-rpc-65.json",
+      "qualification-rpc-66.json",
+      "qualification-rpc-67.json",
+      "qualification-rpc-68.json",
+      "qualification-rpc-69.json",
+      "qualification-rpc-70.json",
+      "qualification-rpc-71.json",
+      "qualification-rpc-72.json",
+      "qualification-rpc-73.json",
+      "qualification-rpc-74.json",
+      "qualification-rpc-75.json",
+      "qualification-rpc-76.json",
+      "qualification-rpc-77.json",
+      "qualification-rpc-78.json",
+      "qualification-rpc-79.json",
+      "qualification-rpc-80.json",
+      "qualification-rpc-81.json",
+      "qualification-rpc-82.json",
+      "qualification-rpc-83.json",
+      "qualification-rpc-84.json",
+      "qualification-rpc-85.json",
+      "qualification-rpc-86.json",
+      "qualification-rpc-87.json",
+      "qualification-rpc-88.json",
+      "qualification-rpc-89.json",
+      "qualification-rpc-90.json",
+      "qualification-rpc-91.json",
+      "qualification-rpc-92.json",
+      "qualification-rpc-93.json",
+      "qualification-rpc-94.json",
+      "qualification-rpc-95.json",
+      "qualification-rpc-96.json",
+      "qualification-rpc-97.json"
+    ],
+    "utc": "2026-10-23T08:14:13.316227+00:00"
   },
   {
     "candidate": "C08",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "ADMIS",
+    "nonceVerified": true,
+    "reason": "Nonce, création, remplacement conditionnel et refus de révision périmée qualifiés. Règle de reçus techniques liée aux transaction_id testée sur factice (15 contrôles), à publier avant toute cellule.",
+    "command": [
+      "node",
+      "<CHEMIN_PRIVE>",
+      "serve",
+      "--vault",
+      "test=<CHEMIN_PRIVE>"
+    ],
+    "artifact_sha256": "286a3a28a3aea6cffd83f510648d425a47a01152ca8560a61da5ce6ef4cda8b0",
+    "catalog_sha256": "decdf72291d2710279e386c26f4ee7ac861af9207cae308cbf19686a06eef082",
+    "adapter_sha256": "dc3f5b0ef3359cb086224014e26eaff594e60d3040f67afe6717ca518fde5ff2",
+    "mode": "Fichiers sans Obsidian hors préparation et T5/T6/T7/T7b",
+    "utc": "2026-10-23T08:26:27.165124+00:00",
+    "technical_policy_qualified": true
   },
   {
     "candidate": "C09",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "ADMIS",
+    "nonceVerified": true,
+    "backend_nonce_verified": true,
+    "reason": "Nonce via candidat et backend isolé, création, remplacement et lecture complète qualifiés. Package ISC / LICENSE MIT : divergence déclarée, aucun code redistribué.",
+    "command": [
+      "node",
+      "<CHEMIN_PRIVE>"
+    ],
+    "mode": "stdio Node vers REST HTTP 5.5.2 ; chemin fichier borné au bac",
+    "artifact_sha256": "3065a9e9f75ff2eb6e95665fec5f78f34819ea1574d293dacdb062cd43b0b16f",
+    "catalog_sha256": "fcb128e37c756deaa99beec43b3e68e9d54a38f93517358d3012b7d9d24eeec8",
+    "adapter_sha256": "791e9abf70fc1981eb904495e52f450bd4bcaa3ba9df4931f46c540e0c87e75c",
+    "utc": "2026-10-23T08:32:48.641140+00:00"
   },
   {
     "candidate": "C10",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "ADMIS",
+    "nonceVerified": true,
+    "reason": "Nonce, création, remplacement et décodage de vue numérotée vérifiés. HTTP/SSE natif ; WebSocket et terminal désactivés, CLAUDE_CONFIG_DIR borné au run. LICENSE 0BSD / package MIT déclaré, code non redistribué.",
+    "mode": "Plugin Obsidian HTTP/SSE legacy, sans client Claude Code",
+    "artifacts": [
+      {
+        "name": "main.js",
+        "size": 701749,
+        "sha256": "784b49d6f243053a2271d1e69c6d0716a3bde407a5dfeda8fbb894eaf87ec043",
+        "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/main.js"
+      },
+      {
+        "name": "manifest.json",
+        "size": 308,
+        "sha256": "0bcdd086d71b1a47bb1f13b4b9320b7544e8f1d4721ab34066b7fd3bd047c2ae",
+        "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/manifest.json"
+      },
+      {
+        "name": "styles.css",
+        "size": 7927,
+        "sha256": "5cf86b5d3f039246bc5af34fea5cd5c93e38a7db867da0778bc9693f01fa84f8",
+        "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/styles.css"
+      }
+    ],
+    "catalog_sha256": "b47643edcb8e11e5ec9761206e51b065f73027d8b4edf4aba497ce0e5e9faae9",
+    "adapter_sha256": "00782de2bb624d8ed81cc35519f3e0b338082d0b20304d0da7d525ab2140a336",
+    "utc": "2026-10-23T08:37:47.133830+00:00"
   }
 ]

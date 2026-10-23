@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "read",
+      "arguments": {
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\": \"Efforts/Projets/Compte rendu — Essai MCP.md\", \"content\": \"---\\ntype: note\\nparent: '[[Projet témoin — Test MCP]]'\\n---\\n# Compte rendu — Essai MCP\\n\\nTrois captures triées.\\n\", \"etag\": \"8dc6c5eea913830e5d13015611e85c68c68b22f5881ffc5de6f602b80258b6f4\"}"
+        }
+      ]
+    }
+  }
+}

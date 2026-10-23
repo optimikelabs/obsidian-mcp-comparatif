@@ -27,5 +27,6 @@
   ],
   "catalog_sha256": "87bfd16cf453c57ec929349d517d92c62e11765d1d176cd0b82c94d7340644de",
   "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
-  "utc": "2026-10-23T07:49:25.585210+00:00"
+  "utc": "2026-10-23T07:49:25.585210+00:00",
+  "view_file_raw_qualified": true
 }

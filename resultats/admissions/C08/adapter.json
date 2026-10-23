@@ -1,0 +1,42 @@
+{
+  "candidate": "C08",
+  "transport": "stdio",
+  "mutation_tools": [
+    "obsidian_create_note",
+    "obsidian_edit_note",
+    "obsidian_delete_note",
+    "obsidian_move_note",
+    "obsidian_add_tags",
+    "obsidian_remove_tags",
+    "obsidian_create_directory"
+  ],
+  "preparation_tools": [],
+  "read_tools": [
+    "obsidian_read_note"
+  ],
+  "read_mappings": {
+    "obsidian_read_note": {
+      "source": "structuredContent",
+      "format": "json",
+      "content_key": [
+        "data",
+        "content"
+      ]
+    }
+  },
+  "path_key": "path",
+  "technical_receipts_policy": "c08-transactions-v1",
+  "enabled_tools": [
+    "obsidian_list_vaults",
+    "obsidian_list_notes",
+    "obsidian_read_note",
+    "obsidian_search_vault",
+    "obsidian_create_note",
+    "obsidian_edit_note"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian-mcp/locks/write/owner.json"
+  ]
+}

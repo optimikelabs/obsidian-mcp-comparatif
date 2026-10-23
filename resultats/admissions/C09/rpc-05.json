@@ -1,0 +1,32 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "name": "update_note",
+      "arguments": {
+        "path": "Admission — schémas C09.md",
+        "edits": [
+          {
+            "oldText": "Essai A.",
+            "newText": "Essai B."
+          }
+        ],
+        "dryRun": false
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "File Admission — schémas C09.md updated successfully"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 5
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "candidate": "C09",
+  "transport": "stdio",
+  "mutation_tools": [
+    "create_note",
+    "update_note",
+    "delete_note",
+    "move_note",
+    "manage_folder",
+    "auto_backlink_vault"
+  ],
+  "read_tools": [
+    "read_note"
+  ],
+  "read_format": "raw",
+  "path_key": "path",
+  "preparation_tools": [],
+  "preparation_rules": [
+    {
+      "tool": "update_note",
+      "key": "dryRun",
+      "values": [
+        true
+      ]
+    }
+  ],
+  "enabled_tools": [
+    "list_notes",
+    "read_note",
+    "search_vault",
+    "create_note",
+    "update_note",
+    "read_multiple_notes"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json"
+  ]
+}

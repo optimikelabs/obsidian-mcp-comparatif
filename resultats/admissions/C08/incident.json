@@ -1,0 +1,4 @@
+{
+  "error": "'content'",
+  "traceback": "Traceback (most recent call last):\n  File \"<CHEMIN_PRIVE>\", line 21, in main\n    r=call('obsidian_read_note',path=path);obj=r['result'].get('structuredContent') or json.loads(r['result']['content'][0]['text']);assert obj['content']==body\n                                                                                                                                            ~~~^^^^^^^^^^^\nKeyError: 'content'\n"
+}

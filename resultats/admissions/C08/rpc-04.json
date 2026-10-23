@@ -1,0 +1,35 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_create_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Admission — schémas C08.md",
+        "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Create Obsidian Note succeeded.\n{\n  \"path\": \"Admission — schémas C08.md\",\n  \"etag\": \"91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e\",\n  \"transaction_id\": \"<IDENTIFIANT_MASQUE>\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Admission — schémas C08.md",
+          "etag": "91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e",
+          "transaction_id": "<IDENTIFIANT_MASQUE>"
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

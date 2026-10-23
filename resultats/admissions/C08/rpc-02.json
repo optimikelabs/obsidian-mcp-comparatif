@@ -1,0 +1,2882 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/list",
+    "params": {}
+  },
+  "response": {
+    "result": {
+      "tools": [
+        {
+          "name": "obsidian_list_vaults",
+          "title": "List Obsidian Vaults",
+          "description": "List configured vault ids accepted by every other Obsidian tool. Returns no host paths.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "vaults": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "description": "Configured vault ids"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Number of configured vaults"
+                      }
+                    },
+                    "required": [
+                      "vaults",
+                      "count"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_read_note",
+          "title": "Read Obsidian Note",
+          "description": "Read a bounded page of a UTF-8 Markdown note. Use the returned cursor to continue and etag before editing.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "cursor": {
+                "description": "Opaque continuation cursor returned by a previous read of the same note",
+                "type": "string",
+                "maxLength": 2048
+              },
+              "max_chars": {
+                "default": 20000,
+                "description": "Maximum characters to return in this page (1-25000)",
+                "examples": [
+                  20000
+                ],
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 25000
+              }
+            },
+            "required": [
+              "vault",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "UTF-8 Markdown content for this page"
+                      },
+                      "etag": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "description": "SHA-256 revision of the resulting note content"
+                      },
+                      "total_characters": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Total characters in the complete note"
+                      },
+                      "offset": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Character offset of this page"
+                      },
+                      "has_more": {
+                        "type": "boolean",
+                        "description": "Whether another page is available"
+                      },
+                      "next_cursor": {
+                        "description": "Opaque cursor for the next page when has_more is true",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "content",
+                      "etag",
+                      "total_characters",
+                      "offset",
+                      "has_more"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_create_note",
+          "title": "Create Obsidian Note",
+          "description": "Atomically create a Markdown note without overwriting an existing file. Parent directories are optional.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "content": {
+                "default": "",
+                "description": "Initial Markdown content; defaults to an empty note",
+                "type": "string",
+                "maxLength": 5242880
+              },
+              "create_parents": {
+                "default": true,
+                "description": "Create missing parent directories before creating the note",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "vault",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "etag": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "description": "SHA-256 revision of the resulting note content"
+                      },
+                      "transaction_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                        "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "etag",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_edit_note",
+          "title": "Edit Obsidian Note",
+          "description": "Append, prepend, or replace note content byte-for-byte. This tool never deletes notes.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "operation": {
+                "type": "string",
+                "enum": [
+                  "append",
+                  "prepend",
+                  "replace"
+                ],
+                "description": "How to combine content with the current note"
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 5242880,
+                "description": "Markdown content to append, prepend, or use as replacement"
+              },
+              "if_match": {
+                "description": "Optional revision guard; obtain it from obsidian_read_note before editing",
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "examples": [
+                  "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                ]
+              }
+            },
+            "required": [
+              "vault",
+              "path",
+              "operation",
+              "content"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "etag": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "description": "SHA-256 revision of the resulting note content"
+                      },
+                      "transaction_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                        "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "etag",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_delete_note",
+          "title": "Delete Obsidian Note",
+          "description": "Transactionally move a note to MCP trash or permanently delete it. Backlinks are preserved unless mark_broken is requested.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "mode": {
+                "default": "trash",
+                "description": "Recoverable MCP trash by default, or irreversible permanent deletion",
+                "type": "string",
+                "enum": [
+                  "trash",
+                  "permanent"
+                ]
+              },
+              "reason": {
+                "description": "Optional deletion reason stored with recoverable trash metadata",
+                "type": "string",
+                "maxLength": 1000
+              },
+              "backlink_action": {
+                "default": "preserve",
+                "description": "Whether backlinks remain unchanged or are marked as broken",
+                "type": "string",
+                "enum": [
+                  "preserve",
+                  "mark_broken"
+                ]
+              },
+              "if_match": {
+                "description": "Optional revision guard returned by obsidian_read_note",
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "examples": [
+                  "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                ]
+              },
+              "confirm_path": {
+                "description": "Required for permanent deletion and must normalize to the path being deleted",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              }
+            },
+            "required": [
+              "vault",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "trash",
+                          "permanent"
+                        ],
+                        "description": "Deletion mode that was applied"
+                      },
+                      "trash_id": {
+                        "description": "Recovery identifier present only when the note was moved to MCP trash",
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$"
+                      },
+                      "updated_backlinks": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Normalized vault-relative path; no absolute host path is exposed"
+                        },
+                        "description": "Notes updated by backlink handling"
+                      },
+                      "ambiguous_links": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Backlinks left unchanged because their targets were ambiguous"
+                      },
+                      "transaction_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                        "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "mode",
+                      "updated_backlinks",
+                      "ambiguous_links",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_move_note",
+          "title": "Move Obsidian Note",
+          "description": "Move or rename a note within one vault without overwriting and transactionally update unambiguous backlinks.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Current vault-relative note path",
+                "examples": [
+                  "Drafts/Plan.md"
+                ]
+              },
+              "destination": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "New vault-relative note path; must not already exist",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "update_links": {
+                "default": true,
+                "description": "Update unambiguous backlinks to the new path in the same transaction",
+                "type": "boolean"
+              },
+              "if_match": {
+                "description": "Optional source revision guard returned by obsidian_read_note",
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "examples": [
+                  "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                ]
+              }
+            },
+            "required": [
+              "vault",
+              "source",
+              "destination"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "destination": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "etag": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "description": "SHA-256 revision of the resulting note content"
+                      },
+                      "updated_backlinks": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Normalized vault-relative path; no absolute host path is exposed"
+                        },
+                        "description": "Notes whose backlinks were updated"
+                      },
+                      "ambiguous_links": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Backlinks left unchanged because their target was ambiguous"
+                      },
+                      "transaction_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                        "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "destination",
+                      "etag",
+                      "updated_backlinks",
+                      "ambiguous_links",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_create_directory",
+          "title": "Create Obsidian Directory",
+          "description": "Transactionally create a directory inside a vault. Existing directories are rejected.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "recursive": {
+                "default": true,
+                "description": "Create every missing parent directory; when false, the parent must exist",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "vault",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Normalized vault-relative path; no absolute host path is exposed"
+                      },
+                      "created": {
+                        "type": "boolean",
+                        "const": true,
+                        "description": "Confirms that the directory was created"
+                      },
+                      "transaction_id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                        "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "created",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_search_vault",
+          "title": "Search Obsidian Vault",
+          "description": "Search filenames, content, or Obsidian tags with deterministic bounded pagination.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "query": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000,
+                "description": "Text, filename fragment, or tag to find",
+                "examples": [
+                  "project/active"
+                ]
+              },
+              "scope": {
+                "description": "Optional vault-relative directory that limits the search",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096,
+                "examples": [
+                  "Projects/Plan.md"
+                ]
+              },
+              "mode": {
+                "default": "content",
+                "description": "Where to match the query",
+                "type": "string",
+                "enum": [
+                  "content",
+                  "filename",
+                  "both",
+                  "tag"
+                ]
+              },
+              "case_sensitive": {
+                "default": false,
+                "description": "Use exact letter case for matching",
+                "type": "boolean"
+              },
+              "limit": {
+                "default": 50,
+                "description": "Maximum matches to return (1-200)",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 200
+              },
+              "cursor": {
+                "description": "Opaque continuation cursor for the same query and options",
+                "type": "string",
+                "maxLength": 4096
+              }
+            },
+            "required": [
+              "vault",
+              "query"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "matches": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Normalized vault-relative path; no absolute host path is exposed"
+                            },
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "content",
+                                "filename",
+                                "tag"
+                              ]
+                            },
+                            "line": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991,
+                              "description": "One-based content line, or zero for filename/frontmatter matches"
+                            },
+                            "snippet": {
+                              "type": "string",
+                              "description": "Bounded matching excerpt"
+                            }
+                          },
+                          "required": [
+                            "path",
+                            "kind",
+                            "line",
+                            "snippet"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Ordered matches in this page"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Number of matches in this page"
+                      },
+                      "has_more": {
+                        "type": "boolean",
+                        "description": "Whether another page of matches is available"
+                      },
+                      "next_cursor": {
+                        "description": "Opaque cursor for the next page when has_more is true",
+                        "type": "string"
+                      },
+                      "warnings": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Notes skipped because they were unreadable"
+                      }
+                    },
+                    "required": [
+                      "matches",
+                      "count",
+                      "has_more",
+                      "warnings"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_add_tags",
+          "title": "Add Obsidian Tags",
+          "description": "Add tags in one all-or-nothing multi-note transaction while preserving unrelated content.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "paths": {
+                "minItems": 1,
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "description": "Notes to update atomically, up to 500"
+              },
+              "tags": {
+                "minItems": 1,
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "description": "Obsidian tag, with or without a leading #; domain grammar is checked at execution",
+                  "examples": [
+                    "project/active"
+                  ]
+                },
+                "description": "Tags to mutate, up to 100"
+              },
+              "location": {
+                "default": "frontmatter",
+                "description": "Where tags are added; defaults to YAML frontmatter",
+                "type": "string",
+                "enum": [
+                  "frontmatter",
+                  "content",
+                  "both"
+                ]
+              },
+              "position": {
+                "default": "end",
+                "description": "Where inline tags are inserted when content is targeted",
+                "type": "string",
+                "enum": [
+                  "start",
+                  "end"
+                ]
+              },
+              "normalization": {
+                "default": "preserve",
+                "description": "Optional normalization applied before matching or writing tags",
+                "type": "string",
+                "enum": [
+                  "preserve",
+                  "lowercase",
+                  "kebab"
+                ]
+              },
+              "expected_etags": {
+                "description": "Optional path-to-etag revision guards for all affected notes",
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "description": "SHA-256 revision returned by obsidian_read_note",
+                  "examples": [
+                    "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "vault",
+              "paths",
+              "tags"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "updated": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Normalized vault-relative path; no absolute host path is exposed"
+                            },
+                            "tags": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "Tags changed in this note"
+                            }
+                          },
+                          "required": [
+                            "path",
+                            "tags"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Notes changed by the tag mutation"
+                      },
+                      "unchanged_count": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Requested notes that required no tag changes"
+                      },
+                      "transaction_id": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                            "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Transaction identifier, or null when the request produced no file changes"
+                      }
+                    },
+                    "required": [
+                      "updated",
+                      "unchanged_count",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_remove_tags",
+          "title": "Remove Obsidian Tags",
+          "description": "Remove tags in one all-or-nothing multi-note transaction while preserving unrelated content.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "paths": {
+                "minItems": 1,
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "description": "Notes to update atomically, up to 500"
+              },
+              "tags": {
+                "default": [],
+                "description": "Exact tags to remove",
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "description": "Obsidian tag, with or without a leading #; domain grammar is checked at execution",
+                  "examples": [
+                    "project/active"
+                  ]
+                }
+              },
+              "patterns": {
+                "default": [],
+                "description": "Tag patterns using single '*' wildcards",
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "location": {
+                "default": "both",
+                "description": "Where tags are removed",
+                "type": "string",
+                "enum": [
+                  "frontmatter",
+                  "content",
+                  "both"
+                ]
+              },
+              "include_children": {
+                "default": false,
+                "description": "Also remove descendants of an explicitly named parent tag",
+                "type": "boolean"
+              },
+              "normalization": {
+                "default": "preserve",
+                "description": "Optional normalization applied before matching tags",
+                "type": "string",
+                "enum": [
+                  "preserve",
+                  "lowercase",
+                  "kebab"
+                ]
+              },
+              "expected_etags": {
+                "description": "Optional path-to-etag revision guards for all affected notes",
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "description": "SHA-256 revision returned by obsidian_read_note",
+                  "examples": [
+                    "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "vault",
+              "paths"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "updated": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Normalized vault-relative path; no absolute host path is exposed"
+                            },
+                            "tags": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "Tags changed in this note"
+                            }
+                          },
+                          "required": [
+                            "path",
+                            "tags"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Notes changed by the tag mutation"
+                      },
+                      "unchanged_count": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Requested notes that required no tag changes"
+                      },
+                      "transaction_id": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                            "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Transaction identifier, or null when the request produced no file changes"
+                      }
+                    },
+                    "required": [
+                      "updated",
+                      "unchanged_count",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_rename_tag",
+          "title": "Rename Obsidian Tag",
+          "description": "Rename a tag across a vault in one journaled all-or-nothing transaction.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "old_tag": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Existing tag to replace, without requiring a leading #"
+              },
+              "new_tag": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Replacement tag, without requiring a leading #"
+              },
+              "location": {
+                "default": "both",
+                "description": "Where to rename matching tags",
+                "type": "string",
+                "enum": [
+                  "frontmatter",
+                  "content",
+                  "both"
+                ]
+              },
+              "include_children": {
+                "default": false,
+                "description": "Also rename descendants of old_tag",
+                "type": "boolean"
+              },
+              "normalization": {
+                "default": "preserve",
+                "description": "Normalization applied to old and new tags",
+                "type": "string",
+                "enum": [
+                  "preserve",
+                  "lowercase",
+                  "kebab"
+                ]
+              },
+              "expected_etags": {
+                "description": "Optional path-to-etag revision guards for affected notes",
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "description": "SHA-256 revision returned by obsidian_read_note",
+                  "examples": [
+                    "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "vault",
+              "old_tag",
+              "new_tag"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "updated": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Normalized vault-relative path; no absolute host path is exposed"
+                            },
+                            "replacements": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            }
+                          },
+                          "required": [
+                            "path",
+                            "replacements"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Notes changed and their replacement counts"
+                      },
+                      "transaction_id": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                            "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Transaction identifier, or null when the request produced no file changes"
+                      }
+                    },
+                    "required": [
+                      "updated",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "obsidian_manage_tags",
+          "title": "Manage Obsidian Tags",
+          "description": "Add or remove tags transactionally. Add requires tags; remove requires tags, patterns, or both.",
+          "inputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "properties": {
+              "operation": {
+                "type": "string",
+                "enum": [
+                  "add",
+                  "remove"
+                ],
+                "description": "Whether tags are added to or removed from the selected notes"
+              },
+              "vault": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "description": "Configured vault id returned by obsidian_list_vaults",
+                "examples": [
+                  "work"
+                ]
+              },
+              "paths": {
+                "minItems": 1,
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "description": "Notes to update atomically, up to 500"
+              },
+              "tags": {
+                "description": "Tags to add or remove exactly; required for add and optional when remove patterns are supplied",
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "description": "Obsidian tag, with or without a leading #; domain grammar is checked at execution",
+                  "examples": [
+                    "project/active"
+                  ]
+                }
+              },
+              "patterns": {
+                "description": "Removal-only tag patterns using single '*' wildcards",
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "location": {
+                "description": "Where tags are changed; defaults to frontmatter for add and both for remove",
+                "type": "string",
+                "enum": [
+                  "frontmatter",
+                  "content",
+                  "both"
+                ]
+              },
+              "position": {
+                "description": "Add-only placement for inline tags; defaults to end",
+                "type": "string",
+                "enum": [
+                  "start",
+                  "end"
+                ]
+              },
+              "normalization": {
+                "default": "preserve",
+                "description": "Optional normalization applied before matching or writing tags",
+                "type": "string",
+                "enum": [
+                  "preserve",
+                  "lowercase",
+                  "kebab"
+                ]
+              },
+              "include_children": {
+                "description": "Removal-only option to also remove descendants; defaults to false",
+                "type": "boolean"
+              },
+              "expected_etags": {
+                "description": "Optional path-to-etag revision guards for all affected notes",
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096,
+                  "description": "Portable path relative to the vault root, using forward slashes; absolute paths, backslashes, dot segments, and reserved roots are rejected",
+                  "examples": [
+                    "Projects/Plan.md"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "description": "SHA-256 revision returned by obsidian_read_note",
+                  "examples": [
+                    "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "operation",
+              "vault",
+              "paths"
+            ],
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+          },
+          "outputSchema": {
+            "type": "object",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "updated": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "path": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Normalized vault-relative path; no absolute host path is exposed"
+                            },
+                            "tags": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "Tags changed in this note"
+                            }
+                          },
+                          "required": [
+                            "path",
+                            "tags"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Notes changed by the tag mutation"
+                      },
+                      "unchanged_count": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991,
+                        "description": "Requested notes that required no tag changes"
+                      },
+                      "transaction_id": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "uuid",
+                            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|<IDENTIFIANT_MASQUE>|<IDENTIFIANT_MASQUE>)$",
+                            "description": "Journaled transaction identifier that can be inspected by recovery tooling"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Transaction identifier, or null when the request produced no file changes"
+                      }
+                    },
+                    "required": [
+                      "updated",
+                      "unchanged_count",
+                      "transaction_id"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "data"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "ok": {
+                    "type": "boolean",
+                    "const": false
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "enum": [
+                          "VAULT_NOT_FOUND",
+                          "PATH_REJECTED",
+                          "SYMLINK_NOT_ALLOWED",
+                          "NOTE_NOT_FOUND",
+                          "ALREADY_EXISTS",
+                          "REVISION_CONFLICT",
+                          "LOCK_TIMEOUT",
+                          "INVALID_FRONTMATTER",
+                          "INVALID_ENCODING",
+                          "INVALID_CURSOR",
+                          "INPUT_TOO_LARGE",
+                          "TRANSACTION_FAILED",
+                          "PERMISSION_DENIED",
+                          "FILESYSTEM_ERROR",
+                          "INVALID_ARGUMENT"
+                        ],
+                        "description": "Stable machine-readable error code"
+                      },
+                      "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Actionable explanation for the agent"
+                      },
+                      "retryable": {
+                        "type": "boolean",
+                        "description": "Whether retrying after correcting state or waiting may succeed"
+                      },
+                      "details": {
+                        "description": "Safe structured context for diagnosing or correcting the failure",
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    },
+                    "required": [
+                      "code",
+                      "message",
+                      "retryable"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "ok",
+                  "error"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "$defs": {
+              "__schema0": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

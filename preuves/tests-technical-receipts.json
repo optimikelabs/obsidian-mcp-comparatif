@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "case": "T2",
+      "verdict": "REUSSI_VERIFIE"
+    },
+    {
+      "case": "T2-no_receipt",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T2-other_note",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T2-corrupt_backup",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T2-hidden_note",
+      "verdict": "EFFET_NON_VOULU"
+    },
+    {
+      "case": "T6",
+      "verdict": "REUSSI_VERIFIE"
+    },
+    {
+      "case": "T6-no_receipt",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T6-other_note",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T6-corrupt_backup",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T6-hidden_note",
+      "verdict": "EFFET_NON_VOULU"
+    },
+    {
+      "case": "T8",
+      "verdict": "REUSSI_VERIFIE"
+    },
+    {
+      "case": "T8-no_receipt",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T8-other_note",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T8-corrupt_backup",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT"
+    },
+    {
+      "case": "T8-hidden_note",
+      "verdict": "EFFET_NON_VOULU"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "before": {
+      "type": "projet",
+      "parent": null,
+      "collection": [
+        "[[Projets]]"
+      ],
+      "entité": null,
+      "statut": "actif",
+      "notes_liees": null,
+      "rang": 1,
+      "client": false,
+      "échéance": null,
+      "next_action": "Trier trois captures.",
+      "budget_h": null,
+      "budget_euros": null,
+      "type_projet": null,
+      "temoin_bool": true,
+      "temoin_liste": [
+        "café",
+        "œuvre"
+      ],
+      "temoin_entier": 7,
+      "clé_inconnue": "Été — 東京"
+    },
+    "after": {
+      "type": "projet",
+      "parent": null,
+      "collection": [
+        "[[Projets]]"
+      ],
+      "entité": null,
+      "statut": "actif",
+      "notes_liees": null,
+      "rang": 1,
+      "client": false,
+      "échéance": null,
+      "next_action": "Trier trois captures.",
+      "budget_h": null,
+      "budget_euros": null,
+      "type_projet": null,
+      "temoin_bool": true,
+      "temoin_liste": [
+        "café",
+        "œuvre"
+      ],
+      "temoin_entier": 7,
+      "clé_inconnue": "Été — 東京",
+      "création": "2026-10-23T10:52",
+      "modification": "2026-10-23T04:38"
+    },
+    "text": "---\ntype: projet\nparent:\ncollection:\n  - \"[[Projets]]\"\nentité:\nstatut: actif\nnotes_liees:\nrang: 1\nclient: false\néchéance:\nnext_action: Trier trois captures.\nbudget_h:\nbudget_euros:\ntype_projet:\ntemoin_bool: true\ntemoin_liste:\n  - café\n  - œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\ncréation: 2026-10-23T10:52\nmodification: 2026-10-23T04:38\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : essai prévu jeudi.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n",
+    "observed_utc": 1792745542.552,
+    "stack": "Error\n    at app.fileManager.processFrontMatter (<anonymous>:7:16)\n    at FrontmatterDateManagerPlugin.handleFileChange (plugin:frontmatter-date-manager:19763:34)\n    at async FrontmatterDateManagerPlugin.processFileWithLock (plugin:frontmatter-date-manager:19840:14)"
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "before": {
+      "type": "projet",
+      "parent": null,
+      "collection": [
+        "[[Projets]]"
+      ],
+      "entité": null,
+      "statut": "actif",
+      "notes_liees": null,
+      "rang": 1,
+      "client": false,
+      "échéance": null,
+      "next_action": "Trier trois captures.",
+      "budget_h": null,
+      "budget_euros": null,
+      "type_projet": null,
+      "temoin_bool": true,
+      "temoin_liste": [
+        "café",
+        "œuvre"
+      ],
+      "temoin_entier": 7,
+      "clé_inconnue": "Été — 東京",
+      "création": "2026-10-23T10:52",
+      "modification": "2026-10-23T04:38"
+    },
+    "after": {
+      "type": "projet",
+      "parent": null,
+      "collection": [
+        "[[Projets]]"
+      ],
+      "entité": null,
+      "statut": "actif",
+      "notes_liees": null,
+      "rang": 1,
+      "client": false,
+      "échéance": null,
+      "next_action": "Trier trois captures.",
+      "budget_h": null,
+      "budget_euros": null,
+      "type_projet": null,
+      "temoin_bool": true,
+      "temoin_liste": [
+        "café",
+        "œuvre"
+      ],
+      "temoin_entier": 7,
+      "clé_inconnue": "Été — 東京",
+      "création": "2026-10-23T10:52",
+      "modification": "2026-10-23T10:53"
+    },
+    "text": "---\ntype: projet\nparent:\ncollection:\n  - \"[[Projets]]\"\nentité:\nstatut: actif\nnotes_liees:\nrang: 1\nclient: false\néchéance:\nnext_action: Trier trois captures.\nbudget_h:\nbudget_euros:\ntype_projet:\ntemoin_bool: true\ntemoin_liste:\n  - café\n  - œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\ncréation: 2026-10-23T10:52\nmodification: 2026-10-23T10:53\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : essai prévu jeudi.\n- Témoin humain : correction H-2406.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n",
+    "observed_utc": 1792745582.939,
+    "stack": "Error\n    at app.fileManager.processFrontMatter (<anonymous>:7:16)\n    at FrontmatterDateManagerPlugin.handleFileChange (plugin:frontmatter-date-manager:19763:34)\n    at async FrontmatterDateManagerPlugin.processFileWithLock (plugin:frontmatter-date-manager:19840:14)"
+  }
+]

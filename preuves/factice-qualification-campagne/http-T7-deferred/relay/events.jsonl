@@ -1,0 +1,35 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 177630859000000, "utc": 1792746589.8020065, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 177630859000000, "utc": 1792746589.8070068, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 177630859000000, "utc": 1792746589.809008, "id": 3, "tool": "deferred_refuse", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "request_held", "seq": 4, "monotonic_ns": 177630859000000, "utc": 1792746589.8100085, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6"}
+{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 177630875000000, "utc": 1792746589.8240092, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "dispatch", "seq": 6, "monotonic_ns": 177630875000000, "utc": 1792746589.826011, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6", "kind": "mutation"}
+{"event": "upstream_response", "seq": 7, "monotonic_ns": 177630875000000, "utc": 1792746589.8290062, "id": 3, "tool": "deferred_refuse", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "first_mutation_pending", "seq": 8, "monotonic_ns": 177630875000000, "utc": 1792746589.8300056, "id": 3}
+{"event": "response_delivered", "seq": 9, "monotonic_ns": 177630875000000, "utc": 1792746589.8300056, "id": 3}
+{"event": "tool_request", "seq": 10, "monotonic_ns": 177630890000000, "utc": 1792746589.8326864, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 177630890000000, "utc": 1792746589.8346891, "id": 4, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 177630890000000, "utc": 1792746589.83569, "id": 4}
+{"event": "tool_request", "seq": 13, "monotonic_ns": 177630906000000, "utc": 1792746589.8482723, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 14, "monotonic_ns": 177630906000000, "utc": 1792746589.8512824, "id": 5, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 15, "monotonic_ns": 177630906000000, "utc": 1792746589.8522809, "id": 5}
+{"event": "tool_request", "seq": 16, "monotonic_ns": 177630921000000, "utc": 1792746589.864767, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 17, "monotonic_ns": 177630921000000, "utc": 1792746589.8674898, "id": 6, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 177630921000000, "utc": 1792746589.8684874, "id": 6}
+{"event": "tool_request", "seq": 19, "monotonic_ns": 177630937000000, "utc": 1792746589.8808215, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 20, "monotonic_ns": 177630937000000, "utc": 1792746589.8833227, "id": 7, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 21, "monotonic_ns": 177630937000000, "utc": 1792746589.8833227, "id": 7}
+{"event": "tool_request", "seq": 22, "monotonic_ns": 177630953000000, "utc": 1792746589.905511, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 23, "monotonic_ns": 177630953000000, "utc": 1792746589.9072046, "id": 8, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 24, "monotonic_ns": 177630953000000, "utc": 1792746589.9082034, "id": 8}
+{"event": "tool_request", "seq": 25, "monotonic_ns": 177630968000000, "utc": 1792746589.9209325, "id": 9, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 26, "monotonic_ns": 177630968000000, "utc": 1792746589.9228728, "id": 9, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 27, "monotonic_ns": 177630968000000, "utc": 1792746589.9234443, "id": 9}
+{"event": "tool_request", "seq": 28, "monotonic_ns": 177630984000000, "utc": 1792746589.9363492, "id": 10, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 29, "monotonic_ns": 177630984000000, "utc": 1792746589.9383495, "id": 10, "tool": "status", "duration_s": 0.0, "bytes": 146, "is_error": false}
+{"event": "first_snapshot", "seq": 30, "monotonic_ns": 177631000000000, "utc": 1792746589.943372, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "response_delivered", "seq": 31, "monotonic_ns": 177631000000000, "utc": 1792746589.943372, "id": 10}
+{"event": "tool_request", "seq": 32, "monotonic_ns": 177631000000000, "utc": 1792746589.9458892, "id": 11, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 33, "monotonic_ns": 177631000000000, "utc": 1792746589.9488866, "id": 11, "tool": "read", "duration_s": 0.0, "bytes": 897, "is_error": false}
+{"event": "mcp_read_response", "seq": 34, "monotonic_ns": 177631000000000, "utc": 1792746589.9488866, "id": 11, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "690001cd9e4adb567dfaef49ca938c1ccea273eaa98ff19d645da098cc8f8973", "response_received": true}
+{"event": "response_delivered", "seq": 35, "monotonic_ns": 177631000000000, "utc": 1792746589.9498863, "id": 11}

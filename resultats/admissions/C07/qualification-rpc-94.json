@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_text_patch_status",
+      "arguments": {
+        "planRef": "obsidian-text-patch:v1:<IDENTIFIANT_MASQUE>"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"contractVersion\": 1,\n  \"operationId\": \"<IDENTIFIANT_MASQUE>\",\n  \"operationKind\": \"obsidian.text.patch\",\n  \"planRef\": \"obsidian-text-patch:v1:<IDENTIFIANT_MASQUE>\",\n  \"planDigest\": \"69572251846a44344cef329f63cb120662adc9af9d853bb005bb6ca82ba79829\",\n  \"phase\": \"terminal\",\n  \"outcome\": \"committed\",\n  \"backend\": {\n    \"kind\": \"obsidian-vault-process\",\n    \"bindingFingerprint\": \"03dd70b29a995eb4f474a25fbbd9fc5ae83dedc0c5f4b6069ed165d2b7dc0674\"\n  },\n  \"target\": {\n    \"kind\": \"vault-markdown-text-body\",\n    \"logicalRef\": \"Admission — schémas C07.md\"\n  },\n  \"beforeProof\": {\n    \"kind\": \"note-sha256\",\n    \"digest\": \"3db5d8e234d42a90b56cacff81681e95a04884c4af02e13bf9bfa0887a948c3f\",\n    \"details\": {\n      \"sha256\": \"bc5cf74bcba8143338e77ded99eca0453e2f263382a1a833151388f3d8083ce9\"\n    }\n  },\n  \"afterProof\": {\n    \"kind\": \"atomic-note-replacement-verified\",\n    \"digest\": \"fad7ff987ca7b286edc984d0c03309a3cd3e877fd0949205f956f4d0d765b4e5\",\n    \"details\": {\n      \"sha256\": \"e4ff5e6197d7a10a19062bce2f3b1c2b9b7c5d9b15c737a4d6404c503b5c08fa\"\n    }\n  },\n  \"postflight\": {\n    \"status\": \"verified\"\n  },\n  \"admittedAt\": \"2026-10-23T08:08:54.745Z\",\n  \"updatedAt\": \"2026-10-23T08:09:32.088Z\",\n  \"terminalAt\": \"2026-10-23T08:09:32.088Z\",\n  \"recoveryAllowed\": false,\n  \"applyAllowed\": false,\n  \"projection\": {\n    \"kind\": \"obsidian.text.patch\",\n    \"sourcePreservation\": \"byte-identical-outside-authorized-body-ranges\",\n    \"proof\": {\n      \"contractVersion\": 1,\n      \"compilerVersion\": 1,\n      \"sourcePreservation\": \"byte-identical-outside-authorized-body-ranges\",\n      \"lineEnding\": \"lf\",\n      \"operationCount\": 1,\n      \"authorizedRanges\": [\n        {\n          \"operationIndex\": 0,\n          \"coordinateSpace\": \"operation-input-content\",\n          \"op\": \"replace_literal\",\n          \"start\": 88,\n          \"end\": 96,\n          \"beforeSha256\": \"3c0fc07afb546ba6db7e695492b345c414fcc7e123f207b865f9f37f6691e151\",\n          \"afterSha256\": \"64fcdfbb21354c2865e8c6cc3ecf25f026299cadbc54040583a11b3f1567b61f\",\n          \"stepBeforeBodySha256\": \"bef91d7752fd781cc582526c0df10e7a64b9729f3cecc330c1e3a3896937d0c5\",\n          \"stepAfterBodySha256\": \"4c5721cbc37be59a59eadb340ece461a2537755ac80c300c1d5e1719a2cf3361\"\n        }\n      ],\n      \"beforeContentSha256\": \"bc5cf74bcba8143338e77ded99eca0453e2f263382a1a833151388f3d8083ce9\",\n      \"nextContentSha256\": \"e4ff5e6197d7a10a19062bce2f3b1c2b9b7c5d9b15c737a4d6404c503b5c08fa\",\n      \"beforeFrontmatterSha256\": \"0b0d70280460f4551e008cf9a36a054db7d34728baf40e95290b155986cf10bf\",\n      \"afterFrontmatterSha256\": \"0b0d70280460f4551e008cf9a36a054db7d34728baf40e95290b155986cf10bf\",\n      \"beforeBodySha256\": \"bef91d7752fd781cc582526c0df10e7a64b9729f3cecc330c1e3a3896937d0c5\",\n      \"afterBodySha256\": \"4c5721cbc37be59a59eadb340ece461a2537755ac80c300c1d5e1719a2cf3361\",\n      \"preservedFrontmatterSha256\": \"0b0d70280460f4551e008cf9a36a054db7d34728baf40e95290b155986cf10bf\"\n    }\n  }\n}"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0",
+    "id": 94
+  }
+}

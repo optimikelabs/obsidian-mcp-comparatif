@@ -1,0 +1,19 @@
+{
+  "candidate": "C08",
+  "status": "ADMIS",
+  "nonceVerified": true,
+  "reason": "Nonce, création, remplacement conditionnel et refus de révision périmée qualifiés. Règle de reçus techniques liée aux transaction_id testée sur factice (15 contrôles), à publier avant toute cellule.",
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>",
+    "serve",
+    "--vault",
+    "test=<CHEMIN_PRIVE>"
+  ],
+  "artifact_sha256": "286a3a28a3aea6cffd83f510648d425a47a01152ca8560a61da5ce6ef4cda8b0",
+  "catalog_sha256": "decdf72291d2710279e386c26f4ee7ac861af9207cae308cbf19686a06eef082",
+  "adapter_sha256": "dc3f5b0ef3359cb086224014e26eaff594e60d3040f67afe6717ca518fde5ff2",
+  "mode": "Fichiers sans Obsidian hors préparation et T5/T6/T7/T7b",
+  "utc": "2026-10-23T08:26:27.165124+00:00",
+  "technical_policy_qualified": true
+}

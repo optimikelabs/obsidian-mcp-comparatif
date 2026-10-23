@@ -1,0 +1,49 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792745703090,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0a55dd638f564de3016adb20ecd9e481918d1fb5a42e90a72a",
+        "progressToken": 1
+      },
+      "name": "read",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\": \"Efforts/Projets/Projet témoin — Test MCP.md\", \"content\": \"---\\ntype: projet\\nparent: null\\ncollection:\\n- '[[Projets]]'\\nentité: null\\nstatut: actif\\nnotes_liees: null\\nrang: 1\\nclient: false\\néchéance: null\\nnext_action: Trier trois captures.\\nbudget_h: null\\nbudget_euros: null\\ntype_projet: null\\ntemoin_bool: true\\ntemoin_liste:\\n- café\\n- œuvre\\ntemoin_entier: 7\\nclé_inconnue: Été — 東京\\n---\\n## Fiche du projet\\n- Objectif : trier trois captures.\\n- Référence de recherche : MARGELLE-TEST-2406.\\n- Passage à modifier : essai prévu jeudi.\\n- Témoin humain : version initiale.\\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\\n\", \"etag\": \"742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46\"}"
+        }
+      ]
+    }
+  }
+}

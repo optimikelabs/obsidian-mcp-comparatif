@@ -1,0 +1,27 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "deferred_patch",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "old": "Passage à modifier : essai prévu jeudi.",
+        "new": "Passage à modifier : essai prévu vendredi."
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\": \"pending\", \"operation_id\": \"fake-operation\"}"
+        }
+      ]
+    }
+  }
+}

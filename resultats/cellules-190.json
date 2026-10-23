@@ -8,7 +8,7 @@
     "cell_id": "C05-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 2,
@@ -19,7 +19,7 @@
     "cell_id": "C05-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 3,
@@ -30,7 +30,7 @@
     "cell_id": "C05-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 4,
@@ -41,7 +41,7 @@
     "cell_id": "C05-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 5,
@@ -52,7 +52,7 @@
     "cell_id": "C05-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 6,
@@ -63,7 +63,7 @@
     "cell_id": "C05-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 7,
@@ -74,7 +74,7 @@
     "cell_id": "C05-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 8,
@@ -85,7 +85,7 @@
     "cell_id": "C05-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 9,
@@ -96,7 +96,7 @@
     "cell_id": "C08-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 10,
@@ -107,7 +107,7 @@
     "cell_id": "C08-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 11,
@@ -118,7 +118,7 @@
     "cell_id": "C08-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 12,
@@ -129,7 +129,7 @@
     "cell_id": "C08-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 13,
@@ -140,7 +140,7 @@
     "cell_id": "C08-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 14,
@@ -151,7 +151,7 @@
     "cell_id": "C08-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 15,
@@ -162,7 +162,7 @@
     "cell_id": "C08-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 16,
@@ -173,7 +173,7 @@
     "cell_id": "C08-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 17,
@@ -184,7 +184,7 @@
     "cell_id": "C01-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 18,
@@ -195,7 +195,7 @@
     "cell_id": "C01-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 19,
@@ -206,7 +206,7 @@
     "cell_id": "C01-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 20,
@@ -217,7 +217,7 @@
     "cell_id": "C01-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 21,
@@ -228,7 +228,7 @@
     "cell_id": "C01-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 22,
@@ -239,7 +239,7 @@
     "cell_id": "C01-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 23,
@@ -250,7 +250,7 @@
     "cell_id": "C01-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 24,
@@ -261,7 +261,7 @@
     "cell_id": "C01-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 25,
@@ -272,7 +272,7 @@
     "cell_id": "C04-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 26,
@@ -283,7 +283,7 @@
     "cell_id": "C04-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 27,
@@ -294,7 +294,7 @@
     "cell_id": "C04-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 28,
@@ -305,7 +305,7 @@
     "cell_id": "C04-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 29,
@@ -316,7 +316,7 @@
     "cell_id": "C04-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 30,
@@ -327,7 +327,7 @@
     "cell_id": "C04-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 31,
@@ -338,7 +338,7 @@
     "cell_id": "C04-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 32,
@@ -349,7 +349,7 @@
     "cell_id": "C04-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 33,
@@ -360,7 +360,7 @@
     "cell_id": "C09-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 34,
@@ -371,7 +371,7 @@
     "cell_id": "C09-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 35,
@@ -382,7 +382,7 @@
     "cell_id": "C09-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 36,
@@ -393,7 +393,7 @@
     "cell_id": "C09-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 37,
@@ -404,7 +404,7 @@
     "cell_id": "C09-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 38,
@@ -415,7 +415,7 @@
     "cell_id": "C09-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 39,
@@ -426,7 +426,7 @@
     "cell_id": "C09-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 40,
@@ -437,7 +437,7 @@
     "cell_id": "C09-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 41,
@@ -448,7 +448,7 @@
     "cell_id": "C03-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 42,
@@ -459,7 +459,7 @@
     "cell_id": "C03-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 43,
@@ -470,7 +470,7 @@
     "cell_id": "C03-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 44,
@@ -481,7 +481,7 @@
     "cell_id": "C03-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 45,
@@ -492,7 +492,7 @@
     "cell_id": "C03-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 46,
@@ -503,7 +503,7 @@
     "cell_id": "C03-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 47,
@@ -514,7 +514,7 @@
     "cell_id": "C03-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 48,
@@ -525,7 +525,7 @@
     "cell_id": "C03-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 49,
@@ -536,7 +536,7 @@
     "cell_id": "C02-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 50,
@@ -547,7 +547,7 @@
     "cell_id": "C02-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 51,
@@ -558,7 +558,7 @@
     "cell_id": "C02-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 52,
@@ -569,7 +569,7 @@
     "cell_id": "C02-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 53,
@@ -580,7 +580,7 @@
     "cell_id": "C02-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 54,
@@ -591,7 +591,7 @@
     "cell_id": "C02-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 55,
@@ -602,7 +602,7 @@
     "cell_id": "C02-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 56,
@@ -613,7 +613,7 @@
     "cell_id": "C02-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 57,
@@ -624,7 +624,8 @@
     "cell_id": "C06-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 58,
@@ -635,7 +636,8 @@
     "cell_id": "C06-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 59,
@@ -646,7 +648,8 @@
     "cell_id": "C06-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 60,
@@ -657,7 +660,8 @@
     "cell_id": "C06-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 61,
@@ -668,7 +672,8 @@
     "cell_id": "C06-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 62,
@@ -679,7 +684,8 @@
     "cell_id": "C06-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 63,
@@ -690,7 +696,8 @@
     "cell_id": "C06-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 64,
@@ -701,7 +708,8 @@
     "cell_id": "C06-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 65,
@@ -712,7 +720,7 @@
     "cell_id": "C10-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 66,
@@ -723,7 +731,7 @@
     "cell_id": "C10-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 67,
@@ -734,7 +742,7 @@
     "cell_id": "C10-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 68,
@@ -745,7 +753,7 @@
     "cell_id": "C10-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 69,
@@ -756,7 +764,7 @@
     "cell_id": "C10-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 70,
@@ -767,7 +775,7 @@
     "cell_id": "C10-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 71,
@@ -778,7 +786,7 @@
     "cell_id": "C10-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 72,
@@ -789,7 +797,7 @@
     "cell_id": "C10-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 73,
@@ -800,7 +808,7 @@
     "cell_id": "C07-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 74,
@@ -811,7 +819,7 @@
     "cell_id": "C07-T2-r1",
     "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 75,
@@ -822,7 +830,7 @@
     "cell_id": "C07-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 76,
@@ -833,7 +841,7 @@
     "cell_id": "C07-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 77,
@@ -844,7 +852,7 @@
     "cell_id": "C07-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 78,
@@ -855,7 +863,7 @@
     "cell_id": "C07-T6-r1",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 79,
@@ -866,7 +874,7 @@
     "cell_id": "C07-T7-r1",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 80,
@@ -877,7 +885,7 @@
     "cell_id": "C07-T8-r1",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 81,
@@ -888,7 +896,7 @@
     "cell_id": "C10-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 82,
@@ -899,7 +907,7 @@
     "cell_id": "C10-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 83,
@@ -910,7 +918,7 @@
     "cell_id": "C10-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 84,
@@ -921,7 +929,7 @@
     "cell_id": "C10-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 85,
@@ -932,7 +940,7 @@
     "cell_id": "C04-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 86,
@@ -943,7 +951,7 @@
     "cell_id": "C04-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 87,
@@ -954,7 +962,7 @@
     "cell_id": "C04-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 88,
@@ -965,7 +973,7 @@
     "cell_id": "C04-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 89,
@@ -976,7 +984,8 @@
     "cell_id": "C06-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 90,
@@ -987,7 +996,8 @@
     "cell_id": "C06-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 91,
@@ -998,7 +1008,8 @@
     "cell_id": "C06-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 92,
@@ -1009,7 +1020,8 @@
     "cell_id": "C06-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 93,
@@ -1020,7 +1032,7 @@
     "cell_id": "C07-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 94,
@@ -1031,7 +1043,7 @@
     "cell_id": "C07-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 95,
@@ -1042,7 +1054,7 @@
     "cell_id": "C07-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 96,
@@ -1053,7 +1065,7 @@
     "cell_id": "C07-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 97,
@@ -1064,7 +1076,7 @@
     "cell_id": "C03-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 98,
@@ -1075,7 +1087,7 @@
     "cell_id": "C03-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 99,
@@ -1086,7 +1098,7 @@
     "cell_id": "C03-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 100,
@@ -1097,7 +1109,7 @@
     "cell_id": "C03-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 101,
@@ -1108,7 +1120,7 @@
     "cell_id": "C09-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 102,
@@ -1119,7 +1131,7 @@
     "cell_id": "C09-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 103,
@@ -1130,7 +1142,7 @@
     "cell_id": "C09-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 104,
@@ -1141,7 +1153,7 @@
     "cell_id": "C09-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 105,
@@ -1152,7 +1164,7 @@
     "cell_id": "C08-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 106,
@@ -1163,7 +1175,7 @@
     "cell_id": "C08-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 107,
@@ -1174,7 +1186,7 @@
     "cell_id": "C08-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 108,
@@ -1185,7 +1197,7 @@
     "cell_id": "C08-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 109,
@@ -1196,7 +1208,7 @@
     "cell_id": "C05-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 110,
@@ -1207,7 +1219,7 @@
     "cell_id": "C05-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 111,
@@ -1218,7 +1230,7 @@
     "cell_id": "C05-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 112,
@@ -1229,7 +1241,7 @@
     "cell_id": "C05-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 113,
@@ -1240,7 +1252,7 @@
     "cell_id": "C02-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 114,
@@ -1251,7 +1263,7 @@
     "cell_id": "C02-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 115,
@@ -1262,7 +1274,7 @@
     "cell_id": "C02-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 116,
@@ -1273,7 +1285,7 @@
     "cell_id": "C02-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 117,
@@ -1284,7 +1296,7 @@
     "cell_id": "C01-T5-r2",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 118,
@@ -1295,7 +1307,7 @@
     "cell_id": "C01-T6-r2",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 119,
@@ -1306,7 +1318,7 @@
     "cell_id": "C01-T7-r2",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 120,
@@ -1317,7 +1329,7 @@
     "cell_id": "C01-T8-r2",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 121,
@@ -1328,7 +1340,7 @@
     "cell_id": "C02-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 122,
@@ -1339,7 +1351,7 @@
     "cell_id": "C02-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 123,
@@ -1350,7 +1362,7 @@
     "cell_id": "C02-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 124,
@@ -1361,7 +1373,7 @@
     "cell_id": "C02-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 125,
@@ -1372,7 +1384,7 @@
     "cell_id": "C08-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 126,
@@ -1383,7 +1395,7 @@
     "cell_id": "C08-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 127,
@@ -1394,7 +1406,7 @@
     "cell_id": "C08-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 128,
@@ -1405,7 +1417,7 @@
     "cell_id": "C08-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 129,
@@ -1416,7 +1428,7 @@
     "cell_id": "C05-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 130,
@@ -1427,7 +1439,7 @@
     "cell_id": "C05-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 131,
@@ -1438,7 +1450,7 @@
     "cell_id": "C05-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 132,
@@ -1449,7 +1461,7 @@
     "cell_id": "C05-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 133,
@@ -1460,7 +1472,7 @@
     "cell_id": "C04-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 134,
@@ -1471,7 +1483,7 @@
     "cell_id": "C04-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 135,
@@ -1482,7 +1494,7 @@
     "cell_id": "C04-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 136,
@@ -1493,7 +1505,7 @@
     "cell_id": "C04-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 137,
@@ -1504,7 +1516,7 @@
     "cell_id": "C07-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 138,
@@ -1515,7 +1527,7 @@
     "cell_id": "C07-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 139,
@@ -1526,7 +1538,7 @@
     "cell_id": "C07-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 140,
@@ -1537,7 +1549,7 @@
     "cell_id": "C07-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 141,
@@ -1548,7 +1560,7 @@
     "cell_id": "C01-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 142,
@@ -1559,7 +1571,7 @@
     "cell_id": "C01-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 143,
@@ -1570,7 +1582,7 @@
     "cell_id": "C01-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 144,
@@ -1581,7 +1593,7 @@
     "cell_id": "C01-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 145,
@@ -1592,7 +1604,8 @@
     "cell_id": "C06-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 146,
@@ -1603,7 +1616,8 @@
     "cell_id": "C06-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 147,
@@ -1614,7 +1628,8 @@
     "cell_id": "C06-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 148,
@@ -1625,7 +1640,8 @@
     "cell_id": "C06-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 149,
@@ -1636,7 +1652,7 @@
     "cell_id": "C09-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 150,
@@ -1647,7 +1663,7 @@
     "cell_id": "C09-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 151,
@@ -1658,7 +1674,7 @@
     "cell_id": "C09-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 152,
@@ -1669,7 +1685,7 @@
     "cell_id": "C09-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 153,
@@ -1680,7 +1696,7 @@
     "cell_id": "C03-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 154,
@@ -1691,7 +1707,7 @@
     "cell_id": "C03-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 155,
@@ -1702,7 +1718,7 @@
     "cell_id": "C03-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 156,
@@ -1713,7 +1729,7 @@
     "cell_id": "C03-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 157,
@@ -1724,7 +1740,7 @@
     "cell_id": "C10-T7-r3",
     "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 158,
@@ -1735,7 +1751,7 @@
     "cell_id": "C10-T8-r3",
     "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 159,
@@ -1746,7 +1762,7 @@
     "cell_id": "C10-T5-r3",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 160,
@@ -1757,7 +1773,7 @@
     "cell_id": "C10-T6-r3",
     "prompt_sha256": "7932d682254aed78074efcef2df09cd2c79e38dacc4cb033b1725bc20cd471ca",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 161,
@@ -1768,7 +1784,7 @@
     "cell_id": "C05-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 162,
@@ -1779,7 +1795,7 @@
     "cell_id": "C08-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 163,
@@ -1790,7 +1806,7 @@
     "cell_id": "C01-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 164,
@@ -1801,7 +1817,7 @@
     "cell_id": "C04-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 165,
@@ -1812,7 +1828,7 @@
     "cell_id": "C09-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 166,
@@ -1823,7 +1839,7 @@
     "cell_id": "C03-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 167,
@@ -1834,7 +1850,7 @@
     "cell_id": "C02-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 168,
@@ -1845,7 +1861,8 @@
     "cell_id": "C06-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 169,
@@ -1856,7 +1873,7 @@
     "cell_id": "C10-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 170,
@@ -1867,7 +1884,7 @@
     "cell_id": "C07-T7b-r1",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 171,
@@ -1878,7 +1895,7 @@
     "cell_id": "C10-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 172,
@@ -1889,7 +1906,7 @@
     "cell_id": "C04-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 173,
@@ -1900,7 +1917,8 @@
     "cell_id": "C06-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 174,
@@ -1911,7 +1929,7 @@
     "cell_id": "C07-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 175,
@@ -1922,7 +1940,7 @@
     "cell_id": "C03-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 176,
@@ -1933,7 +1951,7 @@
     "cell_id": "C09-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 177,
@@ -1944,7 +1962,7 @@
     "cell_id": "C08-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 178,
@@ -1955,7 +1973,7 @@
     "cell_id": "C05-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 179,
@@ -1966,7 +1984,7 @@
     "cell_id": "C02-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 180,
@@ -1977,7 +1995,7 @@
     "cell_id": "C01-T7b-r2",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 181,
@@ -1988,7 +2006,7 @@
     "cell_id": "C02-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 182,
@@ -1999,7 +2017,7 @@
     "cell_id": "C08-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 183,
@@ -2010,7 +2028,7 @@
     "cell_id": "C05-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 184,
@@ -2021,7 +2039,7 @@
     "cell_id": "C04-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 185,
@@ -2032,7 +2050,7 @@
     "cell_id": "C07-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 186,
@@ -2043,7 +2061,7 @@
     "cell_id": "C01-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 187,
@@ -2054,7 +2072,8 @@
     "cell_id": "C06-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT"
   },
   {
     "order": 188,
@@ -2065,7 +2084,7 @@
     "cell_id": "C09-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 189,
@@ -2076,7 +2095,7 @@
     "cell_id": "C03-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   },
   {
     "order": 190,
@@ -2087,6 +2106,6 @@
     "cell_id": "C10-T7b-r3",
     "prompt_sha256": "25c306a163beb6dedf00051aa0122c2717a1f63b25173643091e70401c51f53f",
     "status": "NON_JOUE",
-    "reason": "Campagne en admission / attente ; cellule non commencée."
+    "reason": "Cellule non commencée ; voir le point de reprise."
   }
 ]

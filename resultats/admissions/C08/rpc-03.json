@@ -1,0 +1,37 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_read_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Admission — nonce C08.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Read Obsidian Note succeeded.\n{\n  \"path\": \"Admission — nonce C08.md\",\n  \"content\": \"ADMISSION-C08-5366ac0effd4cc2b691251122f9bb7e5af978274\",\n  \"etag\": \"c8dd2fea15fa44d9ab2dc5e2cbb75bec0eeb248c252820fe0b417e30bdfb18e8\",\n  \"total_characters\": 54,\n  \"offset\": 0,\n  \"has_more\": false\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Admission — nonce C08.md",
+          "content": "ADMISSION-C08-5366ac0effd4cc2b691251122f9bb7e5af978274",
+          "etag": "c8dd2fea15fa44d9ab2dc5e2cbb75bec0eeb248c252820fe0b417e30bdfb18e8",
+          "total_characters": 54,
+          "offset": 0,
+          "has_more": false
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

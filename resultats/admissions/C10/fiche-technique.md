@@ -1,0 +1,3 @@
+C10 — obsidian-claude-code-mcp 1.1.8
+
+Plugin HTTP/SSE legacy ; client Codex commun. view(path) lit une note ou liste un dossier, chemins relatifs au coffre ; texte présenté avec numéros de lignes. Sans view_range pour lire le fichier entier. str_replace(path,old_str,new_str) remplace une occurrence exacte ; create(path,file_text) crée une note ; insert(path,insert_line,new_str) insère du texte. Aucun jeton de révision ni reçu durable établi. Relecture complète après mutation et réponse perdue. obsidian_api et autres commandes arbitraires sont interdits. WebSocket IDE et terminal embarqué sont désactivés ; CLAUDE_CONFIG_DIR isolé dans le run. LICENSE 0BSD, package MIT : divergence déclarée.

@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "create_note",
+      "arguments": {
+        "path": "Admission — schémas C09.md",
+        "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Note created successfully at Admission — schémas C09.md"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

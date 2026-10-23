@@ -1,0 +1,51 @@
+{
+  "qualified": true,
+  "out": "<CHEMIN_PRIVE>",
+  "first": {
+    "returncode": 1,
+    "duration_s": 14.812999999994645,
+    "stop_reason": "T8_REPLY_LOST",
+    "forbidden_tool_events": [],
+    "thread_id": "<IDENTIFIANT_MASQUE>",
+    "usage": [],
+    "errors": []
+  },
+  "resume": {
+    "returncode": 0,
+    "duration_s": 18.062000000005355,
+    "stop_reason": null,
+    "forbidden_tool_events": [],
+    "thread_id": "<IDENTIFIANT_MASQUE>",
+    "usage": [
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 54252,
+          "cached_input_tokens": 46464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 610,
+          "reasoning_output_tokens": 154
+        }
+      }
+    ],
+    "errors": []
+  },
+  "oracle": {
+    "task": "T8",
+    "verdict": "REUSSI_VERIFIE",
+    "errors": [],
+    "changed": [
+      "Efforts/Projets/Projet témoin — Test MCP.md"
+    ],
+    "unwanted": [],
+    "format_differences": [],
+    "technical_changes": [],
+    "first_unwanted": [],
+    "first_technical_changes": [],
+    "technical_receipt_paths": [],
+    "dates": [],
+    "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+  },
+  "upstream_kept_alive": true,
+  "same_thread": true
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_edit_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Admission — schémas C08.md",
+        "operation": "append",
+        "content": "NE DOIT PAS PASSER",
+        "if_match": "91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "REVISION_CONFLICT: The note changed after it was read. Read it again and retry."
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "error": {
+          "code": "REVISION_CONFLICT",
+          "message": "The note changed after it was read. Read it again and retry.",
+          "retryable": true
+        }
+      },
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

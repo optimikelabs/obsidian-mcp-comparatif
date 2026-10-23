@@ -1,0 +1,87 @@
+"""Projection publique en liste blanche. Aucun coffre, profil, code candidat ou authentifiant."""
+from campaign_reporting import build,project
+from campaign_runtime import *
+from redact import sanitize_file,redact
+from oracles import verify
+
+def witness_scope(value):
+    if isinstance(value,str):return value in (P,N,Q)
+    if isinstance(value,dict):return any(witness_scope(v) for v in value.values())
+    if isinstance(value,list):return any(witness_scope(v) for v in value)
+    return False
+
+def omitted(value):
+    raw=json.dumps(value,ensure_ascii=False,sort_keys=True).encode()
+    return {'projection':'octets_hors_temoin_omis','sha256':sha(raw),'bytes':len(raw)}
+
+def project_cells(public):
+    for p in sorted((RUN/'cellules').glob('*')):
+        if not p.is_dir():continue
+        dest=public/'resultats/cellules'/p.name
+        for name in ('result.json','oracle.json','incident.json','diff-complet.json','case-index.json','prompt.json','catalogue.json','client-config-proof.json','effective-config.json','controller.jsonl','preparation-applicative.json','identity.json','fdm-observer-evidence.json','01.exit.json','02.exit.json','01.final.json','02.final.json'):
+            if (p/name).exists():sanitize_file(p/name,dest/name)
+        index=readj(p/'case-index.json') if (p/'case-index.json').exists() else {}
+        witnesses={};inventories={}
+        for stage,rel in index.get('snapshot_files',{}).items():
+            snap=readj(p/rel);witnesses[stage]={k:v for k,v in snap.items() if k in (P,N,Q)};inventories[stage]=manifest(snap)
+        if witnesses:writej(dest/'temoins-snapshots.json',redact(witnesses));writej(dest/'inventaires-complets.json',redact(inventories))
+        for q in (p/'relay').glob('rpc-*.json'):
+            obj=readj(q);req=obj['request']
+            if req.get('method')=='tools/call' and not witness_scope(req.get('params',{}).get('arguments',{})):
+                obj['response']=omitted(obj.get('response'))
+            writej(dest/'relay'/q.name,redact(obj))
+        if (p/'relay/events.jsonl').exists():sanitize_file(p/'relay/events.jsonl',dest/'relay/events.jsonl')
+        for name in ('01.stdout.jsonl','02.stdout.jsonl'):
+            if not (p/name).exists():continue
+            lines=[]
+            for line in (p/name).read_text(encoding='utf-8').splitlines():
+                obj=json.loads(line);item=obj.get('item',{})
+                if item.get('type')=='mcp_tool_call' and not witness_scope(item.get('arguments',{})) and item.get('result'):
+                    item['result']=omitted(item['result'])
+                if item.get('type')=='agent_message':item['text']=omitted(item.get('text'))
+                lines.append(redact(obj))
+            (dest/name).write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in lines),encoding='utf-8')
+
+def main():
+    build();project();public=KIT/'public';project_cells(public)
+    names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
+           'fdm_observer.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py']
+    for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
+    for name in ('PROTOCOLE-V1.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md'):
+        if (KIT/name).exists():sanitize_file(KIT/name,public/name)
+    count=0
+    for stem in ('factice','t7b','read-mappings','native-mappings','technical-receipts','date-stages'):
+        meta=KIT/'preuves'/('tests-'+stem+'.json')
+        if not meta.exists():continue
+        sanitize_file(meta,public/'preuves'/meta.name);root=Path(readj(meta)['root']);dest=public/'preuves'/(stem+'-qualification-campagne')
+        for p in root.rglob('*'):
+            if p.is_file() and p.suffix in ('.json','.jsonl') and 'vault' not in p.relative_to(root).parts:
+                sanitize_file(p,dest/p.relative_to(root))
+        for p in root.rglob('case.json'):
+            c=readj(p);v=readj(p.with_name('oracle.json'));assert verify(c)==v
+            assert redact(verify(redact(c)))==redact(v);count+=1
+        for p in root.rglob('*.json'):
+            obj=readj(p)
+            if isinstance(obj,dict) and 'case' in obj and 'oracle' in obj:
+                assert redact(verify(redact(obj['case'])))==redact(obj['oracle']);count+=1
+    for name in ('CLIENT-QUALIFICATION.json','CLIENT-T8-QUALIFICATION.json','FDM-QUALIFICATION.json'):
+        if (RUN/name).exists():sanitize_file(RUN/name,public/'resultats'/name)
+    for p in (RUN/'client-qualification').iterdir():
+        if not p.is_dir():continue
+        for name in ('01.stdout.jsonl','01.stderr.txt','01.final.json','01.exit.json','oracle.json','case.json','effective-config.json','client-config-proof.json','controller.jsonl'):
+            if (p/name).exists():sanitize_file(p/name,public/'resultats/client-qualification'/p.name/name)
+        for q in (p/'relay').glob('*.json*'):sanitize_file(q,public/'resultats/client-qualification'/p.name/'relay'/q.name)
+    for meta in ('CLIENT-T8-QUALIFICATION.json','FDM-QUALIFICATION.json'):
+        if not (RUN/meta).exists():continue
+        m=readj(RUN/meta);p=Path(m.get('out',m.get('path')));dest=public/'resultats'/('client-t8' if 'T8' in meta else 'fdm-observer')
+        names=('01.stdout.jsonl','01.stderr.txt','01.exit.json','02.stdout.jsonl','02.exit.json','02.final.json','case.json','oracle.json','effective-config.json','qualification.json','fdm-observer-evidence.json','controller.jsonl','identity.json')
+        for name in names:
+            if (p/name).exists():sanitize_file(p/name,dest/name)
+        if meta=='FDM-QUALIFICATION.json' and (p/'fdm-observer-raw.json').exists():
+            writej(dest/'fdm-observer-raw.json',redact([r for r in readj(p/'fdm-observer-raw.json') if r['path']==P]))
+        if 'T8' in meta:
+            for q in (p/'relay').glob('*.json*'):sanitize_file(q,dest/'relay'/q.name)
+    writej(public/'preuves/validation-projection-campagne.json',{'success':True,'fake_cases_replayed_after_redaction':count,'candidate_scores_rewritten':False,'utc':time.time()})
+    print(json.dumps({'projected':True,'fake_cases_replayed':count}))
+
+if __name__=='__main__':main()

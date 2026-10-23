@@ -1,0 +1,37 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_edit_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Admission — schémas C08.md",
+        "operation": "replace",
+        "content": "---\nrang: 1\ninconnu: café\n---\nEssai B.\n",
+        "if_match": "91fb851b859a7f6e3d03f99c9d3fa837316e3e1ae5265b3a69b82043659c495e"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Edit Obsidian Note succeeded.\n{\n  \"path\": \"Admission — schémas C08.md\",\n  \"etag\": \"0d71fdf410971af08ac9efc33db6615050453e7ea8a0772878616b22271638eb\",\n  \"transaction_id\": \"<IDENTIFIANT_MASQUE>\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Admission — schémas C08.md",
+          "etag": "0d71fdf410971af08ac9efc33db6615050453e7ea8a0772878616b22271638eb",
+          "transaction_id": "<IDENTIFIANT_MASQUE>"
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "T2",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": "Passage à modifier : essai prévu vendredi.",
+  "proprietes": {},
+  "message": "Écriture conditionnelle par etag, puis relecture confirmée ; reste du fichier inchangé."
+}

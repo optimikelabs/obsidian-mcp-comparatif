@@ -1,0 +1,30 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {
+        "name": "comparatif-admission",
+        "version": "1.1"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "resources": {},
+        "tools": {}
+      },
+      "serverInfo": {
+        "name": "obsidian-mcp-server",
+        "version": "0.1.0"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

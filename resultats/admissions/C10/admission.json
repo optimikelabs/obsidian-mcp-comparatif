@@ -1,0 +1,30 @@
+{
+  "candidate": "C10",
+  "status": "ADMIS",
+  "nonceVerified": true,
+  "reason": "Nonce, création, remplacement et décodage de vue numérotée vérifiés. HTTP/SSE natif ; WebSocket et terminal désactivés, CLAUDE_CONFIG_DIR borné au run. LICENSE 0BSD / package MIT déclaré, code non redistribué.",
+  "mode": "Plugin Obsidian HTTP/SSE legacy, sans client Claude Code",
+  "artifacts": [
+    {
+      "name": "main.js",
+      "size": 701749,
+      "sha256": "784b49d6f243053a2271d1e69c6d0716a3bde407a5dfeda8fbb894eaf87ec043",
+      "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/main.js"
+    },
+    {
+      "name": "manifest.json",
+      "size": 308,
+      "sha256": "0bcdd086d71b1a47bb1f13b4b9320b7544e8f1d4721ab34066b7fd3bd047c2ae",
+      "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/manifest.json"
+    },
+    {
+      "name": "styles.css",
+      "size": 7927,
+      "sha256": "5cf86b5d3f039246bc5af34fea5cd5c93e38a7db867da0778bc9693f01fa84f8",
+      "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/styles.css"
+    }
+  ],
+  "catalog_sha256": "b47643edcb8e11e5ec9761206e51b065f73027d8b4edf4aba497ce0e5e9faae9",
+  "adapter_sha256": "00782de2bb624d8ed81cc35519f3e0b338082d0b20304d0da7d525ab2140a336",
+  "utc": "2026-10-23T08:37:47.133830+00:00"
+}

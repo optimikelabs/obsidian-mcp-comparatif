@@ -1,0 +1,35 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {
+        "name": "comparatif-admission",
+        "version": "1.1"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        },
+        "resources": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "obsidian-mcp-server",
+        "version": "2.0.1"
+      },
+      "instructions": "Use obsidian_list_vaults when a vault id is unknown. All paths are relative to an explicitly configured vault. Read a note and use its etag before editing when concurrent changes are possible. Destructive operations are journaled under .obsidian-mcp."
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

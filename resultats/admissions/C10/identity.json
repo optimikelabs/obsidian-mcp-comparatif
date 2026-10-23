@@ -1,0 +1,11 @@
+{
+  "vault": "<CHEMIN_PRIVE>",
+  "plugins": {
+    "quickadd": "2.32.1",
+    "templater-obsidian": "2.26.0",
+    "journals": "3.5.1",
+    "notebook-navigator": "3.4.3",
+    "frontmatter-date-manager": "1.6.0",
+    "claude-code-mcp": "1.1.8"
+  }
+}

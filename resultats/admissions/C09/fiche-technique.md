@@ -1,0 +1,3 @@
+C09 — @huangyihe/obsidian-mcp 1.6.0
+
+Node stdio, REST 5.5.2, Obsidian ouvert et chemin du bac configuré. read_note(path) retourne le fichier entier en texte. create_note écrit le contenu fourni. update_note(path,edits=[{oldText,newText}],dryRun=false) applique des remplacements ; un dryRun=true permet un aperçu. Le catalogue publié expose aussi des insertions ciblées ; utiliser seulement les opérations documentées utiles. Aucun ifMatch ni journal durable établi dans ces schémas. Relire après modification et après réponse perdue ; conserver une retouche contradictoire. Incohérence licence : package ISC, LICENSE distribué MIT ; artefact installé localement, code non redistribué.

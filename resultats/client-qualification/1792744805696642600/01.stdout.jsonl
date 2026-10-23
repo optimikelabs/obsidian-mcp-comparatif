@@ -1,0 +1,6 @@
+{"type": "thread.started", "thread_id": "<IDENTIFIANT_MASQUE>"}
+{"type": "item.completed", "item": {"id": "item_0", "type": "error", "message": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."}}
+{"type": "turn.started"}
+{"type": "item.completed", "item": {"id": "item_1", "type": "agent_message", "text": "Je vais lire le fichier par le MCP candidat, effectuer la modification ciblée, puis relire le résultat.\n"}}
+{"type": "item.completed", "item": {"id": "item_2", "type": "agent_message", "text": "{\"task_id\":\"T2\",\"path\":\"Efforts/Projets/Projet témoin — Test MCP.md\",\"etat\":\"non_applique\",\"extrait\":null,\"proprietes\":{},\"message\":\"Outils inaccessibles : « code-mode host is disabled ». Aucune lecture ni écriture effectuée.\"}"}}
+{"type": "turn.completed", "usage": {"input_tokens": 19543, "cached_input_tokens": 17280, "cache_write_input_tokens": 0, "output_tokens": 376, "reasoning_output_tokens": 239}}

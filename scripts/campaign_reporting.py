@@ -16,7 +16,10 @@ def build():
     for row in rows:
         cell=RUN/'cellules'/row['cell_id']/'result.json'
         if cell.exists():row.update(readj(cell))
-        else:row['reason']='Campagne en admission / attente ; cellule non commencée.'
+        else:
+            a=next(x for x in admissions if x['candidate']==row['candidate'])
+            row['reason']=a.get('reason','Cellule non commencée.') if a['status']=='NON_EXECUTE_ENVIRONNEMENT' else 'Cellule non commencée ; voir le point de reprise.'
+            if a['status']=='NON_EXECUTE_ENVIRONNEMENT':row['verdict']='NON_EXECUTE_ENVIRONNEMENT'
     writej(RUN/'cellules-190.json',rows);writej(RUN/'admissions.json',admissions)
     columns=['order','series','candidate','task','repetition','cell_id','status','verdict','reason']
     with (RUN/'cellules-190.csv').open('w',encoding='utf-8',newline='') as f:
@@ -27,7 +30,9 @@ def build():
         selected=[x for x in rows if x['series']==s];played=sum(x['status']=='JOUE' for x in selected)
         counts.append(f'Série {s} : {played} cellules jouées ; {len(selected)-played} non jouées (sur {len(selected)}).')
     incidents=[]
-    for p in sorted((RUN/'admissions').glob('*/incident.json')):incidents.append({'path':str(p.relative_to(RUN)),'error':readj(p)['error']})
+    for pattern in ('admissions/*/incident.json','admissions/*/qualification-incident.json','cellules/*/incident.json'):
+        for p in sorted(RUN.glob(pattern)):incidents.append({'path':p.relative_to(RUN).as_posix(),'error':readj(p).get('error',readj(p).get('reason','Voir trace conservée.'))})
+    incidents.append({'path':'client-qualification/1792744805696642600/01.stdout.jsonl','error':'Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.'})
     text='\n'.join(counts+[
         'Candidats admis : '+(', '.join(admitted) or 'aucun')+'.',
         'Candidats non admis ou admission à achever : '+(', '.join(pending) or 'aucun')+'.',
@@ -46,7 +51,7 @@ def build():
         for x in incidents:text+='- '+x['path']+' : '+x['error']+'\n'
     state=RUN/'REPRISE.json'
     if state.exists():text+='\n## Reprise exacte\n\n```json\n'+json.dumps(readj(state),ensure_ascii=False,indent=2)+'\n```\n'
-    text+='\n## Pilotage\n\nAucun changement de statut recommandé à ce stade ; statut canonique non audité (coffre quotidien hors périmètre). Prochaine action : achever les admissions, puis première cellule selon le manifeste, sous les seuils mémoire et verrou. Aucune tâche du coffre modifiée.\n'
+    text+='\n## Pilotage\n\nAucun changement de statut recommandé à ce stade ; statut canonique non audité (coffre quotidien hors périmètre). Prochaine action : suivre le point de reprise exact, puis le manifeste sous les seuils mémoire et verrou. Aucune tâche du coffre modifiée.\n'
     (RUN/'RAPPORT-CAMPAGNE.md').write_text(text,encoding='utf-8',newline='')
     print(json.dumps({'played':sum(r['status']=='JOUE' for r in rows),'unplayed':sum(r['status']!='JOUE' for r in rows),'admitted':admitted,'pending':pending}))
 
@@ -56,7 +61,7 @@ def project():
         p=RUN/rel
         if p.exists():sanitize_file(p,public/rel)
     for cid in (f'C{i:02}' for i in range(1,11)):
-        for name in ('admission.json','admission-partielle.json','adapter.json','catalogue.json','fiche-technique.md','incident.json','nonce-read.json','preparation-applicative.json','identity.json','qualification-summary.json','qualification-incident.json','controller.jsonl'):
+        for name in ('admission.json','admission-partielle.json','adapter.json','catalogue.json','fiche-technique.md','incident.json','nonce-read.json','preparation-applicative.json','identity.json','qualification-summary.json','qualification-incident.json','final-read-response.json','controller.jsonl'):
             p=RUN/'admissions'/cid/name
             if p.exists():sanitize_file(p,public/'admissions'/cid/name)
         for pattern in ('rpc-*.json','qualification-rpc-*.json'):

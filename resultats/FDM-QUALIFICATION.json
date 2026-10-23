@@ -1,0 +1,22 @@
+{
+  "qualified": true,
+  "path": "<CHEMIN_PRIVE>",
+  "fdm_version": "1.6.0",
+  "plugin_sha256": "0bc7b76ea29409b1d085b7be75b9f7031516bf143455e857c208b0a93bceeb8c",
+  "before_sha256": "c8e103a14c2db913545c5380ae8b691ae72ced013b3a72fea73034331526b508",
+  "after_sha256": "d372a8e9aec44cd6c8866209259d34544d4d95d5cbb526291ceab7e7e169c2d3",
+  "evidence": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "value": "2026-10-23T10:53",
+      "previous_value": "2026-10-23T04:38",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "d372a8e9aec44cd6c8866209259d34544d4d95d5cbb526291ceab7e7e169c2d3",
+      "observed_utc": 1792745582.939,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    }
+  ],
+  "method": "Observation du callback natif processFrontMatter ; pas de date assignée par le contrôleur."
+}

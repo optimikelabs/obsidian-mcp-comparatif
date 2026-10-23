@@ -1,0 +1,46 @@
+{"event": "tool_request", "seq": 1, "monotonic_ns": 177664703000000, "utc": 1792746623.650837, "id": 1, "tool": "obsidian_read_note", "arguments_sha256": "bde5ce8c386c720faee9af3756300a7689e650eb5be8ea980c0bd46288b1fc97"}
+{"event": "upstream_response", "seq": 2, "monotonic_ns": 177664703000000, "utc": 1792746623.6528375, "id": 1, "tool": "obsidian_read_note", "duration_s": 0.0, "bytes": 722, "is_error": false}
+{"event": "mcp_read_response", "seq": 3, "monotonic_ns": 177664703000000, "utc": 1792746623.6528375, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46", "response_received": true}
+{"event": "response_delivered", "seq": 4, "monotonic_ns": 177664703000000, "utc": 1792746623.6528375, "id": 1}
+{"event": "tool_request", "seq": 5, "monotonic_ns": 177664703000000, "utc": 1792746623.6538377, "id": 2, "tool": "obsidian_text_patch_apply", "arguments_sha256": "69a7ca250f2cdb0ac01d87cb096cdf18d5321f3bbca9098057afc00f3595d5d7"}
+{"event": "request_held", "seq": 6, "monotonic_ns": 177664703000000, "utc": 1792746623.6538377, "id": 2, "request_sha256": "0ed10ddc6a65d202440c699b92fd2bb47b611cde5e660aafc7242ea0ab1951f6"}
+{"event": "ui_disk_verified", "seq": 7, "monotonic_ns": 177664703000000, "utc": 1792746623.659351, "snapshot_sha256": "f385a5d3921d3c6acde03057b2831900af20b2605043045ea400ccb7eba5c235"}
+{"event": "dispatch", "seq": 8, "monotonic_ns": 177664703000000, "utc": 1792746623.659351, "id": 2, "request_sha256": "0ed10ddc6a65d202440c699b92fd2bb47b611cde5e660aafc7242ea0ab1951f6", "kind": "mutation"}
+{"event": "upstream_response", "seq": 9, "monotonic_ns": 177664718000000, "utc": 1792746623.6613512, "id": 2, "tool": "obsidian_text_patch_apply", "duration_s": 0.014999999984866008, "bytes": 169, "is_error": false}
+{"event": "first_mutation_pending", "seq": 10, "monotonic_ns": 177664718000000, "utc": 1792746623.6613512, "id": 2}
+{"event": "response_delivered", "seq": 11, "monotonic_ns": 177664718000000, "utc": 1792746623.6623545, "id": 2}
+{"event": "tool_request", "seq": 12, "monotonic_ns": 177664718000000, "utc": 1792746623.6623545, "id": 3, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 13, "monotonic_ns": 177664718000000, "utc": 1792746623.6630826, "id": 3, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 14, "monotonic_ns": 177664718000000, "utc": 1792746623.6640887, "id": 3}
+{"event": "tool_request", "seq": 15, "monotonic_ns": 177664718000000, "utc": 1792746623.6749647, "id": 4, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 16, "monotonic_ns": 177664718000000, "utc": 1792746623.6759706, "id": 4, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 17, "monotonic_ns": 177664718000000, "utc": 1792746623.6759706, "id": 4}
+{"event": "tool_request", "seq": 18, "monotonic_ns": 177664734000000, "utc": 1792746623.6872425, "id": 5, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 19, "monotonic_ns": 177664734000000, "utc": 1792746623.6882496, "id": 5, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 20, "monotonic_ns": 177664734000000, "utc": 1792746623.6882496, "id": 5}
+{"event": "tool_request", "seq": 21, "monotonic_ns": 177664750000000, "utc": 1792746623.6992993, "id": 6, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 22, "monotonic_ns": 177664750000000, "utc": 1792746623.6998212, "id": 6, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 23, "monotonic_ns": 177664750000000, "utc": 1792746623.7012343, "id": 6}
+{"event": "tool_request", "seq": 24, "monotonic_ns": 177664765000000, "utc": 1792746623.7119145, "id": 7, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 25, "monotonic_ns": 177664765000000, "utc": 1792746623.7129192, "id": 7, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 26, "monotonic_ns": 177664765000000, "utc": 1792746623.7129192, "id": 7}
+{"event": "tool_request", "seq": 27, "monotonic_ns": 177664781000000, "utc": 1792746623.7242453, "id": 8, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 28, "monotonic_ns": 177664781000000, "utc": 1792746623.7252505, "id": 8, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 29, "monotonic_ns": 177664781000000, "utc": 1792746623.7252505, "id": 8}
+{"event": "tool_request", "seq": 30, "monotonic_ns": 177664781000000, "utc": 1792746623.7364943, "id": 9, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 31, "monotonic_ns": 177664781000000, "utc": 1792746623.737504, "id": 9, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 169, "is_error": false}
+{"event": "response_delivered", "seq": 32, "monotonic_ns": 177664781000000, "utc": 1792746623.738504, "id": 9}
+{"event": "tool_request", "seq": 33, "monotonic_ns": 177664796000000, "utc": 1792746623.7490761, "id": 10, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 34, "monotonic_ns": 177664796000000, "utc": 1792746623.7500858, "id": 10, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 170, "is_error": false}
+{"event": "response_delivered", "seq": 35, "monotonic_ns": 177664796000000, "utc": 1792746623.7500858, "id": 10}
+{"event": "tool_request", "seq": 36, "monotonic_ns": 177664812000000, "utc": 1792746623.7612002, "id": 11, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 37, "monotonic_ns": 177664812000000, "utc": 1792746623.7617037, "id": 11, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 170, "is_error": false}
+{"event": "response_delivered", "seq": 38, "monotonic_ns": 177664812000000, "utc": 1792746623.7627096, "id": 11}
+{"event": "first_snapshot", "seq": 39, "monotonic_ns": 177664828000000, "utc": 1792746623.7734315, "snapshot_sha256": "2eea6b3683cab8772c1a2b6aa3e4f86d3fdf0e1ec8be9b2a815d0f1077c4b8c0"}
+{"event": "tool_request", "seq": 40, "monotonic_ns": 177664828000000, "utc": 1792746623.7734315, "id": 12, "tool": "obsidian_text_patch_status", "arguments_sha256": "9472364148e4beb96ca0ab9100c3bb47e01074d600152b870fc143ebc80e00b8"}
+{"event": "upstream_response", "seq": 41, "monotonic_ns": 177664828000000, "utc": 1792746623.7739418, "id": 12, "tool": "obsidian_text_patch_status", "duration_s": 0.0, "bytes": 180, "is_error": false}
+{"event": "response_delivered", "seq": 42, "monotonic_ns": 177664828000000, "utc": 1792746623.7749515, "id": 12}
+{"event": "tool_request", "seq": 43, "monotonic_ns": 177664828000000, "utc": 1792746623.7749515, "id": 13, "tool": "obsidian_read_note", "arguments_sha256": "bde5ce8c386c720faee9af3756300a7689e650eb5be8ea980c0bd46288b1fc97"}
+{"event": "upstream_response", "seq": 44, "monotonic_ns": 177664828000000, "utc": 1792746623.7759511, "id": 13, "tool": "obsidian_read_note", "duration_s": 0.0, "bytes": 727, "is_error": false}
+{"event": "mcp_read_response", "seq": 45, "monotonic_ns": 177664828000000, "utc": 1792746623.7769518, "id": 13, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "9317ed79eeb3c68af430592a9e1bcc5a385d21e739b686203b505b8af6772940", "response_received": true}
+{"event": "response_delivered", "seq": 46, "monotonic_ns": 177664828000000, "utc": 1792746623.7769518, "id": 13}

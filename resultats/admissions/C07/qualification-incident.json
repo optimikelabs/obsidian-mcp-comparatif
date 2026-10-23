@@ -1,0 +1,4 @@
+{
+  "error": "{'jsonrpc': '2.0', 'id': 98, 'error': {'code': -32603, 'message': 'MCP backend rejected the request (status=429).'}}",
+  "traceback": "Traceback (most recent call last):\n  File \"<CHEMIN_PRIVE>\", line 28, in main\n    mon.check();time.sleep(1);status=call('obsidian_text_patch_status',planRef=ref)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<CHEMIN_PRIVE>\", line 19, in call\n    r=rpc('tools/call',{'name':n,'arguments':a});assert not r.get('error') and not r['result'].get('isError'),r\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'jsonrpc': '2.0', 'id': 98, 'error': {'code': -32603, 'message': 'MCP backend rejected the request (status=429).'}}\n"
+}

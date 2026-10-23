@@ -1,0 +1,66 @@
+{
+  "candidate": "C07",
+  "transport": "stdio",
+  "mutation_tools": [
+    "obsidian_note_replace_apply",
+    "obsidian_note_replace_recover",
+    "obsidian_note_create_apply",
+    "obsidian_text_patch_apply",
+    "obsidian_text_patch_recover",
+    "obsidian_frontmatter_patch_apply",
+    "obsidian_frontmatter_patch_recover"
+  ],
+  "preparation_tools": [
+    "obsidian_note_replace_plan",
+    "obsidian_note_create_plan",
+    "obsidian_text_patch_plan",
+    "obsidian_frontmatter_patch_plan"
+  ],
+  "read_tools": [
+    "obsidian_read_note"
+  ],
+  "read_format": "json",
+  "read_content_key": "content",
+  "path_key": "filePath",
+  "status_tools": [
+    "obsidian_note_replace_status",
+    "obsidian_note_create_status",
+    "obsidian_text_patch_status",
+    "obsidian_frontmatter_patch_status"
+  ],
+  "status_state_key": "phase",
+  "pending_states": [
+    "applying"
+  ],
+  "terminal_states": [
+    "terminal"
+  ],
+  "enabled_tools": [
+    "obsidian_list_notes",
+    "obsidian_read_note",
+    "obsidian_global_search",
+    "obsidian_list_pending_operations",
+    "obsidian_note_replace_plan",
+    "obsidian_note_replace_apply",
+    "obsidian_note_replace_status",
+    "obsidian_note_replace_recover",
+    "obsidian_note_create_plan",
+    "obsidian_note_create_apply",
+    "obsidian_note_create_status",
+    "obsidian_text_patch_plan",
+    "obsidian_text_patch_apply",
+    "obsidian_text_patch_status",
+    "obsidian_text_patch_recover",
+    "obsidian_frontmatter_patch_plan",
+    "obsidian_frontmatter_patch_apply",
+    "obsidian_frontmatter_patch_status",
+    "obsidian_frontmatter_patch_recover",
+    "obsidian_validate_format",
+    "obsidian_get_frontmatter"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/obsidian-atomic-write-bridge/data.json"
+  ]
+}

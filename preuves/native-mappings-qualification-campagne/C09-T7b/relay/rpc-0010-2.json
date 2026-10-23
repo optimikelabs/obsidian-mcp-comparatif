@@ -1,0 +1,33 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "update_note",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "edits": [
+          {
+            "oldText": "Passage à modifier : essai prévu jeudi.",
+            "newText": "Passage à modifier : essai prévu vendredi."
+          }
+        ],
+        "dryRun": false
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "isError": true,
+      "content": [
+        {
+          "type": "text",
+          "text": "NOT_UNIQUE"
+        }
+      ]
+    }
+  }
+}

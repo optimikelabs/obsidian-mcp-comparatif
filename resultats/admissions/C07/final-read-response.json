@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"content\": \"---\\nrang: 1\\ninconnu: café\\ncréation: 2026-10-23T10:08\\nmodification: 2026-10-23T10:08\\n---\\nEssai B.\\n\"\n}"
+      }
+    ],
+    "isError": false
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

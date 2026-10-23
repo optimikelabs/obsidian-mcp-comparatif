@@ -1,0 +1,24 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/call",
+    "params": {
+      "name": "view",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "1: ---\n2: type: projet\n3: parent: null\n4: collection:\n5: - '[[Projets]]'\n6: entité: null\n7: statut: actif\n8: notes_liees: null\n9: rang: 1\n10: client: false\n11: échéance: null\n12: next_action: Trier trois captures.\n13: budget_h: null\n14: budget_euros: null\n15: type_projet: null\n16: temoin_bool: true\n17: temoin_liste:\n18: - café\n19: - œuvre\n20: temoin_entier: 7\n21: clé_inconnue: Été — 東京\n22: ---\n23: ## Fiche du projet\n24: - Objectif : trier trois captures.\n25: - Référence de recherche : MARGELLE-TEST-2406.\n26: - Passage à modifier : essai prévu jeudi.\n27: - Témoin humain : version initiale.\n28: - Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n29: "
+        }
+      ]
+    }
+  }
+}

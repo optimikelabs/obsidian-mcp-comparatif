@@ -1,0 +1,35 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {
+        "elicitation": {
+          "form": {},
+          "url": {}
+        }
+      },
+      "clientInfo": {
+        "name": "codex-mcp-client",
+        "title": "Codex",
+        "version": "0.160.1"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 0,
+    "result": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {
+        "tools": {}
+      },
+      "serverInfo": {
+        "name": "kit-factice",
+        "version": "1.0.0"
+      }
+    }
+  }
+}

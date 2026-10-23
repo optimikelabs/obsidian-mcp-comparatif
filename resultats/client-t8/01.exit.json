@@ -1,0 +1,9 @@
+{
+  "returncode": 1,
+  "duration_s": 14.812999999994645,
+  "stop_reason": "T8_REPLY_LOST",
+  "forbidden_tool_events": [],
+  "thread_id": "<IDENTIFIANT_MASQUE>",
+  "usage": [],
+  "errors": []
+}
