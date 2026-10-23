@@ -6482,11 +6482,15 @@
     },
     "preuves/validation-projection-campagne.json": {
       "size": 141,
-      "sha256": "2d03db22e8a5f979c2f16339f8ec254d0b84b25f05a9c61ca3c72b0bbb6391e9"
+      "sha256": "f7810db6b30ac98b19628c75280155faaeff7b8f1e4214978f36eef69bbcba25"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
       "sha256": "c8261d53923fa10c657c516d25a2be57cd375aab284e46b4f6d8c77c762176d2"
+    },
+    "preuves/verification-clone-v12.json": {
+      "size": 258,
+      "sha256": "4fe092e4ab24d27651ec7e277bc6ecf99af990d51781d84f370f41005bf7f1a8"
     },
     "prompts/T1.txt": {
       "size": 671,
@@ -7612,6 +7616,10 @@
       "size": 11767,
       "sha256": "b2e57f87d014dad698b0592719b6a21222544b68b949a8b49961aa96dd103d93"
     },
+    "resultats/attente/controller.jsonl": {
+      "size": 164,
+      "sha256": "50f438cd6883f4ef5756a718dcf8e7efa0febe9c4b6844e86ea1c2fd3caee0a3"
+    },
     "resultats/cellules/C05-T1-r1/catalogue.json": {
       "size": 23997,
       "sha256": "0c9607be0ea5b34235c4e3b8814cd3809dd909125b99c8f41cd89802a5ba4bbe"
@@ -8188,17 +8196,25 @@
       "size": 336,
       "sha256": "333e19f4f1d078fb35e592134045fb799c0f8be8890aa864310eafca3f792d08"
     },
+    "resultats/publication/incident-clone-v12-crlf.json": {
+      "size": 589,
+      "sha256": "e4f089c3b88c7e584744cdb868cf4b2e7b1ef5250bd0742e9fd6d2e3623b6337"
+    },
+    "resultats/PUBLICATION-V1.2.json": {
+      "size": 165,
+      "sha256": "b53922d1925869154bdbccc310987708bd5d99bcdddbc9bba34c4ba61c5f6061"
+    },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 11464,
-      "sha256": "44ab99c8a91c09c474d710f3a40c069021b7ab1b35b8fb1053edf8c0808c5ce3"
+      "size": 12517,
+      "sha256": "917f38e01e92494a1437815e06f0d01230134e0e375f3ec63a1fa3617cd5e296"
     },
     "resultats/REPRISE.json": {
-      "size": 555,
-      "sha256": "3fbf3f72dd84f31ee65069e0dae8cb1fd1e0bbef1004a70d5b691f52894f0779"
+      "size": 1126,
+      "sha256": "ed80079337abb90f03a24a6db072e42d9a2a4b9e86660447397dc69db7574f78"
     },
     "resultats/V12-ETAT.json": {
-      "size": 622,
-      "sha256": "d0e78a2e736bc9e1ad61e88c6a8fe6ced8aa8041345519d72e9f0c21bd6873de"
+      "size": 859,
+      "sha256": "73659435896a1e700b19acd17683e6c304e8d9a7e87d315e6d2a95091046e3ec"
     },
     "scripts/admit_c01.py": {
       "size": 2553,
@@ -8385,5 +8401,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "3446ebfe109fcb0b010c83dad28791a6ba76651fcc3e79110d08cf16809b7662"
+  "tree_sha256": "e2856182aaa88de2120d522a60e267687d7861f4fe4f0584c26e325fa5c190cc"
 }

@@ -1,7 +1,9 @@
 {
-  "summary": "Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et SSE. Les changements lastAccessed/hash sont acceptés ; entrées ajoutées/retirées, autre champ, autre note et écart temporaire réparé sont refusés. Les trois verdicts v1.1 restent identiques. Aucun nouveau départ candidat sous le seuil mémoire. La reprise exige le commit v1.2 publié et vérifié sur main.",
+  "summary": "Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et SSE. Les changements lastAccessed/hash sont acceptés ; entrées ajoutées/retirées, autre champ, autre note et écart temporaire réparé sont refusés. Amendement publié et vérifié au commit d0bc3eb8c03f065d8eb666f750625bd5525e772a, gels précédents conservés. Clone v1.2 en LF : 2 096 fichiers contrôlés, 67 cas factices rejoués sans écart ; voir preuves/verification-clone-v12.json. Aucun nouveau départ candidat sous les deux seuils de 4 Gio.",
   "qualified": true,
   "qualification": "preuves/tests-fdm-cache.json",
   "publication_gate": "AMENDEMENT-V1.2-C5.md doit être présent dans HEAD et main distant avant tout départ",
-  "checks": 48
+  "checks": 48,
+  "published_commit": "d0bc3eb8c03f065d8eb666f750625bd5525e772a",
+  "remote_verified": true
 }

@@ -1,0 +1,14 @@
+{
+  "reason": "Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.",
+  "resolved": true,
+  "verification": {
+    "success": true,
+    "commit": "ed4579ec0bee479cc462605ec0b0421cccd5a3d4",
+    "files": 2096,
+    "errors": [],
+    "amendment_v12_is_ancestor": true,
+    "fake_cases_replayed_from_fresh_clone": 67,
+    "git_autocrlf": false,
+    "utc": 1792749219.4966118
+  }
+}

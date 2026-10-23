@@ -1,17 +1,26 @@
 {
   "state": "ATTENTE_MEMOIRE",
-  "utc": "2026-10-23T09:51:55.649050+00:00",
+  "utc": "2026-10-23T10:02:23.666082+00:00",
   "next_cell": "C05-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py",
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "memory": {
-    "utc": "2026-10-23T09:51:55.649050+00:00",
-    "commitFreeBytes": 1778806784,
-    "availableBytes": 1036632064,
+    "utc": "2026-10-23T10:02:23.666082+00:00",
+    "event": "memory_10min",
+    "commitFreeBytes": 1986236416,
+    "availableBytes": 6396112896,
     "admitted": false,
     "stop": true
-  }
+  },
+  "next_order": 5,
+  "last_cell": "C05-T4-r1",
+  "last_status": "JOUE",
+  "last_verdict": "EFFET_NON_VOULU",
+  "next_action": "attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1",
+  "next_check_utc": "2026-10-23T10:12:23+00:00",
+  "replacement_C05_T1": "Non tenté ; uniquement après la série 1 et contrôle CRLF/LF de la fixture préparée",
+  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire"
 }

@@ -4,20 +4,20 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 0 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 0 cellules jouées.
-Incidents consignés : 7 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 8 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T09:51:55.680056+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T10:03:33.773040+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "d0bc3eb8c03f065d8eb666f750625bd5525e772a", "remote_verified": true, "utc": "2026-10-23T09:51:34.471552+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "ed4579ec0bee479cc462605ec0b0421cccd5a3d4", "remote_verified": true, "utc": "2026-10-23T09:52:23.663903+00:00"}.
 
 ## Reprise sous v1.2
 
-Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et SSE. Les changements lastAccessed/hash sont acceptés ; entrées ajoutées/retirées, autre champ, autre note et écart temporaire réparé sont refusés. Les trois verdicts v1.1 restent identiques. Aucun nouveau départ candidat sous le seuil mémoire. La reprise exige le commit v1.2 publié et vérifié sur main.
+Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et SSE. Les changements lastAccessed/hash sont acceptés ; entrées ajoutées/retirées, autre champ, autre note et écart temporaire réparé sont refusés. Amendement publié et vérifié au commit d0bc3eb8c03f065d8eb666f750625bd5525e772a, gels précédents conservés. Clone v1.2 en LF : 2 096 fichiers contrôlés, 67 cas factices rejoués sans écart ; voir preuves/verification-clone-v12.json. Aucun nouveau départ candidat sous les deux seuils de 4 Gio.
 
 C05-T2-r1 et C05-T3-r1 restent REUSSI_VERIFIE ; C05-T4-r1 reste EFFET_NON_VOULU. Ces trois cellules ont été jouées sous la règle v1.1. Note au verdict de C05-T4-r1 : « dû au cache FDM, surface déclarée par l’amendement v1.2 après cet essai ». Cette note ne reclasse pas le verdict et ne prouve pas le writer runtime.
 
@@ -87,6 +87,7 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - admissions/C07/qualification-incident.json : {'jsonrpc': '2.0', 'id': 98, 'error': {'code': -32603, 'message': 'MCP backend rejected the request (status=429).'}}
 - cellules/C05-T1-r1/incident.json : AssertionError ; voir trace et amendement de la cellule.
 - publication/incident-20261023T0915.json : AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.
+- publication/incident-clone-v12-crlf.json : Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
 - client-qualification/1792744805696642600/01.stdout.jsonl : Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.
 
@@ -95,23 +96,32 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 ```json
 {
   "state": "ATTENTE_MEMOIRE",
-  "utc": "2026-10-23T09:51:55.649050+00:00",
+  "utc": "2026-10-23T10:02:23.666082+00:00",
   "next_cell": "C05-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py",
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "memory": {
-    "utc": "2026-10-23T09:51:55.649050+00:00",
-    "commitFreeBytes": 1778806784,
-    "availableBytes": 1036632064,
+    "utc": "2026-10-23T10:02:23.666082+00:00",
+    "event": "memory_10min",
+    "commitFreeBytes": 1986236416,
+    "availableBytes": 6396112896,
     "admitted": false,
     "stop": true
-  }
+  },
+  "next_order": 5,
+  "last_cell": "C05-T4-r1",
+  "last_status": "JOUE",
+  "last_verdict": "EFFET_NON_VOULU",
+  "next_action": "attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1",
+  "next_check_utc": "2026-10-23T10:12:23+00:00",
+  "replacement_C05_T1": "Non tenté ; uniquement après la série 1 et contrôle CRLF/LF de la fixture préparée",
+  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ATTENTE_MEMOIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C05-T5-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ATTENTE_MEMOIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1. Aucune tâche du coffre modifiée.
