@@ -1,0 +1,15 @@
+{
+  "order": 16,
+  "series": 1,
+  "candidate": "C08",
+  "task": "T8",
+  "repetition": 1,
+  "cell_id": "C08-T8-r1",
+  "prompt_sha256": "0429fd0a2a17eea10b64ea38777a145fcf078425296eafe01170758d0f8b7beb",
+  "status": "NON_JOUE",
+  "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+  "reason": "preparation-applicative-native-save exit 1; voir journaux locaux",
+  "started_utc": 1792767855.906611,
+  "finished_utc": 1792767893.909026,
+  "stop_campaign": true
+}

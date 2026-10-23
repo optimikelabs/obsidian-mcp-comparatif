@@ -1,14 +1,14 @@
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:03:15.584479+00:00",
-  "next_cell": "C08-T8-r1",
+  "state": "ARRET_INCIDENT",
+  "utc": "2026-10-23T15:05:16.324204+00:00",
+  "next_cell": "C01-T1-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T7-r1",
-  "last_result": "PROTEGE_NON_ACCOMPLI",
-  "last_reason": "",
-  "incident_cell": null
+  "last_cell": "C08-T8-r1",
+  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
+  "last_reason": "preparation-applicative-native-save exit 1; voir journaux locaux",
+  "incident_cell": "C08-T8-r1"
 }

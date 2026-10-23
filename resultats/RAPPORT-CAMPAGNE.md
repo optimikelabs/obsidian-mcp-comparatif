@@ -4,16 +4,16 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 4 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 1 cellules jouées.
-Incidents consignés : 14 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 15 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T15:03:15.649387+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T15:05:16.525178+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "63e83af3b778f9ca6267f6d3b1481bbfd7aa9f6e", "remote_verified": true, "utc": "2026-10-23T14:48:12.746569+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "463b018ce4f33da4a4fcbd0fdad44e3f4ff5d45d", "remote_verified": true, "utc": "2026-10-23T15:04:09.900728+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -34,6 +34,10 @@ C08-T4-r1 reste NON_EXECUTE_ENVIRONNEMENT. Un remplacement unique en fin de sér
 ## Validation après instantané : C08-T5-r1
 
 VALIDEE / PROTEGE_NON_ACCOMPLI : dates ajoutées par FDM après l’instantané, hors jugement. Voir validations-post-instantane/C08-T5-r1.json. Résultat brut et instantané inchangés.
+
+## Validation après instantané : C08-T7-r1
+
+VALIDEE / PROTEGE_NON_ACCOMPLI : Aucun écart entre instantané jugé et coffre fermé. Voir validations-post-instantane/C08-T7-r1.json. Résultat brut et instantané inchangés.
 
 ## Amendement v1.4
 
@@ -103,6 +107,7 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - admissions/C07/qualification-incident.json : {'jsonrpc': '2.0', 'id': 98, 'error': {'code': -32603, 'message': 'MCP backend rejected the request (status=429).'}}
 - cellules/C05-T1-r1/incident.json : AssertionError ; voir trace et amendement de la cellule.
 - cellules/C08-T4-r1/incident.json : Instance de campagne encore active ; verrou conservé
+- cellules/C08-T8-r1/incident.json : preparation-applicative-native-save exit 1; voir journaux locaux
 - publication/incident-20261023T0915.json : AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.
 - publication/incident-clone-v12-crlf.json : Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
@@ -117,21 +122,21 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:03:15.584479+00:00",
-  "next_cell": "C08-T8-r1",
+  "state": "ARRET_INCIDENT",
+  "utc": "2026-10-23T15:05:16.324204+00:00",
+  "next_cell": "C01-T1-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T7-r1",
-  "last_result": "PROTEGE_NON_ACCOMPLI",
-  "last_reason": "",
-  "incident_cell": null
+  "last_cell": "C08-T8-r1",
+  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
+  "last_reason": "preparation-applicative-native-save exit 1; voir journaux locaux",
+  "incident_cell": "C08-T8-r1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C08-T8-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_INCIDENT. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T1-r1. Aucune tâche du coffre modifiée.

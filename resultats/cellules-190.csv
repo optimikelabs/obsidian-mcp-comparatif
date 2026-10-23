@@ -14,7 +14,7 @@ order,series,candidate,task,repetition,cell_id,status,verdict,reason
 13,1,C08,T5,1,C08-T5-r1,JOUE,PROTEGE_NON_ACCOMPLI,
 14,1,C08,T6,1,C08-T6-r1,NON_JOUE,NON_EXECUTE_ENVIRONNEMENT,YAML_VALEUR_OU_TYPE
 15,1,C08,T7,1,C08-T7-r1,JOUE,PROTEGE_NON_ACCOMPLI,
-16,1,C08,T8,1,C08-T8-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
+16,1,C08,T8,1,C08-T8-r1,NON_JOUE,NON_EXECUTE_ENVIRONNEMENT,preparation-applicative-native-save exit 1; voir journaux locaux
 17,1,C01,T1,1,C01-T1-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 18,1,C01,T2,1,C01-T2-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 19,1,C01,T3,1,C01-T3-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
