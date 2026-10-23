@@ -1,0 +1,49 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792769653679,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0108372cfc9940f3016adb7e7ffa8c8191a45101a9350528c7",
+        "progressToken": 2
+      },
+      "name": "vault_read",
+      "arguments": {
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"tags\": [],\n  \"frontmatter\": {\n    \"type\": \"note\",\n    \"parent\": \"[[Projet témoin — Test MCP]]\"\n  },\n  \"stat\": {\n    \"ctime\": 1792769662536,\n    \"mtime\": 1792769662537,\n    \"size\": 115\n  },\n  \"path\": \"Efforts/Projets/Compte rendu — Essai MCP.md\",\n  \"content\": \"---\\ntype: note\\nparent: \\\"[[Projet témoin — Test MCP]]\\\"\\n---\\n# Compte rendu — Essai MCP\\n\\nTrois captures triées.\\n\",\n  \"links\": [\n    \"Efforts/Projets/Projet témoin — Test MCP.md\"\n  ],\n  \"backlinks\": [],\n  \"unresolvedLinks\": [],\n  \"version\": \"65be47\"\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

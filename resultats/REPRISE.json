@@ -1,13 +1,13 @@
 {
   "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:31:35.695316+00:00",
-  "next_cell": "C01-T4-r1",
+  "utc": "2026-10-23T15:34:46.585402+00:00",
+  "next_cell": "C01-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C01-T3-r1",
+  "last_cell": "C01-T4-r1",
   "last_result": "REUSSI_VERIFIE",
   "last_reason": "",
   "incident_cell": null

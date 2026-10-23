@@ -1,0 +1,11 @@
+{
+  "task_id": "T4",
+  "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+  "etat": "applique",
+  "extrait": "# Compte rendu — Essai MCP\n\nTrois captures triées.\n",
+  "proprietes": {
+    "type": "note",
+    "parent": "[[Projet témoin — Test MCP]]"
+  },
+  "message": "Création sans écrasement ; corps et propriétés vérifiés par relecture MCP."
+}

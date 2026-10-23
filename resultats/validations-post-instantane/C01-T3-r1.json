@@ -1,0 +1,14 @@
+{
+  "cell_id": "C01-T3-r1",
+  "result_sha256": "65d95f7e82977eb7b95e4a44f0ca8375ea6472348c9547b9abc90207c4f09f9c",
+  "judged_tree_sha256": "3fed215c579a6bedc46571187ae2c2ce111a820374dbb34f0297c42aa59c6cf5",
+  "closed_tree_sha256": "49a6b21e2e39cb6ae92f1b82cb48088f428066c08422c680a2e3877f2c27ba3f",
+  "technical_differences": [
+    ".obsidian/workspace.json"
+  ],
+  "decision": {
+    "validation": "VALIDEE",
+    "verdict": "REUSSI_VERIFIE",
+    "note": "Seul workspace.json après instantané, chemin technique déclaré avant mesure ; aucune différence métier"
+  }
+}

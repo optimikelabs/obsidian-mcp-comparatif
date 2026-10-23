@@ -1,0 +1,16 @@
+{
+  "attempts": [
+    {
+      "requested": true,
+      "method": "Browser.close",
+      "vault_verified": true,
+      "response": {
+        "connection_ended_after_request": true
+      },
+      "attempt": 1,
+      "observed_main_pid": 40740
+    }
+  ],
+  "remaining": [],
+  "wait_seconds_per_attempt": 15
+}

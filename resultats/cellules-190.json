@@ -995,8 +995,54 @@
     "repetition": 1,
     "cell_id": "C01-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
-    "status": "NON_JOUE",
-    "reason": "Cellule non commencée ; voir le point de reprise."
+    "status": "JOUE",
+    "protocol_version": "1.4",
+    "verdict": "REUSSI_VERIFIE",
+    "reason": "",
+    "started_utc": 1792769605.8092487,
+    "finished_utc": 1792769676.3513634,
+    "turns": [
+      {
+        "returncode": 0,
+        "duration_s": 17.64100000000144,
+        "stop_reason": null,
+        "forbidden_tool_events": [],
+        "thread_id": "<IDENTIFIANT_MASQUE>",
+        "usage": [
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 48765,
+              "cached_input_tokens": 42880,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 302,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "adapter_sha256": "9bc9c05aaed09513273c2cf554aa2496e43eaa4ed934aa6af2cb85b1c07966ce",
+    "candidate_calls": 2,
+    "wall_s": 70.54211473464966,
+    "used_tools": [
+      "vault_write",
+      "vault_read"
+    ],
+    "catalogue_bytes": 39545,
+    "catalogue_tools": 24,
+    "model_s": 25.21900000000096,
+    "planned_editor_s": 0,
+    "price_usd": null,
+    "interventions": {
+      "setup": 1,
+      "planned_editor": 0,
+      "planned_reconnect": 0,
+      "human_help": 0,
+      "repair_by_controller": 0
+    },
+    "stop_campaign": false
   },
   {
     "order": 21,
