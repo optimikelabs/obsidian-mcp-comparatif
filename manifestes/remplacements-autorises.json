@@ -30,5 +30,13 @@
     "authorization": "<MASQUE>",
     "original_result_sha256": "2d6005d2acd0bfd44a6eaa94ddcedc8c8210f7c7af20734827bb7a017991c6ba",
     "replacement_limit": 1
+  },
+  {
+    "original": "C08-T8-r1",
+    "series": 1,
+    "source": "NOTE-EXPLOITATION-20261023-C5.md",
+    "authorization": "<MASQUE>",
+    "original_result_sha256": "cc6f4f7ee584455717050b15eb597b95ee1cfa9fdb5c305d0278fa9959cab864",
+    "replacement_limit": 1
   }
 ]

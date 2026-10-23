@@ -1,6 +1,6 @@
 {
-  "state": "ARRET_INCIDENT",
-  "utc": "2026-10-23T15:05:16.324204+00:00",
+  "state": "PRET_APRES_INCIDENT_BANC",
+  "utc": "2026-10-23T15:07:40.313154+00:00",
   "next_cell": "C01-T1-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -9,6 +9,7 @@
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C08-T8-r1",
   "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "preparation-applicative-native-save exit 1; voir journaux locaux",
-  "incident_cell": "C08-T8-r1"
+  "last_reason": "Timeout de préparation applicative native-save avant candidat et client ; règle générale C5 16 h 04 appliquée.",
+  "replacement_registered": true,
+  "next_action": "Reprendre C01-T1-r1 ; remplacement C08-T8-r1 en fin de série 1 ; priorité produit 1.0.7."
 }

@@ -1,0 +1,45 @@
+{
+  "cell_id": "C08-T8-r1",
+  "reason": "Timeout de préparation applicative native-save avant candidat et client ; règle générale C5 16 h 04 appliquée.",
+  "conditions": {
+    "no_business_change": true,
+    "clear_bench_cause": true,
+    "not_previously_replaced": true
+  },
+  "format_only": [
+    {
+      "path": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+      "before_sha256": "adc0a3566a599bafc312642d6e7879fbab2d24808bad32d02a6ef5a2ab4a780f",
+      "after_sha256": "b84bc4014f8fc4727ce15ee242618cfa5c2b8dbd71fcb4632439c476415f4e93",
+      "only_CRLF_to_LF": true,
+      "CRLF_before": 124,
+      "CRLF_after": 0
+    }
+  ],
+  "comparison": "preparation-C08-T8-r1-comparison.json",
+  "result_sha256": "cc6f4f7ee584455717050b15eb597b95ee1cfa9fdb5c305d0278fa9959cab864",
+  "candidate_started": false,
+  "client_started": false,
+  "replacement_limit": 1,
+  "replacement_series": 1,
+  "decision_source": "NOTE-EXPLOITATION-20261023-C5.md",
+  "closure": [
+    {
+      "attempts": [
+        {
+          "requested": true,
+          "method": "Browser.close",
+          "vault_verified": true,
+          "response": {
+            "connection_ended_after_request": true
+          },
+          "attempt": 1,
+          "observed_main_pid": 26092
+        }
+      ],
+      "remaining": [],
+      "wait_seconds_per_attempt": 15
+    }
+  ],
+  "next_cell": "C01-T1-r1"
+}
