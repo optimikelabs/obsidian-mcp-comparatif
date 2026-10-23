@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "success": true,
+      "task": "T5",
+      "mode": "positive",
+      "real_ui": true,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T6",
+      "mode": "positive",
+      "real_ui": true,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T7",
+      "mode": "positive",
+      "real_ui": true,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T7b",
+      "mode": "positive",
+      "real_ui": true,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    }
+  ],
+  "utc": 1792762824.5842583,
+  "real_ui": true,
+  "scope": "Serveur factice uniquement, aucun score candidat."
+}

@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "task": "T7b",
+  "mode": "positive",
+  "real_ui": true,
+  "human_snapshot": true,
+  "ui_disk_verified": true,
+  "dispatch_after_save": true
+}

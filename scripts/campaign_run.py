@@ -24,6 +24,12 @@ def checkpoint(state,next_row,**kw):
           'command':'python -X utf8 scripts/campaign_run.py','preservation':'Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.',**kw})
 
 def wait_resources(row):
+    # Priorité explicite au re-test produit Hub 0.5 le 23/10, heure locale du poste.
+    now=datetime.datetime.now()
+    if now.date()==datetime.date(2026,10,23) and datetime.time(14,5)<=now.time()<datetime.time(15,30):
+        checkpoint('ATTENTE_PRIORITE_HUB_05',row)
+        print(json.dumps({'waiting_product_priority':row['cell_id'],'until_local':'2026-10-23T15:30:00'}),flush=True)
+        while datetime.datetime.now()<datetime.datetime(2026,10,23,15,30):time.sleep(30)
     # Instruction Mike du 23/10 : attendre le verrou, sans jamais le forcer.
     while LOCK.exists():
         print(json.dumps({'waiting_lock':row['cell_id'],'utc':memory()['utc']}),flush=True)
@@ -46,7 +52,8 @@ def wait_resources(row):
         else:
             checkpoint('ARRET_MEMOIRE_APRES_120_MIN',row,memory=m)
             publish('Checkpoint: seuil mémoire non atteint en deux heures');return False
-    if LOCK.exists():return wait_resources(row)
+    now=datetime.datetime.now()
+    if LOCK.exists() or (now.date()==datetime.date(2026,10,23) and datetime.time(14,5)<=now.time()<datetime.time(15,30)):return wait_resources(row)
     return True
 
 def main():
@@ -55,6 +62,9 @@ def main():
     assert readj(RUN/'CLIENT-QUALIFICATION.json')['qualified'] and readj(RUN/'CLIENT-T8-QUALIFICATION.json')['qualified'] and readj(RUN/'FDM-QUALIFICATION.json')['qualified']
     assert readj(KIT/'preuves/tests-fdm-cache.json')['success']
     assert git('show','HEAD:AMENDEMENT-V1.2-C5.md')
+    assert git('show','HEAD:AMENDEMENT-V1.3-C5.md')
+    assert readj(KIT/'preuves/tests-injection-v13.json')['success']
+    assert readj(KIT/'preuves/tests-injection-v13-ui.json')['success']
     assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD')
     boundary=0
     if a.after_incident:

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-23T12:09:33.990607+00:00",
+  "files": {
+    "campaign_runtime.py": "4aa3cd23eb2e6a81bd5c7d3114353cbfe382173e8994a9a1d07c0c43a329ad52",
+    "relay.py": "2a795a14b04f2708ca9bb540786f11c49a81f94fd245a9abd197fbdf0f0f5f92",
+    "ui_cdp.mjs": "bdececf5f821cce3627b42ec9ea32582466e0fc1b098a56bcd534ac280e7840a",
+    "client_cli.py": "ffba1285999c39d6a595378148157d60eb7e4fc3912b762687edf2290cb316d3",
+    "campaign_cell.py": "7820e4cef5fb0d977cf74d979e19902b271c6d8db7bb4342dcedd4e2fea9d21e",
+    "test_injection_v13.py": "c59bdde1eaf592b2e7a1243c464fa462241d220b0ab48cdb1294074fe9bbb55c"
+  },
+  "synthetic_checks": 17,
+  "ui_qualified": true,
+  "ui_root": "<CHEMIN_PRIVE>"
+}

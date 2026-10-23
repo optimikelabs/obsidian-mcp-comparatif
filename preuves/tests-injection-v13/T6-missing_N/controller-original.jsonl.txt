@@ -1,0 +1,2 @@
+{"utc": "2026-10-23T12:07:47.359471+00:00", "event": "memory_1s", "commitFreeBytes": 21073240064, "availableBytes": 9259958272, "admitted": true, "stop": false}
+{"utc": "2026-10-23T12:07:48.361610+00:00", "event": "memory_1s", "commitFreeBytes": 20858036224, "availableBytes": 9104449536, "admitted": true, "stop": false}

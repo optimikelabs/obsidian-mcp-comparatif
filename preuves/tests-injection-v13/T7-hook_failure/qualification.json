@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "task": "T7",
+  "mode": "hook_failure",
+  "verdict": "INJECTION_INVALIDE",
+  "candidate_mutations": 0,
+  "second_mutation_blocked": true,
+  "preparation_blocked": true,
+  "disk_unchanged": true
+}

@@ -1,0 +1,6 @@
+{
+  "reason": "Un fragment du journal secondaire controller.jsonl T6 positif UI est tronqué ; original et hash conservés. Preuves d’injection, gates mémoire et arrêts vérifiés. Aucun résultat candidat concerné.",
+  "scope": "Qualification factice/UI v1.3",
+  "evidence": "preuves/v13-ui-sortie.json",
+  "candidate_result": false
+}

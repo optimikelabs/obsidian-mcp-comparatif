@@ -68,22 +68,22 @@
     {
       "event": "response_delivered",
       "seq": 1,
-      "monotonic_ns": 178102625000000,
-      "utc": 1792747061.5746956,
+      "monotonic_ns": 303031000000,
+      "utc": 1792757304.3677957,
       "id": 1
     },
     {
       "event": "response_delivered",
       "seq": 2,
-      "monotonic_ns": 178102640000000,
-      "utc": 1792747061.5879138,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.3729877,
       "id": 2
     },
     {
       "event": "tool_request",
       "seq": 3,
-      "monotonic_ns": 178102640000000,
-      "utc": 1792747061.5889137,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.3750627,
       "id": 3,
       "tool": "read",
       "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"
@@ -91,8 +91,8 @@
     {
       "event": "upstream_response",
       "seq": 4,
-      "monotonic_ns": 178102640000000,
-      "utc": 1792747061.5919104,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.378275,
       "id": 3,
       "tool": "read",
       "duration_s": 0.0,
@@ -100,10 +100,19 @@
       "is_error": false
     },
     {
-      "event": "mcp_read_response",
+      "event": "candidate_note_access",
       "seq": 5,
-      "monotonic_ns": 178102640000000,
-      "utc": 1792747061.5929112,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.378275,
+      "id": 3,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 6,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.3802712,
       "id": 3,
       "path": "Efforts/Projets/Projet témoin — Test MCP.md",
       "content_sha256": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46",
@@ -111,9 +120,9 @@
     },
     {
       "event": "response_delivered",
-      "seq": 6,
-      "monotonic_ns": 178102640000000,
-      "utc": 1792747061.5949366,
+      "seq": 7,
+      "monotonic_ns": 303046000000,
+      "utc": 1792757304.3802712,
       "id": 3
     }
   ],

@@ -1,18 +1,18 @@
 {
-  "state": "ARRET_INCIDENT_INJECTION_T5_A_QUALIFIER",
-  "utc": "2026-10-23T11:17:48.787647+00:00",
+  "state": "V13_QUALIFIE_PRET_PUBLICATION_PUIS_C05_T6",
+  "utc": "2026-10-23T13:43:37.699684+00:00",
   "next_cell": "C05-T6-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": null,
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T5-r1 --series 1 --max-cells 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C05-T5-r1",
   "last_result": "INJECTION_INVALIDE",
   "last_reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
   "incident_cell": "C05-T5-r1",
   "next_order": 6,
-  "next_action": "Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise.",
+  "next_action": "Vérifier la publication du commit v1.3, puis reprendre C05-T6-r1 avec verrou libre et seuils mémoire respectés.",
   "memory": {
     "utc": "2026-10-23T11:17:48.787647+00:00",
     "commitFreeBytes": 6108565504,
@@ -35,5 +35,15 @@
   "C06": "Non tenté ; unique nouvelle admission seulement après série 2, 30 minutes au plus sous conditions mémoire.",
   "campaign_processes_observed": [],
   "bitnet": "Non relancé ; relance réservée à Mike.",
-  "resume_requires_public_amendment": true
+  "resume_requires_public_amendment": true,
+  "qualification_v13": {
+    "synthetic_checks": 17,
+    "real_ui_checks": 4,
+    "regression_checks": 106,
+    "qualified": true
+  },
+  "replacement_C05_T5": "Un seul remplacement à la fin de la série 1, après qualification ; original conservé.",
+  "product_priority_until_local": "2026-10-23T15:30:00",
+  "network_interruption": "Coupure DNS signalée par C5, sans cellule lancée ; aucune qualification rejouée.",
+  "product_lock_observed": "margelle-produit re-test 07 Hub 0.5 ; début 15 h 18 ; fin estimée 16 h 33"
 }

@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 const [configPath, action, task] = process.argv.slice(2);
 const cfg=JSON.parse(fs.readFileSync(configPath,'utf8'));
+if(action==='inject' && (!['T5','T6','T7','T7b'].includes(task) || typeof cfg.N!=='string' || !cfg.N || typeof cfg.P!=='string' || !cfg.P)) throw Error('Cibles UI N/P absentes ou tâche invalide');
 if (![27346].includes(cfg.port)) throw Error('Port non autorisé');
 const pages=(await(await fetch(`http://127.0.0.1:${cfg.port}/json/list`)).json()).filter(p=>p.type==='page');
 if(pages.length!==1) throw Error(`Cible ambiguë : ${pages.length} pages`);

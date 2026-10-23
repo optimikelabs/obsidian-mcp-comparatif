@@ -40,7 +40,7 @@ def executable():
     if not npm.is_file():raise RuntimeError('Binaire Codex 0.160.1 à relocaliser, aucune substitution automatique')
     return npm
 
-def run_turn(out,prompt,home,cwd,monitor,turn='01',resume=None,max_seconds=300,disconnect=None,budget_extension=None):
+def run_turn(out,prompt,home,cwd,monitor,turn='01',resume=None,max_seconds=300,disconnect=None,budget_extension=None,injection_failed=None):
     import subprocess
     binary=executable();args=[str(binary),'exec']
     if resume:args+=['resume',resume]
@@ -52,6 +52,7 @@ def run_turn(out,prompt,home,cwd,monitor,turn='01',resume=None,max_seconds=300,d
         proc=subprocess.Popen(args,env=env,cwd=cwd,stdout=stdout,stderr=stderr,stdin=subprocess.DEVNULL)
         record(out,'measurement_client_started',pid=proc.pid,turn=turn,binary_sha256=sha(binary.read_bytes()))
         while proc.poll() is None:
+            if injection_failed is not None and injection_failed.is_set():reason='INJECTION_INVALIDE';break
             if monitor.stopped.is_set():reason='ARRET_MEMOIRE_SOUS_2GIO';break
             if disconnect is not None and disconnect.lost:reason='T8_REPLY_LOST';break
             if time.monotonic()-start>=max_seconds+(budget_extension() if budget_extension else 0):reason='BUDGET_5_MIN';break

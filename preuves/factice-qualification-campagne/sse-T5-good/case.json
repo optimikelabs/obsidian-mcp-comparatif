@@ -73,22 +73,22 @@
     {
       "event": "response_delivered",
       "seq": 1,
-      "monotonic_ns": 178109625000000,
-      "utc": 1792747068.5793505,
+      "monotonic_ns": 309812000000,
+      "utc": 1792757311.1443367,
       "id": 1
     },
     {
       "event": "response_delivered",
       "seq": 2,
-      "monotonic_ns": 178109625000000,
-      "utc": 1792747068.5833695,
+      "monotonic_ns": 309812000000,
+      "utc": 1792757311.1509197,
       "id": 2
     },
     {
       "event": "tool_request",
       "seq": 3,
-      "monotonic_ns": 178109640000000,
-      "utc": 1792747068.5964353,
+      "monotonic_ns": 309828000000,
+      "utc": 1792757311.1539195,
       "id": 3,
       "tool": "create",
       "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"
@@ -96,23 +96,23 @@
     {
       "event": "request_held",
       "seq": 4,
-      "monotonic_ns": 178109640000000,
-      "utc": 1792747068.5970368,
+      "monotonic_ns": 309828000000,
+      "utc": 1792757311.1539195,
       "id": 3,
       "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716"
     },
     {
       "event": "ui_disk_verified",
       "seq": 5,
-      "monotonic_ns": 178109656000000,
-      "utc": 1792747068.6040618,
+      "monotonic_ns": 309843000000,
+      "utc": 1792757311.1699986,
       "snapshot_sha256": "8a71be580fa48b259c83c558275c96dfde6acb9c3614a05d1436e2a018e639e8"
     },
     {
       "event": "dispatch",
       "seq": 6,
-      "monotonic_ns": 178109656000000,
-      "utc": 1792747068.6060407,
+      "monotonic_ns": 309843000000,
+      "utc": 1792757311.170998,
       "id": 3,
       "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716",
       "kind": "mutation"
@@ -120,33 +120,33 @@
     {
       "event": "upstream_response",
       "seq": 7,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6180418,
+      "monotonic_ns": 309843000000,
+      "utc": 1792757311.1744392,
       "id": 3,
       "tool": "create",
-      "duration_s": 0.015000000013969839,
+      "duration_s": 0.0,
       "bytes": 352,
       "is_error": true
     },
     {
       "event": "first_snapshot",
       "seq": 8,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6240423,
+      "monotonic_ns": 309843000000,
+      "utc": 1792757311.1809566,
       "snapshot_sha256": "8a71be580fa48b259c83c558275c96dfde6acb9c3614a05d1436e2a018e639e8"
     },
     {
       "event": "response_delivered",
       "seq": 9,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6240423,
+      "monotonic_ns": 309843000000,
+      "utc": 1792757311.1809566,
       "id": 3
     },
     {
       "event": "tool_request",
       "seq": 10,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6260424,
+      "monotonic_ns": 309859000000,
+      "utc": 1792757311.183517,
       "id": 4,
       "tool": "read",
       "arguments_sha256": "1f5174a45672c333ba9a814d77b8a24bb73d45f5eb02904ffdfd096a41171d0b"
@@ -154,8 +154,8 @@
     {
       "event": "upstream_response",
       "seq": 11,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6280682,
+      "monotonic_ns": 309859000000,
+      "utc": 1792757311.1881113,
       "id": 4,
       "tool": "read",
       "duration_s": 0.0,
@@ -163,10 +163,19 @@
       "is_error": false
     },
     {
-      "event": "mcp_read_response",
+      "event": "candidate_note_access",
       "seq": 12,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6290414,
+      "monotonic_ns": 309859000000,
+      "utc": 1792757311.1881113,
+      "id": 4,
+      "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 13,
+      "monotonic_ns": 309859000000,
+      "utc": 1792757311.1896188,
       "id": 4,
       "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
       "content_sha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d",
@@ -174,9 +183,9 @@
     },
     {
       "event": "response_delivered",
-      "seq": 13,
-      "monotonic_ns": 178109671000000,
-      "utc": 1792747068.6290414,
+      "seq": 14,
+      "monotonic_ns": 309859000000,
+      "utc": 1792757311.1896188,
       "id": 4
     }
   ],

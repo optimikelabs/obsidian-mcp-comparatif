@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "task": "T5",
+      "owned_instance_stopped": true,
+      "lock_released": true,
+      "memory_gates": [
+        {
+          "utc": "2026-10-23T13:38:36.222480+00:00",
+          "event": "memory_gate",
+          "reason": "qualification_ui_v13",
+          "commitFreeBytes": 10876936192,
+          "availableBytes": 7150071808,
+          "admitted": true,
+          "stop": false
+        },
+        {
+          "utc": "2026-10-23T13:38:37.107632+00:00",
+          "event": "memory_gate",
+          "reason": "before_obsidian",
+          "commitFreeBytes": 10834890752,
+          "availableBytes": 7075749888,
+          "admitted": true,
+          "stop": false
+        }
+      ],
+      "controller_sha256": "38d3612607e9b16d4d5e73887707ee1b652a59853331ecd15458df05aee28446",
+      "invalid_secondary_log_lines": []
+    },
+    {
+      "task": "T6",
+      "owned_instance_stopped": true,
+      "lock_released": true,
+      "memory_gates": [
+        {
+          "utc": "2026-10-23T13:39:03.190887+00:00",
+          "event": "memory_gate",
+          "reason": "before_obsidian",
+          "commitFreeBytes": 10987470848,
+          "availableBytes": 7056371712,
+          "admitted": true,
+          "stop": false
+        }
+      ],
+      "controller_sha256": "c8924984691b4acbb2a5b1ac2ed8e1f867d5323b5cca41b194d817460484e244",
+      "invalid_secondary_log_lines": [
+        {
+          "line": 2,
+          "fragment": ", \"admitted\": true, \"stop\": false}"
+        }
+      ]
+    },
+    {
+      "task": "T7",
+      "owned_instance_stopped": true,
+      "lock_released": true,
+      "memory_gates": [
+        {
+          "utc": "2026-10-23T13:39:27.921896+00:00",
+          "event": "memory_gate",
+          "reason": "qualification_ui_v13",
+          "commitFreeBytes": 10850668544,
+          "availableBytes": 7042887680,
+          "admitted": true,
+          "stop": false
+        },
+        {
+          "utc": "2026-10-23T13:39:28.769430+00:00",
+          "event": "memory_gate",
+          "reason": "before_obsidian",
+          "commitFreeBytes": 10758995968,
+          "availableBytes": 6851485696,
+          "admitted": true,
+          "stop": false
+        }
+      ],
+      "controller_sha256": "94ecc897ff3f4c8d6b27e26baddc8009ecd0ea67f32e59d72158f72fe982d9af",
+      "invalid_secondary_log_lines": []
+    },
+    {
+      "task": "T7b",
+      "owned_instance_stopped": true,
+      "lock_released": true,
+      "memory_gates": [
+        {
+          "utc": "2026-10-23T13:39:54.038241+00:00",
+          "event": "memory_gate",
+          "reason": "qualification_ui_v13",
+          "commitFreeBytes": 10699710464,
+          "availableBytes": 6677762048,
+          "admitted": true,
+          "stop": false
+        },
+        {
+          "utc": "2026-10-23T13:39:54.816542+00:00",
+          "event": "memory_gate",
+          "reason": "before_obsidian",
+          "commitFreeBytes": 10697986048,
+          "availableBytes": 6559469568,
+          "admitted": true,
+          "stop": false
+        }
+      ],
+      "controller_sha256": "93ce95a14959debb9d92afb1e7df94f527970170bab8685d122bce26213b9cd0",
+      "invalid_secondary_log_lines": []
+    }
+  ],
+  "scope": "Journaux originaux conservés. Un fragment secondaire T6 tronqué ; reçus UI, snapshots, gates mémoire et fermetures vérifiés indépendamment."
+}

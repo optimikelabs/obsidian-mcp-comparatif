@@ -1,0 +1,171 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "success": true,
+      "task": "T5",
+      "mode": "positive",
+      "real_ui": false,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T5",
+      "mode": "missing_N",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T5",
+      "mode": "missing_P",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T5",
+      "mode": "hook_failure",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T6",
+      "mode": "positive",
+      "real_ui": false,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T6",
+      "mode": "missing_N",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T6",
+      "mode": "missing_P",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T6",
+      "mode": "hook_failure",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7",
+      "mode": "positive",
+      "real_ui": false,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T7",
+      "mode": "missing_N",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7",
+      "mode": "missing_P",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7",
+      "mode": "hook_failure",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7b",
+      "mode": "positive",
+      "real_ui": false,
+      "human_snapshot": true,
+      "ui_disk_verified": true,
+      "dispatch_after_save": true
+    },
+    {
+      "success": true,
+      "task": "T7b",
+      "mode": "missing_N",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7b",
+      "mode": "missing_P",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "task": "T7b",
+      "mode": "hook_failure",
+      "verdict": "INJECTION_INVALIDE",
+      "candidate_mutations": 0,
+      "second_mutation_blocked": true,
+      "preparation_blocked": true,
+      "disk_unchanged": true
+    },
+    {
+      "success": true,
+      "mode": "client_stop",
+      "stop_reason": "INJECTION_INVALIDE",
+      "no_model_started": true
+    }
+  ],
+  "utc": 1792757278.8701158,
+  "real_ui": false,
+  "scope": "Serveur factice uniquement, aucun score candidat."
+}

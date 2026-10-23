@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 11,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_text_patch_status",
+      "arguments": {
+        "planRef": "fake"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 11,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"phase\": \"terminal\", \"outcome\": \"committed\", \"postflight\": {\"status\": \"verified\"}}"
+        }
+      ]
+    }
+  }
+}

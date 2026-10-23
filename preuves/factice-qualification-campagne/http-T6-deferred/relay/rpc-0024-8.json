@@ -17,7 +17,7 @@
       "content": [
         {
           "type": "text",
-          "text": "{\"state\": \"committed\", \"operation_id\": \"fake-operation\"}"
+          "text": "{\"state\": \"pending\", \"operation_id\": \"fake-operation\"}"
         }
       ]
     }

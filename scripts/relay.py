@@ -101,6 +101,9 @@ class LegacySSE:
         except (AttributeError,OSError):pass
         threading.Thread(target=self.response.close,daemon=True).start()
 
+class InjectionInvalid(RuntimeError):
+    pass
+
 class Relay:
     def __init__(self,upstream,vault,task,out,adapter,ui=None,initialization=None):
         self.upstream=upstream;self.vault=scoped(vault);self.task=task;self.out=scoped(out);self.out.mkdir(parents=True,exist_ok=True)
@@ -108,9 +111,15 @@ class Relay:
         self.before=snapshot(vault);writej(self.out/'before.json',self.before)
         self.human=self.first=self.cut=None
         self.initial_read=None
+        self.injection_failed=threading.Event();self.injection_error=None
         self.initialization=initialization
         self.safety_check=lambda:None
         self.held_since=None;self.held_seconds=0
+    def invalidate_injection(self,error):
+        self.injection_error=str(error)
+        self.injection_failed.set()
+        self.event('injection_invalid',verdict='INJECTION_INVALIDE',error=self.injection_error)
+        writej(self.out/'injection-invalid.json',{'verdict':'INJECTION_INVALIDE','error':self.injection_error,'utc':time.time(),'mutations_blocked':True})
     def budget_extension(self):
         return min(60,self.held_seconds+(time.monotonic()-self.held_since if self.held_since is not None else 0))
     def event(self,name,**fields):
@@ -153,6 +162,9 @@ class Relay:
             preparation=call and (name in self.adapter.get('preparation_tools',[]) or matches(self.adapter.get('preparation_rules',[])))
             mutation=call and not preparation and (name in self.adapter['mutation_tools'] or matches(self.adapter.get('mutation_rules',[])))
             read=call and (name in self.adapter['read_tools'] or matches(self.adapter.get('read_rules',[])))
+            if self.injection_failed.is_set() and (mutation or preparation):
+                self.event('mutation_blocked_after_injection_failure',id=req.get('id'),tool=name)
+                raise InjectionInvalid(self.injection_error)
             if self.pending_first and mutation:
                 rel=N if self.task=='T5' else P
                 if (self.vault/rel).read_bytes()!=data(self.human,rel):self.first_snapshot()
@@ -161,17 +173,21 @@ class Relay:
             selected=(mutation and not self.injected and self.task in ('T5','T6','T7','T8')) or (
                 self.task=='T7b' and not self.injected and (preparation or mutation))
             if selected:
-                if self.task=='T7b':
-                    if self.initial_read is None:raise RuntimeError('T7b : aucune lecture MCP de P livrée avant plan/écriture')
-                    if not read_matches(self.initial_read,(self.vault/P).read_bytes()):raise RuntimeError('T7b : disque divergent avant injection')
-                self.injected=True
-                if self.task!='T8':
-                    self.event('request_held',id=req.get('id'),request_sha256=digest)
-                    if self.ui is None:raise RuntimeError('Aucune retouche UI qualifiée configurée')
-                    self.held_since=time.monotonic()
-                    try:self.ui(self.task)
-                    finally:self.held_seconds+=time.monotonic()-self.held_since;self.held_since=None
-                    self.human=self.capture('human');self.event('ui_disk_verified',snapshot_sha256=manifest(self.human)['tree_sha256'])
+                try:
+                    if self.task=='T7b':
+                        if self.initial_read is None:raise RuntimeError('T7b : aucune lecture MCP de P livrée avant plan/écriture')
+                        if not read_matches(self.initial_read,(self.vault/P).read_bytes()):raise RuntimeError('T7b : disque divergent avant injection')
+                    if self.task!='T8':
+                        self.event('request_held',id=req.get('id'),request_sha256=digest)
+                        if self.ui is None:raise RuntimeError('Aucune retouche UI qualifiée configurée')
+                        self.held_since=time.monotonic()
+                        try:self.ui(self.task)
+                        finally:self.held_seconds+=time.monotonic()-self.held_since;self.held_since=None
+                        self.human=self.capture('human');self.event('ui_disk_verified',snapshot_sha256=manifest(self.human)['tree_sha256'])
+                    self.injected=True
+                except Exception as error:
+                    self.invalidate_injection(error)
+                    raise InjectionInvalid(str(error)) from error
                 self.safety_check()
                 self.event('dispatch',id=req.get('id'),request_sha256=digest,kind='preparation' if preparation else 'mutation')
             elif mutation:self.event('mutation_dispatch',id=req.get('id'),request_sha256=digest)
@@ -280,6 +296,10 @@ def serve(relay,port):
 def editor_hook(config):
     def apply(task):
         cfg=readj(config);vault=Path(cfg['vault'])
+        if task not in ('T5','T6','T7','T7b'):raise ValueError('Tâche UI inconnue')
+        for key,expected in (('N',N),('P',P)):
+            if cfg.get(key)!=expected:raise ValueError('Cible UI absente ou divergente : '+key)
+            target(vault,cfg[key])
         if task=='T5':
             r=subprocess.run(['node',str(KIT/'scripts'/'ui_cdp.mjs'),str(config),'inject',task],capture_output=True,text=True,encoding='utf-8',timeout=30)
             if r.returncode:raise RuntimeError(r.stderr)

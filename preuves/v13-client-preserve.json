@@ -1,0 +1,6 @@
+{
+  "cli_version_observed": "codex-cli 0.160.1",
+  "binary_sha256": "9e7c59c05cc1ce5677b1f94e835b2ac038ca3be14504e78d558eacdb0ea3f55d",
+  "same_as_C05_T5_r1": true,
+  "model_availability": "Aucune nouvelle invocation modèle ; sera vérifiée pendant la cellule, arrêt sans substitution en cas d’indisponibilité."
+}

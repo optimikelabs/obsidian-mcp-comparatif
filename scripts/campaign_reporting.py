@@ -23,6 +23,8 @@ def build():
             row['reason']=a.get('reason','Cellule non commencée.') if a['status']=='NON_EXECUTE_ENVIRONNEMENT' else 'Cellule non commencée ; voir le point de reprise.'
             if a['status']=='NON_EXECUTE_ENVIRONNEMENT':row['verdict']='NON_EXECUTE_ENVIRONNEMENT'
     writej(RUN/'cellules-190.json',rows);writej(RUN/'admissions.json',admissions)
+    replacements=[readj(p) for p in sorted((RUN/'cellules').glob('*-remplacement-1/result.json'))]
+    writej(RUN/'remplacements.json',replacements)
     columns=['order','series','candidate','task','repetition','cell_id','status','verdict','reason']
     with (RUN/'cellules-190.csv').open('w',encoding='utf-8',newline='') as f:
         w=csv.DictWriter(f,fieldnames=columns,extrasaction='ignore');w.writeheader();w.writerows(rows)
@@ -52,7 +54,12 @@ def build():
         text+='## Reprise sous v1.2\n\n'+readj(v12).get('summary','')+'\n\n'
         text+='C05-T2-r1 et C05-T3-r1 restent REUSSI_VERIFIE ; C05-T4-r1 reste EFFET_NON_VOULU. Ces trois cellules ont été jouées sous la règle v1.1. Note au verdict de C05-T4-r1 : « dû au cache FDM, surface déclarée par l’amendement v1.2 après cet essai ». Cette note ne reclasse pas le verdict et ne prouve pas le writer runtime.\n\n'
         text+='Le cache FDM est déclaré pour les dix candidats sous la règle conditionnelle v1.2 : seulement lastAccessed et hash des entrées des notes ouvertes ou modifiées ; aucune entrée ajoutée/retirée, aucun autre champ ni autre note. Contrôle à chaque snapshot, y compris les écarts temporaires. Voir AMENDEMENT-V1.2-C5.md, preuves/tests-fdm-cache.json et la note adjacente à C05-T4-r1.\n\n'
+    if (KIT/'AMENDEMENT-V1.3-C5.md').exists():text+='## Amendement v1.3\n\nC05-T5-r1 reste INJECTION_INVALIDE : défaut du banc d’essai (cibles N/P absentes, relais), corrigé par l’amendement v1.3. Ce n’est pas un résultat du candidat. T2/T3/T4 ne dépendaient pas des cibles absentes ; leurs verdicts v1.1 sont conservés. Remplacements T1/T5 seulement après série 1 ; nouvelle admission C06 seulement après série 2. Qualifications et preuves : preuves/tests-injection-v13.json et preuves/tests-injection-v13-ui.json.\n\n'
     if diagnostic.exists():text+='## Historique — diagnostic et arrêt sous v1.1\n\nLes nombres et le point de reprise de cette section décrivent l’arrêt historique ; l’état courant figure en tête et dans Reprise exacte.\n\n'+diagnostic.read_text(encoding='utf-8')+'\n\n'
+    if replacements:
+        text+='## Remplacements uniques autorisés après série 1\n\nLes verdicts originaux et leurs dossiers sont conservés. Ces essais sont présentés séparément ; aucun original n’est reclassé.\n\n| Essai de remplacement | Original conservé | État | Verdict |\n|---|---|---|---|\n'
+        for r in replacements:text+='| '+r['cell_id']+' | '+r['replacement_of']+' | '+r['status']+' | '+r['verdict']+' |\n'
+        text+='\n'
     text+='## Admissions\n\n| Candidat | État | Preuve ou reste à faire |\n|---|---|---|\n'
     for a in admissions:text+='| '+a['candidate']+' | '+a['status']+' | '+a.get('reason','Nonce/catalogue acquis ; schémas à qualifier.').replace('|','/')+' |\n'
     text+='\n## Limites\n\nUn agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margelle commercial vendu par l’auteur d’Optimike ; corpus synthétique publié mais non rejoué en campagne. T1–T4 : une seule répétition. Trois répétitions de T5/T6/T7/T7b/T8 ne donnent pas un taux de risque rare. Les non-joués ne sont ni réussites ni échecs fonctionnels. Aucun contact mainteneur, aucune publication hors de ce dépôt.\n\n'
@@ -68,7 +75,7 @@ def build():
 
 def project():
     public=KIT/'public/resultats'
-    for rel in ('RAPPORT-CAMPAGNE.md','cellules-190.json','cellules-190.csv','admissions.json','REPRISE.json'):
+    for rel in ('RAPPORT-CAMPAGNE.md','cellules-190.json','cellules-190.csv','admissions.json','REPRISE.json','remplacements.json'):
         p=RUN/rel
         if p.exists():sanitize_file(p,public/rel)
     for cid in (f'C{i:02}' for i in range(1,11)):

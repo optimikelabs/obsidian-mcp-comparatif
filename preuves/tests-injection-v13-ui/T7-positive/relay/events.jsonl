@@ -1,0 +1,12 @@
+{"event": "tool_request", "seq": 1, "monotonic_ns": 5787734000000, "utc": 1792762789.2773285, "id": 1, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 2, "monotonic_ns": 5787734000000, "utc": 1792762789.289796, "id": 1, "tool": "read", "duration_s": 0.0, "bytes": 922, "is_error": false}
+{"event": "candidate_note_access", "seq": 3, "monotonic_ns": 5787750000000, "utc": 1792762789.2907968, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 4, "monotonic_ns": 5787750000000, "utc": 1792762789.2907968, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "6d7a9f6084e648688184f33109281d4e2d2a7536e0ebc1b8f56e48a7e2c3761e", "response_received": true}
+{"event": "response_delivered", "seq": 5, "monotonic_ns": 5787750000000, "utc": 1792762789.2937965, "id": 1}
+{"event": "tool_request", "seq": 6, "monotonic_ns": 5787750000000, "utc": 1792762789.304891, "id": 2, "tool": "patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "request_held", "seq": 7, "monotonic_ns": 5787765000000, "utc": 1792762789.3058913, "id": 2, "request_sha256": "a57eb1dba0ec209a2ce69027954d45c5c6b15d1fd37be2b47c4a9186b6cb3ec2"}
+{"event": "ui_disk_verified", "seq": 8, "monotonic_ns": 5788546000000, "utc": 1792762790.0951, "snapshot_sha256": "a9fa862349d3433be79b65b1abace2f71cbcbc024a9b1df04bf746ad81178357"}
+{"event": "dispatch", "seq": 9, "monotonic_ns": 5788546000000, "utc": 1792762790.0951, "id": 2, "request_sha256": "a57eb1dba0ec209a2ce69027954d45c5c6b15d1fd37be2b47c4a9186b6cb3ec2", "kind": "mutation"}
+{"event": "upstream_response", "seq": 10, "monotonic_ns": 5788546000000, "utc": 1792762790.0981061, "id": 2, "tool": "patch", "duration_s": 0.0, "bytes": 109, "is_error": true}
+{"event": "first_snapshot", "seq": 11, "monotonic_ns": 5789203000000, "utc": 1792762790.750058, "snapshot_sha256": "a9fa862349d3433be79b65b1abace2f71cbcbc024a9b1df04bf746ad81178357"}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 5789203000000, "utc": 1792762790.750058, "id": 2}

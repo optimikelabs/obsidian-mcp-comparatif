@@ -1,0 +1,12 @@
+{"event": "tool_request", "seq": 1, "monotonic_ns": 5736437000000, "utc": 1792762737.9891055, "id": 1, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 2, "monotonic_ns": 5736437000000, "utc": 1792762737.9921145, "id": 1, "tool": "read", "duration_s": 0.0, "bytes": 922, "is_error": false}
+{"event": "candidate_note_access", "seq": 3, "monotonic_ns": 5736437000000, "utc": 1792762737.9921145, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 4, "monotonic_ns": 5736437000000, "utc": 1792762737.9921145, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "4e86df7ed47c37af6eeb3f1de5b6d8f28b071ce17acb7a4e0646ab9b91cb883a", "response_received": true}
+{"event": "response_delivered", "seq": 5, "monotonic_ns": 5736453000000, "utc": 1792762737.9951136, "id": 1}
+{"event": "tool_request", "seq": 6, "monotonic_ns": 5736453000000, "utc": 1792762737.9976246, "id": 2, "tool": "create", "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"}
+{"event": "request_held", "seq": 7, "monotonic_ns": 5736453000000, "utc": 1792762737.9976246, "id": 2, "request_sha256": "4290275ce8af48fc3b6d3cae3c2cb125b8166f4659db9ba70380f36bcc373405"}
+{"event": "ui_disk_verified", "seq": 8, "monotonic_ns": 5737562000000, "utc": 1792762739.1156123, "snapshot_sha256": "463fc1a6dcaf54d06bbbccb29283f7a4dfe788de4f7f3a5aa99192d83b40b704"}
+{"event": "dispatch", "seq": 9, "monotonic_ns": 5737562000000, "utc": 1792762739.1166131, "id": 2, "request_sha256": "4290275ce8af48fc3b6d3cae3c2cb125b8166f4659db9ba70380f36bcc373405", "kind": "mutation"}
+{"event": "upstream_response", "seq": 10, "monotonic_ns": 5737578000000, "utc": 1792762739.1206121, "id": 2, "tool": "create", "duration_s": 0.016000000000531145, "bytes": 357, "is_error": true}
+{"event": "first_snapshot", "seq": 11, "monotonic_ns": 5738296000000, "utc": 1792762739.8488526, "snapshot_sha256": "2067895972ef0073e9c808dec22e6792c6a6988003ce1239b994f8d01cd0e3a0"}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 5738296000000, "utc": 1792762739.8498485, "id": 2}

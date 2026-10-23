@@ -1,3 +1,20 @@
+# Protocole v1.3 — test comparatif ouvert des serveurs MCP Obsidian
+
+Amendement décidé par C5 avant C05-T6-r1. Lire AMENDEMENT-V1.3-C5.md. Les gels v1, v1.1 et v1.2 sont conservés ; la copie PROTOCOLE-V1.2-GELE.md conserve exactement le protocole précédent.
+
+## Journal v1.3
+
+- Correction commune : prepare écrit N et P dans obsidian.json. Le crochet contrôle ces deux cibles avant toute retouche.
+- Le relais ne marque l’injection faite qu’après réussite du crochet et instantané humain vérifié. Un échec verrouille les mutations et préparations jusqu’à la fin de la cellule, enregistre immédiatement INJECTION_INVALIDE et arrête le client de mesure.
+- C05-T2-r1, T3-r1 et T4-r1 ne dépendaient pas de cfg.N ou cfg.P : aucun crochet déclenché, aucune intervention d’éditeur, aucun instantané humain. Preuves : preuves/v13-audit-cellules.json. Verdicts v1.1 inchangés.
+- Qualification v1.3 exigée avant reprise : T5/T6/T7/T7b positifs avec instantané humain et ui_disk_verified ; cibles absentes et crochet en échec doivent bloquer la première puis toute seconde mutation. Qualification distincte du crochet réel dans l’instance isolée, serveur factice seulement. T8 garde sa qualification d’effet/coupure/reconnexion, sans cible cfg.N/P ni crochet UI.
+- C05-T5-r1 reste INJECTION_INVALIDE : « défaut du banc d’essai (cibles N/P absentes, relais), corrigé par l’amendement v1.3 ». Aucun résultat candidat n’en est tiré.
+- Reprise à C05-T6-r1. Un seul remplacement de T1-r1 et un seul de T5-r1 à la fin de la série 1, traces originales conservées. Une seule nouvelle admission C06 à la fin de la série 2, 30 minutes maximum.
+- Astra orchestre uniquement ; agent mesuré inchangé : Codex CLI gpt-6.1-sol, effort high, serviceTier default. Indisponibilité : arrêt sans substitution.
+- Mémoire : 4 Gio de RAM disponible et de marge d’engagement au départ, arrêt sous 2 Gio ; attente inter-cellules bornée à 2 h avec contrôle toutes les 10 min. Verrou partagé jamais forcé. Priorité au re-test produit Hub 0.5 le 23/10 vers 14 h 05–15 h 30 (priorité actualisée par C5) ; aucun départ de campagne entre 14 h 05 et 15 h 30.
+
+## Protocole v1.2 conservé comme contexte historique
+
 # Protocole v1.2 — test comparatif ouvert des serveurs MCP Obsidian
 
 Amendement v1.2 du 23 octobre 2026, après trois cellules v1.1 et avant C05-T5-r1. AMENDEMENT-V1.2-C5.md fait foi. Le gel V1 et la version v1.1 restent dans l’historique ; copie exacte PROTOCOLE-V1.1-GELE.md. Aucune cellule passée n’est reclassée.

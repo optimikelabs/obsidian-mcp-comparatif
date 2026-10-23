@@ -18,7 +18,7 @@ def project_cells(public):
     for p in sorted((RUN/'cellules').glob('*')):
         if not p.is_dir():continue
         dest=public/'resultats/cellules'/p.name
-        for name in ('result.json','oracle.json','incident.json','diff-complet.json','case-index.json','prompt.json','catalogue.json','client-config-proof.json','effective-config.json','controller.jsonl','preparation-applicative.json','identity.json','fdm-observer-evidence.json','01.exit.json','02.exit.json','01.final.json','02.final.json','NOTE-V1.2.md'):
+        for name in ('result.json','oracle.json','incident.json','diff-complet.json','case-index.json','prompt.json','catalogue.json','client-config-proof.json','effective-config.json','controller.jsonl','preparation-applicative.json','identity.json','fdm-observer-evidence.json','01.exit.json','02.exit.json','01.final.json','02.final.json','NOTE-V1.2.md','NOTE-V1.3.md'):
             if (p/name).exists():sanitize_file(p/name,dest/name)
         index=readj(p/'case-index.json') if (p/'case-index.json').exists() else {}
         witnesses={};inventories={}
@@ -45,10 +45,34 @@ def project_cells(public):
 def main():
     build();project();public=KIT/'public';project_cells(public)
     names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
-           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py']
+           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py']
     for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
-    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md'):
+    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md'):
         if (KIT/name).exists():sanitize_file(KIT/name,public/name)
+    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json'):
+        p=KIT/'preuves'/name
+        if p.exists():sanitize_file(p,public/'preuves'/name)
+    # UI runs can contain the commercial fixture: publish witness bytes only.
+    for name in ('tests-injection-v13.json','tests-injection-v13-ui.json'):
+        p=KIT/'preuves'/name
+        if not p.exists():continue
+        root=Path(readj(p)['root']);dest=public/'preuves'/name.removesuffix('.json')
+        for scenario in root.iterdir():
+            if not scenario.is_dir():continue
+            original=scenario/'controller.jsonl'
+            if original.exists():
+                from redact import find_leaks
+                assert not find_leaks(original.read_text(encoding='utf-8'))
+                rawdest=dest/scenario.name/'controller-original.jsonl.txt';rawdest.parent.mkdir(parents=True,exist_ok=True);rawdest.write_bytes(original.read_bytes())
+            for rel in ('qualification.json','relay/events.jsonl','relay/injection-invalid.json'):
+                if (scenario/rel).exists():sanitize_file(scenario/rel,dest/scenario.name/rel)
+            for q in (scenario/'relay').glob('rpc-*.json'):sanitize_file(q,dest/scenario.name/'relay'/q.name)
+            for stage in ('before','human','first'):
+                source=scenario/'relay'/(stage+'.json')
+                if source.exists():
+                    snap=readj(source)
+                    writej(dest/scenario.name/(stage+'-temoins.json'),redact({k:v for k,v in snap.items() if k in (P,N,Q)}))
+                    writej(dest/scenario.name/(stage+'-inventaire.json'),redact(manifest(snap)))
     count=0
     for stem in ('factice','t7b','read-mappings','native-mappings','technical-receipts','date-stages','fdm-cache'):
         meta=KIT/'preuves'/('tests-'+stem+'.json')

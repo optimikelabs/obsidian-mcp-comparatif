@@ -1,29 +1,34 @@
-{"event": "response_delivered", "seq": 1, "monotonic_ns": 178090968000000, "utc": 1792747049.9241545, "id": 1}
-{"event": "response_delivered", "seq": 2, "monotonic_ns": 178091000000000, "utc": 1792747049.948899, "id": 2}
-{"event": "tool_request", "seq": 3, "monotonic_ns": 178091015000000, "utc": 1792747049.9595041, "id": 3, "tool": "deferred_refuse", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "request_held", "seq": 4, "monotonic_ns": 178091015000000, "utc": 1792747049.9595041, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6"}
-{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 178091015000000, "utc": 1792747049.970537, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
-{"event": "dispatch", "seq": 6, "monotonic_ns": 178091015000000, "utc": 1792747049.9725633, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6", "kind": "mutation"}
-{"event": "upstream_response", "seq": 7, "monotonic_ns": 178091031000000, "utc": 1792747049.9745624, "id": 3, "tool": "deferred_refuse", "duration_s": 0.0159999999741558, "bytes": 144, "is_error": false}
-{"event": "first_mutation_pending", "seq": 8, "monotonic_ns": 178091031000000, "utc": 1792747049.9755635, "id": 3}
-{"event": "response_delivered", "seq": 9, "monotonic_ns": 178091031000000, "utc": 1792747049.9755635, "id": 3}
-{"event": "tool_request", "seq": 10, "monotonic_ns": 178091031000000, "utc": 1792747049.9775364, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 11, "monotonic_ns": 178091031000000, "utc": 1792747049.9800525, "id": 4, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 12, "monotonic_ns": 178091031000000, "utc": 1792747049.9810565, "id": 4}
-{"event": "tool_request", "seq": 13, "monotonic_ns": 178091046000000, "utc": 1792747050.002766, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 14, "monotonic_ns": 178091046000000, "utc": 1792747050.0052984, "id": 5, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 15, "monotonic_ns": 178091062000000, "utc": 1792747050.0063322, "id": 5}
-{"event": "tool_request", "seq": 16, "monotonic_ns": 178091078000000, "utc": 1792747050.028546, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 17, "monotonic_ns": 178091093000000, "utc": 1792747050.0402174, "id": 6, "tool": "status", "duration_s": 0.014999999984866008, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 18, "monotonic_ns": 178091093000000, "utc": 1792747050.0402174, "id": 6}
-{"event": "tool_request", "seq": 19, "monotonic_ns": 178091109000000, "utc": 1792747050.0627592, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 20, "monotonic_ns": 178091109000000, "utc": 1792747050.0647612, "id": 7, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 21, "monotonic_ns": 178091109000000, "utc": 1792747050.0657425, "id": 7}
-{"event": "tool_request", "seq": 22, "monotonic_ns": 178091125000000, "utc": 1792747050.0775654, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 23, "monotonic_ns": 178091125000000, "utc": 1792747050.0805771, "id": 8, "tool": "status", "duration_s": 0.0, "bytes": 145, "is_error": false}
-{"event": "first_snapshot", "seq": 24, "monotonic_ns": 178091140000000, "utc": 1792747050.0846725, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
-{"event": "response_delivered", "seq": 25, "monotonic_ns": 178091140000000, "utc": 1792747050.0856736, "id": 8}
-{"event": "tool_request", "seq": 26, "monotonic_ns": 178091140000000, "utc": 1792747050.0866697, "id": 9, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 27, "monotonic_ns": 178091140000000, "utc": 1792747050.0901852, "id": 9, "tool": "read", "duration_s": 0.0, "bytes": 896, "is_error": false}
-{"event": "mcp_read_response", "seq": 28, "monotonic_ns": 178091140000000, "utc": 1792747050.0911846, "id": 9, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "690001cd9e4adb567dfaef49ca938c1ccea273eaa98ff19d645da098cc8f8973", "response_received": true}
-{"event": "response_delivered", "seq": 29, "monotonic_ns": 178091140000000, "utc": 1792747050.0911846, "id": 9}
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 291171000000, "utc": 1792757292.5000591, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 291171000000, "utc": 1792757292.508206, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 291187000000, "utc": 1792757292.511301, "id": 3, "tool": "deferred_refuse", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "request_held", "seq": 4, "monotonic_ns": 291187000000, "utc": 1792757292.5128276, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6"}
+{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 291187000000, "utc": 1792757292.5241034, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "dispatch", "seq": 6, "monotonic_ns": 291187000000, "utc": 1792757292.5241034, "id": 3, "request_sha256": "c1a4013dfa792684c768076ab7a2a5fd116256f5a6d75cb45cfa61f33f235da6", "kind": "mutation"}
+{"event": "upstream_response", "seq": 7, "monotonic_ns": 291203000000, "utc": 1792757292.528167, "id": 3, "tool": "deferred_refuse", "duration_s": 0.01599999999996271, "bytes": 144, "is_error": false}
+{"event": "candidate_note_access", "seq": 8, "monotonic_ns": 291203000000, "utc": 1792757292.5286732, "id": 3, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "first_mutation_pending", "seq": 9, "monotonic_ns": 291203000000, "utc": 1792757292.5286732, "id": 3}
+{"event": "response_delivered", "seq": 10, "monotonic_ns": 291203000000, "utc": 1792757292.5302024, "id": 3}
+{"event": "tool_request", "seq": 11, "monotonic_ns": 291203000000, "utc": 1792757292.53326, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 12, "monotonic_ns": 291203000000, "utc": 1792757292.5368712, "id": 4, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 291203000000, "utc": 1792757292.5379307, "id": 4}
+{"event": "tool_request", "seq": 14, "monotonic_ns": 291218000000, "utc": 1792757292.5544722, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 15, "monotonic_ns": 291234000000, "utc": 1792757292.5580244, "id": 5, "tool": "status", "duration_s": 0.01599999999996271, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 16, "monotonic_ns": 291234000000, "utc": 1792757292.5580244, "id": 5}
+{"event": "tool_request", "seq": 17, "monotonic_ns": 291250000000, "utc": 1792757292.5728781, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 18, "monotonic_ns": 291250000000, "utc": 1792757292.575934, "id": 6, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 19, "monotonic_ns": 291250000000, "utc": 1792757292.5785162, "id": 6}
+{"event": "tool_request", "seq": 20, "monotonic_ns": 291265000000, "utc": 1792757292.5913496, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 21, "monotonic_ns": 291265000000, "utc": 1792757292.594613, "id": 7, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 22, "monotonic_ns": 291265000000, "utc": 1792757292.596674, "id": 7}
+{"event": "tool_request", "seq": 23, "monotonic_ns": 291281000000, "utc": 1792757292.6103473, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 24, "monotonic_ns": 291281000000, "utc": 1792757292.6134846, "id": 8, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 25, "monotonic_ns": 291281000000, "utc": 1792757292.614998, "id": 8}
+{"event": "tool_request", "seq": 26, "monotonic_ns": 291296000000, "utc": 1792757292.6281524, "id": 9, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 27, "monotonic_ns": 291296000000, "utc": 1792757292.6317139, "id": 9, "tool": "status", "duration_s": 0.0, "bytes": 145, "is_error": false}
+{"event": "first_snapshot", "seq": 28, "monotonic_ns": 291312000000, "utc": 1792757292.6388893, "snapshot_sha256": "df54447caaa14f36cdf5e85c28f01d77dbe0778d2519012b334681096237e320"}
+{"event": "response_delivered", "seq": 29, "monotonic_ns": 291312000000, "utc": 1792757292.640476, "id": 9}
+{"event": "tool_request", "seq": 30, "monotonic_ns": 291312000000, "utc": 1792757292.643019, "id": 10, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 31, "monotonic_ns": 291312000000, "utc": 1792757292.6465778, "id": 10, "tool": "read", "duration_s": 0.0, "bytes": 897, "is_error": false}
+{"event": "candidate_note_access", "seq": 32, "monotonic_ns": 291312000000, "utc": 1792757292.6465778, "id": 10, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 33, "monotonic_ns": 291312000000, "utc": 1792757292.6481154, "id": 10, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "690001cd9e4adb567dfaef49ca938c1ccea273eaa98ff19d645da098cc8f8973", "response_received": true}
+{"event": "response_delivered", "seq": 34, "monotonic_ns": 291312000000, "utc": 1792757292.6481154, "id": 10}

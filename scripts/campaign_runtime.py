@@ -104,7 +104,7 @@ def prepare(out,plugin_sources=()):
     writej(profile/'obsidian.json',{'vaults':{'be24062300000001':{'path':str(vault),'ts':int(time.time()*1000),'open':True}},'updateDisabled':True})
     asar=EXE.parent/'resources/obsidian.asar';shutil.copyfile(asar,profile/'obsidian-1.13.7.asar')
     cfg={'out':str(out),'vault':str(vault),'profile':str(profile),'port':PORTS['cdp'],'ports':PORTS,'plugins':plugins,'pid':None,
-         'asar_sha256':sha(asar.read_bytes())}
+         'asar_sha256':sha(asar.read_bytes()),'N':N,'P':P}
     writej(out/'obsidian.json',cfg);return cfg
 
 def launch(cfg):

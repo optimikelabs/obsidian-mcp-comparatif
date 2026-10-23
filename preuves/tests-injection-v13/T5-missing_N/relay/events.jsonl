@@ -1,0 +1,18 @@
+{"event": "tool_request", "seq": 1, "monotonic_ns": 262312000000, "utc": 1792757263.645611, "id": 1, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 2, "monotonic_ns": 262375000000, "utc": 1792757263.6986084, "id": 1, "tool": "read", "duration_s": 0.06299999999998818, "bytes": 882, "is_error": false}
+{"event": "candidate_note_access", "seq": 3, "monotonic_ns": 262375000000, "utc": 1792757263.6996095, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 4, "monotonic_ns": 262375000000, "utc": 1792757263.7000816, "id": 1, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46", "response_received": true}
+{"event": "response_delivered", "seq": 5, "monotonic_ns": 262375000000, "utc": 1792757263.7010908, "id": 1}
+{"event": "tool_request", "seq": 6, "monotonic_ns": 262390000000, "utc": 1792757263.726411, "id": 2, "tool": "create", "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"}
+{"event": "request_held", "seq": 7, "monotonic_ns": 262390000000, "utc": 1792757263.726411, "id": 2, "request_sha256": "4290275ce8af48fc3b6d3cae3c2cb125b8166f4659db9ba70380f36bcc373405"}
+{"event": "injection_invalid", "seq": 8, "monotonic_ns": 262406000000, "utc": 1792757263.7354193, "verdict": "INJECTION_INVALIDE", "error": "Cible UI absente ou divergente : N"}
+{"event": "relay_error", "seq": 9, "monotonic_ns": 262406000000, "utc": 1792757263.7374187, "error": "Cible UI absente ou divergente : N"}
+{"event": "tool_request", "seq": 10, "monotonic_ns": 262437000000, "utc": 1792757263.7664943, "id": 3, "tool": "create", "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"}
+{"event": "mutation_blocked_after_injection_failure", "seq": 11, "monotonic_ns": 262437000000, "utc": 1792757263.7664943, "id": 3, "tool": "create"}
+{"event": "relay_error", "seq": 12, "monotonic_ns": 262437000000, "utc": 1792757263.7664943, "error": "Cible UI absente ou divergente : N"}
+{"event": "tool_request", "seq": 13, "monotonic_ns": 262437000000, "utc": 1792757263.771522, "id": 4, "tool": "write", "arguments_sha256": "fa98e559e818bb2c270ed2f79f80633d6648cfb2234df07a182fdc2cea841906"}
+{"event": "mutation_blocked_after_injection_failure", "seq": 14, "monotonic_ns": 262437000000, "utc": 1792757263.771522, "id": 4, "tool": "write"}
+{"event": "relay_error", "seq": 15, "monotonic_ns": 262437000000, "utc": 1792757263.77253, "error": "Cible UI absente ou divergente : N"}
+{"event": "tool_request", "seq": 16, "monotonic_ns": 262453000000, "utc": 1792757263.7825336, "id": 5, "tool": "plan", "arguments_sha256": "fa98e559e818bb2c270ed2f79f80633d6648cfb2234df07a182fdc2cea841906"}
+{"event": "mutation_blocked_after_injection_failure", "seq": 17, "monotonic_ns": 262453000000, "utc": 1792757263.7845333, "id": 5, "tool": "plan"}
+{"event": "relay_error", "seq": 18, "monotonic_ns": 262453000000, "utc": 1792757263.7875314, "error": "Cible UI absente ou divergente : N"}

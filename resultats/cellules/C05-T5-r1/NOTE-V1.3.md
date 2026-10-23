@@ -1,0 +1,1 @@
+Défaut du banc d’essai (cibles N/P absentes, relais), corrigé par l’amendement v1.3. INJECTION_INVALIDE reste publié ; ce n’est pas un résultat du candidat. Un seul remplacement à la fin de la série 1, deux traces conservées.

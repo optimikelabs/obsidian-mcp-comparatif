@@ -4,16 +4,16 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 0 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 0 cellules jouées.
-Incidents consignés : 9 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 10 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T11:17:48.836851+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T13:43:38.242993+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "d500ccf51a9e13bc4c869d6ea2df59c163750c68", "remote_verified": true, "utc": "2026-10-23T11:16:07.731974+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "623b96309e18bd6656f1d59ff57039fd0b5f50a8", "remote_verified": true, "utc": "2026-10-23T11:18:18.953804+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -22,6 +22,10 @@ Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et S
 C05-T2-r1 et C05-T3-r1 restent REUSSI_VERIFIE ; C05-T4-r1 reste EFFET_NON_VOULU. Ces trois cellules ont été jouées sous la règle v1.1. Note au verdict de C05-T4-r1 : « dû au cache FDM, surface déclarée par l’amendement v1.2 après cet essai ». Cette note ne reclasse pas le verdict et ne prouve pas le writer runtime.
 
 Le cache FDM est déclaré pour les dix candidats sous la règle conditionnelle v1.2 : seulement lastAccessed et hash des entrées des notes ouvertes ou modifiées ; aucune entrée ajoutée/retirée, aucun autre champ ni autre note. Contrôle à chaque snapshot, y compris les écarts temporaires. Voir AMENDEMENT-V1.2-C5.md, preuves/tests-fdm-cache.json et la note adjacente à C05-T4-r1.
+
+## Amendement v1.3
+
+C05-T5-r1 reste INJECTION_INVALIDE : défaut du banc d’essai (cibles N/P absentes, relais), corrigé par l’amendement v1.3. Ce n’est pas un résultat du candidat. T2/T3/T4 ne dépendaient pas des cibles absentes ; leurs verdicts v1.1 sont conservés. Remplacements T1/T5 seulement après série 1 ; nouvelle admission C06 seulement après série 2. Qualifications et preuves : preuves/tests-injection-v13.json et preuves/tests-injection-v13-ui.json.
 
 ## Historique — diagnostic et arrêt sous v1.1
 
@@ -90,26 +94,27 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - publication/incident-clone-v12-crlf.json : Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
 - incidents/injection-ui-C05-T5-r1.json : Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.
+- incidents/v13-qualification-journal.json : Un fragment du journal secondaire controller.jsonl T6 positif UI est tronqué ; original et hash conservés. Preuves d’injection, gates mémoire et arrêts vérifiés. Aucun résultat candidat concerné.
 - client-qualification/1792744805696642600/01.stdout.jsonl : Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.
 
 ## Reprise exacte
 
 ```json
 {
-  "state": "ARRET_INCIDENT_INJECTION_T5_A_QUALIFIER",
-  "utc": "2026-10-23T11:17:48.787647+00:00",
+  "state": "V13_QUALIFIE_PRET_PUBLICATION_PUIS_C05_T6",
+  "utc": "2026-10-23T13:43:37.699684+00:00",
   "next_cell": "C05-T6-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": null,
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T5-r1 --series 1 --max-cells 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C05-T5-r1",
   "last_result": "INJECTION_INVALIDE",
   "last_reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
   "incident_cell": "C05-T5-r1",
   "next_order": 6,
-  "next_action": "Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise.",
+  "next_action": "Vérifier la publication du commit v1.3, puis reprendre C05-T6-r1 avec verrou libre et seuils mémoire respectés.",
   "memory": {
     "utc": "2026-10-23T11:17:48.787647+00:00",
     "commitFreeBytes": 6108565504,
@@ -132,10 +137,20 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "C06": "Non tenté ; unique nouvelle admission seulement après série 2, 30 minutes au plus sous conditions mémoire.",
   "campaign_processes_observed": [],
   "bitnet": "Non relancé ; relance réservée à Mike.",
-  "resume_requires_public_amendment": true
+  "resume_requires_public_amendment": true,
+  "qualification_v13": {
+    "synthetic_checks": 17,
+    "real_ui_checks": 4,
+    "regression_checks": 106,
+    "qualified": true
+  },
+  "replacement_C05_T5": "Un seul remplacement à la fin de la série 1, après qualification ; original conservé.",
+  "product_priority_until_local": "2026-10-23T15:30:00",
+  "network_interruption": "Coupure DNS signalée par C5, sans cellule lancée ; aucune qualification rejouée.",
+  "product_lock_observed": "margelle-produit re-test 07 Hub 0.5 ; début 15 h 18 ; fin estimée 16 h 33"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_INCIDENT_INJECTION_T5_A_QUALIFIER. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise.. Aucune tâche du coffre modifiée.
+État opérationnel : V13_QUALIFIE_PRET_PUBLICATION_PUIS_C05_T6. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Vérifier la publication du commit v1.3, puis reprendre C05-T6-r1 avec verrou libre et seuils mémoire respectés.. Aucune tâche du coffre modifiée.

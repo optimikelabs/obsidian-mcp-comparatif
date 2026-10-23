@@ -1,0 +1,67 @@
+{
+  "independent_of_cfg_N_P": true,
+  "checks": [
+    {
+      "cell": "C05-T2-r1",
+      "verdict_unchanged": "REUSSI_VERIFIE",
+      "injection_events": [],
+      "human_snapshot_present": false,
+      "planned_editor": 0,
+      "files": {
+        "result.json": "f3428e5b06b40fffa642a271efbc81ba86a9871a832a0f9ed31c2cd500040b7a",
+        "case-index.json": "a62ebcd261c9e0497ed724e97cc44605a32a2530bd1ff0ae4a9bda9739e99866",
+        "relay/events.jsonl": "9a476570d217408155bf1b2fc3d21607d7b7d619733e1cd1bbd6d85145dabf17",
+        "obsidian.json": "b670e6ec96f9849758d8b2d3daf8939f7d8da4a78156400db85371e2b3460c78"
+      },
+      "tools": [
+        "vault",
+        "edit",
+        "vault"
+      ]
+    },
+    {
+      "cell": "C05-T3-r1",
+      "verdict_unchanged": "REUSSI_VERIFIE",
+      "injection_events": [],
+      "human_snapshot_present": false,
+      "planned_editor": 0,
+      "files": {
+        "result.json": "c79b4eada6b4c6015246289d58f07952fc48d8c66cc7ce6583ae51ada8da807a",
+        "case-index.json": "640dc47e4c2aa7ff67e8cd6c93567537199973d5863a067e205ccf6ef2f46e0a",
+        "relay/events.jsonl": "332a093d5021c53f462eead8c2c58a85a4d3cc44e4c6482e7f1146e5e94c4f9b",
+        "obsidian.json": "c990e47245485318fb76ca3d7a0ae3d13153cbe1afdebc9bb401cc0c6ee298cc"
+      },
+      "tools": [
+        "vault",
+        "edit",
+        "vault"
+      ]
+    },
+    {
+      "cell": "C05-T4-r1",
+      "verdict_unchanged": "EFFET_NON_VOULU",
+      "injection_events": [],
+      "human_snapshot_present": false,
+      "planned_editor": 0,
+      "files": {
+        "result.json": "bd0d030ec46d7031f90e5e0499c7c48ea4c90c245f02c1a29422cbef40375ea5",
+        "case-index.json": "b71fd739051d8d617bdff99b5434d0d20735b0919cfc24f16995cab31bb1994b",
+        "relay/events.jsonl": "f03d91f9fcb4e2e4ccfd6f60beeb1bfdb47d0fa8734521a732a1bb5a6e3c69f8",
+        "obsidian.json": "018ec2359e1d9c5df0c1800404da7a3ad30b98cd32eec108917f046115811dda"
+      },
+      "tools": [
+        "vault",
+        "vault",
+        "vault"
+      ]
+    }
+  ],
+  "injection_paths": {
+    "T5": "editor_hook -> ui_cdp.mjs; cfg.N, cfg.P présents après v1.3",
+    "T6/T7/T7b": "editor_hook -> retouche-editeur.mjs; constante P, pas cfg.P avant v1.3",
+    "T8": "Relay.observe_effect: coupure réponse; constante P; aucun crochet UI",
+    "T2/T3/T4": "Aucune injection; selected faux; P/N des prompts et common.py distincts de cfg.P/cfg.N"
+  },
+  "historical_commit": "623b963",
+  "scope": "Vérification des traces existantes; aucun rejeu ni reclassement."
+}
