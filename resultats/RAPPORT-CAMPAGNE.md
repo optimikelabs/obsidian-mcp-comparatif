@@ -4,16 +4,16 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 3 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 1 cellules jouées.
-Incidents consignés : 13 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 14 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T14:45:29.947544+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T14:47:26.556829+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "30078e16fd2ccf086d8b2a2aeb9452b99fa7d3d6", "remote_verified": true, "utc": "2026-10-23T14:33:34.985399+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "021d7f803389ba1ce5b8219c279e59ab9dd76b50", "remote_verified": true, "utc": "2026-10-23T14:46:15.539073+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -102,6 +102,7 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - publication/incident-20261023T0915.json : AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.
 - publication/incident-clone-v12-crlf.json : Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
+- incidents/fdm-intermediaire-C08-T6-r1.json : Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.
 - incidents/fermeture-C08-T4-r1.json : La fermeture observe encore 4 processus Obsidian du profil isole apres 500 ms, puis leve deux fois. Aucun processus de ce profil ne subsiste lors du controle differe.
 - incidents/injection-ui-C05-T5-r1.json : Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.
 - incidents/post-fermeture-C08-T5-r1.json : La note injectée N contient maintenant création et modification, absentes de l’instantané after jugé. Texte humain identique. Attribution runtime non établie pour N.
@@ -112,8 +113,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ARRET_INCIDENT",
-  "utc": "2026-10-23T14:45:29.902748+00:00",
+  "state": "ARRET_FDM_PENDANT_MESURE_DEMANDE_C5",
+  "utc": "2026-10-23T14:47:26.466306+00:00",
   "next_cell": "C08-T7-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -122,11 +123,14 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C08-T6-r1",
   "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "YAML_VALEUR_OU_TYPE",
-  "incident_cell": "C08-T6-r1"
+  "last_reason": "Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.",
+  "incident_cell": "C08-T6-r1",
+  "next_action": "Décision C5 sur l’attribution FDM intermédiaire avant C08-T7-r1 ; original conservé, aucun remplacement ajouté.",
+  "operating_note_commit": "9fea9d8897285c20fc44f7c87d72f5332edf740c",
+  "replacement_registered": false
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_INCIDENT. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C08-T7-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_FDM_PENDANT_MESURE_DEMANDE_C5. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Décision C5 sur l’attribution FDM intermédiaire avant C08-T7-r1 ; original conservé, aucun remplacement ajouté.. Aucune tâche du coffre modifiée.

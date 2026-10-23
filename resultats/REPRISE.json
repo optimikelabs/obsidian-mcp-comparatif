@@ -1,6 +1,6 @@
 {
-  "state": "ARRET_INCIDENT",
-  "utc": "2026-10-23T14:45:29.902748+00:00",
+  "state": "ARRET_FDM_PENDANT_MESURE_DEMANDE_C5",
+  "utc": "2026-10-23T14:47:26.466306+00:00",
   "next_cell": "C08-T7-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -9,6 +9,9 @@
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C08-T6-r1",
   "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "YAML_VALEUR_OU_TYPE",
-  "incident_cell": "C08-T6-r1"
+  "last_reason": "Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.",
+  "incident_cell": "C08-T6-r1",
+  "next_action": "Décision C5 sur l’attribution FDM intermédiaire avant C08-T7-r1 ; original conservé, aucun remplacement ajouté.",
+  "operating_note_commit": "9fea9d8897285c20fc44f7c87d72f5332edf740c",
+  "replacement_registered": false
 }

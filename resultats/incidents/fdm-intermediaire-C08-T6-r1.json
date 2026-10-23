@@ -1,0 +1,88 @@
+{
+  "cell_id": "C08-T6-r1",
+  "reason": "Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.",
+  "raw_verdict": "NON_EXECUTE_ENVIRONNEMENT",
+  "raw_error": "YAML_VALEUR_OU_TYPE",
+  "result_sha256": "2d6005d2acd0bfd44a6eaa94ddcedc8c8210f7c7af20734827bb7a017991c6ba",
+  "oracle_sha256": "1904bc4001d5218aebaac94b7029ee7581d6eba3772c9bdd36cea1634b1dfe0b",
+  "fdm_evidence": {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "modification",
+    "value": "2026-10-23T16:45",
+    "previous_value": "2026-10-23T04:38",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "af0c5ba21ebeacf46147e95cf0b2ae16e7ace51856ffa4ff3efacfe06aa8de33",
+    "observed_utc": 1792766703.886,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  "intermediate_rpc": "cellules/C08-T6-r1/relay/rpc-0018-4.json",
+  "intermediate_note": {
+    "base64": "LS0tCnR5cGU6IHByb2pldApwYXJlbnQ6CmNvbGxlY3Rpb246CiAgLSAiW1tQcm9qZXRzXV0iCmVudGl0w6k6CnN0YXR1dDogYWN0aWYKbm90ZXNfbGllZXM6CnJhbmc6IDEKY2xpZW50OiBmYWxzZQrDqWNow6lhbmNlOgpuZXh0X2FjdGlvbjogVHJpZXIgdHJvaXMgY2FwdHVyZXMuCmJ1ZGdldF9oOgpidWRnZXRfZXVyb3M6CnR5cGVfcHJvamV0Ogp0ZW1vaW5fYm9vbDogdHJ1ZQp0ZW1vaW5fbGlzdGU6CiAgLSBjYWbDqQogIC0gxZN1dnJlCnRlbW9pbl9lbnRpZXI6IDcKY2zDqV9pbmNvbm51ZTogw4l0w6kg4oCUIOadseS6rApjcsOpYXRpb246IDIwMjYtMTAtMjNUMTY6NDQKbW9kaWZpY2F0aW9uOiAyMDI2LTEwLTIzVDE2OjQ1Ci0tLQojIyBGaWNoZSBkdSBwcm9qZXQKLSBPYmplY3RpZiA6IHRyaWVyIHRyb2lzIGNhcHR1cmVzLgotIFLDqWbDqXJlbmNlIGRlIHJlY2hlcmNoZSA6IE1BUkdFTExFLVRFU1QtMjQwNi4KLSBQYXNzYWdlIMOgIG1vZGlmaWVyIDogZXNzYWkgcHLDqXZ1IGpldWRpLgotIFTDqW1vaW4gaHVtYWluIDogY29ycmVjdGlvbiBILTI0MDYuCi0gVMOpbW9pbiBpbnRhY3QgOiBjYWbDqSwgxZN1dnJlLCBbW1Byb2pldCB0w6ltb2luIOKAlCBUZXN0IE1DUF1dLgo=",
+    "sha256": "af0c5ba21ebeacf46147e95cf0b2ae16e7ace51856ffa4ff3efacfe06aa8de33",
+    "size": 614
+  },
+  "first_note": {
+    "size": 614,
+    "sha256": "db117ce1ccfb880b944afb8bf71acabc6e9aed7aed75b9c83a3210b15abab2d0",
+    "base64": "LS0tCnR5cGU6IHByb2pldApwYXJlbnQ6CmNvbGxlY3Rpb246CiAgLSAiW1tQcm9qZXRzXV0iCmVudGl0w6k6CnN0YXR1dDogYWN0aWYKbm90ZXNfbGllZXM6CnJhbmc6IDEKY2xpZW50OiBmYWxzZQrDqWNow6lhbmNlOgpuZXh0X2FjdGlvbjogVHJpZXIgdHJvaXMgY2FwdHVyZXMuCmJ1ZGdldF9oOgpidWRnZXRfZXVyb3M6CnR5cGVfcHJvamV0Ogp0ZW1vaW5fYm9vbDogdHJ1ZQp0ZW1vaW5fbGlzdGU6CiAgLSBjYWbDqQogIC0gxZN1dnJlCnRlbW9pbl9lbnRpZXI6IDcKY2zDqV9pbmNvbm51ZTogw4l0w6kg4oCUIOadseS6rApjcsOpYXRpb246IDIwMjYtMTAtMjNUMTY6NDQKbW9kaWZpY2F0aW9uOiAyMDI2LTEwLTIzVDA0OjM4Ci0tLQojIyBGaWNoZSBkdSBwcm9qZXQKLSBPYmplY3RpZiA6IHRyaWVyIHRyb2lzIGNhcHR1cmVzLgotIFLDqWbDqXJlbmNlIGRlIHJlY2hlcmNoZSA6IE1BUkdFTExFLVRFU1QtMjQwNi4KLSBQYXNzYWdlIMOgIG1vZGlmaWVyIDogZXNzYWkgcHLDqXZ1IGpldWRpLgotIFTDqW1vaW4gaHVtYWluIDogY29ycmVjdGlvbiBILTI0MDYuCi0gVMOpbW9pbiBpbnRhY3QgOiBjYWbDqSwgxZN1dnJlLCBbW1Byb2pldCB0w6ltb2luIOKAlCBUZXN0IE1DUF1dLgo="
+  },
+  "final_note": {
+    "size": 617,
+    "sha256": "df8130733e0fa59166d87cb6a7b58a86de761528a8bc5da184d75987201fdedc",
+    "base64": "LS0tCnR5cGU6IHByb2pldApwYXJlbnQ6CmNvbGxlY3Rpb246CiAgLSAiW1tQcm9qZXRzXV0iCmVudGl0w6k6CnN0YXR1dDogYWN0aWYKbm90ZXNfbGllZXM6CnJhbmc6IDEKY2xpZW50OiBmYWxzZQrDqWNow6lhbmNlOgpuZXh0X2FjdGlvbjogVHJpZXIgdHJvaXMgY2FwdHVyZXMuCmJ1ZGdldF9oOgpidWRnZXRfZXVyb3M6CnR5cGVfcHJvamV0Ogp0ZW1vaW5fYm9vbDogdHJ1ZQp0ZW1vaW5fbGlzdGU6CiAgLSBjYWbDqQogIC0gxZN1dnJlCnRlbW9pbl9lbnRpZXI6IDcKY2zDqV9pbmNvbm51ZTogw4l0w6kg4oCUIOadseS6rApjcsOpYXRpb246IDIwMjYtMTAtMjNUMTY6NDQKbW9kaWZpY2F0aW9uOiAyMDI2LTEwLTIzVDE2OjQ1Ci0tLQojIyBGaWNoZSBkdSBwcm9qZXQKLSBPYmplY3RpZiA6IHRyaWVyIHRyb2lzIGNhcHR1cmVzLgotIFLDqWbDqXJlbmNlIGRlIHJlY2hlcmNoZSA6IE1BUkdFTExFLVRFU1QtMjQwNi4KLSBQYXNzYWdlIMOgIG1vZGlmaWVyIDogZXNzYWkgcHLDqXZ1IHZlbmRyZWRpLgotIFTDqW1vaW4gaHVtYWluIDogY29ycmVjdGlvbiBILTI0MDYuCi0gVMOpbW9pbiBpbnRhY3QgOiBjYWbDqSwgxZN1dnJlLCBbW1Byb2pldCB0w6ltb2luIOKAlCBUZXN0IE1DUF1dLgo="
+  },
+  "checks": {
+    "only_modification_between_first_and_intermediate": true,
+    "body_identical_first_to_intermediate": true,
+    "fdm_hash_equals_intermediate": true,
+    "properties_identical_intermediate_to_final": true,
+    "only_requested_body_edit_intermediate_to_final": true,
+    "human_correction_preserved": true,
+    "final_body_equals_requested_and_human_edits": true
+  },
+  "cache_entries_P": {
+    "before": {
+      "hash": "9817af1586f3ea25d1413f577035f50da9836a9e25aea26b60a64cf084c93bc3",
+      "lastAccessed": 1792766662487
+    },
+    "human": {
+      "hash": "9144f3069d3fadcb958ffd39bc6ee5d403cf3e63655ac77c5a7f9eac5a58a9fe",
+      "lastAccessed": 1792766666511
+    },
+    "first": {
+      "hash": "9144f3069d3fadcb958ffd39bc6ee5d403cf3e63655ac77c5a7f9eac5a58a9fe",
+      "lastAccessed": 1792766666511
+    },
+    "after": {
+      "hash": "9144f3069d3fadcb958ffd39bc6ee5d403cf3e63655ac77c5a7f9eac5a58a9fe",
+      "lastAccessed": 1792766666511
+    }
+  },
+  "date_changed_during_judged_window": true,
+  "after_close_differences": [],
+  "business_modification_occurred": true,
+  "prior_replacement": false,
+  "replacement_registered": false,
+  "closure": [
+    {
+      "attempts": [
+        {
+          "requested": true,
+          "method": "Browser.close",
+          "vault_verified": true,
+          "response": {
+            "connection_ended_after_request": true
+          },
+          "attempt": 1,
+          "observed_main_pid": 20916
+        }
+      ],
+      "remaining": [],
+      "wait_seconds_per_attempt": 15
+    }
+  ],
+  "decision": "ARRET_DEMANDE_C5 : conserver oracle brut ; aucune modification de l’oracle ni remplacement automatique.",
+  "proposal": "Conserver l’original non établi, autoriser un remplacement unique en fin de série 1 ; décider d’un amendement commun avant reprise pour une attribution FDM intermédiaire reliée au fichier final par les traces exactes.",
+  "next_cell": "C08-T7-r1"
+}
