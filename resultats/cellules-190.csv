@@ -2,7 +2,7 @@ order,series,candidate,task,repetition,cell_id,status,verdict,reason
 1,1,C05,T1,1,C05-T1-r1,NON_JOUE,NON_EXECUTE_ENVIRONNEMENT,Assertion du hash CRLF avant modèle ; voir AMENDEMENT-C05-T1-r1.md. Cellule non rejouée.
 2,1,C05,T2,1,C05-T2-r1,JOUE,REUSSI_VERIFIE,
 3,1,C05,T3,1,C05-T3-r1,JOUE,REUSSI_VERIFIE,
-4,1,C05,T4,1,C05-T4-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
+4,1,C05,T4,1,C05-T4-r1,JOUE,EFFET_NON_VOULU,HORS_CIBLE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente
 5,1,C05,T5,1,C05-T5-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 6,1,C05,T6,1,C05-T6-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 7,1,C05,T7,1,C05-T7-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.

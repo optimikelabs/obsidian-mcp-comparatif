@@ -1,0 +1,72 @@
+{"utc": "2026-10-23T09:23:33.289444+00:00", "event": "memory_gate", "reason": "before_cell", "commitFreeBytes": 15476469760, "availableBytes": 13086920704, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:33.290442+00:00", "event": "memory_1s", "commitFreeBytes": 15476469760, "availableBytes": 13087105024, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:33.796077+00:00", "event": "memory_gate", "reason": "before_obsidian", "commitFreeBytes": 15470428160, "availableBytes": 13045477376, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:34.291872+00:00", "event": "memory_1s", "commitFreeBytes": 15435046912, "availableBytes": 12995469312, "admitted": true, "stop": false}
+{"utc": 1792747414.9217157, "event": "command", "name": "launch", "returncode": 0}
+{"utc": 1792747415.2065618, "event": "command", "name": "activate", "returncode": 1}
+{"utc": "2026-10-23T09:23:35.292617+00:00", "event": "memory_1s", "commitFreeBytes": 15206674432, "availableBytes": 12837965824, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:36.293305+00:00", "event": "memory_1s", "commitFreeBytes": 15047389184, "availableBytes": 12739117056, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:37.294127+00:00", "event": "memory_1s", "commitFreeBytes": 15006482432, "availableBytes": 12723163136, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:38.294545+00:00", "event": "memory_1s", "commitFreeBytes": 14959841280, "availableBytes": 12687441920, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:39.295093+00:00", "event": "memory_1s", "commitFreeBytes": 14957101056, "availableBytes": 12684472320, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:40.296223+00:00", "event": "memory_1s", "commitFreeBytes": 14868221952, "availableBytes": 12607041536, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:41.297068+00:00", "event": "memory_1s", "commitFreeBytes": 14973120512, "availableBytes": 12694982656, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:42.297557+00:00", "event": "memory_1s", "commitFreeBytes": 14952288256, "availableBytes": 12684525568, "admitted": true, "stop": false}
+{"utc": 1792747422.65891, "event": "command", "name": "activate", "returncode": 0}
+{"utc": 1792747422.664909, "event": "obsidian_started", "pid": 34104}
+{"utc": 1792747422.804005, "event": "command", "name": "fdm-observer-install", "returncode": 0}
+{"utc": 1792747423.06581, "event": "command", "name": "preparation-applicative-native-save", "returncode": 0}
+{"utc": "2026-10-23T09:23:43.297819+00:00", "event": "memory_1s", "commitFreeBytes": 14866698240, "availableBytes": 12594466816, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:44.299681+00:00", "event": "memory_1s", "commitFreeBytes": 14838956032, "availableBytes": 12568186880, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:45.300359+00:00", "event": "memory_1s", "commitFreeBytes": 14788710400, "availableBytes": 12517732352, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:46.301135+00:00", "event": "memory_1s", "commitFreeBytes": 14778957824, "availableBytes": 12519002112, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:47.301695+00:00", "event": "memory_1s", "commitFreeBytes": 14771691520, "availableBytes": 12518047744, "admitted": true, "stop": false}
+{"utc": 1792747428.2001522, "event": "command", "name": "preparation-applicative-fdm-fallback", "returncode": 0}
+{"utc": "2026-10-23T09:23:48.302585+00:00", "event": "memory_1s", "commitFreeBytes": 14745915392, "availableBytes": 12502208512, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:49.303124+00:00", "event": "memory_1s", "commitFreeBytes": 14771163136, "availableBytes": 12519608320, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:50.303254+00:00", "event": "memory_1s", "commitFreeBytes": 14780534784, "availableBytes": 12524544000, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:51.304931+00:00", "event": "memory_1s", "commitFreeBytes": 14786387968, "availableBytes": 12528099328, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:52.305649+00:00", "event": "memory_1s", "commitFreeBytes": 14781591552, "availableBytes": 12526923776, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:53.306142+00:00", "event": "memory_1s", "commitFreeBytes": 14784073728, "availableBytes": 12524331008, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:53.399100+00:00", "event": "memory_gate", "reason": "before_candidate", "commitFreeBytes": 14783950848, "availableBytes": 12525576192, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:54.306648+00:00", "event": "memory_1s", "commitFreeBytes": 14779957248, "availableBytes": 12519587840, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:55.307163+00:00", "event": "memory_1s", "commitFreeBytes": 14761795584, "availableBytes": 12500508672, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:56.308047+00:00", "event": "memory_1s", "commitFreeBytes": 14765993984, "availableBytes": 12476870656, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:57.308282+00:00", "event": "memory_1s", "commitFreeBytes": 14766780416, "availableBytes": 12482691072, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:58.321353+00:00", "event": "memory_1s", "commitFreeBytes": 14761263104, "availableBytes": 12486651904, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:23:59.322277+00:00", "event": "memory_1s", "commitFreeBytes": 14782988288, "availableBytes": 12497817600, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:00.347708+00:00", "event": "memory_1s", "commitFreeBytes": 14771634176, "availableBytes": 12480389120, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:01.107981+00:00", "event": "memory_gate", "reason": "before_measurement_client", "commitFreeBytes": 14773018624, "availableBytes": 12495794176, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:01.420415+00:00", "event": "memory_1s", "commitFreeBytes": 14423859200, "availableBytes": 12139380736, "admitted": true, "stop": false}
+{"utc": 1792747441.8118699, "event": "measurement_client_started", "pid": 29564, "turn": "01", "binary_sha256": "9e7c59c05cc1ce5677b1f94e835b2ac038ca3be14504e78d558eacdb0ea3f55d"}
+{"utc": "2026-10-23T09:24:02.421263+00:00", "event": "memory_1s", "commitFreeBytes": 14768095232, "availableBytes": 12441186304, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:03.421712+00:00", "event": "memory_1s", "commitFreeBytes": 14774353920, "availableBytes": 12444557312, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:04.422308+00:00", "event": "memory_1s", "commitFreeBytes": 14766956544, "availableBytes": 12436885504, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:05.423053+00:00", "event": "memory_1s", "commitFreeBytes": 14940585984, "availableBytes": 12598165504, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:06.424235+00:00", "event": "memory_1s", "commitFreeBytes": 14970126336, "availableBytes": 12640788480, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:07.425179+00:00", "event": "memory_1s", "commitFreeBytes": 14969159680, "availableBytes": 12646572032, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:08.425935+00:00", "event": "memory_1s", "commitFreeBytes": 15001001984, "availableBytes": 12662874112, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:09.426775+00:00", "event": "memory_1s", "commitFreeBytes": 15005048832, "availableBytes": 12667203584, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:10.426793+00:00", "event": "memory_1s", "commitFreeBytes": 14908039168, "availableBytes": 12562604032, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:11.428573+00:00", "event": "memory_1s", "commitFreeBytes": 14854832128, "availableBytes": 12525023232, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:12.428886+00:00", "event": "memory_1s", "commitFreeBytes": 14855344128, "availableBytes": 12525985792, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:13.429078+00:00", "event": "memory_1s", "commitFreeBytes": 14862766080, "availableBytes": 12530294784, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:14.430855+00:00", "event": "memory_1s", "commitFreeBytes": 14900199424, "availableBytes": 12561588224, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:15.430882+00:00", "event": "memory_1s", "commitFreeBytes": 14905479168, "availableBytes": 12564570112, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:16.432226+00:00", "event": "memory_1s", "commitFreeBytes": 14893907968, "availableBytes": 12565778432, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:17.432515+00:00", "event": "memory_1s", "commitFreeBytes": 14890696704, "availableBytes": 12564987904, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:18.433823+00:00", "event": "memory_1s", "commitFreeBytes": 14878720000, "availableBytes": 12565237760, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:19.433917+00:00", "event": "memory_1s", "commitFreeBytes": 14872993792, "availableBytes": 12564897792, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:20.435630+00:00", "event": "memory_1s", "commitFreeBytes": 14880251904, "availableBytes": 12565975040, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:21.435847+00:00", "event": "memory_1s", "commitFreeBytes": 14891556864, "availableBytes": 12586053632, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:22.437231+00:00", "event": "memory_1s", "commitFreeBytes": 14882811904, "availableBytes": 12601556992, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:23.444929+00:00", "event": "memory_1s", "commitFreeBytes": 14899974144, "availableBytes": 12617060352, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:24.447368+00:00", "event": "memory_1s", "commitFreeBytes": 14907846656, "availableBytes": 12631879680, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:25.448183+00:00", "event": "memory_1s", "commitFreeBytes": 14907547648, "availableBytes": 12633341952, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:26.448703+00:00", "event": "memory_1s", "commitFreeBytes": 14932602880, "availableBytes": 12631371776, "admitted": true, "stop": false}
+{"utc": 1792747467.328444, "event": "command", "name": "fdm-observer-collect", "returncode": 0}
+{"utc": "2026-10-23T09:24:27.455366+00:00", "event": "memory_1s", "commitFreeBytes": 14926680064, "availableBytes": 12621180928, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:28.456040+00:00", "event": "memory_1s", "commitFreeBytes": 14901784576, "availableBytes": 12618264576, "admitted": true, "stop": false}
+{"utc": "2026-10-23T09:24:29.456952+00:00", "event": "memory_1s", "commitFreeBytes": 14880382976, "availableBytes": 12587925504, "admitted": true, "stop": false}
+{"utc": 1792747470.134351, "event": "command", "name": "stop", "returncode": 0}
+{"utc": 1792747470.140325, "event": "owned_instance_stopped", "pid": 34104, "lock_present": false}

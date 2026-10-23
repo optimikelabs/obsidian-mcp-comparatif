@@ -1,0 +1,159 @@
+{
+  "task": "T4",
+  "events": [
+    {
+      "event": "bootstrap_response",
+      "seq": 1,
+      "monotonic_ns": 178483390000000,
+      "utc": 1792747442.3455276,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 2,
+      "monotonic_ns": 178483390000000,
+      "utc": 1792747442.3455276,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 3,
+      "monotonic_ns": 178483406000000,
+      "utc": 1792747442.354528,
+      "id": 1
+    },
+    {
+      "event": "tool_request",
+      "seq": 4,
+      "monotonic_ns": 178491000000000,
+      "utc": 1792747449.951763,
+      "id": 2,
+      "tool": "vault",
+      "arguments_sha256": "1286f77cae03f83469a32fc97388117d4019e26f0f6a9dc2bf8a3007a92dad6f"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 5,
+      "monotonic_ns": 178491000000000,
+      "utc": 1792747449.9587724,
+      "id": 2,
+      "tool": "vault",
+      "duration_s": 0.0,
+      "bytes": 516,
+      "is_error": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 6,
+      "monotonic_ns": 178491015000000,
+      "utc": 1792747449.9617724,
+      "id": 2
+    },
+    {
+      "event": "tool_request",
+      "seq": 7,
+      "monotonic_ns": 178494312000000,
+      "utc": 1792747453.2655437,
+      "id": 3,
+      "tool": "vault",
+      "arguments_sha256": "24fc6a657a92df369fb79f25a035df397608e7fde47649c3cbaa9448c2292cb7"
+    },
+    {
+      "event": "mutation_dispatch",
+      "seq": 8,
+      "monotonic_ns": 178494312000000,
+      "utc": 1792747453.2655437,
+      "id": 3,
+      "request_sha256": "7f97f0b435b569261bd02baedf8b44de3deefc7d4d6010d7bc2a536516773625"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 9,
+      "monotonic_ns": 178494312000000,
+      "utc": 1792747453.268541,
+      "id": 3,
+      "tool": "vault",
+      "duration_s": 0.0,
+      "bytes": 621,
+      "is_error": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 10,
+      "monotonic_ns": 178494312000000,
+      "utc": 1792747453.2695434,
+      "id": 3
+    },
+    {
+      "event": "tool_request",
+      "seq": 11,
+      "monotonic_ns": 178498312000000,
+      "utc": 1792747457.2696984,
+      "id": 4,
+      "tool": "vault",
+      "arguments_sha256": "1286f77cae03f83469a32fc97388117d4019e26f0f6a9dc2bf8a3007a92dad6f"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 12,
+      "monotonic_ns": 178498328000000,
+      "utc": 1792747457.2827008,
+      "id": 4,
+      "tool": "vault",
+      "duration_s": 0.01600000000325963,
+      "bytes": 516,
+      "is_error": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 13,
+      "monotonic_ns": 178498328000000,
+      "utc": 1792747457.2837238,
+      "id": 4
+    }
+  ],
+  "response": {
+    "task_id": "T4",
+    "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+    "etat": "non_applique",
+    "extrait": "# Compte rendu — Essai MCP\n\nTrois captures triées.\n",
+    "proprietes": {},
+    "message": "Création rejetée : overwrite=false indisponible pour create, décrit comme destructif. Relecture : fichier absent. Corps demandé restitué, non enregistré."
+  },
+  "expected_before_tree_sha256": "d574de8afa5282cdefb85ef76bc6a4c17a5e9ece957e8927f0c4eea74e0acfa1",
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/semantic-vault-mcp/data.json"
+  ],
+  "date_evidence": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "création",
+      "value": "2026-10-23T11:23",
+      "previous_value": "None",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "0158edcbf0fda8dbc5883dddac8b850661b2613964dfb85d2f0f398ae4be83af",
+      "observed_utc": 1792747428.216,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    },
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "value": "2026-10-23T04:38",
+      "previous_value": "None",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "0158edcbf0fda8dbc5883dddac8b850661b2613964dfb85d2f0f398ae4be83af",
+      "observed_utc": 1792747428.216,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    }
+  ],
+  "window_start": 1792747439.9649286,
+  "window_end": 1792747467.3374429,
+  "snapshot_files": {
+    "before": "relay/before.json",
+    "after": "after.json"
+  }
+}
