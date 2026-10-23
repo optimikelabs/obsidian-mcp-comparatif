@@ -28,6 +28,10 @@
       "size": 3591,
       "sha256": "933222c7d2a2144584da0a59e63a5ae66f99dab200ec6b12280291a126606366"
     },
+    "DIAGNOSTIC-C05-T4-r1.md": {
+      "size": 4675,
+      "sha256": "38b6e3652cdb12a91059d03fde57bd92f2469783ff5efabcf040204ff361d608"
+    },
     "fixtures/synthetique/.obsidian/app.json": {
       "size": 35,
       "sha256": "25f97b4e145e76ae38646fca9edf000af61bae467c9ca446396e80cbbcd0ec43"
@@ -6117,8 +6121,8 @@
       "sha256": "af1b11f46e6fcc02e072597ba7d25c4dbd08874440cc5e033a7d526fb6ca8636"
     },
     "preuves/validation-projection-campagne.json": {
-      "size": 140,
-      "sha256": "97525f90b5ac1fc7be308ae447352dbeb7238eba5fa0291efb1f3ff2c1ced830"
+      "size": 142,
+      "sha256": "b38d0f034e5a66958ce84ceb3a49895a84888e3fdaf7fea17015df91889afc43"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -7700,17 +7704,21 @@
       "size": 960,
       "sha256": "d0d6f1d86802a183682e4d5e57b96d789510323a2b3358547cf8cac20630c694"
     },
+    "resultats/incidents/cache-fdm-C05-T4-r1.json": {
+      "size": 1620,
+      "sha256": "c53d121ea44e369c2a614da58137b3efc9fc289a2451f8de41059e25e2aba239"
+    },
     "resultats/publication/incident-20261023T0915.json": {
       "size": 336,
       "sha256": "333e19f4f1d078fb35e592134045fb799c0f8be8890aa864310eafca3f792d08"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 5359,
-      "sha256": "f8818c6d4c4439a96f67d2af583c12bc7cdc9e8716aa56950b5caf3f52536988"
+      "size": 11506,
+      "sha256": "989c7d7a244587cd125c5432621d05b5fd5e0440acb64304ce65312700935027"
     },
     "resultats/REPRISE.json": {
-      "size": 549,
-      "sha256": "f379179fe807b4f59e1438fc93c10431f677beb8e95137071639df9cf8653868"
+      "size": 1750,
+      "sha256": "58fe1a4a6e627d4cf1258c52e5cd4bb5f777661f39af500f6de0fa962f0e1b38"
     },
     "scripts/admit_c01.py": {
       "size": 2553,
@@ -7749,8 +7757,8 @@
       "sha256": "dcf8eacc9efbe7f56c551a8388053dbac7a7e0ac5d9ed4e0e9380399e1734217"
     },
     "scripts/campaign_reporting.py": {
-      "size": 7122,
-      "sha256": "83e08261bd5b28edd3d8c5215bb61a0724ff32d366380636158337046e146fa4"
+      "size": 7419,
+      "sha256": "9932c67808f2c8ca04e200ff0b2209acaad29df78b11f7d71be49d7370f7fee4"
     },
     "scripts/campaign_run.py": {
       "size": 4509,
@@ -7793,8 +7801,8 @@
       "sha256": "d245d3e5d8c07ed9359f84bdc9393c7debff33c67eae6e86474a492cf7671f1e"
     },
     "scripts/project_campaign.py": {
-      "size": 6558,
-      "sha256": "a13affb6a87fde52490c2b1e785303f97ec1ffbbd84231e2634a53cb05b7d234"
+      "size": 6683,
+      "sha256": "d32eeacdb93f1f093fb02ea64b8ce6de00ec3149d1badd947474cde4ec7cf850"
     },
     "scripts/publish_v11.py": {
       "size": 3686,
@@ -7889,5 +7897,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "ca3a43afaf4044ba262a880c1bbe99bd76503c7fae2f4636b243589a87f3ff99"
+  "tree_sha256": "0ac385e908d8ae9dfbfceb0fc39a761766ebe91d4de57c459a024cb19db8905c"
 }

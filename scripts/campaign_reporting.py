@@ -32,20 +32,22 @@ def build():
         selected=[x for x in rows if x['series']==s];played=sum(x['status']=='JOUE' for x in selected)
         counts.append(f'Série {s} : {played} cellules jouées ; {len(selected)-played} non jouées (sur {len(selected)}).')
     incidents=[]
-    for pattern in ('admissions/*/incident.json','admissions/*/qualification-incident.json','cellules/*/incident.json','publication/incident-*.json'):
+    for pattern in ('admissions/*/incident.json','admissions/*/qualification-incident.json','cellules/*/incident.json','publication/incident-*.json','incidents/*.json'):
         for p in sorted(RUN.glob(pattern)):incidents.append({'path':p.relative_to(RUN).as_posix(),'error':readj(p).get('error') or readj(p).get('reason') or 'AssertionError ; voir trace et amendement de la cellule.'})
     incidents.append({'path':'client-qualification/1792744805696642600/01.stdout.jsonl','error':'Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.'})
     text='\n'.join(counts+[
         'Candidats admis : '+(', '.join(admitted) or 'aucun')+'.',
         'Candidats non admis ou admission à achever : '+(', '.join(pending) or 'aucun')+'.',
-        'T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; aucune conclusion sans les cellules.',
-        'T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; seules les cellules jouées sont mesurées.',
+        'T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; aucune cellule jouée à cet arrêt.',
+        'T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; aucune cellule jouée à cet arrêt.',
         f'Incidents consignés : {len(incidents)} ; voir détails et journaux, sans attribution automatique au candidat.',
         'Résultats publiés : '+URL,
     ])+'\n\n# Rapport de campagne — état courant\n\n'
     text+='État horodaté : '+memory()['utc']+'. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.\n\n'
     text+='Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.\n\n'
     if (RUN/'PUBLICATION-COURANTE.json').exists():text+='Vérification de publication : '+json.dumps(readj(RUN/'PUBLICATION-COURANTE.json'),ensure_ascii=False)+'.\n\n'
+    diagnostic=KIT/'DIAGNOSTIC-C05-T4-r1.md'
+    if diagnostic.exists():text+='## État de la campagne et diagnostic\n\n'+diagnostic.read_text(encoding='utf-8')+'\n\n'
     text+='## Admissions\n\n| Candidat | État | Preuve ou reste à faire |\n|---|---|---|\n'
     for a in admissions:text+='| '+a['candidate']+' | '+a['status']+' | '+a.get('reason','Nonce/catalogue acquis ; schémas à qualifier.').replace('|','/')+' |\n'
     text+='\n## Limites\n\nUn agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margelle commercial vendu par l’auteur d’Optimike ; corpus synthétique publié mais non rejoué en campagne. T1–T4 : une seule répétition. Trois répétitions de T5/T6/T7/T7b/T8 ne donnent pas un taux de risque rare. Les non-joués ne sont ni réussites ni échecs fonctionnels. Aucun contact mainteneur, aucune publication hors de ce dépôt.\n\n'
@@ -54,7 +56,7 @@ def build():
         for x in incidents:text+='- '+x['path']+' : '+x['error']+'\n'
     state=RUN/'REPRISE.json'
     if state.exists():text+='\n## Reprise exacte\n\n```json\n'+json.dumps(readj(state),ensure_ascii=False,indent=2)+'\n```\n'
-    text+='\n## Pilotage\n\nAucun changement de statut recommandé à ce stade ; statut canonique non audité (coffre quotidien hors périmètre). Prochaine action : suivre le point de reprise exact, puis le manifeste sous les seuils mémoire et verrou. Aucune tâche du coffre modifiée.\n'
+    text+='\n## Pilotage\n\nÉtat opérationnel de campagne : arrêt sur incident de périmètre technique non qualifié. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Prochaine action : qualifier le cache FDM et figer publiquement une nouvelle version/série avant tout nouveau départ ; prochaine ligne C05-T5-r1. Aucune tâche du coffre modifiée.\n'
     (RUN/'RAPPORT-CAMPAGNE.md').write_text(text,encoding='utf-8',newline='')
     print(json.dumps({'played':sum(r['status']=='JOUE' for r in rows),'unplayed':sum(r['status']!='JOUE' for r in rows),'admitted':admitted,'pending':pending}))
 

@@ -1,0 +1,38 @@
+{
+  "error": "Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.",
+  "cell": "C05-T4-r1",
+  "before_p_sha256": "0158edcbf0fda8dbc5883dddac8b850661b2613964dfb85d2f0f398ae4be83af",
+  "after_p_sha256": "0158edcbf0fda8dbc5883dddac8b850661b2613964dfb85d2f0f398ae4be83af",
+  "p_bytes_unchanged": true,
+  "n_absent_before_and_after": true,
+  "cache_before_sha256": "d2f00a5539d462075a7e24ae4abb430531af34c9a39e37ea1c21888de4e3f89f",
+  "cache_after_sha256": "f4c62bb78c31ffe4de74a2bbc2b1ee679818a0cdb916b2a69023ea6e7f297384",
+  "cache_entry_differences": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "before": {
+        "hash": "9817af1586f3ea25d1413f577035f50da9836a9e25aea26b60a64cf084c93bc3",
+        "lastAccessed": 1792747423798
+      },
+      "after": {
+        "hash": "9144f3069d3fadcb958ffd39bc6ee5d403cf3e63655ac77c5a7f9eac5a58a9fe",
+        "lastAccessed": 1792747428216
+      }
+    },
+    {
+      "path": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+      "before": {
+        "hash": "f88aa4a1a9a763b173db0baf89c6012eacf0fa43f40da15a9355516c84d1b14b",
+        "lastAccessed": 1792747423791
+      },
+      "after": {
+        "hash": "f88aa4a1a9a763b173db0baf89c6012eacf0fa43f40da15a9355516c84d1b14b",
+        "lastAccessed": 1792747424984
+      }
+    }
+  ],
+  "cache_hash_equals_p_before": false,
+  "candidate_write_rejected": true,
+  "runtime_cache_writer_attribution": "non observée ; inférence seulement",
+  "oracle_original_unchanged": "EFFET_NON_VOULU"
+}
