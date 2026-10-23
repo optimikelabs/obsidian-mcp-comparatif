@@ -9,7 +9,7 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T14:42:00.130958+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T14:45:29.947544+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
@@ -112,22 +112,21 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T14:41:16.436906+00:00",
-  "next_cell": "C08-T6-r1",
+  "state": "ARRET_INCIDENT",
+  "utc": "2026-10-23T14:45:29.902748+00:00",
+  "next_cell": "C08-T7-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T5-r1",
-  "last_result": "PROTEGE_NON_ACCOMPLI",
-  "last_reason": "dates ajoutées par FDM après l’instantané, hors jugement",
-  "next_action": "Reprendre C08-T6-r1 après publication de la décision C5 16 h 35 ; priorité produit 1.0.7.",
-  "replacement_registered": false
+  "last_cell": "C08-T6-r1",
+  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
+  "last_reason": "YAML_VALEUR_OU_TYPE",
+  "incident_cell": "C08-T6-r1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Reprendre C08-T6-r1 après publication de la décision C5 16 h 35 ; priorité produit 1.0.7.. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_INCIDENT. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C08-T7-r1. Aucune tâche du coffre modifiée.

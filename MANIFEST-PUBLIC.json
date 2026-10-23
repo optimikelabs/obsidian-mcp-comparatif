@@ -7982,7 +7982,7 @@
     },
     "preuves/validation-projection-campagne.json": {
       "size": 142,
-      "sha256": "30e4bdc3fe5aef21809d8f8f0033df3c9e86b4924654a74dda24e2dc7610cce8"
+      "sha256": "89e7a7f3b4a7cd324a812f90d831963f57020539e02a8e8e24d5a0c0f1543846"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -10168,13 +10168,113 @@
       "size": 5850,
       "sha256": "4f252007bdefea9ef3f7a326758f320dfaf4619400b27a9b646c9ea4dd8c1501"
     },
+    "resultats/cellules/C08-T6-r1/01.exit.json": {
+      "size": 437,
+      "sha256": "a75f977d56d51612674947a7d5eff940a35c59373a3f4d5e831bb41b0a5da974"
+    },
+    "resultats/cellules/C08-T6-r1/01.final.json": {
+      "size": 292,
+      "sha256": "8cca15bb83e9b4d65dfcf5564620933b2250d216e1b45a446f09ef98a73ee10d"
+    },
+    "resultats/cellules/C08-T6-r1/01.stdout.jsonl": {
+      "size": 13121,
+      "sha256": "9acc4451bd41797e4a6870d49cf2bcf94af03e23f4831b99857c4a75fb6fba19"
+    },
+    "resultats/cellules/C08-T6-r1/case-index.json": {
+      "size": 11333,
+      "sha256": "6e991f3937df2fa362d38b7fafab41c293097dcac1b59f74b8078692ff68d353"
+    },
+    "resultats/cellules/C08-T6-r1/catalogue.json": {
+      "size": 103179,
+      "sha256": "a22572363c5a8e3280aa9aaa568ffe073aeb2175e17511690e7aae89790493b4"
+    },
+    "resultats/cellules/C08-T6-r1/client-config-proof.json": {
+      "size": 998,
+      "sha256": "a56595f8f0a883bc61c36511875be20259a33d4e62a6d2be306d9774a4f2ded0"
+    },
+    "resultats/cellules/C08-T6-r1/closure-1792766729893242600.json": {
+      "size": 322,
+      "sha256": "8ee15c3d81e9d3dd54133e8f11889dbb7d8d288cdf2cc5b6a7891e964f12ffe4"
+    },
+    "resultats/cellules/C08-T6-r1/controller.jsonl": {
+      "size": 15257,
+      "sha256": "628b8f7de6d71cddabdc8644cb2960b145614195f29a7606a76ff27638504bf4"
+    },
+    "resultats/cellules/C08-T6-r1/diff-complet.json": {
+      "size": 1125,
+      "sha256": "e61bdbfb46b842e10de33c6cf34700fc6709cd0638511a5d845f1dc33e52f0a6"
+    },
+    "resultats/cellules/C08-T6-r1/effective-config.json": {
+      "size": 1717,
+      "sha256": "8f71871e5e5bb3bc9173c49d26928a307be29861755ad4d6aa47ad6a06bb2a4d"
+    },
+    "resultats/cellules/C08-T6-r1/fdm-observer-evidence.json": {
+      "size": 2298,
+      "sha256": "ff8bfa3c863a7a4f83cc1e112555d7d6dd8f04df08086be186a182dbcad1b123"
+    },
+    "resultats/cellules/C08-T6-r1/identity.json": {
+      "size": 325,
+      "sha256": "9e955672e83a4239ca3ae087ede7be0bb7f08e8343d674e24cf5ac756b8263e6"
+    },
+    "resultats/cellules/C08-T6-r1/inventaires-complets.json": {
+      "size": 597154,
+      "sha256": "b878ac2d5071be40f5b7b633e15d926dcb520b0f9a7e8e6a3821e97123bf5dba"
+    },
+    "resultats/cellules/C08-T6-r1/oracle.json": {
+      "size": 2315,
+      "sha256": "35e1d6dbe1a2d49e66ae1b9037935aa2332373182c1f97a698036ac01d7e6229"
+    },
+    "resultats/cellules/C08-T6-r1/preparation-applicative.json": {
+      "size": 473,
+      "sha256": "7a2e4e6dab562e39939e64472100ddb8f76995c3fa823b815949791f83521750"
+    },
+    "resultats/cellules/C08-T6-r1/prompt.json": {
+      "size": 1857,
+      "sha256": "316efb50502a60164b347496008c0d51902889fb826a1070ea320291431e3d39"
+    },
+    "resultats/cellules/C08-T6-r1/relay/events.jsonl": {
+      "size": 5852,
+      "sha256": "4f9fe544a8a909fd396fb4245cb87df4493a415e58a10e0b9c390c86e1f9a4c0"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0002-1.json": {
+      "size": 109111,
+      "sha256": "ed0d8a0302c2330da9e7bb4c416375598383ca60ba91cb8bd9923f5fc6ea3443"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0006-2.json": {
+      "size": 3387,
+      "sha256": "cda4281774d4024e3f8bb2aac3df804a1d0bf12ff51c0815b0eb2a3edf204659"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0013-3.json": {
+      "size": 2541,
+      "sha256": "70d1a70787071aceec03b26e72325af3b8f676e469d23bcf1642660a63e259b7"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0018-4.json": {
+      "size": 3389,
+      "sha256": "dcad383a30fd0bbe95523dc90d9b0e57da9a4854b8a1672553abb8c3b7a4a872"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0024-5.json": {
+      "size": 2721,
+      "sha256": "7bcb6c37ec95e70c92649c41d007de101ddf31b5990ef9701c2837a21e329356"
+    },
+    "resultats/cellules/C08-T6-r1/relay/rpc-0029-6.json": {
+      "size": 3395,
+      "sha256": "6ee91c9d8a8d129dbf14aea2e5d766b6d370310cb2ab62e3d82149486357d182"
+    },
+    "resultats/cellules/C08-T6-r1/result.json": {
+      "size": 1596,
+      "sha256": "beddb5536966a6f4461dadf89ea3b6fa17429408c0ad8cd988dcb95aa866aba1"
+    },
+    "resultats/cellules/C08-T6-r1/temoins-snapshots.json": {
+      "size": 5182,
+      "sha256": "036615a8b1fa37b37b091d3825865968bc29b440548c68b3022f2325b2dcb978"
+    },
     "resultats/cellules-190.csv": {
-      "size": 20530,
-      "sha256": "0628905f99660e8f97e899b1900d30b9a0b931a94494817e6651bf0aca35f939"
+      "size": 20524,
+      "sha256": "5e898ebe5f3caf3a285e66764fec22f6e2dea5af29bac363732aa9919b6c4fda"
     },
     "resultats/cellules-190.json": {
-      "size": 81676,
-      "sha256": "1e033d7c99e2f93fd5ab7e4eecf4ff873f0a03b30387b3e355924045760100ba"
+      "size": 83066,
+      "sha256": "36f5e81e7baced6678c27c4a43cb0fa8e5beb6c9a903b6ee7c95cbd1d80db58b"
     },
     "resultats/client-qualification/1792744805696642600/01.exit.json": {
       "size": 450,
@@ -10469,16 +10569,16 @@
       "sha256": "b53922d1925869154bdbccc310987708bd5d99bcdddbc9bba34c4ba61c5f6061"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 14541,
-      "sha256": "eb857119ea5347e810ce34bad4419257c34934165667774d23e6dda48e32692e"
+      "size": 14304,
+      "sha256": "630ea9fa9ccef3cab64dc26831382bd7a0f95bf697ed2e205ca28d179089123a"
     },
     "resultats/remplacements.json": {
       "size": 4,
       "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
     },
     "resultats/REPRISE.json": {
-      "size": 683,
-      "sha256": "20f5d89989af14c0397d9639af3a5543e8578ac197d46397232e8479fe5f3d3b"
+      "size": 522,
+      "sha256": "89db5d3603421ecdc333ceda2fb9aab9a1b85c2fa9ae6979a4100966a0077119"
     },
     "resultats/V12-ETAT.json": {
       "size": 859,
@@ -10697,5 +10797,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "d6eadbcc2215f322ad9f197b3d0651525d27197eca593667795d9405ba9c45d7"
+  "tree_sha256": "ac94b09d480b29ebfdeebdbf09e0bd795fa8f95fc41cfbff842570d928987107"
 }

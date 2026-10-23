@@ -1,0 +1,80 @@
+{
+  "task": "T6",
+  "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+  "errors": [
+    "YAML_VALEUR_OU_TYPE"
+  ],
+  "changed": [
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+  ],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+    ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+  ],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T04:38",
+      "after": "2026-10-23T16:45",
+      "attribution": "indéterminée"
+    }
+  ],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "human",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      },
+      {
+        "from": "human",
+        "to": "first",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      },
+      {
+        "from": "first",
+        "to": "after",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      }
+    ]
+  }
+}

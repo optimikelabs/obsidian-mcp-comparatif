@@ -1,0 +1,57 @@
+[
+  {
+    "path": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+    "key": "création",
+    "value": "2026-10-23T16:44",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "16c5f6e1471f21014d72c324fa5ee3b5f1273e4d7ed53520178ccc61059eb8fe",
+    "observed_utc": 1792766661.758,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  {
+    "path": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+    "key": "modification",
+    "value": "2026-10-23T16:44",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "16c5f6e1471f21014d72c324fa5ee3b5f1273e4d7ed53520178ccc61059eb8fe",
+    "observed_utc": 1792766661.758,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "création",
+    "value": "2026-10-23T16:44",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "2d358f2fa02380099703129a4310da4608edfb37377cc8859b73a41966c48003",
+    "observed_utc": 1792766666.505,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "modification",
+    "value": "2026-10-23T04:38",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "2d358f2fa02380099703129a4310da4608edfb37377cc8859b73a41966c48003",
+    "observed_utc": 1792766666.505,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "modification",
+    "value": "2026-10-23T16:45",
+    "previous_value": "2026-10-23T04:38",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "af0c5ba21ebeacf46147e95cf0b2ae16e7ace51856ffa4ff3efacfe06aa8de33",
+    "observed_utc": 1792766703.886,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  }
+]
