@@ -1,0 +1,13 @@
+{
+  "task_id": "T8",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": "Trace de suivi : EVENEMENT-2406.",
+  "proprietes": {
+    "occurrences": 1,
+    "ligne_finale": true,
+    "création": "2026-10-23T15:51",
+    "modification": "2026-10-23T15:52"
+  },
+  "message": "Ajout confirmé par relecture après réponse perdue, sans nouvelle écriture. Changement du champ modification constaté."
+}
