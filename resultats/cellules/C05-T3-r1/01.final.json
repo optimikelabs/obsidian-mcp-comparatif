@@ -1,0 +1,10 @@
+{
+  "task_id": "T3",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": null,
+  "proprietes": {
+    "rang": 2
+  },
+  "message": "rang=2 confirmé par relecture. Écart hors demande constaté : modification est passée de 2026-10-23T04:38 à 2026-10-23T11:23."
+}

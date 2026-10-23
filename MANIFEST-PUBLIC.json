@@ -6118,7 +6118,7 @@
     },
     "preuves/validation-projection-campagne.json": {
       "size": 142,
-      "sha256": "3f77df8a842977a5e7b33ea53d89b29ae0a1c0767e5cdb18f428369e9510f8e3"
+      "sha256": "8263d8ff50fdea20d7158037e500772b272322d53b5caa97c25d91009fd3550c"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -7256,13 +7256,101 @@
       "size": 2596,
       "sha256": "99c20e9ea5b6486e6cd78fb7d162ce04f45536b0948b186001666782fda153a5"
     },
+    "resultats/cellules/C05-T3-r1/01.exit.json": {
+      "size": 450,
+      "sha256": "115fc84eb441aee6cf481e79c8bbf32c4a85984cbf98976a606c5ffc8f475c64"
+    },
+    "resultats/cellules/C05-T3-r1/01.final.json": {
+      "size": 316,
+      "sha256": "61420e2ebe3063c3f617f6228c834d538d0c0ee39962d944e14bd20c4ef7865b"
+    },
+    "resultats/cellules/C05-T3-r1/01.stdout.jsonl": {
+      "size": 9407,
+      "sha256": "0804e6bdf25842b1ae0bbb079d369ff664773174eda9e112fe9aa3274e66a49a"
+    },
+    "resultats/cellules/C05-T3-r1/case-index.json": {
+      "size": 5809,
+      "sha256": "640dc47e4c2aa7ff67e8cd6c93567537199973d5863a067e205ccf6ef2f46e0a"
+    },
+    "resultats/cellules/C05-T3-r1/catalogue.json": {
+      "size": 23997,
+      "sha256": "0c9607be0ea5b34235c4e3b8814cd3809dd909125b99c8f41cd89802a5ba4bbe"
+    },
+    "resultats/cellules/C05-T3-r1/client-config-proof.json": {
+      "size": 882,
+      "sha256": "2d6097ae9baa36eb5f6ba1b527802da1f9c78ff9ec8dfe83d25a149bc5dce887"
+    },
+    "resultats/cellules/C05-T3-r1/controller.jsonl": {
+      "size": 11670,
+      "sha256": "24f91d1872462408d0f646898c8977c1f227e423dc24ec34c9fa3ecbde6a3f9d"
+    },
+    "resultats/cellules/C05-T3-r1/diff-complet.json": {
+      "size": 306,
+      "sha256": "a96899228ec0cf5eb1ca4af6442e59577fe947ae510d5e3397aca3864ce89bd5"
+    },
+    "resultats/cellules/C05-T3-r1/effective-config.json": {
+      "size": 1593,
+      "sha256": "6952439b69bd2c9a0caf21d2dd5d6859bc71d4cc404e8a5b0f73b748d02351a9"
+    },
+    "resultats/cellules/C05-T3-r1/fdm-observer-evidence.json": {
+      "size": 1361,
+      "sha256": "277ccfeeb2c9b06e5bfc2fd7572d7bc1860a7287ccebd654f22036f50e6963e0"
+    },
+    "resultats/cellules/C05-T3-r1/identity.json": {
+      "size": 261,
+      "sha256": "37360c7fca4ab991d46e39cca1a05cb6a7869909273fa5c82603ce2297651b1b"
+    },
+    "resultats/cellules/C05-T3-r1/inventaires-complets.json": {
+      "size": 299808,
+      "sha256": "663537c56a36cd1f815cded12df2e2de5226b1eb38980532b6605abb370b1a53"
+    },
+    "resultats/cellules/C05-T3-r1/oracle.json": {
+      "size": 737,
+      "sha256": "12f6352151bda8ecb12f4dceb1af11c5d1fc947cfc68c1e11f81a47f85aa005e"
+    },
+    "resultats/cellules/C05-T3-r1/preparation-applicative.json": {
+      "size": 473,
+      "sha256": "e8197479a986d9ad725385d656693cbe94137e2b8080a885f985924bf9ed8e2d"
+    },
+    "resultats/cellules/C05-T3-r1/prompt.json": {
+      "size": 1760,
+      "sha256": "cb9c2a5115114d69a1fc8163ec4c8f6eec6461e5a01f863b6d1bdb9ec765d286"
+    },
+    "resultats/cellules/C05-T3-r1/relay/events.jsonl": {
+      "size": 2641,
+      "sha256": "332a093d5021c53f462eead8c2c58a85a4d3cc44e4c6482e7f1146e5e94c4f9b"
+    },
+    "resultats/cellules/C05-T3-r1/relay/rpc-0002-1.json": {
+      "size": 25403,
+      "sha256": "e3543f467c6deaa39b46d5063d429b32eea5b206530f2fe40ce4d104fa306996"
+    },
+    "resultats/cellules/C05-T3-r1/relay/rpc-0005-2.json": {
+      "size": 4442,
+      "sha256": "95fd100b3b0a90f1924c709929f8821481477a4f516d7027f8e095f824baa821"
+    },
+    "resultats/cellules/C05-T3-r1/relay/rpc-0010-3.json": {
+      "size": 2040,
+      "sha256": "4f758872a1ac8e96c052b58ef4dd2b7d4cba87386b086a64ab8b013f22373450"
+    },
+    "resultats/cellules/C05-T3-r1/relay/rpc-0013-4.json": {
+      "size": 4442,
+      "sha256": "a278db20454d1a7985df1c0f92ac1dbfa8a4f756fd3bd3d0194b50cab5313340"
+    },
+    "resultats/cellules/C05-T3-r1/result.json": {
+      "size": 1435,
+      "sha256": "289ff6c5b10cb87e19b7280934e5f96eb1f446877e89661384c8ce4ce6a58a83"
+    },
+    "resultats/cellules/C05-T3-r1/temoins-snapshots.json": {
+      "size": 2592,
+      "sha256": "4a38492d9a70888ef35692a736b85111d438c89a991fa91b713a8326b6dba17e"
+    },
     "resultats/cellules-190.csv": {
-      "size": 20718,
-      "sha256": "3dc22b113fcc29c86661d73b0ed9e51c970cc47affdc7b21cb3da894e0f89404"
+      "size": 20678,
+      "sha256": "6ca295a60c1e8d522555b3663519b1d953dcd4b3155a90143ed7b8cc15a56114"
     },
     "resultats/cellules-190.json": {
-      "size": 68369,
-      "sha256": "962f6a8d5d93a7cffe8732570fe3633943dbee168d1f24680660d107a1a3e116"
+      "size": 69593,
+      "sha256": "636492fcad9a0fbac1b37511775eab7c796057f6bb98cfdf1b1a8cdc3ddc9fac"
     },
     "resultats/client-qualification/1792744805696642600/01.exit.json": {
       "size": 450,
@@ -7530,11 +7618,11 @@
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
       "size": 5302,
-      "sha256": "6dae3cd5e36bb2f6c0c0a4c806d42a5ecbf7cc93f8b3410c22ab42b841621576"
+      "sha256": "0d0e5c894866ea0275f66b518ee6f4a1f486ccf0de9a77301c69a2ee321d5ff8"
     },
     "resultats/REPRISE.json": {
       "size": 492,
-      "sha256": "225f1d2b04c99f51f57bbd9859b70651d185a9d580df3660cd4278c013100ddd"
+      "sha256": "b96e7e5b34d4604bdc9e842e3d5d418c258851382e148a78a274b27ea6e4a41c"
     },
     "scripts/admit_c01.py": {
       "size": 2553,
@@ -7713,5 +7801,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "329ac06c172541e081d031cc64bbbd3fd44ef6929d532ab562be480520e3e7d1"
+  "tree_sha256": "a07c85b246ac60934425bcbd7682a586d2ab33abb6970539cbd620b6c7edc956"
 }

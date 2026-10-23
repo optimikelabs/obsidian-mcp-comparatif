@@ -79,8 +79,54 @@
     "repetition": 1,
     "cell_id": "C05-T3-r1",
     "prompt_sha256": "5e5467d40f75b2b179ab54cdd31153d36b0cf82a10d12aad3619ba56effd9d29",
-    "status": "NON_JOUE",
-    "reason": "Cellule non commencée ; voir le point de reprise."
+    "status": "JOUE",
+    "verdict": "REUSSI_VERIFIE",
+    "reason": "",
+    "started_utc": 1792747340.2212272,
+    "finished_utc": 1792747397.496752,
+    "turns": [
+      {
+        "returncode": 0,
+        "duration_s": 22.437999999994645,
+        "stop_reason": null,
+        "forbidden_tool_events": [],
+        "thread_id": "<IDENTIFIANT_MASQUE>",
+        "usage": [
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 65181,
+              "cached_input_tokens": 57216,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 441,
+              "reasoning_output_tokens": 91
+            }
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
+    "candidate_calls": 3,
+    "wall_s": 57.275524854660034,
+    "used_tools": [
+      "vault",
+      "edit",
+      "vault"
+    ],
+    "catalogue_bytes": 15715,
+    "catalogue_tools": 7,
+    "model_s": 28.655999999988126,
+    "planned_editor_s": 0,
+    "price_usd": null,
+    "interventions": {
+      "setup": 1,
+      "planned_editor": 0,
+      "planned_reconnect": 0,
+      "human_help": 0,
+      "repair_by_controller": 0
+    },
+    "stop_campaign": false
   },
   {
     "order": 4,
