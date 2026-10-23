@@ -1,0 +1,32 @@
+{
+  "cell_id": "C05-T5-r1",
+  "utc": "2026-10-23T11:17:48.785639+00:00",
+  "error": "Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.",
+  "observed_error": "TypeError: Cannot read properties of undefined (reading 'replace')",
+  "config_has_N": false,
+  "config_has_P": false,
+  "human_snapshot_present": false,
+  "ui_disk_verified_event_present": false,
+  "secondary_issue": "Relay.injected est positionné avant la réussite du hook UI ; après erreur 503, une seconde requête mutante est transmise sans nouvelle barrière. Réponse candidat INVALID_PARAMETERS ; aucune note créée ni perdue observée.",
+  "verdict_unchanged": "INJECTION_INVALIDE",
+  "candidate_conclusion": "Aucune conclusion de protection/perte humaine : injection non établie.",
+  "business_files_changed": [],
+  "technical_files_changed": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "minimum_memory": {
+    "availableBytes": 7083020288,
+    "commitFreeBytes": 8476155904,
+    "samples": 83
+  },
+  "measurement": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "high",
+    "service_tier": "default"
+  },
+  "measurement_cli": "0.160.1",
+  "instance_stop_verified": true,
+  "remaining_test_processes": [],
+  "required_before_resume": "Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise."
+}

@@ -4,16 +4,16 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 0 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 0 cellules jouées.
-Incidents consignés : 8 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 9 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T11:15:38.701209+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T11:17:48.836851+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "f09b7a4da34fb81edec98ea8c0722bb2a73f319f", "remote_verified": true, "utc": "2026-10-23T11:14:10.731532+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "d500ccf51a9e13bc4c869d6ea2df59c163750c68", "remote_verified": true, "utc": "2026-10-23T11:16:07.731974+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -89,27 +89,53 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - publication/incident-20261023T0915.json : AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.
 - publication/incident-clone-v12-crlf.json : Premier clone de contrôle sans core.autocrlf=false : checkout CRLF différent du manifeste LF. Aucun candidat joué. Clone conservé ; contrôle corrigé avec git -c core.autocrlf=false clone, tous les fichiers conformes et oracles factices rejoués.
 - incidents/cache-fdm-C05-T4-r1.json : Cache FDM non inclus dans la liste technique gelée ; arrêt avant C05-T5-r1, aucun reclassement du verdict.
+- incidents/injection-ui-C05-T5-r1.json : Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.
 - client-qualification/1792744805696642600/01.stdout.jsonl : Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.
 
 ## Reprise exacte
 
 ```json
 {
-  "state": "ARRET_INCIDENT",
-  "utc": "2026-10-23T11:15:38.666209+00:00",
+  "state": "ARRET_INCIDENT_INJECTION_T5_A_QUALIFIER",
+  "utc": "2026-10-23T11:17:48.787647+00:00",
   "next_cell": "C05-T6-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py",
+  "command": null,
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C05-T5-r1",
   "last_result": "INJECTION_INVALIDE",
   "last_reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
-  "incident_cell": "C05-T5-r1"
+  "incident_cell": "C05-T5-r1",
+  "next_order": 6,
+  "next_action": "Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise.",
+  "memory": {
+    "utc": "2026-10-23T11:17:48.787647+00:00",
+    "commitFreeBytes": 6108565504,
+    "availableBytes": 6794891264,
+    "admitted": true,
+    "stop": false
+  },
+  "orchestrator_model": "gpt-6-astra",
+  "measurement_model": "gpt-6.1-sol",
+  "measurement_effort": "high",
+  "measurement_service_tier": "default",
+  "measurement_cli_version_observed": "0.160.1",
+  "measurement_model_availability": "Vérifiée runtime dans C05-T5-r1 : configuration effective et métadonnées des appels MCP ; client terminé sans erreur fournisseur.",
+  "cells_attempted_this_resume": 1,
+  "cells_played_this_resume": 0,
+  "series_1_played": 3,
+  "series_2_played": 0,
+  "reason": "Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.",
+  "replacement_C05_T1": "Non tenté ; seulement après la série 1, deux traces conservées.",
+  "C06": "Non tenté ; unique nouvelle admission seulement après série 2, 30 minutes au plus sous conditions mémoire.",
+  "campaign_processes_observed": [],
+  "bitnet": "Non relancé ; relance réservée à Mike.",
+  "resume_requires_public_amendment": true
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_INCIDENT. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C05-T6-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_INCIDENT_INJECTION_T5_A_QUALIFIER. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Correction commune de la configuration de cible et du relais après injection échouée ; qualification positive et négative, puis amendement public avant C05-T6-r1. Aucun rejeu de C05-T5-r1 autorisé dans cette reprise.. Aucune tâche du coffre modifiée.
