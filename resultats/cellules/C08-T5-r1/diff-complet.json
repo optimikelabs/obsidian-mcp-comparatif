@@ -1,0 +1,23 @@
+[
+  {
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "before_sha256": "b987931dac18ff0264da9299f4d0cd4686bb3818e76f24f2e17b900f56c317e8",
+    "after_sha256": "9ba6ab85eaeea44f328fa475f884ec73c098ebe1bbacd829b66cf009add2c9d6",
+    "before_size": 41555,
+    "after_size": 41555
+  },
+  {
+    "path": ".obsidian/workspace.json",
+    "before_sha256": "fb9a5fbdd77a898909da2c5a977a54e7dd628bf9e574e1cda0a3a59f95d5d014",
+    "after_sha256": "1cf2459104c92f92b4429f7a4606e85975290368604732da5b4d6962272325fa",
+    "before_size": 6555,
+    "after_size": 6660
+  },
+  {
+    "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+    "before_sha256": null,
+    "after_sha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d",
+    "before_size": null,
+    "after_size": 26
+  }
+]

@@ -1,0 +1,18 @@
+{"event": "bootstrap_response", "seq": 1, "monotonic_ns": 8743296000000, "utc": 1792765744.8886006, "id": 0}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 8743296000000, "utc": 1792765744.8886006, "id": 0}
+{"event": "response_delivered", "seq": 3, "monotonic_ns": 8743328000000, "utc": 1792765744.9225423, "id": 1}
+{"event": "tool_request", "seq": 4, "monotonic_ns": 8774046000000, "utc": 1792765775.6345644, "id": 2, "tool": "obsidian_read_note", "arguments_sha256": "b15961bf81e8cbdd38fe9894d72a9951607cefb2fb385e675f448a075c18a880"}
+{"event": "upstream_response", "seq": 5, "monotonic_ns": 8774062000000, "utc": 1792765775.6474893, "id": 2, "tool": "obsidian_read_note", "duration_s": 0.01599999999962165, "bytes": 291, "is_error": true}
+{"event": "response_delivered", "seq": 6, "monotonic_ns": 8774062000000, "utc": 1792765775.6511028, "id": 2}
+{"event": "tool_request", "seq": 7, "monotonic_ns": 8782156000000, "utc": 1792765783.7360678, "id": 3, "tool": "obsidian_create_note", "arguments_sha256": "4355ed4a5504379bf7559360438d1adcb17750737c4e7bedf830f90fed631158"}
+{"event": "request_held", "seq": 8, "monotonic_ns": 8782156000000, "utc": 1792765783.7360678, "id": 3, "request_sha256": "3c3c03364d77b51ecf478b26a9ec199d9a4502d9684127e1c77c92bc4da74546"}
+{"event": "ui_disk_verified", "seq": 9, "monotonic_ns": 8783171000000, "utc": 1792765784.7594717, "snapshot_sha256": "20197b86efb4b77ac2e41ad80ea02c36aeea59641d4f26576271faebd9ab25a1"}
+{"event": "dispatch", "seq": 10, "monotonic_ns": 8783171000000, "utc": 1792765784.7594717, "id": 3, "request_sha256": "3c3c03364d77b51ecf478b26a9ec199d9a4502d9684127e1c77c92bc4da74546", "kind": "mutation"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 8783187000000, "utc": 1792765784.7729068, "id": 3, "tool": "obsidian_create_note", "duration_s": 0.01599999999962165, "bytes": 285, "is_error": true}
+{"event": "first_snapshot", "seq": 12, "monotonic_ns": 8783859000000, "utc": 1792765785.4500625, "snapshot_sha256": "5485f40f0112639c6f555c0abefb5295144a6cb1779a632d5b93568990072a29"}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 8783859000000, "utc": 1792765785.4500625, "id": 3}
+{"event": "tool_request", "seq": 14, "monotonic_ns": 8788468000000, "utc": 1792765790.063441, "id": 4, "tool": "obsidian_read_note", "arguments_sha256": "b15961bf81e8cbdd38fe9894d72a9951607cefb2fb385e675f448a075c18a880"}
+{"event": "upstream_response", "seq": 15, "monotonic_ns": 8788484000000, "utc": 1792765790.0767846, "id": 4, "tool": "obsidian_read_note", "duration_s": 0.0, "bytes": 660, "is_error": false}
+{"event": "candidate_note_access", "seq": 16, "monotonic_ns": 8788484000000, "utc": 1792765790.0767846, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 17, "monotonic_ns": 8788484000000, "utc": 1792765790.0782986, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "content_sha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d", "response_received": true}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 8788484000000, "utc": 1792765790.0782986, "id": 4}

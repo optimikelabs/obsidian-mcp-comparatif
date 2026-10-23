@@ -1,0 +1,62 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792765744955,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_018044c8a222c065016adb6f5d76c88191800cc66538e72401",
+        "progressToken": 3
+      },
+      "name": "obsidian_read_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "max_chars": 25000
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Read Obsidian Note succeeded.\n{\n  \"path\": \"Efforts/Projets/Compte rendu — Essai MCP.md\",\n  \"content\": \"NOTE HUMAINE À CONSERVER\\n\",\n  \"etag\": \"15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d\",\n  \"total_characters\": 25,\n  \"offset\": 0,\n  \"has_more\": false\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+          "content": "NOTE HUMAINE À CONSERVER\n",
+          "etag": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d",
+          "total_characters": 25,
+          "offset": 0,
+          "has_more": false
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

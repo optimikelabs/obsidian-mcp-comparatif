@@ -1,0 +1,60 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792765744955,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_018044c8a222c065016adb6f4f0a24819187175e5a5a852c5b",
+        "progressToken": 1
+      },
+      "name": "obsidian_read_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "max_chars": 25000
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "NOTE_NOT_FOUND: The requested path does not exist."
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "error": {
+          "code": "NOTE_NOT_FOUND",
+          "message": "The requested path does not exist.",
+          "retryable": false
+        }
+      },
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

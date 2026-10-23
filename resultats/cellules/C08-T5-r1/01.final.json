@@ -1,0 +1,8 @@
+{
+  "task_id": "T5",
+  "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+  "etat": "conflit",
+  "extrait": "NOTE HUMAINE À CONSERVER\n",
+  "proprietes": {},
+  "message": "Collision lors de la création exclusive ; note conservée et relue, sans écrasement."
+}
