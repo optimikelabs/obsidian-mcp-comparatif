@@ -1,0 +1,501 @@
+{
+  "task": "T6",
+  "events": [
+    {
+      "event": "bootstrap_response",
+      "seq": 1,
+      "monotonic_ns": 13133640000000,
+      "utc": 1792770135.2548316,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 2,
+      "monotonic_ns": 13133640000000,
+      "utc": 1792770135.2558281,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 3,
+      "monotonic_ns": 13133656000000,
+      "utc": 1792770135.2733119,
+      "id": 1
+    },
+    {
+      "event": "tool_request",
+      "seq": 4,
+      "monotonic_ns": 13143125000000,
+      "utc": 1792770144.7382965,
+      "id": 2,
+      "tool": "vault_read",
+      "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 5,
+      "monotonic_ns": 13143140000000,
+      "utc": 1792770144.7584655,
+      "id": 2,
+      "tool": "vault_read",
+      "duration_s": 0.014999999999417923,
+      "bytes": 1934,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 6,
+      "monotonic_ns": 13143140000000,
+      "utc": 1792770144.7609787,
+      "id": 2,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 7,
+      "monotonic_ns": 13143140000000,
+      "utc": 1792770144.7621078,
+      "id": 2,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "content_sha256": "5d8e8af8923572600fa293e3c49bcc6c1d9f106c847180a2d0e0af001bf273b0",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 8,
+      "monotonic_ns": 13143140000000,
+      "utc": 1792770144.763117,
+      "id": 2
+    },
+    {
+      "event": "tool_request",
+      "seq": 9,
+      "monotonic_ns": 13151171000000,
+      "utc": 1792770152.792274,
+      "id": 3,
+      "tool": "vault_write",
+      "arguments_sha256": "14f7e7a93f5dc21c2b2139f3b51090434d5b48f1e9ac2c20728c1d44f0a8eb24"
+    },
+    {
+      "event": "request_held",
+      "seq": 10,
+      "monotonic_ns": 13151171000000,
+      "utc": 1792770152.7938092,
+      "id": 3,
+      "request_sha256": "01b7986b3492a77318062c4e2ad21a958055f68c677d0703ab06966cc46a641d"
+    },
+    {
+      "event": "ui_disk_verified",
+      "seq": 11,
+      "monotonic_ns": 13153156000000,
+      "utc": 1792770154.778943,
+      "snapshot_sha256": "a8b61c01bb92cbcaa0132c21e880cc9bdd9e4d9cb73027f8d318ae9a076ced23"
+    },
+    {
+      "event": "dispatch",
+      "seq": 12,
+      "monotonic_ns": 13153156000000,
+      "utc": 1792770154.778943,
+      "id": 3,
+      "request_sha256": "01b7986b3492a77318062c4e2ad21a958055f68c677d0703ab06966cc46a641d",
+      "kind": "mutation"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 13,
+      "monotonic_ns": 13153171000000,
+      "utc": 1792770154.792776,
+      "id": 3,
+      "tool": "vault_write",
+      "duration_s": 0.014999999999417923,
+      "bytes": 168,
+      "is_error": true
+    },
+    {
+      "event": "first_snapshot",
+      "seq": 14,
+      "monotonic_ns": 13154593000000,
+      "utc": 1792770156.217943,
+      "snapshot_sha256": "a9dc9a1fe1538509ef0bc647e8a6f922b44eaf6cdb8a0d55ab2c3d3334dcd1ff"
+    },
+    {
+      "event": "response_delivered",
+      "seq": 15,
+      "monotonic_ns": 13154593000000,
+      "utc": 1792770156.217943,
+      "id": 3
+    },
+    {
+      "event": "tool_request",
+      "seq": 16,
+      "monotonic_ns": 13158218000000,
+      "utc": 1792770159.8362453,
+      "id": 4,
+      "tool": "vault_read",
+      "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 17,
+      "monotonic_ns": 13158234000000,
+      "utc": 1792770159.84539,
+      "id": 4,
+      "tool": "vault_read",
+      "duration_s": 0.01599999999962165,
+      "bytes": 1935,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 18,
+      "monotonic_ns": 13158234000000,
+      "utc": 1792770159.8469324,
+      "id": 4,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 19,
+      "monotonic_ns": 13158234000000,
+      "utc": 1792770159.848002,
+      "id": 4,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "content_sha256": "944463e3300a5dd3407d59476111bbd2be8e71b35fcd6583f93d4c29a2fd6a57",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 20,
+      "monotonic_ns": 13158234000000,
+      "utc": 1792770159.848002,
+      "id": 4
+    },
+    {
+      "event": "tool_request",
+      "seq": 21,
+      "monotonic_ns": 13163734000000,
+      "utc": 1792770165.3476725,
+      "id": 5,
+      "tool": "vault_write",
+      "arguments_sha256": "1f4778ca788c9f7f64ecf60414efa07ba2cffab4430b6d0eb21a227e52bda793"
+    },
+    {
+      "event": "mutation_dispatch",
+      "seq": 22,
+      "monotonic_ns": 13163734000000,
+      "utc": 1792770165.3495069,
+      "id": 5,
+      "request_sha256": "9c32714bb1bc8b5eb5e1b8a020d3f85d919398f287f364e7b93f5f6ad1b6cf7a"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 23,
+      "monotonic_ns": 13163750000000,
+      "utc": 1792770165.3716767,
+      "id": 5,
+      "tool": "vault_write",
+      "duration_s": 0.01599999999962165,
+      "bytes": 137,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 24,
+      "monotonic_ns": 13163750000000,
+      "utc": 1792770165.3716767,
+      "id": 5,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 25,
+      "monotonic_ns": 13163750000000,
+      "utc": 1792770165.3726876,
+      "id": 5
+    },
+    {
+      "event": "tool_request",
+      "seq": 26,
+      "monotonic_ns": 13168343000000,
+      "utc": 1792770169.9614263,
+      "id": 6,
+      "tool": "vault_read",
+      "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 27,
+      "monotonic_ns": 13168359000000,
+      "utc": 1792770169.972219,
+      "id": 6,
+      "tool": "vault_read",
+      "duration_s": 0.01599999999962165,
+      "bytes": 1938,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 28,
+      "monotonic_ns": 13168359000000,
+      "utc": 1792770169.972219,
+      "id": 6,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 29,
+      "monotonic_ns": 13168359000000,
+      "utc": 1792770169.9742272,
+      "id": 6,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "content_sha256": "fc280b2834ed0978e83728a191b253a6282f6f437566ff809bab1ef48af6d4dc",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 30,
+      "monotonic_ns": 13168359000000,
+      "utc": 1792770169.9742272,
+      "id": 6
+    }
+  ],
+  "response": {
+    "task_id": "T6",
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "etat": "applique",
+    "extrait": "Passage à modifier : essai prévu vendredi.",
+    "proprietes": {},
+    "message": "Remplacement vérifié par relecture complète. Après refus de version, reconstruction en préservant la correction humaine H-2406 et toutes les autres données."
+  },
+  "expected_before_tree_sha256": "56bda5c0c7d15d7522b5e9d3a0b154ca1b25f8c2e021cb1019afdfc5d54b3c9f",
+  "technical_paths": [
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    ".obsidian/workspace.json"
+  ],
+  "date_evidence": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "création",
+      "value": "2026-10-23T17:41",
+      "previous_value": "None",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "5d8e8af8923572600fa293e3c49bcc6c1d9f106c847180a2d0e0af001bf273b0",
+      "observed_utc": 1792770117.384,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    },
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "value": "2026-10-23T04:38",
+      "previous_value": "None",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "5d8e8af8923572600fa293e3c49bcc6c1d9f106c847180a2d0e0af001bf273b0",
+      "observed_utc": 1792770117.384,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    },
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "value": "2026-10-23T17:42",
+      "previous_value": "2026-10-23T04:38",
+      "plugin": "frontmatter-date-manager",
+      "version": "1.6.0",
+      "after_sha256": "944463e3300a5dd3407d59476111bbd2be8e71b35fcd6583f93d4c29a2fd6a57",
+      "observed_utc": 1792770155.247,
+      "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+    }
+  ],
+  "window_start": 1792770130.3315837,
+  "window_end": 1792770180.9707735,
+  "protocol_version": "1.4",
+  "fdm_dates_policy": "fdm-dates-v1.4",
+  "fdm_dates_context": {
+    "version": "1.6.0",
+    "settings": {
+      "dateFormat": "yyyy-MM-dd'T'HH:mm",
+      "timezone": "",
+      "enableNumberProperties": false,
+      "enableCreateTime": true,
+      "enableAutoUpdate": true,
+      "headerUpdated": "modification",
+      "headerCreated": "création",
+      "minSecondsBetweenSaves": 30,
+      "delayForNewFiles": 20000,
+      "postUpdateCommand": "",
+      "filterRules": "X/Modèles\nX/META/Skills",
+      "enableModifiedTime": true,
+      "enableLastViewed": false,
+      "headerLastViewed": "viewed",
+      "countUpdatesEnabled": false,
+      "headerUpdateCount": "updated_count",
+      "enableContentHashCheck": true,
+      "hashTrackingMode": "both",
+      "frontmatterHashExcludeKeys": [],
+      "enableAutoPopulateCache": true,
+      "hashCacheMaxSize": 20000,
+      "inversionFixStrategy": "disabled",
+      "inversionToleranceSec": 0
+    },
+    "records": [
+      {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "plugin": "frontmatter-date-manager",
+        "version": "1.6.0",
+        "before": {
+          "type": "projet",
+          "parent": null,
+          "collection": [
+            "[[Projets]]"
+          ],
+          "entité": null,
+          "statut": "actif",
+          "notes_liees": null,
+          "rang": 1,
+          "client": false,
+          "échéance": null,
+          "next_action": "Trier trois captures.",
+          "budget_h": null,
+          "budget_euros": null,
+          "type_projet": null,
+          "temoin_bool": true,
+          "temoin_liste": [
+            "café",
+            "œuvre"
+          ],
+          "temoin_entier": 7,
+          "clé_inconnue": "Été — 東京"
+        },
+        "after": {
+          "type": "projet",
+          "parent": null,
+          "collection": [
+            "[[Projets]]"
+          ],
+          "entité": null,
+          "statut": "actif",
+          "notes_liees": null,
+          "rang": 1,
+          "client": false,
+          "échéance": null,
+          "next_action": "Trier trois captures.",
+          "budget_h": null,
+          "budget_euros": null,
+          "type_projet": null,
+          "temoin_bool": true,
+          "temoin_liste": [
+            "café",
+            "œuvre"
+          ],
+          "temoin_entier": 7,
+          "clé_inconnue": "Été — 東京",
+          "création": "2026-10-23T17:41",
+          "modification": "2026-10-23T04:38"
+        },
+        "observed_utc": 1792770117.384,
+        "from_fdm_stack": true,
+        "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651",
+        "note": {
+          "base64": "LS0tCnR5cGU6IHByb2pldApwYXJlbnQ6CmNvbGxlY3Rpb246CiAgLSAiW1tQcm9qZXRzXV0iCmVudGl0w6k6CnN0YXR1dDogYWN0aWYKbm90ZXNfbGllZXM6CnJhbmc6IDEKY2xpZW50OiBmYWxzZQrDqWNow6lhbmNlOgpuZXh0X2FjdGlvbjogVHJpZXIgdHJvaXMgY2FwdHVyZXMuCmJ1ZGdldF9oOgpidWRnZXRfZXVyb3M6CnR5cGVfcHJvamV0Ogp0ZW1vaW5fYm9vbDogdHJ1ZQp0ZW1vaW5fbGlzdGU6CiAgLSBjYWbDqQogIC0gxZN1dnJlCnRlbW9pbl9lbnRpZXI6IDcKY2zDqV9pbmNvbm51ZTogw4l0w6kg4oCUIOadseS6rApjcsOpYXRpb246IDIwMjYtMTAtMjNUMTc6NDEKbW9kaWZpY2F0aW9uOiAyMDI2LTEwLTIzVDA0OjM4Ci0tLQojIyBGaWNoZSBkdSBwcm9qZXQKLSBPYmplY3RpZiA6IHRyaWVyIHRyb2lzIGNhcHR1cmVzLgotIFLDqWbDqXJlbmNlIGRlIHJlY2hlcmNoZSA6IE1BUkdFTExFLVRFU1QtMjQwNi4KLSBQYXNzYWdlIMOgIG1vZGlmaWVyIDogZXNzYWkgcHLDqXZ1IGpldWRpLgotIFTDqW1vaW4gaHVtYWluIDogdmVyc2lvbiBpbml0aWFsZS4KLSBUw6ltb2luIGludGFjdCA6IGNhZsOpLCDFk3V2cmUsIFtbUHJvamV0IHTDqW1vaW4g4oCUIFRlc3QgTUNQXV0uCg==",
+          "size": 613,
+          "sha256": "5d8e8af8923572600fa293e3c49bcc6c1d9f106c847180a2d0e0af001bf273b0"
+        },
+        "stat_before": {
+          "ctime": 1792770103089,
+          "mtime": 1792723086962
+        }
+      },
+      {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "plugin": "frontmatter-date-manager",
+        "version": "1.6.0",
+        "before": {
+          "type": "projet",
+          "parent": null,
+          "collection": [
+            "[[Projets]]"
+          ],
+          "entité": null,
+          "statut": "actif",
+          "notes_liees": null,
+          "rang": 1,
+          "client": false,
+          "échéance": null,
+          "next_action": "Trier trois captures.",
+          "budget_h": null,
+          "budget_euros": null,
+          "type_projet": null,
+          "temoin_bool": true,
+          "temoin_liste": [
+            "café",
+            "œuvre"
+          ],
+          "temoin_entier": 7,
+          "clé_inconnue": "Été — 東京",
+          "création": "2026-10-23T17:41",
+          "modification": "2026-10-23T04:38"
+        },
+        "after": {
+          "type": "projet",
+          "parent": null,
+          "collection": [
+            "[[Projets]]"
+          ],
+          "entité": null,
+          "statut": "actif",
+          "notes_liees": null,
+          "rang": 1,
+          "client": false,
+          "échéance": null,
+          "next_action": "Trier trois captures.",
+          "budget_h": null,
+          "budget_euros": null,
+          "type_projet": null,
+          "temoin_bool": true,
+          "temoin_liste": [
+            "café",
+            "œuvre"
+          ],
+          "temoin_entier": 7,
+          "clé_inconnue": "Été — 東京",
+          "création": "2026-10-23T17:41",
+          "modification": "2026-10-23T17:42"
+        },
+        "observed_utc": 1792770155.247,
+        "from_fdm_stack": true,
+        "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651",
+        "note": {
+          "base64": "LS0tCnR5cGU6IHByb2pldApwYXJlbnQ6CmNvbGxlY3Rpb246CiAgLSAiW1tQcm9qZXRzXV0iCmVudGl0w6k6CnN0YXR1dDogYWN0aWYKbm90ZXNfbGllZXM6CnJhbmc6IDEKY2xpZW50OiBmYWxzZQrDqWNow6lhbmNlOgpuZXh0X2FjdGlvbjogVHJpZXIgdHJvaXMgY2FwdHVyZXMuCmJ1ZGdldF9oOgpidWRnZXRfZXVyb3M6CnR5cGVfcHJvamV0Ogp0ZW1vaW5fYm9vbDogdHJ1ZQp0ZW1vaW5fbGlzdGU6CiAgLSBjYWbDqQogIC0gxZN1dnJlCnRlbW9pbl9lbnRpZXI6IDcKY2zDqV9pbmNvbm51ZTogw4l0w6kg4oCUIOadseS6rApjcsOpYXRpb246IDIwMjYtMTAtMjNUMTc6NDEKbW9kaWZpY2F0aW9uOiAyMDI2LTEwLTIzVDE3OjQyCi0tLQojIyBGaWNoZSBkdSBwcm9qZXQKLSBPYmplY3RpZiA6IHRyaWVyIHRyb2lzIGNhcHR1cmVzLgotIFLDqWbDqXJlbmNlIGRlIHJlY2hlcmNoZSA6IE1BUkdFTExFLVRFU1QtMjQwNi4KLSBQYXNzYWdlIMOgIG1vZGlmaWVyIDogZXNzYWkgcHLDqXZ1IGpldWRpLgotIFTDqW1vaW4gaHVtYWluIDogY29ycmVjdGlvbiBILTI0MDYuCi0gVMOpbW9pbiBpbnRhY3QgOiBjYWbDqSwgxZN1dnJlLCBbW1Byb2pldCB0w6ltb2luIOKAlCBUZXN0IE1DUF1dLgo=",
+          "size": 614,
+          "sha256": "944463e3300a5dd3407d59476111bbd2be8e71b35fcd6583f93d4c29a2fd6a57"
+        },
+        "stat_before": {
+          "ctime": 1792770103089,
+          "mtime": 1792770153188
+        }
+      }
+    ],
+    "birthtimes": {
+      "Efforts/Projets/Projet témoin — Test MCP.md": 1792770103.088583,
+      "Efforts/Projets/Note Q.md": 1792770103.0875828
+    },
+    "utc_offset_seconds": 7200.0
+  },
+  "fdm_cache_policy": "fdm-cache-v1.2",
+  "fdm_opened_notes": [
+    "Efforts/Projets/Projet témoin — Test MCP.md",
+    "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+  ],
+  "snapshot_files": {
+    "before": "relay/before.json",
+    "after": "after.json",
+    "human": "relay/human.json",
+    "first": "relay/first.json"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792770135308,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_053c96b1d962d206016adb8066272c819197fd473ca73fab12",
+        "progressToken": 2
+      },
+      "name": "vault_write",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "content": "---\ntype: projet\nparent:\ncollection:\n  - \"[[Projets]]\"\nentité:\nstatut: actif\nnotes_liees:\nrang: 1\nclient: false\néchéance:\nnext_action: Trier trois captures.\nbudget_h:\nbudget_euros:\ntype_projet:\ntemoin_bool: true\ntemoin_liste:\n  - café\n  - œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\ncréation: 2026-10-23T17:41\nmodification: 2026-10-23T04:38\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : essai prévu vendredi.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n",
+        "ifMatch": "5d8e8a"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "If-Match named \"5d8e8a\", but the file is now at version \"6c5222\"."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}
