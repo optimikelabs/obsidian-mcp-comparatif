@@ -4,7 +4,7 @@ order,series,candidate,task,repetition,cell_id,status,verdict,reason
 3,1,C05,T3,1,C05-T3-r1,JOUE,REUSSI_VERIFIE,
 4,1,C05,T4,1,C05-T4-r1,JOUE,EFFET_NON_VOULU,HORS_CIBLE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente
 5,1,C05,T5,1,C05-T5-r1,NON_JOUE,INJECTION_INVALIDE,INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente
-6,1,C05,T6,1,C05-T6-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
+6,1,C05,T6,1,C05-T6-r1,JOUE,REUSSI_VERIFIE,
 7,1,C05,T7,1,C05-T7-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 8,1,C05,T8,1,C05-T8-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.
 9,1,C08,T1,1,C08-T1-r1,NON_JOUE,,Cellule non commencée ; voir le point de reprise.

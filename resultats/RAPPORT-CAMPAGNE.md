@@ -1,19 +1,19 @@
-Série 1 : 3 cellules jouées ; 77 non jouées (sur 80).
+Série 1 : 4 cellules jouées ; 76 non jouées (sur 80).
 Série 2 : 0 cellules jouées ; 110 non jouées (sur 110).
 Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
-T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 0 cellules jouées.
+T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 1 cellules jouées.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 0 cellules jouées.
 Incidents consignés : 10 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T13:43:38.242993+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T13:49:25.254919+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "623b96309e18bd6656f1d59ff57039fd0b5f50a8", "remote_verified": true, "utc": "2026-10-23T11:18:18.953804+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "71b70f866a113d3b2739cf5a0dceb775c084181e", "remote_verified": true, "utc": "2026-10-23T13:47:43.191180+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -101,56 +101,21 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "V13_QUALIFIE_PRET_PUBLICATION_PUIS_C05_T6",
-  "utc": "2026-10-23T13:43:37.699684+00:00",
-  "next_cell": "C05-T6-r1",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T13:49:25.225298+00:00",
+  "next_cell": "C05-T7-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T5-r1 --series 1 --max-cells 1",
+  "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C05-T5-r1",
-  "last_result": "INJECTION_INVALIDE",
-  "last_reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
-  "incident_cell": "C05-T5-r1",
-  "next_order": 6,
-  "next_action": "Vérifier la publication du commit v1.3, puis reprendre C05-T6-r1 avec verrou libre et seuils mémoire respectés.",
-  "memory": {
-    "utc": "2026-10-23T11:17:48.787647+00:00",
-    "commitFreeBytes": 6108565504,
-    "availableBytes": 6794891264,
-    "admitted": true,
-    "stop": false
-  },
-  "orchestrator_model": "gpt-6-astra",
-  "measurement_model": "gpt-6.1-sol",
-  "measurement_effort": "high",
-  "measurement_service_tier": "default",
-  "measurement_cli_version_observed": "0.160.1",
-  "measurement_model_availability": "Vérifiée runtime dans C05-T5-r1 : configuration effective et métadonnées des appels MCP ; client terminé sans erreur fournisseur.",
-  "cells_attempted_this_resume": 1,
-  "cells_played_this_resume": 0,
-  "series_1_played": 3,
-  "series_2_played": 0,
-  "reason": "Injection UI T5 invalide : cfg.N absent du fichier obsidian.json créé par campaign_runtime.prepare ; TypeError avant création humaine.",
-  "replacement_C05_T1": "Non tenté ; seulement après la série 1, deux traces conservées.",
-  "C06": "Non tenté ; unique nouvelle admission seulement après série 2, 30 minutes au plus sous conditions mémoire.",
-  "campaign_processes_observed": [],
-  "bitnet": "Non relancé ; relance réservée à Mike.",
-  "resume_requires_public_amendment": true,
-  "qualification_v13": {
-    "synthetic_checks": 17,
-    "real_ui_checks": 4,
-    "regression_checks": 106,
-    "qualified": true
-  },
-  "replacement_C05_T5": "Un seul remplacement à la fin de la série 1, après qualification ; original conservé.",
-  "product_priority_until_local": "2026-10-23T15:30:00",
-  "network_interruption": "Coupure DNS signalée par C5, sans cellule lancée ; aucune qualification rejouée.",
-  "product_lock_observed": "margelle-produit re-test 07 Hub 0.5 ; début 15 h 18 ; fin estimée 16 h 33"
+  "last_cell": "C05-T6-r1",
+  "last_result": "REUSSI_VERIFIE",
+  "last_reason": "",
+  "incident_cell": null
 }
 ```
 
 ## Pilotage
 
-État opérationnel : V13_QUALIFIE_PRET_PUBLICATION_PUIS_C05_T6. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Vérifier la publication du commit v1.3, puis reprendre C05-T6-r1 avec verrou libre et seuils mémoire respectés.. Aucune tâche du coffre modifiée.
+État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C05-T7-r1. Aucune tâche du coffre modifiée.
