@@ -1,0 +1,62 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792763669116,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0cd0b6c9792f6058016adb6720c1d881919cf605e9ec89ced2",
+        "progressToken": 2
+      },
+      "name": "obsidian_read_note",
+      "arguments": {
+        "vault": "test",
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "max_chars": 25000
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Read Obsidian Note succeeded.\n{\n  \"path\": \"Efforts/Projets/Projet témoin — Test MCP.md\",\n  \"content\": \"---\\ntype: projet\\nparent:\\ncollection:\\n  - \\\"[[Projets]]\\\"\\nentité:\\nstatut: actif\\nnotes_liees:\\nrang: 1\\nclient: false\\néchéance:\\nnext_action: Trier trois captures.\\nbudget_h:\\nbudget_euros:\\ntype_projet:\\ntemoin_bool: true\\ntemoin_liste:\\n  - café\\n  - œuvre\\ntemoin_entier: 7\\nclé_inconnue: Été — 東京\\ncréation: 2026-10-23T15:53\\nmodification: 2026-10-23T04:38\\n---\\n## Fiche du projet\\n- Objectif : trier trois captures.\\n- Référence de recherche : MARGELLE-TEST-2406.\\n- Passage à modifier : essai prévu jeudi.\\n- Témoin humain : version initiale.\\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\\n\",\n  \"etag\": \"78d72af9de929dde99ede336b760b274025794d8ebec33948b3d9194e9a61ea5\",\n  \"total_characters\": 587,\n  \"offset\": 0,\n  \"has_more\": false\n}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "data": {
+          "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+          "content": "---\ntype: projet\nparent:\ncollection:\n  - \"[[Projets]]\"\nentité:\nstatut: actif\nnotes_liees:\nrang: 1\nclient: false\néchéance:\nnext_action: Trier trois captures.\nbudget_h:\nbudget_euros:\ntype_projet:\ntemoin_bool: true\ntemoin_liste:\n  - café\n  - œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\ncréation: 2026-10-23T15:53\nmodification: 2026-10-23T04:38\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : essai prévu jeudi.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n",
+          "etag": "78d72af9de929dde99ede336b760b274025794d8ebec33948b3d9194e9a61ea5",
+          "total_characters": 587,
+          "offset": 0,
+          "has_more": false
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}
