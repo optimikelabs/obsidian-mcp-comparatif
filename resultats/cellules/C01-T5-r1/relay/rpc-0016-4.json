@@ -1,0 +1,49 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792769852946,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0cb9d4c6eb382fcc016adb7f4f1dd88191b0331d1ef2ca5a0a",
+        "progressToken": 3
+      },
+      "name": "vault_read",
+      "arguments": {
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"tags\": [],\n  \"frontmatter\": {},\n  \"stat\": {\n    \"ctime\": 1792769864367,\n    \"mtime\": 1792769867592,\n    \"size\": 26\n  },\n  \"path\": \"Efforts/Projets/Compte rendu — Essai MCP.md\",\n  \"content\": \"NOTE HUMAINE À CONSERVER\\n\",\n  \"links\": [],\n  \"backlinks\": [],\n  \"unresolvedLinks\": [],\n  \"version\": \"15325d\"\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}
