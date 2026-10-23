@@ -1,0 +1,57 @@
+{
+  "order": 2,
+  "series": 1,
+  "candidate": "C05",
+  "task": "T2",
+  "repetition": 1,
+  "cell_id": "C05-T2-r1",
+  "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+  "status": "JOUE",
+  "verdict": "REUSSI_VERIFIE",
+  "reason": "",
+  "started_utc": 1792747268.1843193,
+  "finished_utc": 1792747324.2938864,
+  "turns": [
+    {
+      "returncode": 0,
+      "duration_s": 22.030999999988126,
+      "stop_reason": null,
+      "forbidden_tool_events": [],
+      "thread_id": "<IDENTIFIANT_MASQUE>",
+      "usage": [
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 65135,
+            "cached_input_tokens": 47616,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 434,
+            "reasoning_output_tokens": 82
+          }
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
+  "candidate_calls": 3,
+  "wall_s": 56.11056709289551,
+  "used_tools": [
+    "vault",
+    "edit",
+    "vault"
+  ],
+  "catalogue_bytes": 15715,
+  "catalogue_tools": 7,
+  "model_s": 28.264999999984866,
+  "planned_editor_s": 0,
+  "price_usd": null,
+  "interventions": {
+    "setup": 1,
+    "planned_editor": 0,
+    "planned_reconnect": 0,
+    "human_help": 0,
+    "repair_by_controller": 0
+  },
+  "stop_campaign": false
+}

@@ -1,17 +1,14 @@
 {
-  "state": "INCIDENT_PRE_MODELE_DIAGNOSTIQUE",
-  "utc": "2026-10-23T09:19:03.219600+00:00",
-  "last_cell": "C05-T1-r1",
-  "last_status": "NON_JOUE",
-  "reason": "Hash contrôlé en bytes CRLF contre manifeste LF ; aucun modèle lancé. Écart de tri du rejeu public également corrigé.",
-  "next_cell": "C05-T2-r1",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T09:22:06.551132+00:00",
+  "next_cell": "C05-T3-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T1-r1",
-  "required_before_resume": [
-    "Publier AMENDEMENT-C05-T1-r1.md et preuves",
-    "Vérifier le HEAD distant"
-  ],
-  "preservation": "C05-T1-r1 conservée sans rejeu, aucune cellule jouée à ce point."
+  "command": "python -X utf8 scripts/campaign_run.py",
+  "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
+  "last_cell": "C05-T2-r1",
+  "last_result": "REUSSI_VERIFIE",
+  "last_reason": "",
+  "incident_cell": null
 }

@@ -1,0 +1,54 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792747297591,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0a1d60d33090e1c3016adb272a981c81918188b2f364efdae9",
+        "progressToken": 2
+      },
+      "name": "edit",
+      "arguments": {
+        "action": "window",
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+        "oldText": "Passage à modifier : essai prévu jeudi.",
+        "newText": "Passage à modifier : essai prévu vendredi.",
+        "fuzzyThreshold": 1,
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"result\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"Successfully replaced exact match in Efforts/Projets/Projet témoin — Test MCP.md\"\n      }\n    ]\n  },\n  \"context\": {\n    \"current_file\": \"Efforts/Projets/Projet témoin — Test MCP.md\",\n    \"buffer_available\": false,\n    \"file_history\": [\n      \"Efforts/Projets/Projet témoin — Test MCP.md\"\n    ],\n    \"has_links\": false,\n    \"has_tags\": false\n  }\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}
