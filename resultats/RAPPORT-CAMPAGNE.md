@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T15:15:41.774262+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T15:17:27.030425+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "f4b29811ff612313f99e8e01194af9f765646c9a", "remote_verified": true, "utc": "2026-10-23T15:11:06.876024+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "36001e5422da4dbde4dd7b409e2c86302ad1886b", "remote_verified": true, "utc": "2026-10-23T15:17:06.338411+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -133,22 +133,24 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:15:41.323931+00:00",
+  "state": "ATTENTE_MEMOIRE",
+  "utc": "2026-10-23T15:17:26.939609+00:00",
   "next_cell": "C01-T3-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C01-T2-r1",
-  "last_result": "REUSSI_VERIFIE",
-  "last_reason": "Première commande de fermeture a expiré ; instance ensuite disparue, vérifiée avant toute nouvelle demande ; cache FDM v1.2 qualifié.",
-  "next_action": "Reprendre C01-T3-r1 ; priorité produit 1.0.7.",
-  "replacement_registered": false
+  "memory": {
+    "utc": "2026-10-23T15:17:26.938599+00:00",
+    "commitFreeBytes": 4249985024,
+    "availableBytes": 4979920896,
+    "admitted": false,
+    "stop": false
+  }
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Reprendre C01-T3-r1 ; priorité produit 1.0.7.. Aucune tâche du coffre modifiée.
+État opérationnel : ATTENTE_MEMOIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T3-r1. Aucune tâche du coffre modifiée.
