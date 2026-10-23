@@ -1,0 +1,11 @@
+{
+  "task_id": "T2",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": "Passage à modifier : essai prévu vendredi.",
+  "proprietes": {
+    "création": "2026-10-23T17:11",
+    "modification": "2026-10-23T17:12"
+  },
+  "message": "Remplacement vérifié par relecture. Le champ modification a aussi changé, hors du patch demandé ; aucune correction de ce champ effectuée."
+}

@@ -1,0 +1,59 @@
+{
+  "order": 18,
+  "series": 1,
+  "candidate": "C01",
+  "task": "T2",
+  "repetition": 1,
+  "cell_id": "C01-T2-r1",
+  "prompt_sha256": "b7b3cfc19d03727778bbde4511eb79f04ac97f4b2dcd70b25f1aad2745152d60",
+  "status": "JOUE",
+  "protocol_version": "1.4",
+  "verdict": "REUSSI_VERIFIE",
+  "reason": "",
+  "started_utc": 1792768287.7683234,
+  "finished_utc": 1792768382.1003177,
+  "turns": [
+    {
+      "returncode": 0,
+      "duration_s": 40.32899999999972,
+      "stop_reason": null,
+      "forbidden_tool_events": [],
+      "thread_id": "<IDENTIFIANT_MASQUE>",
+      "usage": [
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 86674,
+            "cached_input_tokens": 75648,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 702,
+            "reasoning_output_tokens": 238
+          }
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "adapter_sha256": "9bc9c05aaed09513273c2cf554aa2496e43eaa4ed934aa6af2cb85b1c07966ce",
+  "candidate_calls": 4,
+  "wall_s": 94.33450675010681,
+  "used_tools": [
+    "vault_read",
+    "vault_get_document_map",
+    "vault_patch",
+    "vault_read"
+  ],
+  "catalogue_bytes": 39545,
+  "catalogue_tools": 24,
+  "model_s": 50.45399999999972,
+  "planned_editor_s": 0,
+  "price_usd": null,
+  "interventions": {
+    "setup": 1,
+    "planned_editor": 0,
+    "planned_reconnect": 0,
+    "human_help": 0,
+    "repair_by_controller": 0
+  },
+  "stop_campaign": false
+}

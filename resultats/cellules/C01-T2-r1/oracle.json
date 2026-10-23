@@ -1,0 +1,71 @@
+{
+  "task": "T2",
+  "verdict": "REUSSI_VERIFIE",
+  "errors": [],
+  "changed": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T04:38",
+      "after": "2026-10-23T17:12",
+      "attribution": "FDM prouvée",
+      "proof": {
+        "policy": "fdm-dates-v1.4",
+        "chain": [
+          {
+            "observed_utc": 1792768361.369,
+            "after_sha256": "0227ce5eafc892aac8895487b02acff801b32b019311057e9c15bb5be07f4eed",
+            "changed_keys": [
+              "modification"
+            ],
+            "basis": "delai_FDM",
+            "cache_passage": null
+          }
+        ]
+      }
+    }
+  ],
+  "dates_policy": "fdm-dates-v1.4",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "after",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      }
+    ]
+  }
+}

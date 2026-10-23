@@ -1,14 +1,15 @@
 {
   "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T15:10:13.737917+00:00",
-  "next_cell": "C01-T2-r1",
+  "utc": "2026-10-23T15:15:41.323931+00:00",
+  "next_cell": "C01-T3-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C01-T1-r1",
-  "last_result": "ECHEC_FONCTIONNEL",
-  "last_reason": "REPONSE_EXTRAIT",
-  "incident_cell": null
+  "last_cell": "C01-T2-r1",
+  "last_result": "REUSSI_VERIFIE",
+  "last_reason": "Première commande de fermeture a expiré ; instance ensuite disparue, vérifiée avant toute nouvelle demande ; cache FDM v1.2 qualifié.",
+  "next_action": "Reprendre C01-T3-r1 ; priorité produit 1.0.7.",
+  "replacement_registered": false
 }

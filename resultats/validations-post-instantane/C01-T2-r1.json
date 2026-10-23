@@ -1,0 +1,39 @@
+{
+  "cell_id": "C01-T2-r1",
+  "result_sha256": "cdbcc44646d481868fc75a528183736d3f2870ff9e0e720b3ea51e76a9af09f5",
+  "judged_tree_sha256": "6f65809f1d181e902fd42b52ac3462bcc1234aac26b4aa9e44eeab0a27ed65e2",
+  "closed_tree_sha256": "3b9a9eda43f25ea0f0d7b96980309efbabb13f010db4f62db097f90cb3cd0e61",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "after",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "validation": "VALIDEE",
+    "verdict": "REUSSI_VERIFIE",
+    "note": "Fermeture tardive confirmée sans seconde demande ; seul cache FDM après instantané, permis par v1.2"
+  }
+}
