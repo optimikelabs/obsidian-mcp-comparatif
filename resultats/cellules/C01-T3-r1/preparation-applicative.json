@@ -1,0 +1,14 @@
+{
+  "command": {
+    "command": "editor:save-file",
+    "result": true,
+    "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "active": "Efforts/Projets/Projet témoin — Test MCP.md"
+  },
+  "fdmFallback": true,
+  "datesPresent": true,
+  "beforeSha256": "742aac55b8532182c153bcb44371c877bfd13ab8e10cdd415a0ba9345181ce46",
+  "afterSha256": "537446078cbafdbfd049e39df9742917607165b1088e0d06d8d31efdee5895b1",
+  "bodyPreserved": true,
+  "CRLF": 0
+}

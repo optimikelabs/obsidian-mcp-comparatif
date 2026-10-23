@@ -1,17 +1,14 @@
 {
-  "state": "ATTENTE_MEMOIRE",
-  "utc": "2026-10-23T15:17:26.939609+00:00",
-  "next_cell": "C01-T3-r1",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T15:31:35.695316+00:00",
+  "next_cell": "C01-T4-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "memory": {
-    "utc": "2026-10-23T15:17:26.938599+00:00",
-    "commitFreeBytes": 4249985024,
-    "availableBytes": 4979920896,
-    "admitted": false,
-    "stop": false
-  }
+  "last_cell": "C01-T3-r1",
+  "last_result": "REUSSI_VERIFIE",
+  "last_reason": "",
+  "incident_cell": null
 }

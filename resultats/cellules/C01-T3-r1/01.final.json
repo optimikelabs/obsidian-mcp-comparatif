@@ -1,0 +1,10 @@
+{
+  "task_id": "T3",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": null,
+  "proprietes": {
+    "rang": 2
+  },
+  "message": "Relu et vérifié : seul rang est passé de l’entier 1 à l’entier 2."
+}
