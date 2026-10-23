@@ -1,0 +1,92 @@
+{
+  "task": "T7",
+  "verdict": "PROTEGE_NON_ACCOMPLI",
+  "errors": [],
+  "changed": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T04:38",
+      "after": "2026-10-23T17:02",
+      "attribution": "FDM prouvée",
+      "proof": {
+        "policy": "fdm-dates-v1.4",
+        "chain": [
+          {
+            "observed_utc": 1792767776.976,
+            "after_sha256": "1d9942cd8ce6d5bf3b83a48c6a29198e81c7adb04884b690a0f3e25ca0033694",
+            "changed_keys": [
+              "modification"
+            ],
+            "basis": "delai_FDM",
+            "cache_passage": null
+          }
+        ]
+      }
+    }
+  ],
+  "dates_policy": "fdm-dates-v1.4",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "human",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+            "field": "hash"
+          },
+          {
+            "note": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+            "field": "lastAccessed"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      },
+      {
+        "from": "human",
+        "to": "first",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      },
+      {
+        "from": "first",
+        "to": "after",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      }
+    ]
+  }
+}

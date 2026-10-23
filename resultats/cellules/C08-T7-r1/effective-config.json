@@ -1,0 +1,61 @@
+{
+  "model": "gpt-6.1-sol",
+  "model_provider": "openai",
+  "model_reasoning_effort": "high",
+  "service_tier": "default",
+  "approval_policy": "never",
+  "sandbox_mode": "read-only",
+  "web_search": "disabled",
+  "features": {
+    "code_mode": false,
+    "code_mode_host": true,
+    "multi_agent_v2": false,
+    "sleep_tool": true,
+    "network_proxy": null,
+    "apps": false,
+    "browser_use": false,
+    "browser_use_external": false,
+    "browser_use_full_cdp_access": false,
+    "computer_use": false,
+    "daemon_auto_start": false,
+    "goals": false,
+    "image_generation": false,
+    "in_app_browser": false,
+    "in_app_local_automation": false,
+    "memories": false,
+    "multi_agent": false,
+    "plugins": false,
+    "shell_tool": false,
+    "skill_search": false,
+    "tool_suggest": false,
+    "view_image": false,
+    "worktrees": false,
+    "api_key_model_discovery": false,
+    "auth_elicitation": true,
+    "background_paginated_rollout_migration": false,
+    "codex_apps_mcp_2026_07_28": false,
+    "mcp_2026_07_28": false,
+    "mentions_v2": true,
+    "remote_control": false,
+    "remote_plugin": true,
+    "windows_sandbox_service": false
+  },
+  "mcp_servers": {
+    "candidate": {
+      "url": "http://127.0.0.1:27348/mcp",
+      "environment_id": "local",
+      "enabled": true,
+      "startup_timeout_sec": 60.0,
+      "tool_timeout_sec": 120.0,
+      "default_tools_approval_mode": "approve",
+      "enabled_tools": [
+        "obsidian_list_vaults",
+        "obsidian_list_notes",
+        "obsidian_read_note",
+        "obsidian_search_vault",
+        "obsidian_create_note",
+        "obsidian_edit_note"
+      ]
+    }
+  }
+}

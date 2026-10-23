@@ -1,0 +1,58 @@
+{
+  "order": 15,
+  "series": 1,
+  "candidate": "C08",
+  "task": "T7",
+  "repetition": 1,
+  "cell_id": "C08-T7-r1",
+  "prompt_sha256": "4b1c70b86250edc2abec73b3cf5d291e294ff174f979214e86422772eb621f8b",
+  "status": "JOUE",
+  "protocol_version": "1.4",
+  "verdict": "PROTEGE_NON_ACCOMPLI",
+  "reason": "",
+  "started_utc": 1792767720.8401253,
+  "finished_utc": 1792767789.8530228,
+  "turns": [
+    {
+      "returncode": 0,
+      "duration_s": 29.235000000000582,
+      "stop_reason": null,
+      "forbidden_tool_events": [],
+      "thread_id": "<IDENTIFIANT_MASQUE>",
+      "usage": [
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 57658,
+            "cached_input_tokens": 52096,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 358,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "adapter_sha256": "dc3f5b0ef3359cb086224014e26eaff594e60d3040f67afe6717ca518fde5ff2",
+  "candidate_calls": 3,
+  "wall_s": 69.01389956474304,
+  "used_tools": [
+    "obsidian_read_note",
+    "obsidian_edit_note",
+    "obsidian_read_note"
+  ],
+  "catalogue_bytes": 50446,
+  "catalogue_tools": 12,
+  "model_s": 35.70399999999972,
+  "planned_editor_s": 0.2029999999995198,
+  "price_usd": null,
+  "interventions": {
+    "setup": 1,
+    "planned_editor": 1,
+    "planned_reconnect": 0,
+    "human_help": 0,
+    "repair_by_controller": 0
+  },
+  "stop_campaign": false
+}

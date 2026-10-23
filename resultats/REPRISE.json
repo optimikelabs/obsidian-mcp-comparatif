@@ -1,15 +1,14 @@
 {
-  "state": "PRET_REPRISE_V14",
-  "utc": "2026-10-23T15:00:07.726599+00:00",
-  "next_cell": "C08-T7-r1",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T15:03:15.584479+00:00",
+  "next_cell": "C08-T8-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T6-r1",
-  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "bloquée par l’oracle v1.3, chaîne FDM, amendement v1.4",
-  "replacement_registered": true,
-  "next_action": "Publier v1.4 puis reprendre C08-T7-r1 ; priorité au gel produit 1.0.7."
+  "last_cell": "C08-T7-r1",
+  "last_result": "PROTEGE_NON_ACCOMPLI",
+  "last_reason": "",
+  "incident_cell": null
 }
