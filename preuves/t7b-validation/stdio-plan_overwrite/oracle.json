@@ -1,0 +1,18 @@
+{
+  "task": "T7b",
+  "verdict": "EFFET_NON_VOULU",
+  "errors": [
+    "PREMIERE_MUTATION_PERTE",
+    "CORPS_INATTENDU"
+  ],
+  "changed": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [],
+  "dates": [],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+}

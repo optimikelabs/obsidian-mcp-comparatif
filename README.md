@@ -1,6 +1,6 @@
 # Kit ouvert du comparatif MCP Obsidian
 
-Préparation avant essais, pour revue C5. Aucun résultat candidat. Lire `PROTOCOLE-V1.md` puis les manifestes. Le plan contient 160 cellules ; seules T5–T8 sont prévues en trois répétitions.
+Préparation avant essais, pour revue C5. Aucun résultat candidat. Lire `PROTOCOLE-V1.md` puis les manifestes. Le plan contient 190 cellules ; seules T5, T6, T7, T7b et T8 sont prévues en trois répétitions.
 
 ## Vérifier l’outillage sans installer de candidat
 
@@ -40,3 +40,5 @@ Le relais retient une requête T5–T7, confirme la retouche via l’éditeur et
 Revue C5 du kit, publication du gel horodatée, admission/empreintes des candidats, fournisseur/options identiques, G1 puis les deux séries. Aucun script de ce paquet ne lance la campagne ni n’installe un candidat. Le client Codex doit exposer seulement le relais, avec shell/navigateur/eval/autres MCP interdits et un contexte neuf par cellule. serviceTier default et effort high sont communs.
 
 Le masquage est testé, les originaux privés restent séparés. Les mécanismes des candidats peuvent rester reconnaissables ; masquage de secrets ≠ juge parfaitement aveugle. Les sources et versions des candidats sont documentaires, pas des installations validées.
+
+Amendement v1.1 : lire le journal du protocole et AMENDEMENTS-C5-AVANT-CAMPAGNE.md ; `python -X utf8 scripts/test_t7b.py` qualifie T7b sur le factice.

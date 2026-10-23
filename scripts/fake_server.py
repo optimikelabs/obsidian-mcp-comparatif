@@ -23,7 +23,8 @@ class Fake:
         return {'jsonrpc':'2.0','id':ident,'result':result}
     def call(self,name,args):
         p=target(self.vault,args['path'])
-        if name=='status':value={'state':self.state,'operation_id':'fake-operation'}
+        if name=='plan':value={'state':'planned','content':args['content']}
+        elif name=='status':value={'state':self.state,'operation_id':'fake-operation'}
         elif name.startswith('deferred_'):
             self.state='pending'
             def work():

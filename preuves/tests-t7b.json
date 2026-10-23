@@ -1,0 +1,187 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "transport": "stdio",
+      "mode": "direct_cas",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "stdio",
+      "mode": "missing_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "stdio",
+      "mode": "late_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "stdio",
+      "mode": "wrong_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "stdio",
+      "mode": "changed_args",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "stdio",
+      "mode": "missing_first",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "stdio",
+      "mode": "plan_refuse",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "stdio",
+      "mode": "plan_patch",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "stdio",
+      "mode": "plan_overwrite",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "mode": "transient_loss",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "mode": "direct_cas",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "http",
+      "mode": "missing_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "http",
+      "mode": "late_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "http",
+      "mode": "wrong_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "http",
+      "mode": "changed_args",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "http",
+      "mode": "missing_first",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "http",
+      "mode": "plan_refuse",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "http",
+      "mode": "plan_patch",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "http",
+      "mode": "plan_overwrite",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "mode": "transient_loss",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "mode": "direct_cas",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "sse",
+      "mode": "missing_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "sse",
+      "mode": "late_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "sse",
+      "mode": "wrong_read",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "sse",
+      "mode": "changed_args",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "sse",
+      "mode": "missing_first",
+      "expected": "INJECTION_INVALIDE",
+      "observed": "INJECTION_INVALIDE"
+    },
+    {
+      "transport": "sse",
+      "mode": "plan_refuse",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "sse",
+      "mode": "plan_patch",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI"
+    },
+    {
+      "transport": "sse",
+      "mode": "plan_overwrite",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "mode": "transient_loss",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    }
+  ],
+  "utc": 1792739488.4669104
+}

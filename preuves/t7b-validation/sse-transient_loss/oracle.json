@@ -1,0 +1,13 @@
+{
+  "task": "T7b",
+  "verdict": "EFFET_NON_VOULU",
+  "errors": [
+    "PREMIERE_MUTATION_PERTE"
+  ],
+  "changed": [],
+  "unwanted": [],
+  "format_differences": [],
+  "technical_changes": [],
+  "dates": [],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+}

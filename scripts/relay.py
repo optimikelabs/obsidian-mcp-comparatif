@@ -107,6 +107,7 @@ class Relay:
         self.adapter=adapter;self.ui=ui;self.events=[];self.injected=False;self.lost=False;self.lock=threading.Lock();self.first_done=False;self.pending_first=False;self.first_lock=threading.Lock()
         self.before=snapshot(vault);writej(self.out/'before.json',self.before)
         self.human=self.first=self.cut=None
+        self.initial_read=None
     def event(self,name,**fields):
         value={'event':name,'seq':len(self.events)+1,'monotonic_ns':time.monotonic_ns(),'utc':time.time(),**fields};self.events.append(value)
         with (self.out/'events.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps(value,ensure_ascii=False)+'\n')
@@ -138,16 +139,22 @@ class Relay:
                 if (self.vault/rel).read_bytes()!=data(self.human,rel):self.first_snapshot()
                 else:raise RuntimeError('Première mutation différée non réglée : ne pas permettre une réparation sans preuve')
             digest=sha(json.dumps(req,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
-            selected=mutation and not self.injected and self.task in ('T5','T6','T7','T8')
+            preparation=call and name in self.adapter.get('preparation_tools',[])
+            selected=(mutation and not self.injected and self.task in ('T5','T6','T7','T8')) or (
+                self.task=='T7b' and not self.injected and (preparation or mutation))
             if selected:
+                if self.task=='T7b':
+                    if self.initial_read is None:raise RuntimeError('T7b : aucune lecture MCP de P livrée avant plan/écriture')
+                    if sha((self.vault/P).read_bytes())!=self.initial_read['content_sha256']:raise RuntimeError('T7b : disque divergent avant injection')
                 self.injected=True
                 if self.task!='T8':
                     self.event('request_held',id=req.get('id'),request_sha256=digest)
                     if self.ui is None:raise RuntimeError('Aucune retouche UI qualifiée configurée')
                     self.ui(self.task)
                     self.human=self.capture('human');self.event('ui_disk_verified',snapshot_sha256=manifest(self.human)['tree_sha256'])
-                self.event('dispatch',id=req.get('id'),request_sha256=digest)
+                self.event('dispatch',id=req.get('id'),request_sha256=digest,kind='preparation' if preparation else 'mutation')
             elif mutation:self.event('mutation_dispatch',id=req.get('id'),request_sha256=digest)
+            observe_mutation=mutation and self.injected and self.first is None and not self.pending_first and self.task in ('T5','T6','T7','T7b')
             lost_errors=[];observer=None
             if selected and self.task=='T8':
                 # Fermer le portillon de réponse AVANT dispatch effectif ; observer le disque en parallèle.
@@ -168,7 +175,7 @@ class Relay:
                 if observer.is_alive():raise TimeoutError('Observation effet T8 non terminée')
                 if lost_errors:raise lost_errors[0]
                 return None,True
-            if selected and self.task!='T8':
+            if observe_mutation:
                 obj=self.result_object(reply);state=obj.get(self.adapter.get('status_state_key','state'),obj.get('status'))
                 if state in ('pending','accepted','running'):
                     self.pending_first=True;self.event('first_mutation_pending',id=req.get('id'))
@@ -185,9 +192,19 @@ class Relay:
                     content=raw if obj is None else obj[self.adapter.get('read_content_key','content')]
                     rel=args[self.adapter.get('path_key','path')]
                     self.event('mcp_read_response',id=req.get('id'),path=rel,content_sha256=sha(content.encode()),response_received=True)
+                    if self.task=='T7b' and not self.injected and rel==P:
+                        self.initial_read={'id':req.get('id'),'content_sha256':sha(content.encode())}
+                        self.event('agent_read_delivered',**self.initial_read)
                 except (KeyError,ValueError,TypeError,IndexError):self.event('readback_unmapped',id=req.get('id'))
             if reply:self.event('response_delivered',id=req.get('id'))
             return reply,False
+
+    def finish(self):
+        # Refus au plan : aucune mutation n'a été envoyée. État terminal conservé,
+        # distinct d'un snapshot pris après une vraie mutation.
+        if self.task=='T7b' and self.injected and self.first is None:
+            if self.pending_first:raise RuntimeError('Mutation T7b encore indéterminée')
+            self.first_snapshot();self.event('no_mutation_after_preparation')
 
 def serve(relay,port):
     if port in (27123,27124):raise ValueError('Port quotidien interdit')
