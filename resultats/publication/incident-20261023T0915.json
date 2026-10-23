@@ -1,0 +1,5 @@
+{
+  "error": "AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.",
+  "reason": "Sortie de liste non triée ; corrigée et rejouée avant la cellule suivante.",
+  "candidate_score": false
+}

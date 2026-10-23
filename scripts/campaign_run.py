@@ -1,7 +1,7 @@
 """Suite dans l'ordre publié, avec checkpoint et publication après chaque cellule.
 Une erreur de sécurité, d'instrumentation ou de publication arrête la boucle.
 """
-import argparse
+import argparse,sys
 from campaign_runtime import *
 from campaign_cell import play
 from project_campaign import main as project
@@ -24,11 +24,19 @@ def checkpoint(state,next_row,**kw):
           'command':'python -X utf8 scripts/campaign_run.py','preservation':'Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.',**kw})
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);a=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);parser.add_argument('--after-incident');a=parser.parse_args()
     rows=readj(KIT/'manifestes/cellules-190.json');done=0
     assert readj(RUN/'CLIENT-QUALIFICATION.json')['qualified'] and readj(RUN/'CLIENT-T8-QUALIFICATION.json')['qualified'] and readj(RUN/'FDM-QUALIFICATION.json')['qualified']
     assert not LOCK.exists(),'Verrou occupé : aucune suppression autorisée'
+    boundary=0
+    if a.after_incident:
+        incident=next(r for r in rows if r['cell_id']==a.after_incident);boundary=incident['order']
+        assert readj(RUN/'cellules'/a.after_incident/'result.json')['stop_campaign']
+        name='AMENDEMENT-'+a.after_incident+'.md'
+        assert git('show','HEAD:'+name),'Amendement absent du commit courant'
+        assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD'),'Amendement non publié'
     for i,row in enumerate(rows):
+        if row['order']<=boundary:continue
         p=RUN/'cellules'/row['cell_id']
         admission=readj(RUN/'admissions'/row['candidate']/'admission.json')
         if admission['status']!='ADMIS':continue

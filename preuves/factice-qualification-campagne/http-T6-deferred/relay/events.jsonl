@@ -1,35 +1,29 @@
-{"event": "response_delivered", "seq": 1, "monotonic_ns": 177630171000000, "utc": 1792746589.1212142, "id": 1}
-{"event": "response_delivered", "seq": 2, "monotonic_ns": 177630171000000, "utc": 1792746589.128213, "id": 2}
-{"event": "tool_request", "seq": 3, "monotonic_ns": 177630187000000, "utc": 1792746589.131214, "id": 3, "tool": "deferred_patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
-{"event": "request_held", "seq": 4, "monotonic_ns": 177630187000000, "utc": 1792746589.131214, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b"}
-{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 177630187000000, "utc": 1792746589.1422122, "snapshot_sha256": "f385a5d3921d3c6acde03057b2831900af20b2605043045ea400ccb7eba5c235"}
-{"event": "dispatch", "seq": 6, "monotonic_ns": 177630203000000, "utc": 1792746589.1492116, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b", "kind": "mutation"}
-{"event": "upstream_response", "seq": 7, "monotonic_ns": 177630203000000, "utc": 1792746589.1532123, "id": 3, "tool": "deferred_patch", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "first_mutation_pending", "seq": 8, "monotonic_ns": 177630203000000, "utc": 1792746589.155215, "id": 3}
-{"event": "response_delivered", "seq": 9, "monotonic_ns": 177630203000000, "utc": 1792746589.155215, "id": 3}
-{"event": "tool_request", "seq": 10, "monotonic_ns": 177630203000000, "utc": 1792746589.1582131, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 11, "monotonic_ns": 177630218000000, "utc": 1792746589.1625063, "id": 4, "tool": "status", "duration_s": 0.014999999984866008, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 12, "monotonic_ns": 177630218000000, "utc": 1792746589.1635137, "id": 4}
-{"event": "tool_request", "seq": 13, "monotonic_ns": 177630234000000, "utc": 1792746589.1770508, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 14, "monotonic_ns": 177630234000000, "utc": 1792746589.180192, "id": 5, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 15, "monotonic_ns": 177630234000000, "utc": 1792746589.1811996, "id": 5}
-{"event": "tool_request", "seq": 16, "monotonic_ns": 177630250000000, "utc": 1792746589.1947415, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 17, "monotonic_ns": 177630250000000, "utc": 1792746589.1982548, "id": 6, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 18, "monotonic_ns": 177630250000000, "utc": 1792746589.1992567, "id": 6}
-{"event": "tool_request", "seq": 19, "monotonic_ns": 177630265000000, "utc": 1792746589.2123442, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 20, "monotonic_ns": 177630265000000, "utc": 1792746589.2157907, "id": 7, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 21, "monotonic_ns": 177630265000000, "utc": 1792746589.2167916, "id": 7}
-{"event": "tool_request", "seq": 22, "monotonic_ns": 177630281000000, "utc": 1792746589.2293339, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 23, "monotonic_ns": 177630281000000, "utc": 1792746589.2324069, "id": 8, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 24, "monotonic_ns": 177630281000000, "utc": 1792746589.2334137, "id": 8}
-{"event": "tool_request", "seq": 25, "monotonic_ns": 177630296000000, "utc": 1792746589.2465518, "id": 9, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 26, "monotonic_ns": 177630296000000, "utc": 1792746589.2490582, "id": 9, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
-{"event": "response_delivered", "seq": 27, "monotonic_ns": 177630296000000, "utc": 1792746589.2500648, "id": 9}
-{"event": "first_snapshot", "seq": 28, "monotonic_ns": 177630312000000, "utc": 1792746589.260118, "snapshot_sha256": "2eea6b3683cab8772c1a2b6aa3e4f86d3fdf0e1ec8be9b2a815d0f1077c4b8c0"}
-{"event": "tool_request", "seq": 29, "monotonic_ns": 177630312000000, "utc": 1792746589.2626314, "id": 10, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 30, "monotonic_ns": 177630312000000, "utc": 1792746589.2646308, "id": 10, "tool": "status", "duration_s": 0.0, "bytes": 147, "is_error": false}
-{"event": "response_delivered", "seq": 31, "monotonic_ns": 177630312000000, "utc": 1792746589.265631, "id": 10}
-{"event": "tool_request", "seq": 32, "monotonic_ns": 177630312000000, "utc": 1792746589.267633, "id": 11, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
-{"event": "upstream_response", "seq": 33, "monotonic_ns": 177630328000000, "utc": 1792746589.2706344, "id": 11, "tool": "read", "duration_s": 0.01600000000325963, "bytes": 887, "is_error": false}
-{"event": "mcp_read_response", "seq": 34, "monotonic_ns": 177630328000000, "utc": 1792746589.2706344, "id": 11, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "9317ed79eeb3c68af430592a9e1bcc5a385d21e739b686203b505b8af6772940", "response_received": true}
-{"event": "response_delivered", "seq": 35, "monotonic_ns": 177630328000000, "utc": 1792746589.2706344, "id": 11}
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 178090250000000, "utc": 1792747049.2065654, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 178090265000000, "utc": 1792747049.2198324, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 178090281000000, "utc": 1792747049.2315586, "id": 3, "tool": "deferred_patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "request_held", "seq": 4, "monotonic_ns": 178090281000000, "utc": 1792747049.2315586, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b"}
+{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 178090281000000, "utc": 1792747049.2375314, "snapshot_sha256": "f385a5d3921d3c6acde03057b2831900af20b2605043045ea400ccb7eba5c235"}
+{"event": "dispatch", "seq": 6, "monotonic_ns": 178090296000000, "utc": 1792747049.2405655, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b", "kind": "mutation"}
+{"event": "upstream_response", "seq": 7, "monotonic_ns": 178090296000000, "utc": 1792747049.2425647, "id": 3, "tool": "deferred_patch", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "first_mutation_pending", "seq": 8, "monotonic_ns": 178090296000000, "utc": 1792747049.2435632, "id": 3}
+{"event": "response_delivered", "seq": 9, "monotonic_ns": 178090296000000, "utc": 1792747049.2435632, "id": 3}
+{"event": "tool_request", "seq": 10, "monotonic_ns": 178090296000000, "utc": 1792747049.2455332, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 178090296000000, "utc": 1792747049.247558, "id": 4, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 178090296000000, "utc": 1792747049.2485585, "id": 4}
+{"event": "tool_request", "seq": 13, "monotonic_ns": 178090312000000, "utc": 1792747049.2701633, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 14, "monotonic_ns": 178090328000000, "utc": 1792747049.28126, "id": 5, "tool": "status", "duration_s": 0.01600000000325963, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 15, "monotonic_ns": 178090328000000, "utc": 1792747049.28126, "id": 5}
+{"event": "tool_request", "seq": 16, "monotonic_ns": 178090343000000, "utc": 1792747049.2938101, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 17, "monotonic_ns": 178090359000000, "utc": 1792747049.3049068, "id": 6, "tool": "status", "duration_s": 0.01600000000325963, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 178090359000000, "utc": 1792747049.3063023, "id": 6}
+{"event": "tool_request", "seq": 19, "monotonic_ns": 178090375000000, "utc": 1792747049.3289077, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 20, "monotonic_ns": 178090390000000, "utc": 1792747049.3418548, "id": 7, "tool": "status", "duration_s": 0.015000000013969839, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 21, "monotonic_ns": 178090390000000, "utc": 1792747049.3428538, "id": 7}
+{"event": "first_snapshot", "seq": 22, "monotonic_ns": 178090390000000, "utc": 1792747049.348285, "snapshot_sha256": "2eea6b3683cab8772c1a2b6aa3e4f86d3fdf0e1ec8be9b2a815d0f1077c4b8c0"}
+{"event": "tool_request", "seq": 23, "monotonic_ns": 178090406000000, "utc": 1792747049.3645458, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 24, "monotonic_ns": 178090421000000, "utc": 1792747049.3665447, "id": 8, "tool": "status", "duration_s": 0.015000000013969839, "bytes": 146, "is_error": false}
+{"event": "response_delivered", "seq": 25, "monotonic_ns": 178090421000000, "utc": 1792747049.3675194, "id": 8}
+{"event": "tool_request", "seq": 26, "monotonic_ns": 178090421000000, "utc": 1792747049.3786652, "id": 9, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 27, "monotonic_ns": 178090437000000, "utc": 1792747049.390686, "id": 9, "tool": "read", "duration_s": 0.01600000000325963, "bytes": 886, "is_error": false}
+{"event": "mcp_read_response", "seq": 28, "monotonic_ns": 178090437000000, "utc": 1792747049.3916664, "id": 9, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "9317ed79eeb3c68af430592a9e1bcc5a385d21e739b686203b505b8af6772940", "response_received": true}
+{"event": "response_delivered", "seq": 29, "monotonic_ns": 178090437000000, "utc": 1792747049.3916664, "id": 9}

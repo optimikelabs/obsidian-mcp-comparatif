@@ -154,7 +154,7 @@ def verify(case):
              'ECHEC_FONCTIONNEL' if errors else
              'PROTEGE_NON_ACCOMPLI' if task in ('T5','T7','T7b') else 'REUSSI_VERIFIE')
     return {'task':task,'verdict':verdict,'errors':errors,'changed':sorted(changed),
-            'unwanted':sorted(unwanted),'format_differences':fmt,'technical_changes':[k for k in changed if k in technical],
+            'unwanted':sorted(unwanted),'format_differences':fmt,'technical_changes':sorted(k for k in changed if k in technical),
             'first_unwanted':sorted(first_unwanted),'first_technical_changes':sorted(first_technical),
             'technical_receipt_paths':receipt_paths,
             'dates':dates,

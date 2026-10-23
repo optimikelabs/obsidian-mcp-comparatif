@@ -1,0 +1,6 @@
+{
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"<CHEMIN_PRIVE>\", line 36, in play\n    canonical=(KIT/'prompts'/(row['task']+'.txt')).read_text(encoding='utf-8');assert sha((KIT/'prompts'/(row['task']+'.txt')).read_bytes())==row['prompt_sha256']\n                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "utc": 1792746922.2263484,
+  "cell_id": "C05-T1-r1"
+}

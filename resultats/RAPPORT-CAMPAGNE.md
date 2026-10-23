@@ -4,14 +4,16 @@ Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
 T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; aucune conclusion sans les cellules.
 T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; seules les cellules jouées sont mesurées.
-Incidents consignés : 4 ; voir détails et journaux, sans attribution automatique au candidat.
+Incidents consignés : 6 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T09:13:03.838192+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T09:19:16.320434+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
+
+Vérification de publication : {"head": "6b5eaf9dbf420d71b9b121f53bce26d75ccd0444", "remote_verified": true, "fresh_clone_manifest_files": 1893, "mismatches": []}.
 
 ## Admissions
 
@@ -37,42 +39,29 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 - admissions/C02/incident.json : Préparation applicative non stable/LF/datée en 60 s
 - admissions/C08/incident.json : 'content'
 - admissions/C07/qualification-incident.json : {'jsonrpc': '2.0', 'id': 98, 'error': {'code': -32603, 'message': 'MCP backend rejected the request (status=429).'}}
+- cellules/C05-T1-r1/incident.json : AssertionError ; voir trace et amendement de la cellule.
+- publication/incident-20261023T0915.json : AssertionError pendant le rejeu masqué de T2-negative-hidden_note.json : ordre différent de deux chemins technical_changes, verdict et erreurs identiques. Publication arrêtée avant commit.
 - client-qualification/1792744805696642600/01.stdout.jsonl : Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.
 
 ## Reprise exacte
 
 ```json
 {
-  "state": "AVANT_PREMIERE_CELLULE",
-  "utc": "2026-10-23T09:06:55.925426+00:00",
-  "next_cell": "C05-T1-r1",
-  "admitted": [
-    "C01",
-    "C02",
-    "C03",
-    "C04",
-    "C05",
-    "C07",
-    "C08",
-    "C09",
-    "C10"
-  ],
-  "non_admitted": {
-    "C06": "Isolation CLI non démontrée, aucune commande quotidienne envoyée"
-  },
+  "state": "INCIDENT_PRE_MODELE_DIAGNOSTIQUE",
+  "utc": "2026-10-23T09:19:03.219600+00:00",
+  "last_cell": "C05-T1-r1",
+  "last_status": "NON_JOUE",
+  "reason": "Hash contrôlé en bytes CRLF contre manifeste LF ; aucun modèle lancé. Écart de tri du rejeu public également corrigé.",
+  "next_cell": "C05-T2-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "client_t2_qualified": true,
-  "client_t8_resume_qualified": true,
-  "fdm_observer_qualified": true,
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T1-r1",
   "required_before_resume": [
-    "Publier AMENDEMENT-ADMISSIONS-ET-CLIENT.md, sources et preuves dans un commit sans score",
-    "Vérifier clone frais et manifeste",
-    "Lancer C05-T1-r1 puis ordre intégral, sous les seuils mémoire"
+    "Publier AMENDEMENT-C05-T1-r1.md et preuves",
+    "Vérifier le HEAD distant"
   ],
-  "command_after_publication": "python -X utf8 scripts/campaign_cell.py C05-T1-r1",
-  "preservation": "Les bacs d’admission et les essais factices restent conservés ; aucun bac de cellule créé."
+  "preservation": "C05-T1-r1 conservée sans rejeu, aucune cellule jouée à ce point."
 }
 ```
 

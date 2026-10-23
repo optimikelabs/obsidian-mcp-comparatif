@@ -8,7 +8,11 @@
     "cell_id": "C05-T1-r1",
     "prompt_sha256": "fa81a124b6b8d98c4d193201dad45fa41cceb31727890e93f53ea47416ff997f",
     "status": "NON_JOUE",
-    "reason": "Cellule non commencée ; voir le point de reprise."
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+    "reason": "Assertion du hash CRLF avant modèle ; voir AMENDEMENT-C05-T1-r1.md. Cellule non rejouée.",
+    "started_utc": 1792746891.6121192,
+    "finished_utc": 1792746922.2263484,
+    "stop_campaign": true
   },
   {
     "order": 2,

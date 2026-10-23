@@ -33,7 +33,7 @@ def play(row):
         relay=Relay(candidate.up,vault,row['task'],out/'relay',adapter,editor_hook(out/'obsidian.json'),initialization=init);relay.safety_check=mon.check
         server=serve(relay,27348);threading.Thread(target=server.serve_forever,daemon=True).start()
         home,cwd=make_config(out,adapter['enabled_tools']);effective_config(out,home,cwd)
-        canonical=(KIT/'prompts'/(row['task']+'.txt')).read_text(encoding='utf-8');assert sha((KIT/'prompts'/(row['task']+'.txt')).read_bytes())==row['prompt_sha256']
+        canonical=(KIT/'prompts'/(row['task']+'.txt')).read_text(encoding='utf-8');assert sha(canonical.encode('utf-8'))==row['prompt_sha256'],'Empreinte du prompt LF différente du manifeste'
         fiche=(RUN/'admissions'/row['candidate']/'fiche-technique.md').read_text(encoding='utf-8');assert len(fiche.split())<=400
         prompt=canonical+'\n\nFiche technique du candidat :\n'+fiche
         writej(out/'prompt.json',{'canonical_sha256':row['prompt_sha256'],'fiche_sha256':sha(fiche.encode()),'combined_sha256':sha(prompt.encode()),'text':prompt})
@@ -72,7 +72,7 @@ def play(row):
         writej(out/'result.json',result);return result
     except BaseException as e:
         writej(out/'incident.json',{'error':str(e),'traceback':traceback.format_exc(),'utc':time.time(),'cell_id':row['cell_id']})
-        result={**row,'status':'NON_JOUE','verdict':'NON_EXECUTE_ENVIRONNEMENT','reason':str(e),'started_utc':started,'finished_utc':time.time(),'stop_campaign':True}
+        result={**row,'status':'NON_JOUE','verdict':'NON_EXECUTE_ENVIRONNEMENT','reason':str(e) or type(e).__name__,'started_utc':started,'finished_utc':time.time(),'stop_campaign':True}
         writej(out/'result.json',result);return result
     finally:
         try:

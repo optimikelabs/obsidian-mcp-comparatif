@@ -1,32 +1,17 @@
 {
-  "state": "AVANT_PREMIERE_CELLULE",
-  "utc": "2026-10-23T09:06:55.925426+00:00",
-  "next_cell": "C05-T1-r1",
-  "admitted": [
-    "C01",
-    "C02",
-    "C03",
-    "C04",
-    "C05",
-    "C07",
-    "C08",
-    "C09",
-    "C10"
-  ],
-  "non_admitted": {
-    "C06": "Isolation CLI non démontrée, aucune commande quotidienne envoyée"
-  },
+  "state": "INCIDENT_PRE_MODELE_DIAGNOSTIQUE",
+  "utc": "2026-10-23T09:19:03.219600+00:00",
+  "last_cell": "C05-T1-r1",
+  "last_status": "NON_JOUE",
+  "reason": "Hash contrôlé en bytes CRLF contre manifeste LF ; aucun modèle lancé. Écart de tri du rejeu public également corrigé.",
+  "next_cell": "C05-T2-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "client_t2_qualified": true,
-  "client_t8_resume_qualified": true,
-  "fdm_observer_qualified": true,
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T1-r1",
   "required_before_resume": [
-    "Publier AMENDEMENT-ADMISSIONS-ET-CLIENT.md, sources et preuves dans un commit sans score",
-    "Vérifier clone frais et manifeste",
-    "Lancer C05-T1-r1 puis ordre intégral, sous les seuils mémoire"
+    "Publier AMENDEMENT-C05-T1-r1.md et preuves",
+    "Vérifier le HEAD distant"
   ],
-  "command_after_publication": "python -X utf8 scripts/campaign_cell.py C05-T1-r1",
-  "preservation": "Les bacs d’admission et les essais factices restent conservés ; aucun bac de cellule créé."
+  "preservation": "C05-T1-r1 conservée sans rejeu, aucune cellule jouée à ce point."
 }

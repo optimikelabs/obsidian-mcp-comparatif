@@ -15,7 +15,9 @@ def build():
         admissions.append(entry)
     for row in rows:
         cell=RUN/'cellules'/row['cell_id']/'result.json'
-        if cell.exists():row.update(readj(cell))
+        if cell.exists():
+            row.update(readj(cell))
+            if row['cell_id']=='C05-T1-r1' and not row.get('reason'):row['reason']='Assertion du hash CRLF avant modèle ; voir AMENDEMENT-C05-T1-r1.md. Cellule non rejouée.'
         else:
             a=next(x for x in admissions if x['candidate']==row['candidate'])
             row['reason']=a.get('reason','Cellule non commencée.') if a['status']=='NON_EXECUTE_ENVIRONNEMENT' else 'Cellule non commencée ; voir le point de reprise.'
@@ -30,8 +32,8 @@ def build():
         selected=[x for x in rows if x['series']==s];played=sum(x['status']=='JOUE' for x in selected)
         counts.append(f'Série {s} : {played} cellules jouées ; {len(selected)-played} non jouées (sur {len(selected)}).')
     incidents=[]
-    for pattern in ('admissions/*/incident.json','admissions/*/qualification-incident.json','cellules/*/incident.json'):
-        for p in sorted(RUN.glob(pattern)):incidents.append({'path':p.relative_to(RUN).as_posix(),'error':readj(p).get('error',readj(p).get('reason','Voir trace conservée.'))})
+    for pattern in ('admissions/*/incident.json','admissions/*/qualification-incident.json','cellules/*/incident.json','publication/incident-*.json'):
+        for p in sorted(RUN.glob(pattern)):incidents.append({'path':p.relative_to(RUN).as_posix(),'error':readj(p).get('error') or readj(p).get('reason') or 'AssertionError ; voir trace et amendement de la cellule.'})
     incidents.append({'path':'client-qualification/1792744805696642600/01.stdout.jsonl','error':'Premier client factice sans accès MCP : code-mode host is disabled. Corrigé avant toute cellule ; T2 et coupure/reprise T8 factices qualifiés ensuite.'})
     text='\n'.join(counts+[
         'Candidats admis : '+(', '.join(admitted) or 'aucun')+'.',
@@ -43,6 +45,7 @@ def build():
     ])+'\n\n# Rapport de campagne — état courant\n\n'
     text+='État horodaté : '+memory()['utc']+'. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.\n\n'
     text+='Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.\n\n'
+    if (RUN/'PUBLICATION-COURANTE.json').exists():text+='Vérification de publication : '+json.dumps(readj(RUN/'PUBLICATION-COURANTE.json'),ensure_ascii=False)+'.\n\n'
     text+='## Admissions\n\n| Candidat | État | Preuve ou reste à faire |\n|---|---|---|\n'
     for a in admissions:text+='| '+a['candidate']+' | '+a['status']+' | '+a.get('reason','Nonce/catalogue acquis ; schémas à qualifier.').replace('|','/')+' |\n'
     text+='\n## Limites\n\nUn agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margelle commercial vendu par l’auteur d’Optimike ; corpus synthétique publié mais non rejoué en campagne. T1–T4 : une seule répétition. Trois répétitions de T5/T6/T7/T7b/T8 ne donnent pas un taux de risque rare. Les non-joués ne sont ni réussites ni échecs fonctionnels. Aucun contact mainteneur, aucune publication hors de ce dépôt.\n\n'
