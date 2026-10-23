@@ -24,6 +24,10 @@
       "size": 250,
       "sha256": "e421bf2c75c32a8626d68024a99f41f9d74c4de0c630d4135f728df70d4d8638"
     },
+    "AMENDEMENT-C08-T4-r1.md": {
+      "size": 414,
+      "sha256": "8571755efe2afa4caa0a581c544e58286a3c04bc0400d8df2637b626610ea530"
+    },
     "AMENDEMENT-INSTRUMENTATION-ADMISSION.md": {
       "size": 1712,
       "sha256": "a786fc64a7775e1758b03c1bdb7ed9b22592102a05539a2c465fbf3af26a1203"
@@ -39,6 +43,10 @@
     "AMENDEMENTS-C5-AVANT-CAMPAGNE.md": {
       "size": 3048,
       "sha256": "08722ef03eeea28c4da886d553205a6d1643157c98cf295034cb6407c041a5b5"
+    },
+    "DECISIONS-C5-20261023.md": {
+      "size": 5458,
+      "sha256": "7723f3467f05b70f5cd8c3aeb1b805d97848818cf861aee70fd5fd7da2e79bec"
     },
     "DECISIONS-C5.md": {
       "size": 3591,
@@ -124,6 +132,14 @@
       "size": 141958,
       "sha256": "13d518c65cffb93ca4cb2ff98a9057220f4f28cb0eb07bd3085464e931be852d"
     },
+    "manifestes/remplacements-autorises.json": {
+      "size": 796,
+      "sha256": "d0869df2fc4fcfaa02510520c7966fe6344c2542a8d25a5383ed47e9d2625123"
+    },
+    "NOTE-EXPLOITATION-20261023-C5.md": {
+      "size": 6233,
+      "sha256": "8821519f683f4fea2f60743c76b76e40b6423c6e6ce42b34d614902bf6660bb5"
+    },
     "PREPARATION-G1-AMENDEMENT-2.md": {
       "size": 2737,
       "sha256": "5cccb4c1bd374644b28e15d3eb4a84bbe2e9dd42ffd950539efd245c3681f816"
@@ -191,6 +207,14 @@
     "preuves/date-stages-qualification-campagne/14.json": {
       "size": 16505,
       "sha256": "f80739fb31f6466bbf7a8712e5828b48d8038493b4a45e45214d510ea7aca608"
+    },
+    "preuves/exploitation-journal-audit.json": {
+      "size": 1124,
+      "sha256": "b5f383306c4fbc9ee53a82ae9c1b11f7f91849e222094ec078bca9ca7e7455a2"
+    },
+    "preuves/exploitation-resultats-preserves.json": {
+      "size": 1826,
+      "sha256": "be7bd02cbe7f8f64ba707a84dae6b1f331244614a4166cd316de8beb0951905d"
     },
     "preuves/factice-qualification-campagne/http-T1-good/case.json": {
       "size": 7001,
@@ -4068,6 +4092,30 @@
       "size": 12609,
       "sha256": "8f567e0cc53bebe7d812b7352a227e0598e860455e31a8e65e961f11af382150"
     },
+    "preuves/fermeture-native-incident.json": {
+      "size": 771,
+      "sha256": "cd9ee0147e947e8a7a5a76ca3d365a2f0a76e59e83aff8825b1c62f555953905"
+    },
+    "preuves/fermeture-ui/closure-1792765507618258100.json": {
+      "size": 322,
+      "sha256": "0ff0396f06e3fdcb6bda17a4d20c612cefd8c5a93da65165ea5f3068daf0ec45"
+    },
+    "preuves/fermeture-ui/controller.jsonl": {
+      "size": 7172,
+      "sha256": "cad4d395e66c0edce4940fb080576f1173f93b506ed3b980860909fc0aaa2486"
+    },
+    "preuves/fermeture-ui/identity.json": {
+      "size": 325,
+      "sha256": "9e955672e83a4239ca3ae087ede7be0bb7f08e8343d674e24cf5ac756b8263e6"
+    },
+    "preuves/fermeture-ui/preparation-applicative.json": {
+      "size": 473,
+      "sha256": "ba5ca95c87e853c9ac06e376829082d14787cd7e185d0a8b282bd7f3545f771b"
+    },
+    "preuves/fermeture-ui/wrong-vault-negative.json": {
+      "size": 117,
+      "sha256": "5bc9b78399fcd3e53a847db18579211b118f291a449ec9669ce757f21d9e9edd"
+    },
     "preuves/masquage.json": {
       "size": 430,
       "sha256": "11d312a71c87d64ccb64510ce6b4ebff5957e02f102b289b4ab90f2ed8a316a6"
@@ -7164,6 +7212,14 @@
       "size": 7445,
       "sha256": "f5eeadb354c90b0ab8a45b8730bda1f1a9318a95808e14646838b95a5c0f2773"
     },
+    "preuves/tests-fermeture-ui.json": {
+      "size": 300128,
+      "sha256": "dc5003dc930291f92a4eba69aeadd985e6c63e61d012178cb9bfbf69bf973525"
+    },
+    "preuves/tests-fermeture.json": {
+      "size": 1268,
+      "sha256": "2218ecda20e82c23f8f270f133981edcdbf0d122a9dfc6689416f80a733508c0"
+    },
     "preuves/tests-injection-v13/client-stop/controller-original.jsonl.txt": {
       "size": 177,
       "sha256": "98f7ae7737692b87b40b620268d6c056b7896d637165671386065778cf46162a"
@@ -7914,7 +7970,7 @@
     },
     "preuves/validation-projection-campagne.json": {
       "size": 142,
-      "sha256": "8421df37b084cf416b77c4fb7d9f0d223d2e45bae123b78a5141f062958f8e46"
+      "sha256": "4114b6088f6e617f5f218110c1a754553ba892790adb07e6f226775ce95d5a89"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -10305,16 +10361,16 @@
       "sha256": "b53922d1925869154bdbccc310987708bd5d99bcdddbc9bba34c4ba61c5f6061"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 13753,
-      "sha256": "01af8f12b683bb0221420355f09b58a81cb9587c3d813d65fcfedcb2aaa7e9b0"
+      "size": 14746,
+      "sha256": "bb335335edbfacae33d99b82155338e795ca16268bb23632eff28b0391bf1c46"
     },
     "resultats/remplacements.json": {
       "size": 4,
       "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
     },
     "resultats/REPRISE.json": {
-      "size": 1118,
-      "sha256": "144e1a7e2f346fba83170cb5637bd13431df8b00a74454d51c619da2979b33a8"
+      "size": 1287,
+      "sha256": "26bb28786a41f3fb4ecabe09c499096ce67c3cd464d69433381ad427cb4da527"
     },
     "resultats/V12-ETAT.json": {
       "size": 859,
@@ -10357,20 +10413,20 @@
       "sha256": "7820e4cef5fb0d977cf74d979e19902b271c6d8db7bb4342dcedd4e2fea9d21e"
     },
     "scripts/campaign_replacements.py": {
-      "size": 2383,
-      "sha256": "2e9f9a84cac6691751c26451ebedfc00f7fb5bd90b8cfa44622a149b556f881b"
+      "size": 2932,
+      "sha256": "5b64c1c0b68ffe64ab756611bc3a31fd75b869b5022fc447c496e68301cd1f1a"
     },
     "scripts/campaign_reporting.py": {
-      "size": 9766,
-      "sha256": "cc3fd972d2d301f1cd7d38f94067d5d0f68e9c66a5094c25b36903eefd5b27a9"
+      "size": 10611,
+      "sha256": "e9afd377b27725573255608221924585b4728090b6132e62800fad3357973a2c"
     },
     "scripts/campaign_run.py": {
-      "size": 6437,
-      "sha256": "8280ae1f4410e88a41a7227d5f22522bbd3bab2a6df8ed5115fd880253b2fa91"
+      "size": 6568,
+      "sha256": "a316043666805437a74aaf8796ef14ab33973ab3e12bc8e7056fb4f65893ea01"
     },
     "scripts/campaign_runtime.py": {
-      "size": 11427,
-      "sha256": "4aa3cd23eb2e6a81bd5c7d3114353cbfe382173e8994a9a1d07c0c43a329ad52"
+      "size": 14008,
+      "sha256": "6adb2059af7e77a5219af9b511914ea32bea621b14d2a0c6113a0e1dac94a05c"
     },
     "scripts/candidate_runtime.py": {
       "size": 5037,
@@ -10379,6 +10435,10 @@
     "scripts/client_cli.py": {
       "size": 8078,
       "sha256": "ffba1285999c39d6a595378148157d60eb7e4fc3912b762687edf2290cb316d3"
+    },
+    "scripts/close_owned_cdp.mjs": {
+      "size": 2273,
+      "sha256": "0e96ab714fe9dd1baf689eff5cef9fe2613032394113ff2507c2c2910e2b04c9"
     },
     "scripts/common.py": {
       "size": 5486,
@@ -10409,8 +10469,8 @@
       "sha256": "d245d3e5d8c07ed9359f84bdc9393c7debff33c67eae6e86474a492cf7671f1e"
     },
     "scripts/project_campaign.py": {
-      "size": 9495,
-      "sha256": "5c537bb86d0d40bcbe4a3b41257ab8fd210c4b29fc498ab4c1302016cc1da08f"
+      "size": 10601,
+      "sha256": "1fa9be2ecdd7bb732a1c6ba04d0db0b1a214f140456c201e2074e933bdc8a931"
     },
     "scripts/publish_v11.py": {
       "size": 3686,
@@ -10464,6 +10524,10 @@
       "size": 2159,
       "sha256": "9638ea6c6176d6a6a796089abd96214e4905d3a2db8c31ab44b3ff9adeecb267"
     },
+    "scripts/test_closure_operation.py": {
+      "size": 5937,
+      "sha256": "9a6beb0ddf2d6d514bf165a051222e5c86cf7e6bb32380268700eabfbacd6cca"
+    },
     "scripts/test_dates_stages.py": {
       "size": 2404,
       "sha256": "6871284347321eaf6a4733f9a18db023ed39aada3fd549ee524ca171f91f1c2d"
@@ -10513,5 +10577,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "0ab41d07e6e9a078978801763e1e5dfc1b048cc6423396d4ab1907519bc06c1e"
+  "tree_sha256": "eccf8ab30f6fa455fa0d8223f0d17009903d769565ece4a9e03d42a19f323704"
 }

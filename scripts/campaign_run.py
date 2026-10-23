@@ -33,7 +33,7 @@ def wait_resources(row):
     # Instruction Mike du 23/10 : attendre le verrou, sans jamais le forcer.
     while LOCK.exists():
         print(json.dumps({'waiting_lock':row['cell_id'],'utc':memory()['utc']}),flush=True)
-        time.sleep(30)
+        time.sleep(300)
     m=memory()
     if m['stop']:
         checkpoint('ARRET_MEMOIRE_SOUS_2GIO',row,memory=m)
@@ -63,6 +63,8 @@ def main():
     assert readj(KIT/'preuves/tests-fdm-cache.json')['success']
     assert git('show','HEAD:AMENDEMENT-V1.2-C5.md')
     assert git('show','HEAD:AMENDEMENT-V1.3-C5.md')
+    assert git('show','HEAD:NOTE-EXPLOITATION-20261023-C5.md')
+    assert readj(KIT/'preuves/tests-fermeture-ui.json')['success']
     assert readj(KIT/'preuves/tests-injection-v13.json')['success']
     assert readj(KIT/'preuves/tests-injection-v13-ui.json')['success']
     assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD')

@@ -1,0 +1,13 @@
+{
+  "success": false,
+  "phase": "qualification uniquement, aucun candidat",
+  "root": "<CHEMIN_PRIVE>",
+  "reason": "Deux CloseMainWindow sans effet, MainWindowHandle=0. Incident de qualification conserve.",
+  "qualification_preserved_as_failed": true,
+  "recovery_method": "Browser.close apres verification du coffre exact",
+  "recovery_transport_error": "CDP websocket error pendant la disparition effective de l instance",
+  "remaining_after_recovery": [],
+  "business_changes_during_recovery": "non mesurees : instantane memoire non persiste; aucune cellule candidat",
+  "owned_lock_released": true,
+  "next": "Qualification dans un nouveau bac; transport de fermeture attendu traite comme demande envoyee, succes exigeant disparition des processus."
+}

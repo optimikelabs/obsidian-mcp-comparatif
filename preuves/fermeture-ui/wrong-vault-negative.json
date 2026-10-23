@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "returncode": 1,
+  "reason": "Wrong vault; no close",
+  "instance_still_present": true
+}

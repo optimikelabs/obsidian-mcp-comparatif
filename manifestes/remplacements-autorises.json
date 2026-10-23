@@ -1,0 +1,26 @@
+[
+  {
+    "original": "C05-T1-r1",
+    "series": 1,
+    "source": "AMENDEMENT-V1.2-C5.md",
+    "authorization": "<MASQUE>",
+    "original_result_sha256": "5abf9fbb8a53684afb2e46d5a38e2ca7cf333a97602a9bc8fc13ea0075b12b29",
+    "replacement_limit": 1
+  },
+  {
+    "original": "C05-T5-r1",
+    "series": 1,
+    "source": "AMENDEMENT-V1.3-C5.md",
+    "authorization": "<MASQUE>",
+    "original_result_sha256": "9b2b01bb87ae7c17151fc569571608714c60e6c97af9cb2c1c5c23fcbc727aa1",
+    "replacement_limit": 1
+  },
+  {
+    "original": "C08-T4-r1",
+    "series": 1,
+    "source": "NOTE-EXPLOITATION-20261023-C5.md",
+    "authorization": "<MASQUE>",
+    "original_result_sha256": "0a80354f7e4a408cfc00339e7eaaed8bb960d2e8c0b971260f769951234c687f",
+    "replacement_limit": 1
+  }
+]

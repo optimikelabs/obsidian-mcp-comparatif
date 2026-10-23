@@ -45,13 +45,23 @@ def project_cells(public):
 def main():
     build();project();public=KIT/'public';project_cells(public)
     names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
-           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py']
+           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py','test_closure_operation.py','close_owned_cdp.mjs']
     for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
-    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md'):
+    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md','NOTE-EXPLOITATION-20261023-C5.md','DECISIONS-C5-20261023.md','AMENDEMENT-C08-T4-r1.md'):
         if (KIT/name).exists():sanitize_file(KIT/name,public/name)
-    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json'):
+    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json','tests-fermeture.json','tests-fermeture-ui.json','exploitation-journal-audit.json','exploitation-resultats-preserves.json','fermeture-native-incident.json'):
         p=KIT/'preuves'/name
         if p.exists():sanitize_file(p,public/'preuves'/name)
+    sanitize_file(KIT/'manifestes/remplacements-autorises.json',public/'manifestes/remplacements-autorises.json')
+    for p in (RUN/'cellules').glob('*/closure-*.json'):
+        sanitize_file(p,public/'resultats/cellules'/p.parent.name/p.name)
+    closure_meta=KIT/'preuves/tests-fermeture-ui.json'
+    if closure_meta.exists():
+        source=Path(readj(closure_meta)['root'])/'ui';dest=public/'preuves/fermeture-ui'
+        for q in source.glob('closure-*.json'):sanitize_file(q,dest/q.name)
+        if (source.parent/'wrong-vault-negative.json').exists():sanitize_file(source.parent/'wrong-vault-negative.json',dest/'wrong-vault-negative.json')
+        for name in ('controller.jsonl','preparation-applicative.json','identity.json'):
+            if (source/name).exists():sanitize_file(source/name,dest/name)
     # UI runs can contain the commercial fixture: publish witness bytes only.
     for name in ('tests-injection-v13.json','tests-injection-v13-ui.json'):
         p=KIT/'preuves'/name

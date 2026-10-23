@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T14:02:19.925856+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T14:26:18.077470+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "98a7835cecebc7a42c02872cab3394b4476b7ba0", "remote_verified": true, "utc": "2026-10-23T13:59:19.846978+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "ed56cc9a6f21ab5f16a2f4c09fad79d4f4883087", "remote_verified": true, "utc": "2026-10-23T14:03:09.525205+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -26,6 +26,10 @@ Le cache FDM est déclaré pour les dix candidats sous la règle conditionnelle 
 ## Amendement v1.3
 
 C05-T5-r1 reste INJECTION_INVALIDE : défaut du banc d’essai (cibles N/P absentes, relais), corrigé par l’amendement v1.3. Ce n’est pas un résultat du candidat. T2/T3/T4 ne dépendaient pas des cibles absentes ; leurs verdicts v1.1 sont conservés. Remplacements T1/T5 seulement après série 1 ; nouvelle admission C06 seulement après série 2. Qualifications et preuves : preuves/tests-injection-v13.json et preuves/tests-injection-v13-ui.json.
+
+## Note d’exploitation C5 du 23 octobre, 16 h 04
+
+C08-T4-r1 reste NON_EXECUTE_ENVIRONNEMENT. Un remplacement unique en fin de série 1 est ajouté à ceux de C05-T1-r1 et C05-T5-r1. Les incidents du banc sans modification métier prouvée, clairement attribués au banc et sans remplacement antérieur peuvent être publiés puis différés en fin de série sans nouvel arbitrage. Tout doute, modification métier inattendue ou deuxième incident impose un arrêt. Registre : manifestes/remplacements-autorises.json. Journal secondaire tronqué conservé ; aucun oracle candidat ne le lit (preuves/exploitation-journal-audit.json). Fermeture native bornée à deux demandes de 15 secondes, profil et exécutable vérifiés. Priorité au fil produit 1.0.7 pour le verrou.
 
 ## Historique — diagnostic et arrêt sous v1.1
 
@@ -103,8 +107,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ARRET_INCIDENT_FERMETURE_A_INSTRUIRE",
-  "utc": "2026-10-23T14:02:19.860545+00:00",
+  "state": "PRET_C08_T5_APRES_PUBLICATION_NOTE_EXPLOITATION",
+  "utc": "2026-10-23T14:26:17.065830+00:00",
   "next_cell": "C08-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -115,14 +119,16 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "last_result": "NON_EXECUTE_ENVIRONNEMENT",
   "last_reason": "Fermeture du profil isole non confirmee a temps; aucun candidat ni client lance. Controle differe: aucun processus restant, verrou propre libere.",
   "incident_cell": "C08-T4-r1",
-  "resume_requires_public_amendment": true,
+  "resume_requires_public_amendment": false,
   "amendment_v13_commit": "71b70f866a113d3b2739cf5a0dceb775c084181e",
   "amendment_v13_published": true,
-  "next_action": "C5 instruit fermeture-C08-T4-r1 avant reprise a C08-T5-r1. Ne pas rejouer C08-T4-r1.",
-  "replacements": "C05-T1-r1 et C05-T5-r1: un seul remplacement chacun apres la serie 1; C06: une nouvelle admission apres la serie 2."
+  "next_action": "Publier la note exploitation qualifiee puis C08-T5-r1, sous priorite produit et verrou; decision C5 du 23/10 16h04 appliquee.",
+  "replacements": "Trois remplacements uniques en fin de serie 1: C05-T1-r1, C05-T5-r1, C08-T4-r1; registre manifestes/remplacements-autorises.json. C06 apres serie 2.",
+  "resume_requires_published_operating_note": true,
+  "closure_qualified": true
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_INCIDENT_FERMETURE_A_INSTRUIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : C5 instruit fermeture-C08-T4-r1 avant reprise a C08-T5-r1. Ne pas rejouer C08-T4-r1.. Aucune tâche du coffre modifiée.
+État opérationnel : PRET_C08_T5_APRES_PUBLICATION_NOTE_EXPLOITATION. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Publier la note exploitation qualifiee puis C08-T5-r1, sous priorite produit et verrou; decision C5 du 23/10 16h04 appliquee.. Aucune tâche du coffre modifiée.

@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const [cfgfile]=process.argv.slice(2);
+const cfg=JSON.parse(fs.readFileSync(cfgfile,'utf8'));
+const norm=x=>path.resolve(x).replaceAll('\\','/').toLowerCase();
+if(norm(path.dirname(cfgfile))!==norm(cfg.out)||norm(cfg.profile)!==norm(path.join(cfg.out,'profile'))||norm(cfg.vault)!==norm(path.join(cfg.out,'vault')))throw Error('Unexpected isolated paths');
+if(!Number.isInteger(cfg.port)||[27123,27124].includes(cfg.port))throw Error('Forbidden port');
+const base=`http://127.0.0.1:${cfg.port}`;
+const get=async suffix=>{const r=await fetch(base+suffix,{signal:AbortSignal.timeout(5000)});if(!r.ok)throw Error('CDP HTTP '+r.status);return r.json()};
+const rpc=(url,method,params={},closing=false)=>new Promise((resolve,reject)=>{
+ const parsed=new URL(url);if(parsed.hostname!=='127.0.0.1'||Number(parsed.port)!==cfg.port)throw Error('Unexpected websocket endpoint');
+ const ws=new WebSocket(url);let sent=false,done=false;
+ const finish=(error,result)=>{if(done)return;done=true;clearTimeout(timer);ws.close();error?reject(error):resolve(result)};
+ const timer=setTimeout(()=>finish(Error('CDP close timeout')),5000);
+ ws.addEventListener('open',()=>{sent=true;ws.send(JSON.stringify({id:1,method,params}))});
+ ws.addEventListener('message',e=>{const r=JSON.parse(e.data);if(r.id!==1)return;finish(r.error?Error(JSON.stringify(r.error)):null,r.result)});
+ ws.addEventListener('close',()=>{if(!done)finish(closing&&sent?null:Error('CDP disconnected'),{disconnected_after_request:true})});
+ ws.addEventListener('error',()=>finish(closing&&sent?null:Error('CDP websocket error'),{connection_ended_after_request:true}));
+});
+const targets=(await get('/json/list')).filter(t=>t.type==='page');if(targets.length!==1)throw Error('Ambiguous page');
+const identity=await rpc(targets[0].webSocketDebuggerUrl,'Runtime.evaluate',{expression:'app.vault.adapter.basePath',returnByValue:true});
+if(identity.exceptionDetails||norm(identity.result?.value)!==norm(cfg.vault))throw Error('Wrong vault; no close');
+const version=await get('/json/version');
+const response=await rpc(version.webSocketDebuggerUrl,'Browser.close',{},true);
+console.log(JSON.stringify({requested:true,method:'Browser.close',vault_verified:true,response}));

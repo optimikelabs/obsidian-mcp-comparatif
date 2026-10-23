@@ -137,14 +137,65 @@ def launch(cfg):
     except BaseException:
         stop(cfg);raise
 
+def _owned_processes(cfg):
+    # Le profil exact et l'exécutable doivent correspondre, pas seulement le PID.
+    ps="@(Get-CimInstance Win32_Process -Filter \"Name='Obsidian.exe'\" | Select-Object ProcessId,ExecutablePath,CommandLine) | ConvertTo-Json -Compress"
+    raw=subprocess.check_output(['powershell','-NoProfile','-Command',ps],text=True,encoding='utf-8').strip()
+    rows=json.loads(raw) if raw else []
+    if isinstance(rows,dict):rows=[rows]
+    return [r for r in rows if _owns_process(r,cfg)]
+
+
+def _owns_process(row,cfg):
+    import re
+    profile=cfg['profile']
+    pattern=r'(?:^|\s)--user-data-dir=(?:"'+re.escape(profile)+r'"|'+re.escape(profile)+r')(?=\s|$)'
+    return bool(row.get('ExecutablePath') and Path(row['ExecutablePath']).resolve()==EXE.resolve()
+                and re.search(pattern,row.get('CommandLine') or '',re.IGNORECASE))
+
+
+def _request_owned_close(cfg,attempt):
+    # Le lanceur peut réexécuter Obsidian sous un autre PID. Le profil et
+    # l'exécutable identifient le principal ; CDP revérifie le coffre exact.
+    import re
+    mains=[r for r in _owned_processes(cfg) if not re.search(r'(?:^|\s)--type=',r['CommandLine'])]
+    if not mains:return {'attempt':attempt,'requested':False,'reason':'no_owned_main'}
+    if len(mains)!=1:raise RuntimeError('Plusieurs processus principaux pour le profil; aucune fermeture')
+    raw=command(['node',str(KIT/'scripts/close_owned_cdp.mjs'),str(Path(cfg['out'])/'obsidian.json')],Path(cfg['out']),'close-request-'+str(attempt),timeout=15)
+    return {**json.loads(raw),'attempt':attempt,'observed_main_pid':mains[0]['ProcessId']}
+
+
+def _close_sequence(observe,request,clock=time.monotonic,sleep=time.sleep,wait_seconds=15,max_attempts=2):
+    attempts=[];remaining=observe()
+    for attempt in range(1,max_attempts+1):
+        if not remaining:break
+        attempts.append(request(attempt))
+        deadline=clock()+wait_seconds
+        while remaining and clock()<deadline:
+            sleep(min(.5,max(0,deadline-clock())));remaining=observe()
+    return {'attempts':attempts,'remaining':remaining,'wait_seconds_per_attempt':wait_seconds}
+
+
 def stop(cfg):
-    out=Path(cfg['out']);pid=cfg.get('pid');profile=cfg['profile'].replace("'","''")
-    if pid:
-        ps=f"$p=Get-CimInstance Win32_Process -Filter 'ProcessId={pid}'; if($p -and $p.CommandLine.Contains('{profile}')){{Stop-Process -Id {pid} -Force}}; Start-Sleep -Milliseconds 500; @(Get-CimInstance Win32_Process -Filter \"Name='Obsidian.exe'\" | Where-Object {{$_.CommandLine -and $_.CommandLine.Contains('{profile}')}}).Count"
-        remaining=int(command(['powershell','-NoProfile','-Command',ps],out,'stop',timeout=25).strip())
-        if remaining:raise RuntimeError('Instance de campagne encore active ; verrou conservé')
+    out=Path(cfg['out']);pid=cfg.get('pid')
+    assert Path(cfg['profile']).resolve()==(out/'profile').resolve()
+    assert out.resolve().is_relative_to(KIT.parent.resolve())
+    used=cfg.get('_close_requests_used',0)
+    if used>=2 or cfg.get('_closure_exhausted'):
+        proof={'attempts':[],'remaining':_owned_processes(cfg),'reason':'two_requests_already_used'}
+    else:
+        def request(_):
+            cfg['_close_requests_used']=cfg.get('_close_requests_used',0)+1
+            return _request_owned_close(cfg,cfg['_close_requests_used'])
+        proof=_close_sequence(lambda:_owned_processes(cfg),request,max_attempts=2-used)
+        if proof['remaining']:cfg['_closure_exhausted']=True
+    # Nouveaux reçus, sans réécrire une tentative de fermeture précédente.
+    writej(out/('closure-'+str(time.time_ns())+'.json'),proof)
+    record(out,'owned_close_check',pid=pid,attempts=len(proof['attempts']),remaining=len(proof['remaining']))
+    if proof['remaining']:raise RuntimeError('Instance de campagne encore active apres deux demandes propres ; verrou conserve')
     if LOCK.exists() and LOCK.read_text(encoding='utf-8').strip()==cfg.get('lock_token'):LOCK.unlink()
     record(out,'owned_instance_stopped',pid=pid,lock_present=LOCK.exists())
+
 
 def prepare_application(cfg,note=P,prefix='preparation-applicative'):
     out=Path(cfg['out']);vault=Path(cfg['vault']);p=target(vault,note);before=p.read_bytes()
