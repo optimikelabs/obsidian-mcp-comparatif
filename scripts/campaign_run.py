@@ -23,11 +23,36 @@ def checkpoint(state,next_row,**kw):
           'candidate_active':False,'obsidian_instance_active':False,'lock_present':LOCK.exists(),
           'command':'python -X utf8 scripts/campaign_run.py','preservation':'Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.',**kw})
 
+def wait_resources(row):
+    # Instruction Mike du 23/10 : attendre le verrou, sans jamais le forcer.
+    while LOCK.exists():
+        print(json.dumps({'waiting_lock':row['cell_id'],'utc':memory()['utc']}),flush=True)
+        time.sleep(30)
+    m=memory()
+    if m['stop']:
+        checkpoint('ARRET_MEMOIRE_SOUS_2GIO',row,memory=m)
+        publish('Checkpoint: seuil critique mémoire avant '+row['cell_id']);return False
+    if not m['admitted']:
+        checkpoint('ATTENTE_MEMOIRE',row,memory=m)
+        publish('Checkpoint: attente mémoire avant '+row['cell_id'])
+        for wait in range(12):
+            for minute in range(10):time.sleep(60)
+            m=memory();record(RUN/'attente','memory_10min',**m)
+            print(json.dumps({'waiting_memory':row['cell_id'],'check':wait+1,**m}),flush=True)
+            if m['stop']:
+                checkpoint('ARRET_MEMOIRE_SOUS_2GIO',row,memory=m)
+                publish('Checkpoint: seuil critique mémoire');return False
+            if m['admitted']:break
+        else:
+            checkpoint('ARRET_MEMOIRE_APRES_120_MIN',row,memory=m)
+            publish('Checkpoint: seuil mémoire non atteint en deux heures');return False
+    if LOCK.exists():return wait_resources(row)
+    return True
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);parser.add_argument('--after-incident');parser.add_argument('--series',type=int,choices=(1,2));a=parser.parse_args()
     rows=readj(KIT/'manifestes/cellules-190.json');done=0
     assert readj(RUN/'CLIENT-QUALIFICATION.json')['qualified'] and readj(RUN/'CLIENT-T8-QUALIFICATION.json')['qualified'] and readj(RUN/'FDM-QUALIFICATION.json')['qualified']
-    assert not LOCK.exists(),'Verrou occupé : aucune suppression autorisée'
     assert readj(KIT/'preuves/tests-fdm-cache.json')['success']
     assert git('show','HEAD:AMENDEMENT-V1.2-C5.md')
     assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD')
@@ -47,13 +72,7 @@ def main():
         if p.exists():
             if (p/'result.json').exists() and not readj(p/'result.json').get('stop_campaign'):continue
             checkpoint('ARRET_INCIDENT_A_INSTRUIRE',row,reason='Dossier commencé ou arrêt conservé ; aucun rejeu automatique.');return
-        if not memory()['admitted']:
-            checkpoint('ATTENTE_MEMOIRE',row,memory=memory());publish('Checkpoint: attente mémoire avant '+row['cell_id'])
-            for wait in range(3):
-                time.sleep(600);m=memory();record(RUN/'attente','memory_10min',**m)
-                if m['admitted']:break
-            else:
-                checkpoint('ARRET_MEMOIRE_APRES_30_MIN',row,memory=memory());publish('Checkpoint: seuil mémoire non atteint');return
+        if not wait_resources(row):return
         checkpoint('CELLULE_EN_COURS',row);print(json.dumps({'starting':row['cell_id'],'utc':memory()['utc']}),flush=True)
         result=play(row);following=next((r for r in rows[i+1:] if readj(RUN/'admissions'/r['candidate']/'admission.json')['status']=='ADMIS'),None)
         checkpoint('ARRET_INCIDENT' if result['stop_campaign'] else 'PRET_CELLULE_SUIVANTE',following,

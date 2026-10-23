@@ -6481,8 +6481,8 @@
       "sha256": "ebb6c7babaa3e1eb45868ca963a3bf09038321b05bd761d527bfaf7e842194b3"
     },
     "preuves/validation-projection-campagne.json": {
-      "size": 142,
-      "sha256": "42adcc4434564c8518fb9c60b2ca9cdfd708ddd4b9e0194d88a93e77c45803a7"
+      "size": 141,
+      "sha256": "3d6182008c0647660dd9ff53b03efd6abef6d9bfa200cedc0b0f1c6be4bb7579"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -6539,6 +6539,10 @@
     "README.md": {
       "size": 4694,
       "sha256": "82bdb882f004b09cbecb63edc60d9f194736496ddd0f2ea27210b1cabb06e8a6"
+    },
+    "REPRISE-OPERATIONNELLE-20261023.md": {
+      "size": 1418,
+      "sha256": "98da46ceb2b765fc9509bc3957d0194bc1dca69eea2e116664317befd811a553"
     },
     "requirements.txt": {
       "size": 14,
@@ -8205,12 +8209,12 @@
       "sha256": "b53922d1925869154bdbccc310987708bd5d99bcdddbc9bba34c4ba61c5f6061"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 13991,
-      "sha256": "ebe3c1260a8f1a8a5e90f973f33ed7789b0617c16e34793494b15428edfae06a"
+      "size": 13817,
+      "sha256": "ff698a839d34db3fea7d88d7248ffcd7cc1b6307edc4a2a185f6dd142762b725"
     },
     "resultats/REPRISE.json": {
-      "size": 2543,
-      "sha256": "77223f23ca8f2108111e0a4c18b21593f1fa5a02c8a012939cee0b3b50ea5cbb"
+      "size": 2426,
+      "sha256": "3a37b3f6e6e33939c784917aca9c39b49adcb44c379920399cbdd87e97fcaf74"
     },
     "resultats/V12-ETAT.json": {
       "size": 859,
@@ -8257,8 +8261,8 @@
       "sha256": "d7f3a73fe0688fbb03bef0355e2842fc6d2a4cba0c11dd89a122b6edc40de694"
     },
     "scripts/campaign_run.py": {
-      "size": 4890,
-      "sha256": "a8738cdb90faea821ae494056e07f1c4568c346f9b7fd54f2527ba1e18e2fbf2"
+      "size": 5636,
+      "sha256": "bdbb8137e91f08fd531b16d97417af386d4aec6d98a270d3c209501e94594331"
     },
     "scripts/campaign_runtime.py": {
       "size": 11415,
@@ -8401,5 +8405,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "89d90abf9b11002371c0775a4184f3869112c6cdd343d201012f885d045455c8"
+  "tree_sha256": "0efecd99d5f8c886387892c99f1e824016b15e2e80478477090ae96943bc6f06"
 }
