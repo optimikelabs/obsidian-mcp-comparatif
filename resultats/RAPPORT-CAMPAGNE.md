@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T15:38:11.286922+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T15:39:50.819522+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "23e57f787d36204f03f9802a7dd41d8fed8e4cd4", "remote_verified": true, "utc": "2026-10-23T15:36:20.058440+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "04b568103e6784bca1ae29db76961cd2b797d043", "remote_verified": true, "utc": "2026-10-23T15:39:13.157038+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -46,6 +46,10 @@ VALIDEE / REUSSI_VERIFIE : Seul workspace.json après instantané, chemin techni
 ## Validation après instantané : C01-T4-r1
 
 VALIDEE / REUSSI_VERIFIE : Aucun écart entre instantané jugé et coffre fermé. Voir validations-post-instantane/C01-T4-r1.json. Résultat brut et instantané inchangés.
+
+## Validation après instantané : C01-T5-r1
+
+VALIDEE / PROTEGE_NON_ACCOMPLI : dates ajoutées par FDM après l’instantané, hors jugement. Voir validations-post-instantane/C01-T5-r1.json. Résultat brut et instantané inchangés.
 
 ## Validation après instantané : C08-T5-r1
 
