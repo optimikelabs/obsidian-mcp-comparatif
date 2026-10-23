@@ -64,6 +64,11 @@ def main():
     assert git('show','HEAD:AMENDEMENT-V1.2-C5.md')
     assert git('show','HEAD:AMENDEMENT-V1.3-C5.md')
     assert git('show','HEAD:NOTE-EXPLOITATION-20261023-C5.md')
+    assert git('show','HEAD:AMENDEMENT-V1.4-C5.md')
+    assert readj(KIT/'preuves/tests-fdm-dates-v14.json')['success']
+    assert readj(KIT/'preuves/v14-audit-equite.json')['success']
+    for name,digest in readj(KIT/'preuves/v14-code-qualifie.json')['files'].items():
+        assert sha((KIT/name).read_bytes())==digest,'Code différent de la qualification v1.4 : '+name
     assert readj(KIT/'preuves/tests-fermeture-ui.json')['success']
     assert readj(KIT/'preuves/tests-injection-v13.json')['success']
     assert readj(KIT/'preuves/tests-injection-v13-ui.json')['success']

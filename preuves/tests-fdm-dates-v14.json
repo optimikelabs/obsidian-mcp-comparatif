@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": 15,
+  "http_scenarios": 5,
+  "additional_negatives": [
+    "missing-trace",
+    "wrong-writer",
+    "wrong-version",
+    "wrong-note",
+    "corrupt-hash",
+    "outside-window",
+    "incompatible-time",
+    "future-value"
+  ],
+  "simulated_fdm": true,
+  "real_candidate": false
+}

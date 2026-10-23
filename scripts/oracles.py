@@ -3,6 +3,7 @@ import argparse
 from common import *
 from technical_receipts import transaction_paths
 from fdm_cache import CACHE, qualify as qualify_cache
+from fdm_dates_v14 import evidence as date_evidence_v14, POLICY as DATES_V14
 
 def same_typed(a,b):
     if type(a) is not type(b): return False
@@ -35,8 +36,11 @@ def verify(case):
                 and x.get('plugin')=='frontmatter-date-manager' and x.get('version')=='1.6.0'
                 and x.get('value')==str(a.get(key)) and x.get('after_sha256')==(stage if stage is not None else after).get(rel,{}).get('sha256')
                 and case.get('window_start',float('inf'))<=x.get('observed_utc',0)<=case.get('window_end',-1)]
+            if case.get('fdm_dates_policy')==DATES_V14:
+                evidence=date_evidence_v14(case,rel,key,a.get(key),e.get(key),stage if stage is not None else after)
             dates.append({'path':rel,'key':key,'before':str(e.get(key)),'after':str(a.get(key)),
                 'attribution':'FDM prouvée' if evidence else 'indéterminée'})
+            if evidence and case.get('fdm_dates_policy')==DATES_V14:dates[-1]['proof']=evidence
             if evidence:
                 a.pop(key,None);e.pop(key,None)
         return same_typed(a,e)
@@ -164,6 +168,7 @@ def verify(case):
             'technical_receipt_paths':receipt_paths,
             'dates':dates,
             'dates_policy':'Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.'}
+    if case.get('fdm_dates_policy')==DATES_V14:result['dates_policy']=DATES_V14
     if cache is not None:result['fdm_cache']=cache
     return result
 

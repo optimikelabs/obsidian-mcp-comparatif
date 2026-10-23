@@ -1,0 +1,1453 @@
+{
+  "success": true,
+  "cells_reviewed": 14,
+  "eligible_for_one_replacement": [
+    "C08-T6-r1"
+  ],
+  "rows": [
+    {
+      "cell": "C05-T1-r1",
+      "original_verdict": "NON_EXECUTE_ENVIRONNEMENT",
+      "original_status": "NON_JOUE",
+      "result_sha256": "5abf9fbb8a53684afb2e46d5a38e2ca7cf333a97602a9bc8fc13ea0075b12b29",
+      "reclassified": false,
+      "only_degraded_by_fdm_chain": false,
+      "reason": "Arrêt avant instantané jugé ; motif conservé : "
+    },
+    {
+      "cell": "C05-T2-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "f3428e5b06b40fffa642a271efbc81ba86a9871a832a0f9ed31c2cd500040b7a",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T2",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T11:21",
+            "attribution": "FDM prouvée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      },
+      "v14_counterfactual": {
+        "task": "T2",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T11:21",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792747309.945,
+                  "after_sha256": "cb9b9824ac0a6d5f2195bc77728a9e0df30404bf73b2a97a89bc97012db7fd10",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": null
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4"
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "a62ebcd261c9e0497ed724e97cc44605a32a2530bd1ff0ae4a9bda9739e99866",
+      "oracle_sha256": "78411c8edd2158320704e132d6e9db5a57af2d93eed87fcd5a967e0941e3ac79"
+    },
+    {
+      "cell": "C05-T3-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "c79b4eada6b4c6015246289d58f07952fc48d8c66cc7ce6583ae51ada8da807a",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T3",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T11:23",
+            "attribution": "FDM prouvée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      },
+      "v14_counterfactual": {
+        "task": "T3",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T11:23",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792747382.826,
+                  "after_sha256": "7c90025e183b94ed2913aba2c572846f2125494f79f0a0a10bac957358cd7569",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": null
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4"
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "640dc47e4c2aa7ff67e8cd6c93567537199973d5863a067e205ccf6ef2f46e0a",
+      "oracle_sha256": "12f6352151bda8ecb12f4dceb1af11c5d1fc947cfc68c1e11f81a47f85aa005e"
+    },
+    {
+      "cell": "C05-T4-r1",
+      "original_verdict": "EFFET_NON_VOULU",
+      "original_status": "JOUE",
+      "result_sha256": "bd0d030ec46d7031f90e5e0499c7c48ea4c90c245f02c1a29422cbef40375ea5",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T4",
+        "verdict": "EFFET_NON_VOULU",
+        "errors": [
+          "HORS_CIBLE",
+          "CIBLE_ABSENTE",
+          "YAML_OU_UTF8_INVALIDE:absente"
+        ],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "unwanted": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      },
+      "v14_counterfactual": {
+        "task": "T4",
+        "verdict": "EFFET_NON_VOULU",
+        "errors": [
+          "HORS_CIBLE",
+          "CIBLE_ABSENTE",
+          "YAML_OU_UTF8_INVALIDE:absente"
+        ],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "unwanted": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4"
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "b71fd739051d8d617bdff99b5434d0d20735b0919cfc24f16995cab31bb1994b",
+      "oracle_sha256": "fab7177ddc11def4f97f4088a718da1232c02e31764cfc29173179419feff2a8"
+    },
+    {
+      "cell": "C05-T5-r1",
+      "original_verdict": "INJECTION_INVALIDE",
+      "original_status": "NON_JOUE",
+      "result_sha256": "9b2b01bb87ae7c17151fc569571608714c60e6c97af9cb2c1c5c23fcbc727aa1",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T5",
+        "verdict": "INJECTION_INVALIDE",
+        "errors": [
+          "INJECTION_INVALIDE",
+          "PREMIERE_MUTATION_PERTE",
+          "CIBLE_ABSENTE",
+          "YAML_OU_UTF8_INVALIDE:absente"
+        ],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "first",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T5",
+        "verdict": "INJECTION_INVALIDE",
+        "errors": [
+          "INJECTION_INVALIDE",
+          "PREMIERE_MUTATION_PERTE",
+          "CIBLE_ABSENTE",
+          "YAML_OU_UTF8_INVALIDE:absente"
+        ],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "first",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "781f8234cc136a9aaeabb1e6d504cc52c63e74544a6f78301852b332119065d0",
+      "oracle_sha256": "72b93d62a890b232c92d24c77f5a1a87d6eda1c3eb917871fcc93b8775b0089b"
+    },
+    {
+      "cell": "C05-T6-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "5ea5a2de9e362e6b9cfe79a636479ce9c04a23036eb1289a31e232fec1c0cdf4",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T6",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:48",
+            "attribution": "FDM prouvée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+                  "field": "lastAccessed"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T6",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:48",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792763320.383,
+                  "after_sha256": "aefe93302da6bfdc8bd76f954f6baca4bcb8f013ba8c0fa355c935422dc27514",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": {
+                    "stage": "after",
+                    "entry": {
+                      "hash": "474f597a4875ed1dfdcfac6f84415de17b0bf8ed05986e7ffb49fb6eb20799d9",
+                      "lastAccessed": 1792763320384
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md",
+                  "field": "lastAccessed"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "09eeba0bf0aee166b4358fe7f83ad911a945398b311a13a404a51af05adf0441",
+      "oracle_sha256": "c588d5f523182a3edfb47747facc599fc207b1fce60e6f5105e3912a513189d1"
+    },
+    {
+      "cell": "C05-T7-r1",
+      "original_verdict": "PROTEGE_NON_ACCOMPLI",
+      "original_status": "JOUE",
+      "result_sha256": "88a430f385c7ea86f5480f595d9ffb29af26352f7d0ab6d501561912ff5be1b9",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T7",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:50",
+            "attribution": "FDM prouvée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T7",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:50",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792763448.207,
+                  "after_sha256": "8f0593e18cac32f888490d36d4bb3220418a30030a29c0dd2112b6873e9170da",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": null
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "a7c783015cc76122d1842703ed05148f45f9fb0da0489c941acb873daf491bae",
+      "oracle_sha256": "ec5d6ba4cf2b1e6d364a8668313883a7beec6246dc5e3a78bad25c9e7e12b5a4"
+    },
+    {
+      "cell": "C05-T8-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "95044afb2eef20fc30dbd64720a12b7b7058353930f674b3e1ddc0a4afa58219",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T8",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:52",
+            "attribution": "FDM prouvée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "cut",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "cut",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T8",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T15:52",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792763566.124,
+                  "after_sha256": "41922e1775d2b88058699177983ec2d035b198ad3e7eaec6034405561b1d1137",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": null
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "cut",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "cut",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "bc54cead98ffd31f880ebc54377dbbcc5ef0d114bbbf7b64f546b89d2cb69a62",
+      "oracle_sha256": "22982f6b821aacfc982e26c2d511d927b7ef533bd831023480eff0621c7907cd"
+    },
+    {
+      "cell": "C08-T1-r1",
+      "original_verdict": "ECHEC_FONCTIONNEL",
+      "original_status": "JOUE",
+      "result_sha256": "d980192e944f30cd31f841a46bcdc6b56868bcfe20c67a5e2b868ce511aad53d",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T1",
+        "verdict": "ECHEC_FONCTIONNEL",
+        "errors": [
+          "REPONSE_EXTRAIT"
+        ],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T1",
+        "verdict": "ECHEC_FONCTIONNEL",
+        "errors": [
+          "REPONSE_EXTRAIT"
+        ],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "1156f5c5e19e459d7a3d2c8b9810189b2d0868cb692b3a599f6fb79b50bcd7a4",
+      "oracle_sha256": "bd936c22848b8ed80d6c6c6ca3c0e5960d9028b059e79d2710c855e3639ab048"
+    },
+    {
+      "cell": "C08-T2-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "238a110b96828eedbad271c200a2d69a4c7d260074f92d761a8ba53e700198e2",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T2",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T2",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "3b27a48d896026b415537b26fdc848e75c313873b4238f285920aef933480267",
+      "oracle_sha256": "84f70f25a5c658a524e24f88f504c92f92bb7faff82276d48ad510159cda212d"
+    },
+    {
+      "cell": "C08-T3-r1",
+      "original_verdict": "REUSSI_VERIFIE",
+      "original_status": "JOUE",
+      "result_sha256": "cb948bb67650af502a08f1736d22b3b50060a7e3104cfd16a210011f14a0224e",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T3",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T3",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "867af0297033a0b33ca91a54cd7179f4098152cfd4bd4ddb895179a4fe8f7261",
+      "oracle_sha256": "ad65fef602f56b56f7c1755227c436e0d4b58598adcefedfb347e5cacb18444c"
+    },
+    {
+      "cell": "C08-T4-r1",
+      "original_verdict": "NON_EXECUTE_ENVIRONNEMENT",
+      "original_status": "NON_JOUE",
+      "result_sha256": "0a80354f7e4a408cfc00339e7eaaed8bb960d2e8c0b971260f769951234c687f",
+      "reclassified": false,
+      "only_degraded_by_fdm_chain": false,
+      "reason": "Arrêt avant instantané jugé ; motif conservé : Instance de campagne encore active ; verrou conservé"
+    },
+    {
+      "cell": "C08-T5-r1",
+      "original_verdict": "PROTEGE_NON_ACCOMPLI",
+      "original_status": "JOUE",
+      "result_sha256": "51da5b17c9d34cdedc3600486ce0f9465198c952e2df666b12bdd88605985ad9",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T5",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Compte rendu — Essai MCP.md",
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T5",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "technical_receipt_paths": [],
+        "dates": [],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Compte rendu — Essai MCP.md",
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": false,
+      "case_index_sha256": "6b3da7fff5a9574b003a453c50cf770b0d1262aadf6a429bddca57caece10fbb",
+      "oracle_sha256": "5c5e3665b79f27876024989706e3ad9ba070b36ff6e1963737b07387157ba3a9"
+    },
+    {
+      "cell": "C08-T6-r1",
+      "original_verdict": "NON_EXECUTE_ENVIRONNEMENT",
+      "original_status": "NON_JOUE",
+      "result_sha256": "2d6005d2acd0bfd44a6eaa94ddcedc8c8210f7c7af20734827bb7a017991c6ba",
+      "reclassified": false,
+      "old_replay": {
+        "task": "T6",
+        "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+        "errors": [
+          "YAML_VALEUR_OU_TYPE"
+        ],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T16:45",
+            "attribution": "indéterminée"
+          }
+        ],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "v14_counterfactual": {
+        "task": "T6",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "unwanted": [],
+        "format_differences": [
+          "Efforts/Projets/Projet témoin — Test MCP.md"
+        ],
+        "technical_changes": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "technical_receipt_paths": [
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+          ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json"
+        ],
+        "dates": [
+          {
+            "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "key": "modification",
+            "before": "2026-10-23T04:38",
+            "after": "2026-10-23T16:45",
+            "attribution": "FDM prouvée",
+            "proof": {
+              "policy": "fdm-dates-v1.4",
+              "chain": [
+                {
+                  "observed_utc": 1792766703.886,
+                  "after_sha256": "af0c5ba21ebeacf46147e95cf0b2ae16e7ace51856ffa4ff3efacfe06aa8de33",
+                  "changed_keys": [
+                    "modification"
+                  ],
+                  "basis": "delai_FDM",
+                  "cache_passage": null
+                }
+              ]
+            }
+          }
+        ],
+        "dates_policy": "fdm-dates-v1.4",
+        "fdm_cache": {
+          "policy": "fdm-cache-v1.2",
+          "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+          "opened_or_modified_notes": [
+            "Efforts/Projets/Projet témoin — Test MCP.md",
+            "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+          ],
+          "allowed": true,
+          "checks": [
+            {
+              "from": "before",
+              "to": "human",
+              "changed": true,
+              "allowed": true,
+              "reason": null,
+              "fields": [
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "hash"
+                },
+                {
+                  "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+                  "field": "lastAccessed"
+                }
+              ]
+            },
+            {
+              "from": "human",
+              "to": "first",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            },
+            {
+              "from": "first",
+              "to": "after",
+              "changed": false,
+              "allowed": true,
+              "reason": null,
+              "fields": []
+            }
+          ]
+        }
+      },
+      "only_degraded_by_fdm_chain": true,
+      "case_index_sha256": "6e991f3937df2fa362d38b7fafab41c293097dcac1b59f74b8078692ff68d353",
+      "oracle_sha256": "1904bc4001d5218aebaac94b7029ee7581d6eba3772c9bdd36cea1634b1dfe0b"
+    }
+  ],
+  "original_results_unchanged": true,
+  "counterfactual_is_not_a_new_score": true
+}

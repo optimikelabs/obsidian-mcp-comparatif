@@ -59,6 +59,7 @@ def build():
     for validation in sorted((RUN/'validations-post-instantane').glob('*.json')):
         evidence=readj(validation);decision=evidence['decision']
         text+='## Validation après instantané : '+evidence['cell_id']+'\n\n'+decision['validation']+' / '+decision['verdict']+' : '+decision['note']+'. Voir validations-post-instantane/'+validation.name+'. Résultat brut et instantané inchangés.\n\n'
+    if (KIT/'AMENDEMENT-V1.4-C5.md').exists():text+='## Amendement v1.4\n\nAttribution FDM dans l’instantané jugé, commune aux dix candidats, sans déplacement du jugement. Quinze contrôles factices passés. Audit de 14 cellules : seule C08-T6-r1 dégradée uniquement par ce motif ; verdict brut NON_EXECUTE_ENVIRONNEMENT conservé, note : « bloquée par l’oracle v1.3, chaîne FDM, amendement v1.4 ». Un remplacement unique ajouté en fin de série 1. Aucun autre ancien résultat reclassé. Voir preuves/v14-audit-equite.json et manifestes/remplacements-autorises.json.\n\n'
     if diagnostic.exists():text+='## Historique — diagnostic et arrêt sous v1.1\n\nLes nombres et le point de reprise de cette section décrivent l’arrêt historique ; l’état courant figure en tête et dans Reprise exacte.\n\n'+diagnostic.read_text(encoding='utf-8')+'\n\n'
     if replacements:
         text+='## Remplacements uniques autorisés en fin de série\n\nLes verdicts originaux et leurs dossiers sont conservés. Ces essais sont présentés séparément ; aucun original n’est reclassé.\n\n| Essai de remplacement | Original conservé | État | Verdict |\n|---|---|---|---|\n'

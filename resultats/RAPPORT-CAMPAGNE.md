@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T14:47:26.556829+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T15:00:08.015041+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "021d7f803389ba1ce5b8219c279e59ab9dd76b50", "remote_verified": true, "utc": "2026-10-23T14:46:15.539073+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "63e83af3b778f9ca6267f6d3b1481bbfd7aa9f6e", "remote_verified": true, "utc": "2026-10-23T14:48:12.746569+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -34,6 +34,10 @@ C08-T4-r1 reste NON_EXECUTE_ENVIRONNEMENT. Un remplacement unique en fin de sér
 ## Validation après instantané : C08-T5-r1
 
 VALIDEE / PROTEGE_NON_ACCOMPLI : dates ajoutées par FDM après l’instantané, hors jugement. Voir validations-post-instantane/C08-T5-r1.json. Résultat brut et instantané inchangés.
+
+## Amendement v1.4
+
+Attribution FDM dans l’instantané jugé, commune aux dix candidats, sans déplacement du jugement. Quinze contrôles factices passés. Audit de 14 cellules : seule C08-T6-r1 dégradée uniquement par ce motif ; verdict brut NON_EXECUTE_ENVIRONNEMENT conservé, note : « bloquée par l’oracle v1.3, chaîne FDM, amendement v1.4 ». Un remplacement unique ajouté en fin de série 1. Aucun autre ancien résultat reclassé. Voir preuves/v14-audit-equite.json et manifestes/remplacements-autorises.json.
 
 ## Historique — diagnostic et arrêt sous v1.1
 
@@ -113,8 +117,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ARRET_FDM_PENDANT_MESURE_DEMANDE_C5",
-  "utc": "2026-10-23T14:47:26.466306+00:00",
+  "state": "PRET_REPRISE_V14",
+  "utc": "2026-10-23T15:00:07.726599+00:00",
   "next_cell": "C08-T7-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -123,14 +127,12 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C08-T6-r1",
   "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "Trace FDM intermédiaire prouvée pendant la mesure ; oracle gelé exige son hash égal au fichier final, ensuite modifié conformément à la tâche.",
-  "incident_cell": "C08-T6-r1",
-  "next_action": "Décision C5 sur l’attribution FDM intermédiaire avant C08-T7-r1 ; original conservé, aucun remplacement ajouté.",
-  "operating_note_commit": "9fea9d8897285c20fc44f7c87d72f5332edf740c",
-  "replacement_registered": false
+  "last_reason": "bloquée par l’oracle v1.3, chaîne FDM, amendement v1.4",
+  "replacement_registered": true,
+  "next_action": "Publier v1.4 puis reprendre C08-T7-r1 ; priorité au gel produit 1.0.7."
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_FDM_PENDANT_MESURE_DEMANDE_C5. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Décision C5 sur l’attribution FDM intermédiaire avant C08-T7-r1 ; original conservé, aucun remplacement ajouté.. Aucune tâche du coffre modifiée.
+État opérationnel : PRET_REPRISE_V14. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Publier v1.4 puis reprendre C08-T7-r1 ; priorité au gel produit 1.0.7.. Aucune tâche du coffre modifiée.

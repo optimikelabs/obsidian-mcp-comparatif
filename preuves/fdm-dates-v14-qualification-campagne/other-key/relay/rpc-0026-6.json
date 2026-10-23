@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "method": "tools/call",
+    "params": {
+      "name": "read",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\": \"Efforts/Projets/Projet témoin — Test MCP.md\", \"content\": \"---\\ntype: projet\\nparent: null\\ncollection:\\n- '[[Projets]]'\\nentité: null\\nstatut: actif\\nnotes_liees: null\\nrang: 99\\nclient: false\\néchéance: null\\nnext_action: Trier trois captures.\\nbudget_h: null\\nbudget_euros: null\\ntype_projet: null\\ntemoin_bool: true\\ntemoin_liste:\\n- café\\n- œuvre\\ntemoin_entier: 7\\nclé_inconnue: Été — 東京\\ncréation: 2026-10-23T00:00\\nmodification: 2026-10-23T16:57\\n---\\n## Fiche du projet\\n- Objectif : trier trois captures.\\n- Référence de recherche : MARGELLE-TEST-2406.\\n- Passage à modifier : essai prévu vendredi.\\n- Témoin humain : correction H-2406.\\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\\n\", \"etag\": \"ccd963d1dc74bbcf29b77549682e64095c5ba6af51fd1deead6c731ddbfe035b\"}"
+        }
+      ]
+    }
+  }
+}

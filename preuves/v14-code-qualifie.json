@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "files": {
+    "scripts/oracles.py": "ab1a8cdeecc750b8b6bb7e4237fc5b63892813c5cc64007c96ed6727ab317681",
+    "scripts/fdm_dates_v14.py": "12ff07d8f78075c00b25f1a656525e996c0e608e72b42712a546aea2c1e378fa",
+    "scripts/fdm_observer.py": "c0380bd188e10e1cc4e92276d5964b24045ee98c8b49d9a56f0dfccc78dca217",
+    "scripts/campaign_cell.py": "64dd75b5da587f03d0a62dc23ce29ad991da3e7dafa161a8d8f7a9a0bfc50ffa",
+    "scripts/test_fdm_dates_v14.py": "87f67e007f411c0531816510b88af0ccb7b9e1b6b9877d6fb4e8b3994e24928b",
+    "scripts/audit_fdm_v14.py": "6aa2799e61e92ad9a6e3bbbc553914a16a7ad9eb00d465b6defa78917a4e3497"
+  },
+  "checks": 15,
+  "equity_cells": 14
+}

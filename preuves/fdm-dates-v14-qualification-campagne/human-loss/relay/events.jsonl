@@ -1,0 +1,33 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 10439281000000, "utc": 1792767440.886826, "id": 1}
+{"event": "tool_request", "seq": 2, "monotonic_ns": 10439281000000, "utc": 1792767440.8898287, "id": 2, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 3, "monotonic_ns": 10439296000000, "utc": 1792767440.8928285, "id": 2, "tool": "read", "duration_s": 0.014999999999417923, "bytes": 945, "is_error": false}
+{"event": "candidate_note_access", "seq": 4, "monotonic_ns": 10439296000000, "utc": 1792767440.8938284, "id": 2, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 5, "monotonic_ns": 10439296000000, "utc": 1792767440.894827, "id": 2, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "ddc58f4cc4d42595f37ff482e9a97dc5f624c04895f806bb39406ee40791fd27", "response_received": true}
+{"event": "response_delivered", "seq": 6, "monotonic_ns": 10439296000000, "utc": 1792767440.894827, "id": 2}
+{"event": "tool_request", "seq": 7, "monotonic_ns": 10439296000000, "utc": 1792767440.8968394, "id": 3, "tool": "write", "arguments_sha256": "0ce6a161034a40082423ba4c73b6a7ed0133f16cfb2fb5979f86a4ef08be5a5f"}
+{"event": "request_held", "seq": 8, "monotonic_ns": 10439296000000, "utc": 1792767440.8968394, "id": 3, "request_sha256": "05218ebee66107f9c67a0448b2e13121e84dabaf45f361b3bf54ae1b1fddefc7"}
+{"event": "ui_disk_verified", "seq": 9, "monotonic_ns": 10439296000000, "utc": 1792767440.9046242, "snapshot_sha256": "e2b4e351da4d972e04d250e3d193fb8433e32c1d61ef23692ad5635353d6316e"}
+{"event": "dispatch", "seq": 10, "monotonic_ns": 10439296000000, "utc": 1792767440.9046242, "id": 3, "request_sha256": "05218ebee66107f9c67a0448b2e13121e84dabaf45f361b3bf54ae1b1fddefc7", "kind": "mutation"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 10439312000000, "utc": 1792767440.9091423, "id": 3, "tool": "write", "duration_s": 0.01599999999962165, "bytes": 116, "is_error": true}
+{"event": "first_snapshot", "seq": 12, "monotonic_ns": 10439312000000, "utc": 1792767440.9161441, "snapshot_sha256": "e2b4e351da4d972e04d250e3d193fb8433e32c1d61ef23692ad5635353d6316e"}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 10439312000000, "utc": 1792767440.9166505, "id": 3}
+{"event": "tool_request", "seq": 14, "monotonic_ns": 10439328000000, "utc": 1792767440.9237468, "id": 4, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 15, "monotonic_ns": 10439328000000, "utc": 1792767440.928755, "id": 4, "tool": "read", "duration_s": 0.0, "bytes": 946, "is_error": false}
+{"event": "candidate_note_access", "seq": 16, "monotonic_ns": 10439328000000, "utc": 1792767440.9297547, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 17, "monotonic_ns": 10439328000000, "utc": 1792767440.9307551, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "e005027ad8cd9204726014cd52b19a403eae1d798f0365bfe400fc0c0802a9b1", "response_received": true}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 10439328000000, "utc": 1792767440.9307551, "id": 4}
+{"event": "tool_request", "seq": 19, "monotonic_ns": 10439328000000, "utc": 1792767440.933566, "id": 5, "tool": "patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "mutation_dispatch", "seq": 20, "monotonic_ns": 10439328000000, "utc": 1792767440.9345758, "id": 5, "request_sha256": "08cbdb6da241563d5af4c722bf99da2bafc0d004f4b47b111850495381a101e5"}
+{"event": "upstream_response", "seq": 21, "monotonic_ns": 10439343000000, "utc": 1792767440.9381142, "id": 5, "tool": "patch", "duration_s": 0.015000000001236913, "bytes": 158, "is_error": false}
+{"event": "candidate_note_access", "seq": 22, "monotonic_ns": 10439343000000, "utc": 1792767440.9391134, "id": 5, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "response_delivered", "seq": 23, "monotonic_ns": 10439343000000, "utc": 1792767440.9401119, "id": 5}
+{"event": "tool_request", "seq": 24, "monotonic_ns": 10439343000000, "utc": 1792767440.9421806, "id": 6, "tool": "patch", "arguments_sha256": "67247888db830a04b9b058c16554f40bb4976d681dd033ba9cd2eba7d0e6687c"}
+{"event": "mutation_dispatch", "seq": 25, "monotonic_ns": 10439343000000, "utc": 1792767440.9421806, "id": 6, "request_sha256": "b1df4b99565a6b9de74523235ac09ec277fafd91bbb0f0230c98ebcc12d1f784"}
+{"event": "upstream_response", "seq": 26, "monotonic_ns": 10439343000000, "utc": 1792767440.9477077, "id": 6, "tool": "patch", "duration_s": 0.0, "bytes": 158, "is_error": false}
+{"event": "candidate_note_access", "seq": 27, "monotonic_ns": 10439343000000, "utc": 1792767440.9487057, "id": 6, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "response_delivered", "seq": 28, "monotonic_ns": 10439343000000, "utc": 1792767440.9497054, "id": 6}
+{"event": "tool_request", "seq": 29, "monotonic_ns": 10439343000000, "utc": 1792767440.9517071, "id": 7, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 30, "monotonic_ns": 10439359000000, "utc": 1792767440.9633784, "id": 7, "tool": "read", "duration_s": 0.01599999999962165, "bytes": 948, "is_error": false}
+{"event": "candidate_note_access", "seq": 31, "monotonic_ns": 10439359000000, "utc": 1792767440.9633784, "id": 7, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 32, "monotonic_ns": 10439359000000, "utc": 1792767440.9643776, "id": 7, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "415d202722b777ba580aec95823d0669fa7af44477f9e94408055a4cd328d25b", "response_received": true}
+{"event": "response_delivered", "seq": 33, "monotonic_ns": 10439359000000, "utc": 1792767440.9643776, "id": 7}

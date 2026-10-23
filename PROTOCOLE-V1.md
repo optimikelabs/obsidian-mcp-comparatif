@@ -1,4 +1,8 @@
-# Protocole v1.3 — test comparatif ouvert des serveurs MCP Obsidian
+# Protocole v1.4 — test comparatif ouvert des serveurs MCP Obsidian
+
+## Journal v1.4
+
+Décision C5 du 23 octobre, 16 h 50, avant C08-T7-r1 : attribution des dates FDM dans l’instantané jugé selon AMENDEMENT-V1.4-C5.md. Les délais de mesure restent inchangés. Oracle v1.3 archivé dans scripts/oracles_v13.py et protocole antérieur dans PROTOCOLE-V1.3-GELE.md. Aucun ancien verdict reclassé.
 
 Amendement décidé par C5 avant C05-T6-r1. Lire AMENDEMENT-V1.3-C5.md. Les gels v1, v1.1 et v1.2 sont conservés ; la copie PROTOCOLE-V1.2-GELE.md conserve exactement le protocole précédent.
 

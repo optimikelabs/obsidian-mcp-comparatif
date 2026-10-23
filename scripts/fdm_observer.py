@@ -10,11 +10,12 @@ INSTALL=r'''(()=>{
  const log=[];const original=app.fileManager.processFrontMatter;
  app.fileManager.processFrontMatter=function(file,callback,...rest){
    const stack=new Error().stack;const fromFdm=stack.includes('plugin:frontmatter-date-manager');
+   const stat_before={ctime:file.stat.ctime,mtime:file.stat.mtime};
    let before,after;
    const wrapped=function(fm){before=JSON.parse(JSON.stringify(fm));const value=callback(fm);after=JSON.parse(JSON.stringify(fm));return value;};
    const result=original.call(this,file,wrapped,...rest);
    return Promise.resolve(result).then(async value=>{
-     if(fromFdm){const text=await app.vault.read(file);log.push({path:file.path,plugin:'frontmatter-date-manager',version:plugin.manifest.version,before,after,text,observed_utc:Date.now()/1000,stack});}
+     if(fromFdm){const text=await app.vault.read(file);log.push({path:file.path,plugin:'frontmatter-date-manager',version:plugin.manifest.version,before,after,text,stat_before,observed_utc:Date.now()/1000,stack});}
      return value;
    });
  };
