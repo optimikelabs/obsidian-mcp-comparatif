@@ -1,0 +1,25 @@
+{
+  "name": "obsidian-mcp",
+  "version": "2.0.1",
+  "sha256": "286a3a28a3aea6cffd83f510648d425a47a01152ca8560a61da5ce6ef4cda8b0",
+  "sha1": "b12680120857c94168a43bf4a694fa002f3a7452",
+  "integrity": "sha512-OCTsRGKXc3SNI3xCph1hsGgmUmdhfOPRgIHpO5u5593cgQw/0upMTRK5P8IFpLLo4Q1c3i8IxNwl9Ny4p1RoYg==",
+  "url": "https://registry.npmjs.org/obsidian-mcp/-/obsidian-mcp-2.0.1.tgz",
+  "lifecycle_scripts": {
+    "ci": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run eval:validate && npm run package:check",
+    "lint": "eslint src",
+    "test": "node --import tsx --test test/*.test.ts test/**/*.test.ts",
+    "build": "npm run clean && tsc -p tsconfig.json && node scripts/make-executable.mjs",
+    "clean": "node scripts/clean.mjs",
+    "start": "node dist/main.js serve",
+    "prepack": "npm run build",
+    "pretest": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format:check": "prettier --check .",
+    "eval:validate": "node scripts/validate-evaluations.mjs",
+    "package:check": "node scripts/check-package.mjs",
+    "test:coverage": "node --import tsx --test --experimental-test-coverage test/*.test.ts test/**/*.test.ts",
+    "test:integration": "node --import tsx --test test/integration/**/*.test.ts"
+  },
+  "scripts_executed": false
+}

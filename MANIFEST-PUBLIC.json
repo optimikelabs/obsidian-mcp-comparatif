@@ -6122,7 +6122,7 @@
     },
     "preuves/validation-projection-campagne.json": {
       "size": 142,
-      "sha256": "b38d0f034e5a66958ce84ceb3a49895a84888e3fdaf7fea17015df91889afc43"
+      "sha256": "22ca2c8c5bb589f948efbfa3904529e4d726d4181b7517e75b297697dc0b1bc5"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -6196,6 +6196,10 @@
       "size": 50930,
       "sha256": "27174de20398060f5e83f6de7c5f6997c2fb715cf003b6d8ea33f127e692a211"
     },
+    "resultats/admissions/C01/configuration-plugins.json": {
+      "size": 366,
+      "sha256": "f3fce5207113cc4509cbede5f7e1c992dc976399ddb46c0529f482ed8a716b49"
+    },
     "resultats/admissions/C01/controller.jsonl": {
       "size": 7058,
       "sha256": "9e6bf4cb9777e7d2ca85546f844e85478f14896b5622cbbeed17922c5a07b9fe"
@@ -6207,6 +6211,10 @@
     "resultats/admissions/C01/identity.json": {
       "size": 292,
       "sha256": "74e7842381d54645660b26208c3426af3e95e0e011f22f87bc53248f67c6ce63"
+    },
+    "resultats/admissions/C01/installation-metadata/artifacts.json": {
+      "size": 748,
+      "sha256": "b4dd184c9993b3cca418b836a066f3b0192ca9eb728cab12be1267976b0913af"
     },
     "resultats/admissions/C01/nonce-read.json": {
       "size": 509,
@@ -6304,6 +6312,18 @@
       "size": 480,
       "sha256": "d5bb5ac62dc1b42e2e478eebad654d22ea1c3f0dd040ef3124be98db8f7e13c4"
     },
+    "resultats/admissions/C02/installation-metadata/artifact.json": {
+      "size": 987,
+      "sha256": "497c112775a7c352e265de111591a82b651913e6642b329a3db3b6c257aeaefd"
+    },
+    "resultats/admissions/C02/installation-metadata/installed-tree.json": {
+      "size": 256235,
+      "sha256": "34b68960dcdd76f46d072dfb6a870f7181c60afc207e8dcdd246e88bc81b3a78"
+    },
+    "resultats/admissions/C02/installation-metadata/package-lock.json": {
+      "size": 28899,
+      "sha256": "1006466bf3fe375afc5f748e3280c5590079a565369fdfaec8d7ea722e71a8dc"
+    },
     "resultats/admissions/C02/nonce-read.json": {
       "size": 229,
       "sha256": "d71200071257f202c6f5259224d19d934e6d8871c1b9f3fc3eec67cb572698bf"
@@ -6328,6 +6348,10 @@
       "size": 13874,
       "sha256": "b2d08736b55f38b2dbfc4f451708db12e8de148cbbbbe2959ad6400f562df672"
     },
+    "resultats/admissions/C03/configuration-plugins.json": {
+      "size": 366,
+      "sha256": "f3fce5207113cc4509cbede5f7e1c992dc976399ddb46c0529f482ed8a716b49"
+    },
     "resultats/admissions/C03/controller.jsonl": {
       "size": 5527,
       "sha256": "a51a3c9b38595f2b67ebc71ef11761e6349b0da93460b9810b14c01f8e59d914"
@@ -6339,6 +6363,10 @@
     "resultats/admissions/C03/identity.json": {
       "size": 265,
       "sha256": "9245b265bdf1459dc3dd35aa869d93215b78359ba0f9f37ef458242286fde27d"
+    },
+    "resultats/admissions/C03/installation-metadata/pip-freeze.txt": {
+      "size": 659,
+      "sha256": "ea324242c146830c5dfe00846f0730cb31e398cd677d43a1cf5ef2b091cc61d6"
     },
     "resultats/admissions/C03/nonce-read.json": {
       "size": 228,
@@ -6388,6 +6416,10 @@
       "size": 155428,
       "sha256": "92216d248497de42c588631d233426b0b3e469932955f25e0c24d6fb4d0e6bcb"
     },
+    "resultats/admissions/C04/configuration-plugins.json": {
+      "size": 366,
+      "sha256": "f3fce5207113cc4509cbede5f7e1c992dc976399ddb46c0529f482ed8a716b49"
+    },
     "resultats/admissions/C04/controller.jsonl": {
       "size": 5008,
       "sha256": "83333c5a538fd09ed56b5ee03a40278c4b281b3aa0da9c0dd99667ba0abadf03"
@@ -6399,6 +6431,18 @@
     "resultats/admissions/C04/identity.json": {
       "size": 265,
       "sha256": "9245b265bdf1459dc3dd35aa869d93215b78359ba0f9f37ef458242286fde27d"
+    },
+    "resultats/admissions/C04/installation-metadata/artifact.json": {
+      "size": 1779,
+      "sha256": "0644807cd06a86e3c9dc8f702c0f72d72a4903a8b4af69dc87b36161ade4e0a2"
+    },
+    "resultats/admissions/C04/installation-metadata/installed-tree.json": {
+      "size": 758100,
+      "sha256": "c42d4369d17de7064745b81751980b0088c339e4946cb5a4bb0c5a151d30907a"
+    },
+    "resultats/admissions/C04/installation-metadata/package-lock.json": {
+      "size": 22552,
+      "sha256": "47c8fd06269aeb254c9e65d4e4bd45ec6dda4f3985aa41748622f2a88e4d6e05"
     },
     "resultats/admissions/C04/nonce-read.json": {
       "size": 471,
@@ -6444,6 +6488,10 @@
       "size": 23996,
       "sha256": "4399a783b105d4ef991c34219d386f077a87f688eb4c0b2f8e4e2cdb1c3fb5fc"
     },
+    "resultats/admissions/C05/configuration-plugins.json": {
+      "size": 486,
+      "sha256": "a42507e3e51f89a5e817e2e43044324259a91e067461c601357c5a5fae36508e"
+    },
     "resultats/admissions/C05/controller.jsonl": {
       "size": 10418,
       "sha256": "ef684edba7a7016bcc846c328e814236955ff5abf836a026b37d93d625a33aba"
@@ -6455,6 +6503,10 @@
     "resultats/admissions/C05/identity.json": {
       "size": 261,
       "sha256": "37360c7fca4ab991d46e39cca1a05cb6a7869909273fa5c82603ce2297651b1b"
+    },
+    "resultats/admissions/C05/installation-metadata/artifacts.json": {
+      "size": 718,
+      "sha256": "c32dc7b758c62e8542d53f591b33173cca03b94729e5fbed97a5988ce5263ec2"
     },
     "resultats/admissions/C05/nonce-read.json": {
       "size": 487,
@@ -6516,6 +6568,14 @@
       "size": 184090,
       "sha256": "9d7bbe53212f3f4eb5419bc3bf35bfd0232dfa0b93aee01c83d5c3feee2d742a"
     },
+    "resultats/admissions/C07/configuration-parametres.json": {
+      "size": 1357,
+      "sha256": "b297d43629dbde8f00fb53070ba0ee786b151674f97c318149cb600a37ce8752"
+    },
+    "resultats/admissions/C07/configuration-plugins.json": {
+      "size": 542,
+      "sha256": "bc4c299480f63e4f3a8d464191fe7c0ce3a6f13032ce69e5a1cb386e1fc7355b"
+    },
     "resultats/admissions/C07/controller.jsonl": {
       "size": 36469,
       "sha256": "e1cef859f7afd0e29b752c2e676a1c2c1c626a9dab477e8a4230de16fb005cfc"
@@ -6531,6 +6591,18 @@
     "resultats/admissions/C07/identity.json": {
       "size": 311,
       "sha256": "3b86d1df4b425071c079d174404eaa4eee9814973c66f46be072f3536a2e9365"
+    },
+    "resultats/admissions/C07/installation-metadata/optimike-bridge-bundle-v3.13.0.manifest.json": {
+      "size": 2223,
+      "sha256": "b36330f878881295289b517bdd5124a6ece112d456c2869d7d60d60b71f7c71b"
+    },
+    "resultats/admissions/C07/installation-metadata/release-artifacts.json": {
+      "size": 857,
+      "sha256": "32bdc257e5f98d53d72d934ab87e094c0170c8e49e206836dff78ee46c509801"
+    },
+    "resultats/admissions/C07/installation-metadata/source-package-lock.json": {
+      "size": 261150,
+      "sha256": "26f147ee0c59c2389dd6c9431de25f321d824581b548b584b6fdc25ca6d8df46"
     },
     "resultats/admissions/C07/nonce-read.json": {
       "size": 249,
@@ -6976,6 +7048,18 @@
       "size": 470,
       "sha256": "b6ca2e0e482dfd04601007eddcfd24311a128d0db1efa65e48fa3629b8b50d26"
     },
+    "resultats/admissions/C08/installation-metadata/artifact.json": {
+      "size": 1326,
+      "sha256": "55633d24095af857655d6043575fd38847d8ca22cafdb5e51d91904ec9015927"
+    },
+    "resultats/admissions/C08/installation-metadata/installed-tree.json": {
+      "size": 206158,
+      "sha256": "530ef9702793c46c59f589f11a6cbf34635baf9de1669d4e2c5521e9540b3d5f"
+    },
+    "resultats/admissions/C08/installation-metadata/package-lock.json": {
+      "size": 2506,
+      "sha256": "5edd84721a2db1035442963879fd838e72d9f4219141bfbaed47ac55f77b9fb4"
+    },
     "resultats/admissions/C08/nonce-read.json": {
       "size": 829,
       "sha256": "e0eb14cb9e52b595ffe595258cfa5fee1122cc0592087435e1315662c5f59233"
@@ -7036,6 +7120,10 @@
       "size": 9526,
       "sha256": "fcb128e37c756deaa99beec43b3e68e9d54a38f93517358d3012b7d9d24eeec8"
     },
+    "resultats/admissions/C09/configuration-plugins.json": {
+      "size": 366,
+      "sha256": "f3fce5207113cc4509cbede5f7e1c992dc976399ddb46c0529f482ed8a716b49"
+    },
     "resultats/admissions/C09/controller.jsonl": {
       "size": 5077,
       "sha256": "873030148c33a50e1f472a886bdc3fb6e5470f543c86441383bf26966b674c0b"
@@ -7047,6 +7135,18 @@
     "resultats/admissions/C09/identity.json": {
       "size": 265,
       "sha256": "9245b265bdf1459dc3dd35aa869d93215b78359ba0f9f37ef458242286fde27d"
+    },
+    "resultats/admissions/C09/installation-metadata/artifact.json": {
+      "size": 729,
+      "sha256": "d2076fbe8a9c7a7d1c63bdd39e92b6c853501bd4411440000b18ff1168288ed9"
+    },
+    "resultats/admissions/C09/installation-metadata/installed-tree.json": {
+      "size": 1065981,
+      "sha256": "cacc364c9ba822de3822508ace8e8853058911eee59405824c2b046ea8d06af5"
+    },
+    "resultats/admissions/C09/installation-metadata/package-lock.json": {
+      "size": 99405,
+      "sha256": "6077b2ee4fb255753998cccf5188ad70e3f33aaf0616391af3cb2c48786cc867"
     },
     "resultats/admissions/C09/nonce-read.json": {
       "size": 201,
@@ -7092,6 +7192,10 @@
       "size": 5658,
       "sha256": "b47643edcb8e11e5ec9761206e51b065f73027d8b4edf4aba497ce0e5e9faae9"
     },
+    "resultats/admissions/C10/configuration-plugins.json": {
+      "size": 420,
+      "sha256": "14e185d1890558721ead229923c355d970bb2e06d10e3a2c70c155d81fc73538"
+    },
     "resultats/admissions/C10/controller.jsonl": {
       "size": 4555,
       "sha256": "4a32d06893a7a1e43069717c02c8a24e63706c795d9cb4ed1f341d72db9505f9"
@@ -7103,6 +7207,10 @@
     "resultats/admissions/C10/identity.json": {
       "size": 257,
       "sha256": "8290482b06090b361f9da48ae08a31a01acefa28c0e8d882883e75177a93038e"
+    },
+    "resultats/admissions/C10/installation-metadata/artifacts.json": {
+      "size": 738,
+      "sha256": "f41c92cbd28d44fdbc0205030c24fb3b3768ae583e787e288cfff8b14d2a5bc6"
     },
     "resultats/admissions/C10/nonce-read.json": {
       "size": 204,
@@ -7713,8 +7821,8 @@
       "sha256": "333e19f4f1d078fb35e592134045fb799c0f8be8890aa864310eafca3f792d08"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 11506,
-      "sha256": "989c7d7a244587cd125c5432621d05b5fd5e0440acb64304ce65312700935027"
+      "size": 11536,
+      "sha256": "bfd96e907e031dc5733daf1decc15c792f7f16bf5fedd4f4c00d8dc8e92e848b"
     },
     "resultats/REPRISE.json": {
       "size": 1750,
@@ -7757,8 +7865,8 @@
       "sha256": "dcf8eacc9efbe7f56c551a8388053dbac7a7e0ac5d9ed4e0e9380399e1734217"
     },
     "scripts/campaign_reporting.py": {
-      "size": 7419,
-      "sha256": "9932c67808f2c8ca04e200ff0b2209acaad29df78b11f7d71be49d7370f7fee4"
+      "size": 7449,
+      "sha256": "c752ebed11187880539303938aac9c5f1b8d2921b6acba2eb090394578d45704"
     },
     "scripts/campaign_run.py": {
       "size": 4509,
@@ -7801,8 +7909,8 @@
       "sha256": "d245d3e5d8c07ed9359f84bdc9393c7debff33c67eae6e86474a492cf7671f1e"
     },
     "scripts/project_campaign.py": {
-      "size": 6683,
-      "sha256": "d32eeacdb93f1f093fb02ea64b8ce6de00ec3149d1badd947474cde4ec7cf850"
+      "size": 7152,
+      "sha256": "6b331bbf92bb299d894a696c20a6292b67237e37997c0c9e7e629dbfb2eb0ecb"
     },
     "scripts/publish_v11.py": {
       "size": 3686,
@@ -7897,5 +8005,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "0ac385e908d8ae9dfbfceb0fc39a761766ebe91d4de57c459a024cb19db8905c"
+  "tree_sha256": "bfd1de56f3fe5e3747eec5f80c3d382583d98c1b4c3fb40eba5c1d916daf1194"
 }

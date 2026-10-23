@@ -1,0 +1,19 @@
+{
+  "origin": "Valeurs sur disque dans le bac d’admission après son arrêt ; secrets omis par liste blanche.",
+  "settings": {
+    "obsidian-local-rest-api": {
+      "port": 27342,
+      "insecurePort": 27341,
+      "enableInsecureServer": true,
+      "enableSecureServer": false,
+      "bindingHost": "127.0.0.1"
+    },
+    "obsidian-atomic-write-bridge": {
+      "allowWrites": true,
+      "allowCanvasWrites": false,
+      "allowNativeMoves": false,
+      "allowNoteCreates": true
+    }
+  },
+  "hub_disabled": true
+}

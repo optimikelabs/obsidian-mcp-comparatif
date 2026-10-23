@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T09:33:17.509854+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T09:37:50.879352+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Vérification de publication : {"head": "598263d36bda8aef24e1bea177ea803207ba8624", "remote_verified": true, "utc": "2026-10-23T09:24:44.968564+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "ebcd4e0c05749f084bafe8bdbc4d5e505874ab3c", "remote_verified": true, "utc": "2026-10-23T09:33:41.654367+00:00"}.
 
 ## État de la campagne et diagnostic
 

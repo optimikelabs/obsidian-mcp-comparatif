@@ -1,0 +1,20 @@
+[
+  {
+    "name": "optimike-bridge-bundle-v3.13.0.manifest.json",
+    "size": 2151,
+    "sha256": "3b86847b8992b34b3e57a39f7d204f6a16162aced36ed2b28eca7620c0ed3dae",
+    "url": "https://github.com/optimikelabs/optimike-obsidian-mcp/releases/download/v3.13.0/optimike-bridge-bundle-v3.13.0.manifest.json"
+  },
+  {
+    "name": "optimike-bridge-bundle-v3.13.0.zip",
+    "size": 420785,
+    "sha256": "447ab29432299678d57aec6c8cf4290b8fb69ae28689ebbc0372f5c0de75374b",
+    "url": "https://github.com/optimikelabs/optimike-obsidian-mcp/releases/download/v3.13.0/optimike-bridge-bundle-v3.13.0.zip"
+  },
+  {
+    "name": "SHA256SUMS",
+    "size": 214,
+    "sha256": "8b9c9484800bccd99aa561841cd73adf3fe42438d987e5f14fede19845792f34",
+    "url": "https://github.com/optimikelabs/optimike-obsidian-mcp/releases/download/v3.13.0/SHA256SUMS"
+  }
+]

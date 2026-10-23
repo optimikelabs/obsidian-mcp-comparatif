@@ -1,0 +1,33 @@
+{
+  "origin": "Configuration transmise à l’admission, pas une nouvelle mesure.",
+  "env": {
+    "LOCALAPPDATA": "<BAC>\\server-state\\localappdata",
+    "TEMP": "<BAC>\\server-state\\tmp",
+    "TMP": "<BAC>\\server-state\\tmp",
+    "USERPROFILE": "<BAC>\\server-state\\home",
+    "OBSIDIAN_VAULT": "<BAC>\\vault",
+    "OBSIDIAN_RUNTIME_MODE": "live",
+    "OBSIDIAN_BASE_URL": "http://127.0.0.1:27341",
+    "OBSIDIAN_API_KEY": "<MASQUE>",
+    "MCP_TRANSPORT_TYPE": "stdio",
+    "MCP_TOOL_PROFILE": "operational",
+    "MCP_WRITE_MODE": "full",
+    "MCP_LOG_LEVEL": "warning",
+    "MCP_HTTP_HOST": "127.0.0.1",
+    "MCP_HTTP_PORT": "27349",
+    "OBSIDIAN_SHARED_CACHE_DB_PATH": "<BAC>\\server-state\\shared-cache.sqlite",
+    "MCP_OBSIDIAN_NOTE_REPLACE_JOURNAL_PATH": "<BAC>\\server-state\\note-replace.sqlite",
+    "MCP_OBSIDIAN_BASE_FORMULA_JOURNAL_PATH": "<BAC>\\server-state\\base-formula.sqlite",
+    "MCP_OBSIDIAN_CANVAS_JOURNAL_PATH": "<BAC>\\server-state\\canvas.sqlite",
+    "MCP_EXTERNAL_MOVE_JOURNAL_PATH": "<BAC>\\server-state\\external-moves.sqlite",
+    "HOME": "<BAC>\\server-state\\home",
+    "OPERON_MUTATIONS_ENABLED": "false",
+    "SEMANTIC_SEARCH_PREWARM": "false",
+    "ENABLE_QUERY_EMBEDDING": "false",
+    "OBSIDIAN_STARTUP_BLOCKING": "true"
+  },
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>"
+  ]
+}

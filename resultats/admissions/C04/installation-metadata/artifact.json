@@ -1,0 +1,32 @@
+{
+  "name": "obsidian-mcp-server",
+  "version": "3.7.0",
+  "sha256": "cd6f1017f96dc6be2aa5d52e9cc6707de6190e0f4ee53e35d9e4b696f86820ac",
+  "sha1": "ec0f24971b4c9159540b0854c6dfee87f12a2636",
+  "integrity": "sha512-NlaLj3KSw+nUgBK26lsiXOd9We8NKCNgDW2rHHpbpQrZX36KbW/udHjj+qre5Ra7Y1NEW0pHWpQwr2Otw33bdg==",
+  "url": "https://registry.npmjs.org/obsidian-mcp-server/-/obsidian-mcp-server-3.7.0.tgz",
+  "lifecycle_scripts": {
+    "test": "bunx vitest run",
+    "tree": "bun run scripts/tree.ts",
+    "build": "bun run scripts/build.ts",
+    "clean": "bun run scripts/clean.ts",
+    "start": "node dist/index.js",
+    "bundle": "bun run build && npx -y @anthropic-ai/mcpb pack . dist/obsidian-mcp-server.mcpb && bun run scripts/clean-mcpb.ts dist/obsidian-mcp-server.mcpb",
+    "format": "biome check --write .",
+    "rebuild": "bun run scripts/clean.ts && bun run build",
+    "devcheck": "bun run scripts/devcheck.ts",
+    "lint:mcp": "bun run scripts/lint-mcp.ts",
+    "audit:fix": "bun audit fix",
+    "start:http": "MCP_TRANSPORT_TYPE=http bun ./dist/index.js",
+    "list-skills": "bun run scripts/list-skills.ts",
+    "publish-mcp": "mcp-publisher login github -token \"$(security find-generic-password -a \"$USER\" -s mcp-publisher-github-pat -w)\" && mcp-publisher publish",
+    "start:stdio": "MCP_TRANSPORT_TYPE=stdio bun ./dist/index.js",
+    "audit:refresh": "rm -f bun.lock && bun install && bun audit",
+    "format:unsafe": "biome check --write --unsafe .",
+    "lint:packaging": "bun run scripts/lint-packaging.ts",
+    "release:github": "bun run scripts/release-github.ts",
+    "changelog:build": "bun run scripts/build-changelog.ts",
+    "changelog:check": "bun run scripts/build-changelog.ts --check"
+  },
+  "scripts_executed": false
+}

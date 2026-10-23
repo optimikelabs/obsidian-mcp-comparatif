@@ -1,0 +1,24 @@
+{
+  "name": "@bitbonsai/mcpvault",
+  "version": "0.17.0",
+  "sha256": "2ab928fb36a37ff5002c2755d4b019024b1588d6aa14fed75cdfdd00bac57e0f",
+  "sha1": "b874c13c6c70cd8aa9000611965cb61eecc03f0d",
+  "integrity": "sha512-fuhLBuSZYn0O/3xMjRuNhE8FrFyltKj5046qHO89vse4068f9L2cYmwdVSSK0M0dFrR3ucnwCuppRTO5FQsiwQ==",
+  "url": "https://registry.npmjs.org/@bitbonsai/mcpvault/-/mcpvault-0.17.0.tgz",
+  "lifecycle_scripts": {
+    "ship": "bun scripts/ship.ts",
+    "test": "vitest run",
+    "build": "tsc --project tsconfig.build.json",
+    "start": "tsx server.ts",
+    "prepack": "npm install",
+    "website": "cd website && bun dev",
+    "ship:setup": "bun scripts/ship.ts --setup",
+    "test:watch": "vitest",
+    "publish:dry": "npm publish --dry-run",
+    "ship:update": "bun scripts/ship.ts --update",
+    "publish:beta": "npm publish --tag beta",
+    "prepublishOnly": "npm run build && npm test",
+    "publish:latest": "npm publish"
+  },
+  "scripts_executed": false
+}

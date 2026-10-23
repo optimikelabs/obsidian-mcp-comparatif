@@ -1,0 +1,17 @@
+{
+  "origin": "Valeurs sur disque dans le bac d’admission après son arrêt ; secrets omis par liste blanche.",
+  "settings": {
+    "semantic-vault-mcp": {
+      "httpEnabled": true,
+      "httpPort": 27344,
+      "httpsEnabled": false,
+      "httpsPort": 27345,
+      "bindMode": "loopback",
+      "readOnlyMode": false,
+      "enableWebFetch": false,
+      "dangerouslyDisableAuth": false,
+      "autoDetectPortConflicts": false
+    }
+  },
+  "hub_disabled": true
+}

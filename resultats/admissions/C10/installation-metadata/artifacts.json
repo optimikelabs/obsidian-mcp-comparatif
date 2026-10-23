@@ -1,0 +1,20 @@
+[
+  {
+    "name": "main.js",
+    "size": 701749,
+    "sha256": "784b49d6f243053a2271d1e69c6d0716a3bde407a5dfeda8fbb894eaf87ec043",
+    "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/main.js"
+  },
+  {
+    "name": "manifest.json",
+    "size": 308,
+    "sha256": "0bcdd086d71b1a47bb1f13b4b9320b7544e8f1d4721ab34066b7fd3bd047c2ae",
+    "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/manifest.json"
+  },
+  {
+    "name": "styles.css",
+    "size": 7927,
+    "sha256": "5cf86b5d3f039246bc5af34fea5cd5c93e38a7db867da0778bc9693f01fa84f8",
+    "url": "https://github.com/iansinnott/obsidian-claude-code-mcp/releases/download/1.1.8/styles.css"
+  }
+]

@@ -68,6 +68,12 @@ def main():
         if (RUN/name).exists():sanitize_file(RUN/name,public/'resultats'/name)
     for p in (RUN/'publication').glob('incident-*.json'):sanitize_file(p,public/'resultats/publication'/p.name)
     for p in (RUN/'incidents').glob('*.json'):sanitize_file(p,public/'resultats/incidents'/p.name)
+    for cid in (f'C{i:02}' for i in range(1,11)):
+        base=RUN/'admissions'/cid
+        for name in ('configuration-parametres.json','configuration-plugins.json'):
+            if (base/name).exists():sanitize_file(base/name,public/'resultats/admissions'/cid/name)
+        for p in (base/'installation-metadata').glob('*'):
+            if p.is_file() and p.suffix in ('.json','.txt'):sanitize_file(p,public/'resultats/admissions'/cid/'installation-metadata'/p.name)
     for p in (RUN/'client-qualification').iterdir():
         if not p.is_dir():continue
         for name in ('01.stdout.jsonl','01.stderr.txt','01.final.json','01.exit.json','oracle.json','case.json','effective-config.json','client-config-proof.json','controller.jsonl'):

@@ -1,0 +1,14 @@
+{
+  "origin": "Valeurs sur disque dans le bac d’admission après son arrêt ; secrets omis par liste blanche.",
+  "settings": {
+    "claude-code-mcp": {
+      "mcpHttpPort": 27344,
+      "enableWebSocketServer": false,
+      "enableHttpServer": true,
+      "enableEmbeddedTerminal": false,
+      "autoCloseTerminalOnClaudeExit": true,
+      "startupCommand": "claude"
+    }
+  },
+  "hub_disabled": true
+}

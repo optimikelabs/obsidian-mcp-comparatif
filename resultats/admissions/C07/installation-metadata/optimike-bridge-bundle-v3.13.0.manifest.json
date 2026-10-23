@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "name": "optimike-bridge-bundle",
+    "version": "3.13.0",
+    "repository": "https://github.com/optimikelabs/optimike-obsidian-mcp",
+    "sourceCommit": "8696687e1a449f5f74550331ac902b0b358b4ccf",
+    "sourceCommittedAt": "2026-10-18T02:02:15+02:00"
+  },
+  "installers": [
+    {
+      "path": "install-bridge-bundle.mjs",
+      "sha256": "791264fe1297f32549b30e8b1eae30762e234022c098f106900317a98c7fb455",
+      "size": 34797
+    },
+    {
+      "path": "install-bridge-bundle.ps1",
+      "sha256": "86827c8d29bd5b156f5a50bda2142c6983cec2660e2f46699d31b281f83820d9",
+      "size": 1025
+    }
+  ],
+  "bridges": [
+    {
+      "id": "optimike-operon-bridge",
+      "version": "0.9.3",
+      "files": [
+        {
+          "path": "bridges/optimike-operon-bridge/main.js",
+          "sha256": "3c33769e5ec9b522ed9e9201898d403a96234b71f498dad6355be6644f455575",
+          "size": 1191424
+        },
+        {
+          "path": "bridges/optimike-operon-bridge/manifest.json",
+          "sha256": "84ae78ae64b08f91708dcd1e09dfe2afdffa83990d13a968fbd577d335fd556a",
+          "size": 376
+        }
+      ]
+    },
+    {
+      "id": "obsidian-atomic-write-bridge",
+      "version": "0.8.1",
+      "files": [
+        {
+          "path": "bridges/obsidian-atomic-write-bridge/main.js",
+          "sha256": "ddd7b26365ff178fe938b59f304b2d8d901baef39e88f230fd9fe06f751c6f45",
+          "size": 354341
+        },
+        {
+          "path": "bridges/obsidian-atomic-write-bridge/manifest.json",
+          "sha256": "12e80e6119fd0e0f34be184e82597b9d7bc5ef7ec2731e0de0f4705a69a1e5a0",
+          "size": 392
+        }
+      ]
+    },
+    {
+      "id": "obsidian-bases-bridge",
+      "version": "1.2.2",
+      "files": [
+        {
+          "path": "bridges/obsidian-bases-bridge/main.js",
+          "sha256": "f33beb13976ca6d2783723945f91291ce1856c31d4b6dc8f738b0a5447c784f5",
+          "size": 318666
+        },
+        {
+          "path": "bridges/obsidian-bases-bridge/manifest.json",
+          "sha256": "5b70ee83483377c4a6d05e85fd732f9dfd8d6280c0d5ed2233a662d100de82fb",
+          "size": 367
+        }
+      ]
+    }
+  ]
+}

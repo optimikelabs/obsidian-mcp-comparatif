@@ -1,0 +1,17 @@
+{
+  "name": "@huangyihe/obsidian-mcp",
+  "version": "1.6.0",
+  "sha256": "3065a9e9f75ff2eb6e95665fec5f78f34819ea1574d293dacdb062cd43b0b16f",
+  "sha1": "418e74acaa3764334f82417c9c80305eda4d2757",
+  "integrity": "sha512-67NQGpZqGiJVWwhOtbiOXM492x/nXG9Nx02BeHlXHDrwrIaUHh+AqJ+qJNcec15CAV5Zf2+7DmrXgjGHS8x43w==",
+  "url": "https://registry.npmjs.org/@huangyihe/obsidian-mcp/-/obsidian-mcp-1.6.0.tgz",
+  "lifecycle_scripts": {
+    "dev": "ts-node --esm src/index.ts",
+    "test": "node test-mcp.js",
+    "build": "tsc && chmod +x build/index.js",
+    "start": "node build/index.js",
+    "generate-dxt": "npm run build && node generate-dxt.js",
+    "prepublishOnly": "npm run build"
+  },
+  "scripts_executed": false
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "main.js",
+    "size": 4379595,
+    "sha256": "c5750633003f252f289c29442e0052e13df5220d5804e8549400bd04fafb45f3",
+    "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/main.js"
+  },
+  {
+    "name": "manifest.json",
+    "size": 442,
+    "sha256": "c97651e992d033b345a5df95d4007e529b73e2c7b3192df75a678d949ef6febb",
+    "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/manifest.json"
+  },
+  {
+    "name": "styles.css",
+    "size": 7564,
+    "sha256": "abab77a83974ccb853765c0b45e1040d740e51349f191053937e7d241c8eb4bf",
+    "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/styles.css"
+  }
+]
