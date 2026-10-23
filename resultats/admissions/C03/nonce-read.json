@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "\"ADMISSION-C03-8f18d6cff7f464c60370866ecbabdde2adea3ea8\""
+      }
+    ],
+    "isError": false
+  }
+}

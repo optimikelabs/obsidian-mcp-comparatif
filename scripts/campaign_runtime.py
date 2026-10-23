@@ -140,21 +140,21 @@ def stop(cfg):
     if LOCK.exists() and LOCK.read_text(encoding='utf-8').strip()==cfg.get('lock_token'):LOCK.unlink()
     record(out,'owned_instance_stopped',pid=pid,lock_present=LOCK.exists())
 
-def prepare_application(cfg):
-    out=Path(cfg['out']);vault=Path(cfg['vault']);p=vault/P;before=p.read_bytes()
-    result=cdp(cfg,'(async()=>{const f=app.vault.getAbstractFileByPath('+json.dumps(P)+');const leaf=app.workspace.getLeaf(false);await leaf.openFile(f,{state:{mode:"source"}});app.workspace.setActiveLeaf(leaf,{focus:true});if(app.workspace.getActiveFile()?.path!==f.path)throw Error("Fiche non active");const result=await app.commands.executeCommandById("editor:save-file");return {command:"editor:save-file",result,note:f.path,active:app.workspace.getActiveFile()?.path};})()','native-save')
+def prepare_application(cfg,note=P,prefix='preparation-applicative'):
+    out=Path(cfg['out']);vault=Path(cfg['vault']);p=target(vault,note);before=p.read_bytes()
+    result=cdp(cfg,'(async()=>{const f=app.vault.getAbstractFileByPath('+json.dumps(note)+');const leaf=app.workspace.getLeaf(false);await leaf.openFile(f,{state:{mode:"source"}});app.workspace.setActiveLeaf(leaf,{focus:true});if(app.workspace.getActiveFile()?.path!==f.path)throw Error("Fiche non active");const result=await app.commands.executeCommandById("editor:save-file");return {command:"editor:save-file",result,note:f.path,active:app.workspace.getActiveFile()?.path};})()',prefix+'-native-save')
     deadline=time.monotonic()+60;fallback=False;last=None;since=time.monotonic()
     while time.monotonic()<deadline:
         if memory()['stop']:raise RuntimeError('ARRET_MEMOIRE_SOUS_2GIO')
         raw=p.read_bytes();props,body=split(raw)
         if not all(k in props for k in ('création','modification')) and not fallback and time.monotonic()-since>=5:
             fallback=True
-            cdp(cfg,'(async()=>{if(app.workspace.getActiveFile()?.path!=='+json.dumps(P)+')throw Error("Mauvaise fiche active");const id="frontmatter-date-manager:update-timestamps-current-file";return {id,result:await app.commands.executeCommandById(id),active:app.workspace.getActiveFile()?.path};})()','fdm-fallback')
+            cdp(cfg,'(async()=>{if(app.workspace.getActiveFile()?.path!=='+json.dumps(note)+')throw Error("Mauvaise fiche active");const id="frontmatter-date-manager:update-timestamps-current-file";return {id,result:await app.commands.executeCommandById(id),active:app.workspace.getActiveFile()?.path};})()',prefix+'-fdm-fallback')
         if raw!=last:last=raw;since=time.monotonic()
         if time.monotonic()-since>=5 and all(k in props for k in ('création','modification')) and b'\r\n' not in raw:
             assert split(before)[1]==body
             proof={'command':result,'fdmFallback':fallback,'datesPresent':True,'beforeSha256':sha(before),'afterSha256':sha(raw),'bodyPreserved':True,'CRLF':0}
-            writej(out/'preparation-applicative.json',proof);return proof
+            writej(out/(prefix+'.json'),proof);return proof
         time.sleep(.1)
     raise TimeoutError('Préparation applicative non stable/LF/datée en 60 s')
 

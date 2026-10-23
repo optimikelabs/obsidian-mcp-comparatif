@@ -21,8 +21,21 @@ def main():
         cat=rpc('tools/list');writej(out/'catalogue.json',cat)
         result=rpc('tools/call',{'name':'obsidian_get_file_contents','arguments':{'filepath':note}});assert nonce in json.dumps(result,ensure_ascii=False)
         writej(out/'nonce-read.json',result)
-        writej(out/'admission-partielle.json',{'candidate':'C03','status':'SCHEMAS_A_QUALIFIER','nonceVerified':True,'command':cmd,'mode':'stdio Python vers REST HTTP 5.5.2 ; Obsidian ouvert'})
-        print(json.dumps({'candidate':'C03','nonceVerified':True,'read':result,'tools':[x['name'] for x in cat['result']['tools']]},ensure_ascii=False))
+        path='Admission — schémas C03.md';body='---\nrang: 1\ninconnu: café\n---\nEssai A.\n'
+        def call(name,**args):return rpc('tools/call',{'name':name,'arguments':args})
+        r=call('obsidian_put_content',filepath=path,content=body);assert not r['result'].get('isError')
+        r=call('obsidian_append_content',filepath=path,content='Essai B.\n');assert not r['result'].get('isError')
+        r=call('obsidian_get_file_contents',filepath=path);text=json.loads(r['result']['content'][0]['text']);assert text==body+'Essai B.\n'
+        adapter={'candidate':'C03','transport':'stdio','mutation_tools':['obsidian_put_content','obsidian_append_content','obsidian_patch_content','obsidian_delete_file'],
+                 'preparation_tools':[],'read_tools':['obsidian_get_file_contents'],'read_format':'json_string','path_key':'filepath','status_tools':[],
+                 'enabled_tools':[t['name'] for t in cat['result']['tools'] if t['name'] not in ('obsidian_delete_file','obsidian_periodic_notes','obsidian_recent_periodic_notes')],
+                 'technical_paths':['.obsidian/workspace.json','.obsidian/plugins/frontmatter-date-manager/data.json']}
+        writej(out/'adapter.json',adapter)
+        summary={'candidate':'C03','status':'ADMIS','reason':'Nonce et mapping JSON-string vérifiés ; création et append sur note d’admission distincte.','nonceVerified':True,'command':cmd,'mode':'stdio Python vers REST HTTP 5.5.2 ; Obsidian ouvert',
+                 'artifact_sha256':'573491093065f0af7546c8a26b884974997e8d91f148cb9d8471d4857c1b6286','catalog_sha256':sha((out/'catalogue.json').read_bytes()),'adapter_sha256':sha((out/'adapter.json').read_bytes()),'utc':memory()['utc']}
+        writej(out/'admission.json',summary)
+        (out/'fiche-technique.md').write_text('C03 — mcp-obsidian 0.2.3 (MarkusPfundstein)\n\nPython stdio vers REST 5.5.2. obsidian_get_file_contents retourne un texte JSON encodant le fichier entier ; chemin filepath. obsidian_put_content crée ou remplace entièrement ; obsidian_append_content ajoute ; obsidian_patch_content cible heading/block/frontmatter (operation/target_type/target/content). Pas de ifMatch dans le schéma observé, ni statut durable exposé. Relecture complète après mutation ou réponse perdue. Les outils de lecture/recherche de notes sont autorisés ; aucun autre serveur de secours.\n',encoding='utf-8')
+        print(json.dumps({'candidate':'C03','nonceVerified':True,'status':'ADMIS','tools':[x['name'] for x in cat['result']['tools']]},ensure_ascii=False))
     except BaseException as e:writej(out/'incident.json',{'error':str(e),'traceback':traceback.format_exc()});raise
     finally:
         if up:up.close()

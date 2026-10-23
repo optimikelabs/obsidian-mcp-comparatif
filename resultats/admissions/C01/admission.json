@@ -28,10 +28,19 @@
     "pid": 51976,
     "port": 27341
   },
-  "status": "ADMISSION_A_REVALIDER_CONFIG",
-  "reason": "Nonce et schémas acquis ; reprise requise sans Margelle Hub (identifiant elysia-os) selon préparation commune.",
+  "status": "ADMIS",
+  "reason": "Nonce et schémas acquis ; revalidation en configuration commune sans Hub réussie avant mesure.",
   "catalog_sha256": "27174de20398060f5e83f6de7c5f6997c2fb715cf003b6d8ea33f127e692a211",
   "adapter_sha256": "9bc9c05aaed09513273c2cf554aa2496e43eaa4ed934aa6af2cb85b1c07966ce",
   "mode": "Plugin Obsidian ouvert, MCP HTTP natif",
-  "utc": "2026-10-23T07:19:58.796998+00:00"
+  "utc": "2026-10-23T07:40:24.918634+00:00",
+  "configuration": [
+    "quickadd",
+    "templater-obsidian",
+    "journals",
+    "notebook-navigator",
+    "frontmatter-date-manager",
+    "obsidian-local-rest-api"
+  ],
+  "runtime_admission": "<CHEMIN_PRIVE>"
 }

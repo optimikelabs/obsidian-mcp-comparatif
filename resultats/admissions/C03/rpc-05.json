@@ -1,0 +1,27 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_append_content",
+      "arguments": {
+        "filepath": "Admission — schémas C03.md",
+        "content": "Essai B.\n"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Successfully appended content to Admission — schémas C03.md"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

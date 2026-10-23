@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.160.1",
+  "model": "gpt-6.1-sol",
+  "provider": "openai",
+  "effort": "high",
+  "service_tier": "default",
+  "features_off": [
+    "apps",
+    "plugins",
+    "multi_agent",
+    "multi_agent_v2",
+    "shell_tool",
+    "browser_use",
+    "browser_use_external",
+    "browser_use_full_cdp_access",
+    "computer_use",
+    "in_app_browser",
+    "in_app_local_automation",
+    "image_generation",
+    "view_image",
+    "code_mode",
+    "code_mode_host",
+    "memories",
+    "skill_search",
+    "tool_suggest",
+    "worktrees",
+    "goals",
+    "sleep_tool"
+  ],
+  "config_sha256": "6b28a39ebf88963902078f6a4da38807305b04a1e3774d6652a9e45a0eb6f884",
+  "enabled_tools": [
+    "read",
+    "patch",
+    "append",
+    "create"
+  ],
+  "runtime_qualified": false,
+  "official_reference": "https://learn.chatgpt.com/docs/config-file/config-reference"
+}

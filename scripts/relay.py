@@ -133,7 +133,14 @@ class Relay:
             if self.lost:
                 self.event('client_reconnected',id=req.get('id'));self.lost=False
             call=req.get('method')=='tools/call';params=req.get('params',{});name=params.get('name');args=params.get('arguments',{})
-            mutation=call and name in self.adapter['mutation_tools'];read=call and name in self.adapter['read_tools']
+            def matches(rules):
+                for rule in rules:
+                    try:
+                        if rule['tool']==name and field(args,rule['key']) in rule['values']:return True
+                    except (KeyError,TypeError):continue
+                return False
+            mutation=call and (name in self.adapter['mutation_tools'] or matches(self.adapter.get('mutation_rules',[])))
+            read=call and (name in self.adapter['read_tools'] or matches(self.adapter.get('read_rules',[])))
             if self.pending_first and mutation:
                 rel=N if self.task=='T5' else P
                 if (self.vault/rel).read_bytes()!=data(self.human,rel):self.first_snapshot()
@@ -177,7 +184,7 @@ class Relay:
                 return None,True
             if observe_mutation:
                 obj=self.result_object(reply);state=obj.get(self.adapter.get('status_state_key','state'),obj.get('status'))
-                if state in ('pending','accepted','running'):
+                if state in self.adapter.get('pending_states',['pending','accepted','running']):
                     self.pending_first=True;self.event('first_mutation_pending',id=req.get('id'))
                     threading.Thread(target=self.observe_first,daemon=True).start()
                 else:self.first_snapshot()
@@ -186,14 +193,14 @@ class Relay:
                 if state in self.adapter.get('terminal_states',['committed','verified','conflict','rejected','failed']):self.first_snapshot()
             if read and reply and not reply.get('error') and not reply.get('result',{}).get('isError'):
                 try:
-                    raw=reply['result']['content'][0]['text']
                     mapping=self.adapter.get('read_mappings',{}).get(name,{})
                     form=mapping.get('format',self.adapter.get('read_format','json'))
-                    obj=json.loads(raw) if form!='raw' else None
+                    raw=reply['result']['content'][0]['text']
+                    obj=reply['result']['structuredContent'] if mapping.get('source')=='structuredContent' else json.loads(raw) if form!='raw' else None
                     # Mapping explicite ; jamais lecture disque fabriquée comme relecture MCP.
-                    content=raw if obj is None else obj if form=='json_string' else obj[mapping.get('content_key',self.adapter.get('read_content_key','content'))]
-                    rel=args[mapping.get('path_key',self.adapter.get('path_key','path'))]
-                    projection=({'projection':'body_frontmatter','properties':obj[mapping['frontmatter_key']],'body_sha256':sha(content.encode())}
+                    content=raw if obj is None else obj if form=='json_string' else field(obj,mapping.get('content_key',self.adapter.get('read_content_key','content')))
+                    rel=field(args,mapping.get('path_key',self.adapter.get('path_key','path')))
+                    projection=({'projection':'body_frontmatter','properties':field(obj,mapping['frontmatter_key']),'body_sha256':sha(content.encode())}
                                 if form=='body_frontmatter' else {'content_sha256':sha(content.encode())})
                     self.event('mcp_read_response',id=req.get('id'),path=rel,**projection,response_received=True)
                     if self.task=='T7b' and not self.injected and rel==P:

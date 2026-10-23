@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"tags\": [],\n  \"frontmatter\": {},\n  \"stat\": {\n    \"ctime\": 1792741206750,\n    \"mtime\": 1792741206750,\n    \"size\": 67\n  },\n  \"path\": \"Admission — nonce C01.md\",\n  \"content\": \"ADMISSION-C01-REVALIDATION-26037b52861bc72e931498411676aa6a30ae4077\",\n  \"links\": [],\n  \"backlinks\": [],\n  \"unresolvedLinks\": [],\n  \"version\": \"85df17\"\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

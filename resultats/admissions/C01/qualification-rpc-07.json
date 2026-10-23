@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 7,
+    "method": "tools/call",
+    "params": {
+      "name": "vault_read",
+      "arguments": {
+        "path": "Admission — schémas C01.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"tags\": [],\n  \"frontmatter\": {},\n  \"stat\": {\n    \"ctime\": 1792739998707,\n    \"mtime\": 1792739998759,\n    \"size\": 24\n  },\n  \"path\": \"Admission — schémas C01.md\",\n  \"content\": \"Témoin admission A.\\nB.\\n\",\n  \"links\": [],\n  \"backlinks\": [],\n  \"unresolvedLinks\": [],\n  \"version\": \"907514\"\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 7
+  }
+}

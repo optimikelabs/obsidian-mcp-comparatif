@@ -1,0 +1,30 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "edit",
+      "arguments": {
+        "action": "window",
+        "path": "Admission — schémas C05.md",
+        "oldText": "Essai A.",
+        "newText": "Essai B.",
+        "fuzzyThreshold": 1,
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"result\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"Successfully replaced exact match in Admission — schémas C05.md\"\n      }\n    ]\n  },\n  \"context\": {\n    \"current_file\": \"Admission — schémas C05.md\",\n    \"buffer_available\": false,\n    \"file_history\": [\n      \"Admission — schémas C05.md\"\n    ],\n    \"has_links\": false,\n    \"has_tags\": false\n  }\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "vault",
+      "arguments": {
+        "action": "read",
+        "path": "Admission — nonce C05.md"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "# File: Admission — nonce C05.md\n\nPath: Admission — nonce C05.md\nLines: 1\n\n## Content\n\nADMISSION-C05-cb21ba219f934bcbb41dde4a548eebb9dc8f2a4e\n\n---\nTip: Use `view.file(path)` for full content or `view.window(path, lineNumber)` for a section\n\n_Metadata fields are abbreviated; use `raw: true` for the full structured payload._"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  }
+}

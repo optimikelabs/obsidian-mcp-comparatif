@@ -1,0 +1,3 @@
+C04 — cyanheads/obsidian-mcp-server 3.7.0
+
+Node 24, stdio vers REST 5.5.2, Obsidian ouvert. obsidian_get_note demande format=content/full et target={type:path,path:...}. Le résultat structuré result.content contient le fichier entier ; le texte visible peut avoir un en-tête de présentation. obsidian_write_note crée et refuse un fichier existant sans overwrite=true. Les outils append/patch/replace et frontmatter sont documentés dans le catalogue. Aucun ifMatch ni statut durable établi dans cette surface. Relire le fichier entier après mutation ou réponse perdue. Les commandes et ouvertures arbitraires ne sont pas autorisées.

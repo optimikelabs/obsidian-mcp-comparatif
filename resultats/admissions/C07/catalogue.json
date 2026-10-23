@@ -1,0 +1,5172 @@
+{
+  "result": {
+    "tools": [
+      {
+        "name": "obsidian_list_notes",
+        "description": "Lists files and subdirectories within a specified Obsidian vault folder. Supports optional filtering by extension or name regex, and recursive listing to a specified depth (-1 for infinite). Returns an object containing the listed directory path, a formatted tree string of its contents, and the total entry count. Use an empty string or '/' for dirPath to list the vault root.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "dirPath": {
+              "type": "string",
+              "description": "The vault-relative path to the directory to list (e.g., \"developer/atlas-mcp-server\", \"/\" for root). Case-sensitive."
+            },
+            "fileExtensionFilter": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^\\."
+              },
+              "description": "Optional array of file extensions (e.g., [\".md\"]) to filter files. Directories are always included."
+            },
+            "nameRegexFilter": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Optional regex pattern (JavaScript syntax) to filter results by name. Ancestor directories are retained as path context, without pruning traversal."
+            },
+            "recursionDepth": {
+              "type": "integer",
+              "default": -1,
+              "description": "Maximum recursion depth. 0 for no recursion, -1 for infinite (default)."
+            },
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "tree",
+                "compact"
+              ],
+              "default": "tree",
+              "description": "Response shape. 'tree' preserves the legacy tree string; 'compact' returns paginated path entries for agent context efficiency."
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "description": "Maximum compact entries to return. Only applies to responseMode='compact'."
+            },
+            "cursor": {
+              "type": "string",
+              "description": "Opaque cursor returned by a previous compact response."
+            }
+          },
+          "required": [
+            "dirPath"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_read_note",
+        "description": "Retrieves the content and metadata of a specified file within the Obsidian vault. Tries the exact path first, then attempts a case-insensitive fallback. Returns an object containing the content (markdown string or full NoteJson object based on 'format'), and optionally formatted file stats ('stats' object with creationTime, modifiedTime, tokenCountEstimate). Use 'includeStat: true' with 'format: markdown' to include stats; stats are always included with 'format: json'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The vault-relative path to the target file (e.g., \"developer/github/tips.md\"). Tries case-sensitive first, then case-insensitive fallback."
+            },
+            "format": {
+              "type": "string",
+              "enum": [
+                "markdown",
+                "json"
+              ],
+              "default": "markdown",
+              "description": "Format for the returned content ('markdown' or 'json'). Defaults to 'markdown'."
+            },
+            "includeStat": {
+              "type": "boolean",
+              "default": false,
+              "description": "If true and format is 'markdown', includes file stats in the response. Defaults to false. Ignored if format is 'json'."
+            }
+          },
+          "required": [
+            "filePath"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_global_search",
+        "description": "Performs search across the Obsidian vault using text or regex, using live Markdown content with a shared-cache fallback. Supports filtering by modification date, optionally restricting search to a specific directory path (recursively), pagination (page, pageSize), and limiting matches shown per file (maxMatchesPerFile). Returns a JSON object containing success status, a message, pagination details (currentPage, pageSize, totalPages), total file/match counts (before pagination), and an array of results. Each result includes the file path, filename, creation timestamp (ctime), modification timestamp (mtime), and an array of match context snippets (limited by maxMatchesPerFile). matchCount reports all content occurrences per file independently of the snippet limit; returnedMatchCount reports detailed snippets. hasMore/nextPage provide pagination. Compact mode omits off-page identities. Detailed mode includes at most 20 off-page vault-relative paths in alsoFoundInFiles, with alsoFoundInFilesTotal.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The search query (text or regex pattern)."
+            },
+            "searchInPath": {
+              "type": "string",
+              "description": "Optional vault-relative path to recursively search within (e.g., 'Notes/Projects'). If omitted, searches the entire vault."
+            },
+            "contextLength": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "default": 100,
+              "description": "Characters of context around matches."
+            },
+            "modified_since": {
+              "type": "string",
+              "description": "Filter files modified *since* this date/time (e.g., '2 weeks ago', '2024-01-15')."
+            },
+            "modified_until": {
+              "type": "string",
+              "description": "Filter files modified *until* this date/time (e.g., 'today', '2024-03-20 17:00')."
+            },
+            "useRegex": {
+              "type": "boolean",
+              "default": false,
+              "description": "Treat 'query' as regex. Defaults to false."
+            },
+            "caseSensitive": {
+              "type": "boolean",
+              "default": false,
+              "description": "Perform case-sensitive search. Defaults to false."
+            },
+            "pageSize": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "default": 50,
+              "description": "Maximum number of result files per page. Defaults to 50."
+            },
+            "page": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "default": 1,
+              "description": "Page number of results to return. Defaults to 1."
+            },
+            "maxMatchesPerFile": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "default": 5,
+              "description": "Maximum number of matches to show per file. Defaults to 5."
+            },
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "detailed",
+                "compact"
+              ],
+              "default": "detailed",
+              "description": "Response shape. 'detailed' returns match snippets; 'compact' returns file-level hits with counts and metadata only."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "smart_semantic_search",
+        "description": "Semantic search powered by Smart Connections embeddings (query embedder auto-matches the vault model).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 2
+            },
+            "top_k": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            },
+            "folders": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "with_snippets": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": true
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "list_all_tasks",
+        "description": "Legacy Obsidian Tasks-compatible Markdown inventory, not Operon task authority. Recursively scans Markdown and returns structured task status, dates and tags. Supports include/exclude path filters, optional non-task inclusion, file created/modified metadata, frontmatter meta dates, and the configured global Tasks filter. The optional path is vault-relative, defaults to the vault root, and must not contain traversal components (`..`). Use operon_list_tasks for Operon-managed tasks, stable IDs, workflow state and validated snapshots.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "includePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "excludePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "includeNonTasks": {
+              "type": "boolean"
+            },
+            "includeFileMetadata": {
+              "type": "boolean"
+            },
+            "includeMetaDates": {
+              "type": "boolean"
+            },
+            "metaFallbackToFile": {
+              "type": "boolean"
+            },
+            "applyGlobalFilter": {
+              "type": "boolean"
+            },
+            "responseFormat": {
+              "type": "string",
+              "enum": [
+                "json",
+                "markdown"
+              ]
+            },
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "legacy",
+                "compact",
+                "detailed"
+              ]
+            },
+            "useCache": {
+              "type": "boolean"
+            },
+            "responseLimit": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            "cursor": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "query_tasks",
+        "description": "Legacy Obsidian Tasks-compatible Markdown query, not Operon task authority. Each newline-separated query line is a filter and all lines are combined with AND logic. Supported predicates cover status, relative or absolute dates (EN/FR), description, tags, priority and path; examples include `done`, `not done`, `tag include #foo/bar`, `tag do not include #potato`, and `description includes keyword`. Supports include/exclude path filters, optional non-task inclusion, file created/modified metadata, frontmatter meta dates, and the configured global Tasks filter. The optional path is vault-relative, defaults to the vault root, and must not contain traversal components (`..`). Use operon_query_tasks for Operon-managed tasks, stable workflow IDs and validated snapshots.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            },
+            "queryFilePath": {
+              "type": "string"
+            },
+            "includePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "excludePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "includeNonTasks": {
+              "type": "boolean"
+            },
+            "includeFileMetadata": {
+              "type": "boolean"
+            },
+            "includeMetaDates": {
+              "type": "boolean"
+            },
+            "metaFallbackToFile": {
+              "type": "boolean"
+            },
+            "applyGlobalFilter": {
+              "type": "boolean"
+            },
+            "responseFormat": {
+              "type": "string",
+              "enum": [
+                "json",
+                "markdown"
+              ]
+            },
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "legacy",
+                "compact",
+                "detailed"
+              ]
+            },
+            "useCache": {
+              "type": "boolean"
+            },
+            "responseLimit": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            "cursor": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_runtime_status",
+        "description": "Returns redacted runtime diagnostics plus the versioned capability manifest and safe image-import policy discovery. Asset policy reports only vault-relative destination/conversion/ingress facts and the observed Obsidian attachment-folder relationship; physical paths, URLs, secrets, note content, and raw configuration are never returned.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "expectedDestructiveVaultAttestation": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_runtime_maintenance",
+        "description": "Runs integrity checks, maintenance, or cache refresh actions for the local shared runtime.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "integrity_check",
+                "run_maintenance",
+                "refresh_vault_cache",
+                "refresh_semantic_cache",
+                "refresh_tasks_cache",
+                "refresh_all"
+              ],
+              "description": "Maintenance action to run on the shared local runtime."
+            }
+          },
+          "required": [
+            "action"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_list_pending_operations",
+        "description": "Lists redacted durable Note, Frontmatter, Base Formula, Canvas and Text Patch operations that still require apply, status or exact-plan recovery. It never returns note payloads, invokes a backend, changes a journal or performs recovery.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Maximum number of pending operations to return."
+            },
+            "cursor": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,2048}$",
+              "description": "Opaque cursor returned by the previous page."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_replace_plan",
+        "description": "Plan one complete atomic replacement of an existing Markdown note. This reads the live Atomic Write Bridge, validates the future Markdown and protected frontmatter, seals the before/after proofs and next content in the private journal, and performs no note write. planRef is opaque.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative path of an existing Markdown note."
+            },
+            "nextContent": {
+              "type": "string",
+              "description": "Complete next Markdown content. It is sealed in the private journal and never returned."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Caller-owned key binding one canonical replacement request."
+            }
+          },
+          "required": [
+            "path",
+            "nextContent",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_replace_apply",
+        "description": "Apply only the exact sealed note-replacement plan. Pass planRef and its matching idempotencyKey; do not provide a new target, hash, or content. A lost response must be followed by status, never by a new mutation request.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque plan reference returned by obsidian_note_replace_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_replace_status",
+        "description": "Read and reconcile the durable status of one sealed note-replacement plan without executing a new mutation. Use this first after a timeout or lost response.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque plan reference returned by obsidian_note_replace_plan."
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_replace_recover",
+        "description": "Recover the exact same sealed note-replacement plan after an uncertain outcome. Recovery reconciles or safely resumes that plan; it is not undo and never accepts replacement mutation inputs.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque plan reference returned by obsidian_note_replace_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_move_plan",
+        "description": "Seal one native Markdown move and its bounded observed semantic neighborhood without moving a note. Requires MCP_WRITE_MODE=full and the independent native-move Bridge grant. No global graph transaction or source-content CAS. Unknown/truncated neighborhoods are refused; graph effects outside the sealed neighborhood are not certified.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "sourcePath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Exact vault-relative Markdown source path."
+            },
+            "destinationPath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Exact absent Markdown destination; its parent must already exist."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "sourcePath",
+            "destinationPath",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_move_apply",
+        "description": "Dispatch only the exact sealed native rename once. Native completion does not mean graph verification. Inspect graph_postflight with status after a lost reply; never manufacture a new move request to retry an uncertain effect.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_move_status",
+        "description": "Read/reconcile the durable move outcome and separately observe graph_postflight without executing a rename. Backend restart can leave an unacknowledged move indeterminate; no recover/undo tool exists for this V1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_create_plan",
+        "description": "Seal one absent-only Markdown creation in the existing durable journal. Does not create a note. Requires the separate Bridge creation grant and writable MCP policy; no automatic naming or parent-directory creation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Exact new vault-relative Markdown path; parent directory must already exist."
+            },
+            "content": {
+              "type": "string",
+              "maxLength": 2097152,
+              "description": "Exact complete intended Markdown. Include a frontmatter envelope when qualified automatic date fields are active."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "path",
+            "content",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_create_apply",
+        "description": "Attempt the exact sealed exclusive creation once. Reuse the same idempotencyKey supplied to obsidian_note_create_plan; never generate a new key for apply. Never overwrite or add suffixes. On conflict or lost response, call obsidian_note_create_status on the existing planRef before any further action; never blindly replay. Only terminal/committed with postflight verified certifies completion. Committed means intended state observed, not attribution to this attempt; Obsidian indexing is not certified.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Reuse the exact idempotencyKey from obsidian_note_create_plan. Do not generate a new key for apply."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_create_status",
+        "description": "Observe/reconcile a durable create without writing a note. Verifies exact bytes or strictly qualified automatic date fields after their settlement delay. Partial/unknown effects are never overwritten, deleted or blindly replayed. No recovery tool is exposed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_rows_patch_plan",
+        "description": "Seal a property patch for one exact existing Markdown row in an explicit Base/view. Uses a complete, warning-free supported-filter Bridge snapshot (max 500 rows, freshness unknown), not a native engine guarantee. No note write, creation or deletion. Reuses the durable note CAS journal.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "baseId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            },
+            "view": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "set"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "value": {}
+                    },
+                    "required": [
+                      "op",
+                      "key"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "key"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 64,
+              "description": "Raw top-level frontmatter keys; not Base display names or file/formula properties."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "baseId",
+            "view",
+            "path",
+            "operations",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_rows_patch_apply",
+        "description": "Revalidate the sealed Base and selected path, then apply one note-content CAS. Top-level set/delete only. No Base write or multi-file transaction. Waits within the sealed note observation window, using a supported completion signal when available; a still-pending signal returns applying for later status. Unknown or completed attempts are observed, never blindly replayed; no synthetic recovery.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_rows_patch_status",
+        "description": "Observe/reconcile the durable row patch without changing any note. Reports note postflight, not continued view membership; a patched row may legitimately leave the view. Does not expose internal child recovery or private idempotency keys.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_text_patch_plan",
+        "description": "Plan one bounded body text patch, optionally combined with frontmatterOperations, of an existing Markdown note. The sealed plan preserves the complete note outside its authorized body and optional frontmatter ranges, binds the current before proof and vault identity, and returns only opaque proof metadata; it never writes the note.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "frontmatterOperations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "set"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "string",
+                            "maxLength": 262144
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/properties/frontmatterOperations/items/anyOf/0/properties/value"
+                            },
+                            "maxItems": 256
+                          },
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "$ref": "#/properties/frontmatterOperations/items/anyOf/0/properties/value"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "key",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "key"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 64,
+              "description": "Optional top-level frontmatter set/delete intentions compiled after the body patch into the SAME sealed plan and single CAS. Both write policies and date protection apply. No new values on apply/recover."
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative path of one existing Markdown note."
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "append_body"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 262144
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "prepend_body"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 262144
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "replace_literal"
+                      },
+                      "search": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 262144
+                      },
+                      "replacement": {
+                        "type": "string",
+                        "maxLength": 262144
+                      },
+                      "occurrence": {
+                        "type": "string",
+                        "enum": [
+                          "unique",
+                          "all"
+                        ]
+                      },
+                      "intent": {
+                        "type": "string",
+                        "const": "replace_all"
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "search",
+                      "replacement"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 32,
+              "description": "Ordered body-only append_body, prepend_body, or replace_literal intentions. All-occurrence replacement needs occurrence=all and intent=replace_all. Literal values are sealed privately and never returned."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Caller-owned key binding one canonical text patch intent."
+            }
+          },
+          "required": [
+            "path",
+            "operations",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_text_patch_apply",
+        "description": "Apply only the exact sealed text patch. Pass planRef and its matching idempotencyKey; no target, text, operation, or hash can be replaced after planning. After a lost response, call status before any recovery.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_text_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_text_patch_status",
+        "description": "Read and reconcile the durable status of one governed text patch without executing a mutation. The response never includes its idempotency key or sealed text.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_text_patch_plan."
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_text_patch_recover",
+        "description": "Recover the exact same sealed text patch after an uncertain outcome. Recovery is not undo and accepts no new patch intent; it reconciles the existing plan under its original fencing.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_text_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_frontmatter_patch_plan",
+        "description": "Plan a source-preserving patch of top-level frontmatter keys in one existing Markdown note. The compiler changes only authorized source ranges, then seals the complete next note through the existing atomic note runtime. It performs no note write and returns an opaque planRef.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative path of one existing Markdown note."
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "set"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "string",
+                            "maxLength": 262144
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/properties/operations/items/anyOf/0/properties/value"
+                            },
+                            "maxItems": 256
+                          },
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "$ref": "#/properties/operations/items/anyOf/0/properties/value"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "key",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete"
+                      },
+                      "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "key"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 64,
+              "description": "Bounded top-level set/delete intentions. Each key may appear at most once; unsupported YAML fails closed."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Caller-owned key binding one canonical frontmatter intent."
+            }
+          },
+          "required": [
+            "path",
+            "operations",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_frontmatter_patch_apply",
+        "description": "Apply only the exact sealed frontmatter plan. The target, operations, compiled Markdown, hashes, and projection proof cannot be replaced after planning. After a lost response call status, not a new mutation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_frontmatter_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_frontmatter_patch_status",
+        "description": "Read and reconcile the durable status of one governed frontmatter plan without executing a new mutation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_frontmatter_patch_plan."
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_frontmatter_patch_recover",
+        "description": "Recover the exact same sealed frontmatter plan after an uncertain outcome. Recovery inherits P0 fencing and reconciliation; it is not undo and accepts no new patch intent.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "responseMode": {
+              "type": "string",
+              "enum": [
+                "compact",
+                "detailed"
+              ],
+              "description": "Default detailed for compatibility. compact preserves state, postflight/checkAfter, permissions and proof digests; retrieve full evidence with the matching status tool and responseMode=detailed."
+            },
+            "diagnostics": {
+              "type": "boolean",
+              "description": "Opt-in per-call server timings in milliseconds. Excludes client transport and does not change the sealed intent or journal."
+            },
+            "completionMode": {
+              "type": "string",
+              "enum": [
+                "deferred",
+                "verified"
+              ],
+              "description": "Default deferred: return after the CAS attempt, with postflight.checkAfter when date settlement is pending. Call status at or after that time; only committed/verified certifies success. verified waits within the sealed observation window and can exceed client timeouts; a still-pending completion signal returns applying for later status."
+            },
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_frontmatter_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_formula_patch_plan",
+        "description": "Plan a source-preserving set/delete patch of named formulas in one existing Obsidian Base. The complete next YAML, backend binding, hashes, and byte-preservation proof are sealed without writing.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative path of one existing .base file."
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "set_formula"
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "expression": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 65536
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "name",
+                      "expression"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete_formula"
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "name"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 32
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "path",
+            "operations",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_formula_patch_apply",
+        "description": "Apply only the exact sealed Base formula plan through the Bases Bridge atomic CAS. No target, formula, expression, or compiled YAML can change after planning.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_formula_patch_status",
+        "description": "Read and reconcile the durable status of one governed Base formula plan without starting a new mutation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_formula_patch_recover",
+        "description": "Recover the exact sealed Base formula plan after an uncertain outcome. Recovery is not undo and accepts no new formula intent.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_canvas_patch_plan",
+        "description": "Plan a governed mutation of one existing JSON Canvas graph. It preserves unknown root/entity values, validates node and edge identity/references, compiles only the sealed entity changes, and performs no write.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative path of one existing .canvas file."
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "add_text_node"
+                      },
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "text": {
+                        "type": "string",
+                        "maxLength": 1048576
+                      },
+                      "x": {
+                        "type": "integer"
+                      },
+                      "y": {
+                        "type": "integer"
+                      },
+                      "width": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "color": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id",
+                      "text",
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "set_text"
+                      },
+                      "id": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      },
+                      "text": {
+                        "type": "string",
+                        "maxLength": 1048576
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "move_node"
+                      },
+                      "id": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      },
+                      "x": {
+                        "type": "integer"
+                      },
+                      "y": {
+                        "type": "integer"
+                      },
+                      "width": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "height": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id",
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete_node"
+                      },
+                      "id": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "connect_nodes"
+                      },
+                      "id": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      },
+                      "fromNode": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      },
+                      "toNode": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      },
+                      "fromSide": {
+                        "type": "string",
+                        "enum": [
+                          "top",
+                          "right",
+                          "bottom",
+                          "left"
+                        ]
+                      },
+                      "toSide": {
+                        "$ref": "#/properties/operations/items/anyOf/4/properties/fromSide"
+                      },
+                      "label": {
+                        "type": "string",
+                        "maxLength": 1024
+                      },
+                      "color": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id",
+                      "fromNode",
+                      "toNode"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "const": "delete_edge"
+                      },
+                      "id": {
+                        "$ref": "#/properties/operations/items/anyOf/0/properties/id"
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 64,
+              "description": "Ordered graph intentions. One node or edge ID may be targeted at most once; deleting a node also seals deletion of its incident edges."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Caller-owned key binding one canonical Canvas intent."
+            }
+          },
+          "required": [
+            "path",
+            "operations",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_canvas_patch_apply",
+        "description": "Apply only the exact sealed Canvas plan through the Atomic Write Bridge with a vault binding and SHA-256 CAS. After a lost response call status, not a new mutation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_canvas_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_canvas_patch_status",
+        "description": "Read and reconcile the durable status of one governed Canvas plan without executing a new mutation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_canvas_patch_plan."
+            }
+          },
+          "required": [
+            "planRef"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_canvas_patch_recover",
+        "description": "Recover the exact same sealed Canvas plan after an uncertain outcome. It accepts no new graph intent and is not undo.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Opaque reference returned by obsidian_canvas_patch_plan."
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "The exact public idempotency key bound during planning."
+            }
+          },
+          "required": [
+            "planRef",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_status",
+        "description": "Inspect the live Optimike Operon Bridge and the persisted MCP snapshot. forceRefresh=true rebuilds the snapshot only when Obsidian Desktop, Local REST API, Operon, and the Bridge are available. This surface is read-only.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_get_configuration",
+        "description": "Read the task-semantic Operon configuration from the live plugin runtime: language, stable workflow/status IDs, priority definitions, canonical-to-visible key mappings, creation targets/templates, task automations, excluded folders, and documentation location. A saved-filter catalog is included only when the official runtime exposes one. Falls back only to an explicitly stale persisted snapshot.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_list_tasks",
+        "description": "List Operon tasks from a live-generation-validated snapshot or an explicitly stale persisted fallback. Supports pagination and optional filters. No task mutation is performed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "operonIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "search": {
+              "type": "string"
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "inline",
+                  "file"
+                ]
+              }
+            },
+            "checkboxes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "open",
+                  "done",
+                  "cancelled"
+                ]
+              }
+            },
+            "statuses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "statusIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pipelines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pipelineIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "priorities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "hot",
+                  "warm",
+                  "cold"
+                ]
+              }
+            },
+            "pathIncludes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pathExcludes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tagsAny": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tagsAll": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "parentTask": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "due",
+                      "scheduled",
+                      "started",
+                      "completed",
+                      "cancelled",
+                      "datetimeStart",
+                      "datetimeEnd",
+                      "created",
+                      "modified"
+                    ]
+                  },
+                  "before": {
+                    "type": "string"
+                  },
+                  "after": {
+                    "type": "string"
+                  },
+                  "on": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "fieldEquals": {
+              "type": "object",
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            "propertyEquals": {
+              "type": "object",
+              "additionalProperties": {}
+            },
+            "sort": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "description",
+                      "status",
+                      "pipeline",
+                      "priority",
+                      "due",
+                      "scheduled",
+                      "path",
+                      "line",
+                      "datetimeModified",
+                      "tier"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "asc",
+                      "desc"
+                    ],
+                    "default": "asc"
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "includeProperties": {
+              "type": "boolean",
+              "default": false
+            },
+            "cursor": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "default": 100
+            },
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_query_tasks",
+        "description": "Query Operon tasks by identity, text, source, checkbox, stable workflow/status IDs, visible workflow labels, priority, tier, path, tags, parent, dates, canonical/custom fields, or unmanaged file-task properties. Prefer pipelineIds/statusIds from operon_get_configuration so UI language changes do not break automations. Responses always declare source and freshness.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "operonIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "search": {
+              "type": "string"
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "inline",
+                  "file"
+                ]
+              }
+            },
+            "checkboxes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "open",
+                  "done",
+                  "cancelled"
+                ]
+              }
+            },
+            "statuses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "statusIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pipelines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pipelineIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "priorities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "hot",
+                  "warm",
+                  "cold"
+                ]
+              }
+            },
+            "pathIncludes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pathExcludes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tagsAny": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tagsAll": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "parentTask": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "due",
+                      "scheduled",
+                      "started",
+                      "completed",
+                      "cancelled",
+                      "datetimeStart",
+                      "datetimeEnd",
+                      "created",
+                      "modified"
+                    ]
+                  },
+                  "before": {
+                    "type": "string"
+                  },
+                  "after": {
+                    "type": "string"
+                  },
+                  "on": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "fieldEquals": {
+              "type": "object",
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            "propertyEquals": {
+              "type": "object",
+              "additionalProperties": {}
+            },
+            "sort": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "description",
+                      "status",
+                      "pipeline",
+                      "priority",
+                      "due",
+                      "scheduled",
+                      "path",
+                      "line",
+                      "datetimeModified",
+                      "tier"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "asc",
+                      "desc"
+                    ],
+                    "default": "asc"
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "includeProperties": {
+              "type": "boolean",
+              "default": false
+            },
+            "cursor": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "default": 100
+            },
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_query_saved_filter",
+        "description": "Evaluate one saved Operon filter through Operon's native filter engine. filterSetId must be an exact ID obtained from Operon's UI/configuration or an operator workflow; Operon 3.2 can execute a filter but does not expose the saved-filter catalog through its official Developer API. optional scopePath limits results to one note or folder. This capability is live-only because headless snapshots cannot reproduce plugin filter semantics.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filterSetId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scopePath": {
+              "type": "string",
+              "minLength": 1
+            },
+            "includeProperties": {
+              "type": "boolean",
+              "default": false
+            },
+            "cursor": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 500,
+              "default": 100
+            }
+          },
+          "required": [
+            "filterSetId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_get_task",
+        "description": "Read one Operon task by stable operonId from the live-generation-validated snapshot or the last persisted stale fallback.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "operonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "includeProperties": {
+              "type": "boolean",
+              "default": false
+            },
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "operonId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_validate",
+        "description": "Validate the live Operon duplicate/source/workflow graph when available, otherwise run a limited snapshot-only validation and state its limitations.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "forceRefresh": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_get_diagnostics",
+        "description": "Read Operon 3.2 native runtime diagnostics through Developer API V1. Use this for lifecycle, persistence, capability/grant, catalog, and transport diagnosis; it never modifies the vault.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_find_tasks",
+        "description": "Run Operon's native ranked task/project finder with bounded filters, scopes, representations, project mode, cursor, and at most 50 rows. Prefer this over broad text query when ranking, overdue/today/recent scope, or project-tree counts matter.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "filters": {
+              "type": "object",
+              "properties": {
+                "checkbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "open",
+                      "done",
+                      "cancelled"
+                    ]
+                  },
+                  "maxItems": 3
+                },
+                "pipelineIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 50
+                },
+                "statusIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 100
+                },
+                "priorityIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 50
+                },
+                "tiers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 20
+                },
+                "due": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "to": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "representations": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "inline",
+                  "file"
+                ]
+              },
+              "maxItems": 2
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "normal",
+                "overdue",
+                "happens-today",
+                "recent"
+              ]
+            },
+            "project": {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "direct",
+                    "tree"
+                  ]
+                },
+                "rootOperonId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                }
+              },
+              "required": [
+                "mode"
+              ],
+              "additionalProperties": false
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 50,
+              "default": 20
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_resolve_task",
+        "description": "Resolve an Operon task selector through the native entity resolver and return resolved, ambiguous, or not-found with bounded candidates. Use before acting when you have a path, note name, locator, search phrase, or uncertain identity instead of guessing an operonId.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "selector": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "operon-id"
+                    },
+                    "operonId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "operonId"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "exact-locator"
+                    },
+                    "locator": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "representation": {
+                              "type": "string",
+                              "const": "inline"
+                            },
+                            "filePath": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1024
+                            },
+                            "lineNumber": {
+                              "type": "integer",
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "representation",
+                            "filePath",
+                            "lineNumber"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "representation": {
+                              "type": "string",
+                              "const": "file"
+                            },
+                            "filePath": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1024
+                            }
+                          },
+                          "required": [
+                            "representation",
+                            "filePath"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "expectedOperonId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "locator"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "exact-path"
+                    },
+                    "filePath": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1024
+                    },
+                    "expectedOperonId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "filePath"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "exact-name"
+                    },
+                    "noteName": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512
+                    },
+                    "expectedOperonId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 256
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "noteName"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "search"
+                    },
+                    "query": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "exclusiveMinimum": 0,
+                      "maximum": 20,
+                      "default": 10
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "query"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 20,
+              "default": 10
+            }
+          },
+          "required": [
+            "selector"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_get_relationships",
+        "description": "Read the bounded native relationship graph for one stable operonId, including explicit, derived, and inferred edges plus hydrated task summaries. Depth is capped at 3 and results at 100.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "operonId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "kinds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "child",
+                  "blocking",
+                  "blocked-by",
+                  "related",
+                  "ancestor",
+                  "project-member"
+                ]
+              },
+              "maxItems": 7
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 100,
+              "default": 50
+            },
+            "depth": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3,
+              "default": 1
+            }
+          },
+          "required": [
+            "operonId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_build_context",
+        "description": "Build a bounded native Operon context pack for exact-task, neighborhood, project analysis, planning workload, or creation context. Only notes, links, and custom fields may be hydrated; source Markdown, tracker history, reminders, placement, and mutation-readiness packs are intentionally excluded.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "enum": [
+                "read",
+                "analysis",
+                "planning",
+                "creation"
+              ]
+            },
+            "projection": {
+              "type": "string",
+              "enum": [
+                "exact-task",
+                "task-neighborhood",
+                "project-analysis",
+                "planning-workload",
+                "creation-context"
+              ]
+            },
+            "operonId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "filters": {
+              "type": "object",
+              "properties": {
+                "checkbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "open",
+                      "done",
+                      "cancelled"
+                    ]
+                  },
+                  "maxItems": 3
+                },
+                "pipelineIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 50
+                },
+                "statusIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 100
+                },
+                "priorityIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 50
+                },
+                "tiers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxItems": 20
+                },
+                "filePath": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1024
+                },
+                "parentOperonId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "due": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "to": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                }
+              },
+              "additionalProperties": false
+            },
+            "include": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "notes",
+                  "links",
+                  "custom-fields"
+                ]
+              },
+              "maxItems": 3
+            },
+            "limit": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "depth": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "cursor": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            }
+          },
+          "required": [
+            "purpose",
+            "projection"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_get_timer_state",
+        "description": "Read Operon's native active timer and in-flight timer transition state. This is observation only; timer start, stop, and session edits remain operator-controlled outside MCP.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_adopt_task",
+        "description": "Adopt one existing plain Markdown or Obsidian Tasks checkbox in place through Operon's official sealed task-workflow preview/apply contract. Requires an exact one-based line and expectedLine precondition, plus idempotencyKey; dryRun defaults to true. No raw Markdown or CLI fallback exists.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "adoption": {
+              "type": "object",
+              "properties": {
+                "targetPath": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "line": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                },
+                "expectedLine": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "statusId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "terminalSourcePolicy": {
+                  "type": "string",
+                  "const": "reopen"
+                }
+              },
+              "required": [
+                "targetPath",
+                "line",
+                "expectedLine"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "adoption"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_create_periodic_task",
+        "description": "Create exactly one inline Operon task in the configured Daily or Weekly Note through Operon's sealed periodic-note workflow. Operon owns routing, templates, container identity and receipts; routeDate is optional and distinct from an initial fields.dateScheduled value. Later dateScheduled changes must use operon_update_periodic_scheduling. dryRun defaults to true. Apply requires the live Bridge, idempotency and the periodicCreate capability.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "periodic": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "periodicKind": {
+                  "type": "string",
+                  "enum": [
+                    "daily",
+                    "weekly"
+                  ]
+                },
+                "routeDate": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "statusId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "priorityId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fields": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 65536
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 65536
+                        },
+                        "maxItems": 512
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "description",
+                "periodicKind"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "periodic"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_update_periodic_scheduling",
+        "description": "Set or clear dateScheduled for one exact Operon task. The Bridge first uses Operon's ordinary typed update path and escalates to the sealed periodic-update workflow only when Operon proves Daily/Weekly parent realignment is required. Use this tool, not operon_update_task, for every dateScheduled change. expectedRevision and idempotencyKey are mandatory; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "pattern": "^[a-z0-9]{7}$"
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "patch": {
+              "type": "object",
+              "properties": {
+                "fields": {
+                  "type": "object",
+                  "properties": {
+                    "dateScheduled": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "dateScheduled"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "fields"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "patch"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_create_task",
+        "description": "Create an Operon inline or file task through the loaded engine's supported official API. targetFolder is legacy-only and rejected by official Developer API V1; file tasks use the configured destination or a genuine fields.parentTask relationship. taskFolder is not a supported argument. dateScheduled is reserved for operon_update_periodic_scheduling. dryRun defaults to true. Apply requires the live Bridge and an idempotencyKey; no raw Markdown fallback exists.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "task": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "inline",
+                    "file"
+                  ]
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "statusId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fields": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 65536
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 65536
+                        },
+                        "maxItems": 512
+                      }
+                    ]
+                  }
+                },
+                "properties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": [
+                            "string",
+                            "number",
+                            "boolean",
+                            "null"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "fileTemplateId": {
+                  "type": "string"
+                },
+                "targetDateKey": {
+                  "type": "string"
+                },
+                "targetFolder": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Legacy engine routing only. Official Developer API V1 rejects targetFolder and uses its configured file-task destination or a genuine parentTask relationship."
+                },
+                "targetPath": {
+                  "$ref": "#/properties/task/properties/targetFolder"
+                }
+              },
+              "required": [
+                "source",
+                "description"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "task"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_update_task",
+        "description": "Update exactly one ordinary Operon mutation group: description, managed fields/tags, or one unmanaged file property. Do not use this tool for dateScheduled (use operon_update_periodic_scheduling), relationships (use operon_set_relationships), or recurrence fields (use operon_update_recurrence). expectedRevision and idempotencyKey are mandatory; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "patch": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fields": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 65536
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 65536
+                        },
+                        "maxItems": 512
+                      }
+                    ]
+                  }
+                },
+                "properties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": [
+                            "string",
+                            "number",
+                            "boolean",
+                            "null"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "patch"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_transition_task",
+        "description": "Transition an Operon task through Operon's dependency, recurrence, aggregate, and workflow guards. Prefer stable statusId from operon_get_configuration; exact configured status remains supported. expectedRevision and idempotencyKey are mandatory; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "statusId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_convert_task",
+        "description": "Convert an Operon task between inline and file forms through Operon's transition-safe conversion path. Apply is destructive and requires MCP_WRITE_MODE=full; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "target": {
+              "type": "string",
+              "enum": [
+                "inline",
+                "file"
+              ]
+            },
+            "fileTemplateId": {
+              "type": "string"
+            },
+            "targetPath": {
+              "type": "string",
+              "minLength": 1
+            },
+            "targetFolder": {
+              "$ref": "#/properties/targetPath",
+              "description": "Legacy engine routing only. Official Developer API V1 conversion rejects targetFolder; use the configured destination or an exact targetPath where supported."
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "target"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_relocate_task",
+        "description": "Move one inline Operon task to another Markdown note while preserving operonId. expectedRevision and idempotencyKey are mandatory; dryRun defaults to true. Both Bridge and MCP mutation opt-ins must be enabled for apply.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "targetPath": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "targetPath"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_set_relationships",
+        "description": "Replace or explicitly clear parentTask, blocking, or blockedBy through Operon Developer API V1. The tool rejects duplicate, self, and contradictory dependency targets; expectedRevision and idempotencyKey are mandatory; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "pattern": "^[a-z0-9]{7}$"
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relationships": {
+              "type": "object",
+              "properties": {
+                "parentTask": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/properties/operonId"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "blocking": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/properties/operonId"
+                  },
+                  "maxItems": 100
+                },
+                "blockedBy": {
+                  "$ref": "#/properties/relationships/properties/blocking"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "relationships"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_update_recurrence",
+        "description": "Set or explicitly clear an Operon recurrence rule and its official temporal fields, except dateScheduled, for this-task or this-and-following. dateScheduled is reserved for operon_update_periodic_scheduling. This apply is reserved for full write policy; expectedRevision and idempotencyKey are mandatory; dryRun defaults to true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$"
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": true
+            },
+            "operonId": {
+              "type": "string",
+              "pattern": "^[a-z0-9]{7}$"
+            },
+            "expectedRevision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "this-task",
+                "this-and-following"
+              ]
+            },
+            "changes": {
+              "type": "object",
+              "properties": {
+                "repeat": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "datetimeRepeatEnd": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "dateStarted": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "dateDue": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "datetimeStart": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "datetimeEnd": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "estimate": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "operonId",
+            "expectedRevision",
+            "scope",
+            "changes"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_list_pending_recoveries",
+        "description": "List durable official Operon Developer API mutation recoveries. Read-only: it does not retry or apply anything. Blocked when OPERON_MUTATION_ALLOWED_PATH_PREFIXES is nonempty because recovery records lack canonical route evidence; a refusal is not an empty recovery list. Preserve any known recoveryRef, inspect the affected task with authorized reads, and do not replay the original mutation or relax the allowlist to bypass this gate. When permitted, use the returned recoveryRef only with operon_recover_mutation after inspecting the uncertain outcome.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "adopt",
+                "periodic-create",
+                "periodic-update"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "operon_recover_mutation",
+        "description": "Recover exactly one uncertain official Operon mutation by recoveryRef. Set recovery.kind=developer-api for legacy official recovery, or use the exact task-workflow kind returned by pending state and optionally echo its planDigest. This replays the same durable plan only; it never constructs a new mutation. Requires idempotencyKey, OPERON_MUTATIONS_ENABLED=true, MCP_WRITE_MODE=full, and an empty OPERON_MUTATION_ALLOWED_PATH_PREFIXES because current recovery records do not prove their route.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200
+            },
+            "recoveryRef": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "recovery": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "developer-api"
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "adopt",
+                        "periodic-create",
+                        "periodic-update"
+                      ]
+                    },
+                    "planDigest": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$",
+                      "description": "Exact lowercase 64-hex planDigest returned by Operon pending recovery state; never synthesize or alter it."
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "idempotencyKey",
+            "recoveryRef",
+            "recovery"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_runtime_status",
+        "description": "Reports whether explicitly configured external document roots are enabled and available. Physical root paths are never returned.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_roots_list",
+        "description": "Lists configured external document root IDs, capabilities, limits, and availability without disclosing physical paths.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_list",
+        "description": "Lists bounded directory entries inside one configured external root. Paths are root-relative and links are never followed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable logical ID of a configured external root."
+            },
+            "relativePath": {
+              "type": "string",
+              "default": "",
+              "description": "Path relative to the external root. Absolute paths are rejected."
+            },
+            "depth": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 20,
+              "default": 1
+            },
+            "maxEntries": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 5000
+            }
+          },
+          "required": [
+            "rootId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_stat",
+        "description": "Returns bounded metadata and optionally a SHA-256 hash for one root-relative external file.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable logical ID of a configured external root."
+            },
+            "relativePath": {
+              "type": "string",
+              "default": "",
+              "description": "Path relative to the external root. Absolute paths are rejected."
+            },
+            "includeHash": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "rootId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_read",
+        "description": "Reads bounded UTF-8 text from one explicitly allowed root-relative file. Binary and Office documents require an explicit handoff mode supported by the active transport.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable logical ID of a configured external root."
+            },
+            "relativePath": {
+              "type": "string",
+              "default": "",
+              "description": "Path relative to the external root. Absolute paths are rejected."
+            },
+            "maxChars": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 2000000
+            }
+          },
+          "required": [
+            "rootId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_handoff",
+        "description": "Prepares one verified temporary copy of an explicitly allowed file. Stdio returns a local path; an authenticated HTTP profile may return a short-lived opaque download ticket. The source path is never returned over HTTP.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable logical ID of a configured external root."
+            },
+            "relativePath": {
+              "type": "string",
+              "default": "",
+              "description": "Path relative to the external root. Absolute paths are rejected."
+            },
+            "includeHash": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "rootId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_references_scan",
+        "description": "Inventories canonical and ambiguous ÉLYSIA references to one external file. This stdio-only operation never mutates either surface.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Stable logical ID of a configured external root."
+            },
+            "relativePath": {
+              "type": "string",
+              "default": "",
+              "description": "Path relative to the external root. Absolute paths are rejected."
+            }
+          },
+          "required": [
+            "rootId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_move_plan",
+        "description": "Builds a durable stdio-only diagnostic plan for a same-root external file move and exact ÉLYSIA link repairs. Mutation is unavailable.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "rootId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sourceRelativePath": {
+              "type": "string",
+              "minLength": 1
+            },
+            "targetRelativePath": {
+              "type": "string",
+              "minLength": 1
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "rootId",
+            "sourceRelativePath",
+            "targetRelativePath",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_move_status",
+        "description": "Returns the read-only durable status and redacted receipt for one external move plan.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planId": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "required": [
+            "planId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_move_apply",
+        "description": "Unavailable: native handle-relative external move mutation is not supported on this runtime.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "planId",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "external_move_rollback",
+        "description": "Unavailable: native handle-relative external move mutation is not supported on this runtime.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "planId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "planId",
+            "idempotencyKey"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_validate_format",
+        "description": "Validate Obsidian-facing file formats before writing. Checks Markdown frontmatter/tags/wikilinks/callouts, .base YAML/formula references/views, and JSON Canvas nodes/edges.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "markdown",
+                "base",
+                "canvas"
+              ],
+              "default": "auto"
+            },
+            "filePath": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_note_links",
+        "description": "Observe the bounded semantic neighborhood of one Markdown note from Obsidian Desktop public MetadataCache APIs. Returns outgoing links, embeds and frontmatter links with actual resolution; requested subpaths with honest anchor validation; unresolved aggregates; resolved backlinks; truncation; provenance; and cache-freshness limits. Read-only and no graph-preservation claim.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Vault-relative Markdown note path."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "default": 200,
+              "description": "Maximum returned independently for outgoing references, unresolved aggregates, and backlinks. Defaults to 200; maximum 1000."
+            }
+          },
+          "required": [
+            "filePath"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_delete_note",
+        "description": "Direct permanent deletion of one vault file by explicit path. This operation has no governed recovery or undo receipt; use only when irreversible deletion is intentional and allowed by policy. Exact path is tried before a case-insensitive fallback.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The vault-relative path to the file to be deleted (e.g., \"archive/old-file.md\"). Tries case-sensitive first, then case-insensitive fallback."
+            }
+          },
+          "required": [
+            "filePath"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_get_frontmatter",
+        "description": "Read one frontmatter key through Local REST. Read-only: no set/delete/value inputs and no note mutation. Use obsidian_frontmatter_patch_plan/apply/status for edits; obsidian_read_note remains the complete-note read path.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Vault-relative path of the note."
+            },
+            "key": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Raw frontmatter key to read."
+            }
+          },
+          "required": [
+            "filePath",
+            "key"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "obsidian_manage_tags",
+        "description": "Direct Local REST tag add/remove/list for YAML frontmatter and inline Markdown. It creates no durable plan/status/recovery receipt. For a frontmatter-only mutation, prefer obsidian_frontmatter_patch_plan when available.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The vault-relative path to the target note (e.g., 'Journal/2024-06-12.md')."
+            },
+            "operation": {
+              "type": "string",
+              "enum": [
+                "add",
+                "remove",
+                "list"
+              ],
+              "description": "The tag operation to perform: 'add' to include new tags, 'remove' to delete existing tags, or 'list' to view all current tags."
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "An array of tag names to be processed. The '#' prefix should be omitted (e.g., use 'project/active', not '#project/active')."
+            }
+          },
+          "required": [
+            "filePath",
+            "operation",
+            "tags"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_list",
+        "description": "Liste les Bases (.base) disponibles via le bridge REST. Utilise l'extension obsidian-bases-bridge du plugin Local REST API.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_get_schema",
+        "description": "Retourne le schéma (propriétés, vues, formules) d'une base .base via le bridge REST.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "base_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Identifiant (chemin) de la base, par ex. 'Content/plan.base'."
+            }
+          },
+          "required": [
+            "base_id"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_query",
+        "description": "Exécute une requête sur une base (.base) avec filtres additionnels, tri et pagination.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "base_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Identifiant (chemin) du fichier .base à interroger."
+            },
+            "view": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Vue à utiliser pour l'ordre/les formules. Optionnel."
+            },
+            "filter": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "Filtre additionnel (JSON) appliqué par le bridge."
+            },
+            "sort": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "prop": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Identifiant de propriété (ex. 'priority' ou 'file.mtime')."
+                  },
+                  "dir": {
+                    "type": "string",
+                    "enum": [
+                      "asc",
+                      "desc"
+                    ],
+                    "default": "asc"
+                  }
+                },
+                "required": [
+                  "prop"
+                ],
+                "additionalProperties": false,
+                "description": "Critère de tri supplémentaire."
+              },
+              "description": "Critères de tri supplémentaires (en plus de la vue)."
+            },
+            "limit": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 50,
+              "description": "Nombre max de lignes par page (<= 500)."
+            },
+            "page": {
+              "type": "number",
+              "minimum": 1,
+              "default": 1,
+              "description": "Numéro de page (1-indexé)."
+            },
+            "evaluate": {
+              "type": "boolean",
+              "default": true,
+              "description": "Quand true, force l'utilisation des valeurs évaluées si disponibles."
+            }
+          },
+          "required": [
+            "base_id"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_upsert_rows",
+        "description": "Direct multi-row Base property set/unset through the REST bridge. This compatibility operation is not one atomic batch and may return partial results; it has no durable batch recovery receipt.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "base_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Identifiant (chemin) de la base utilisée pour contextualiser la mise à jour."
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Chemin de la note ciblée (relatif au coffre), ex. 'SEO/Pages/13-Aix.md'."
+                  },
+                  "set": {
+                    "type": "object",
+                    "additionalProperties": {},
+                    "description": "Valeurs de frontmatter à appliquer."
+                  },
+                  "unset": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "description": "Clés de frontmatter à supprimer."
+                  },
+                  "expected_mtime": {
+                    "type": "number",
+                    "description": "Timestamp mtime attendu (verrou optimiste). Conflit => 409 renvoyé par le bridge."
+                  }
+                },
+                "required": [
+                  "file"
+                ],
+                "additionalProperties": false,
+                "description": "Opération d'upsert frontmatter pour une note."
+              },
+              "minItems": 1,
+              "description": "Tableau d'opérations d'upsert frontmatter."
+            },
+            "continueOnError": {
+              "type": "boolean",
+              "default": false,
+              "description": "Quand true, poursuit les opérations malgré les erreurs individuelles."
+            },
+            "chunkSize": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 1,
+              "description": "Nombre d'opérations envoyées par requête bridge. Par défaut 1 pour préserver une reprise granulaire autour de processFrontMatter."
+            },
+            "delayMs": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 30000,
+              "default": 150,
+              "description": "Pause entre deux requêtes bridge, utile quand Obsidian indexe ou verrouille le coffre."
+            },
+            "maxRetries": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3,
+              "default": 2,
+              "description": "Nombre de retries automatiques pour les erreurs retryables comme write_timeout."
+            },
+            "retryBackoffMs": {
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 60000,
+              "default": 1000,
+              "description": "Backoff de base avant retry. Le délai est multiplié par le numéro de tentative."
+            },
+            "requestTimeoutMs": {
+              "type": "integer",
+              "minimum": 10000,
+              "maximum": 300000,
+              "default": 90000,
+              "description": "Timeout HTTP client pour chaque requête vers le bridge Bases."
+            },
+            "dryRun": {
+              "type": "boolean",
+              "default": false,
+              "description": "Valide les fichiers, les mtime et le payload via le bridge sans écrire."
+            }
+          },
+          "required": [
+            "base_id",
+            "operations"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "bases_create",
+        "description": "Direct validation or creation of one .base YAML document through the REST bridge. Overwrite is a legacy whole-config compatibility effect and has no durable plan/status/recovery receipt.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Chemin cible du nouveau fichier .base (relatif au coffre)."
+            },
+            "spec": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "Spécification JSON conforme à la syntaxe Bases (filters, properties, formulas, views)."
+            },
+            "overwrite": {
+              "type": "boolean",
+              "default": false,
+              "description": "Autoriser l'écrasement si le fichier existe déjà."
+            },
+            "validateOnly": {
+              "type": "boolean",
+              "default": false,
+              "description": "Quand true, valide uniquement la spec sans écrire sur disque."
+            }
+          },
+          "required": [
+            "path",
+            "spec"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

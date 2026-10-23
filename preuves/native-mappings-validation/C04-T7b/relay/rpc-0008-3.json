@@ -1,0 +1,35 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_get_note",
+      "arguments": {
+        "target": {
+          "type": "path",
+          "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+        },
+        "format": "content"
+      }
+    }
+  },
+  "response": {
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Présentation\n---\ntype: projet\nparent: null\ncollection:\n- '[[Projets]]'\nentité: null\nstatut: actif\nnotes_liees: null\nrang: 1\nclient: false\néchéance: null\nnext_action: Trier trois captures.\nbudget_h: null\nbudget_euros: null\ntype_projet: null\ntemoin_bool: true\ntemoin_liste:\n- café\n- œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : annulé par la correction H-2406.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "format": "content",
+          "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+          "content": "---\ntype: projet\nparent: null\ncollection:\n- '[[Projets]]'\nentité: null\nstatut: actif\nnotes_liees: null\nrang: 1\nclient: false\néchéance: null\nnext_action: Trier trois captures.\nbudget_h: null\nbudget_euros: null\ntype_projet: null\ntemoin_bool: true\ntemoin_liste:\n- café\n- œuvre\ntemoin_entier: 7\nclé_inconnue: Été — 東京\n---\n## Fiche du projet\n- Objectif : trier trois captures.\n- Référence de recherche : MARGELLE-TEST-2406.\n- Passage à modifier : annulé par la correction H-2406.\n- Témoin humain : version initiale.\n- Témoin intact : café, œuvre, [[Projet témoin — Test MCP]].\n"
+        }
+      }
+    }
+  }
+}

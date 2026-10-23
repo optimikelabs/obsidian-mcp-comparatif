@@ -1,0 +1,13 @@
+{
+  "task": "T5",
+  "verdict": "PROTEGE_NON_ACCOMPLI",
+  "errors": [],
+  "changed": [],
+  "unwanted": [],
+  "format_differences": [],
+  "technical_changes": [],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "dates": [],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+}

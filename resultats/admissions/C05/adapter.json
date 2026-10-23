@@ -1,0 +1,70 @@
+{
+  "candidate": "C05",
+  "transport": "http",
+  "mutation_tools": [
+    "edit"
+  ],
+  "mutation_rules": [
+    {
+      "tool": "vault",
+      "key": "action",
+      "values": [
+        "create",
+        "update",
+        "delete",
+        "move",
+        "rename",
+        "copy",
+        "split",
+        "combine",
+        "concatenate"
+      ]
+    }
+  ],
+  "read_tools": [],
+  "read_rules": [
+    {
+      "tool": "vault",
+      "key": "action",
+      "values": [
+        "read"
+      ]
+    },
+    {
+      "tool": "view",
+      "key": "action",
+      "values": [
+        "file"
+      ]
+    }
+  ],
+  "read_mappings": {
+    "vault": {
+      "format": "json",
+      "content_key": [
+        "result",
+        "content"
+      ]
+    },
+    "view": {
+      "format": "json",
+      "content_key": [
+        "result",
+        "content"
+      ]
+    }
+  },
+  "preparation_tools": [],
+  "path_key": "path",
+  "enabled_tools": [
+    "vault",
+    "edit",
+    "view",
+    "graph"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/semantic-vault-mcp/data.json"
+  ]
+}

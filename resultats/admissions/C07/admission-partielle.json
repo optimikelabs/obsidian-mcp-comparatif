@@ -1,0 +1,8 @@
+{
+  "candidate": "C07",
+  "status": "SCHEMAS_A_QUALIFIER",
+  "nonceVerified": true,
+  "source_commit": "8696687e1a449f5f74550331ac902b0b358b4ccf",
+  "mode": "Proxy stdio operational / backend HTTP full propre au run, REST 5.5.2 + Atomic 0.8.1",
+  "backend_port": 27349
+}

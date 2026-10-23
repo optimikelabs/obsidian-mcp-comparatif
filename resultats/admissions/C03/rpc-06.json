@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_get_file_contents",
+      "arguments": {
+        "filepath": "Admission — schémas C03.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "\"---\\nrang: 1\\ninconnu: caf\\u00e9\\n---\\nEssai A.\\nEssai B.\\n\""
+        }
+      ],
+      "isError": false
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_get_note",
+      "arguments": {
+        "format": "content",
+        "target": {
+          "type": "path",
+          "path": "Admission — schémas C04.md"
+        }
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "**Admission — schémas C04.md** (format: content)\n\n---\nrang: 1\ninconnu: café\n---\nEssai A.\n"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "format": "content",
+          "path": "Admission — schémas C04.md",
+          "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n"
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 5
+  }
+}

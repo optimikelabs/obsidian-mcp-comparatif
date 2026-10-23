@@ -1,0 +1,28 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "vault",
+      "arguments": {
+        "action": "create",
+        "path": "Admission — schémas C05.md",
+        "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n",
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"result\": {\n    \"success\": true,\n    \"path\": \"Admission — schémas C05.md\",\n    \"name\": \"Admission — schémas C05.md\"\n  },\n  \"context\": {\n    \"current_file\": \"Admission — schémas C05.md\",\n    \"buffer_available\": false,\n    \"file_history\": [\n      \"Admission — schémas C05.md\"\n    ],\n    \"has_file_content\": true,\n    \"has_links\": false,\n    \"has_tags\": false\n  }\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  }
+}

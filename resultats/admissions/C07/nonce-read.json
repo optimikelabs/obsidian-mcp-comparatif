@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"content\": \"ADMISSION-C07-67e57de6b1968a400a738681623d2bc871a08b8e\"\n}"
+      }
+    ],
+    "isError": false
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

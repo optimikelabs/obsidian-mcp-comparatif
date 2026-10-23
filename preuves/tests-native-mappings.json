@@ -1,0 +1,166 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "case": "C03-T1",
+      "verdict": {
+        "task": "T1",
+        "verdict": "REUSSI_VERIFIE",
+        "errors": [],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C04-T7b",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C04-T7b-technical-first",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C04-T7b-temporary-other-note",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "EFFET_NON_VOULU",
+        "errors": [
+          "PREMIERE_MUTATION_HORS_CIBLE"
+        ],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [
+          "Efforts/Projets/Note Q.md"
+        ],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C05-T7b",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C05-T7b-technical-first",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C05-T7b-temporary-other-note",
+      "verdict": {
+        "task": "T7b",
+        "verdict": "EFFET_NON_VOULU",
+        "errors": [
+          "PREMIERE_MUTATION_HORS_CIBLE"
+        ],
+        "changed": [
+          ".obsidian/workspace.json"
+        ],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "first_unwanted": [
+          "Efforts/Projets/Note Q.md"
+        ],
+        "first_technical_changes": [
+          ".obsidian/workspace.json"
+        ],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    },
+    {
+      "case": "C05-T5",
+      "verdict": {
+        "task": "T5",
+        "verdict": "PROTEGE_NON_ACCOMPLI",
+        "errors": [],
+        "changed": [],
+        "unwanted": [],
+        "format_differences": [],
+        "technical_changes": [],
+        "first_unwanted": [],
+        "first_technical_changes": [],
+        "dates": [],
+        "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne."
+      }
+    }
+  ]
+}

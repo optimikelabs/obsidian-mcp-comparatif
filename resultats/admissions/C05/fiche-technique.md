@@ -1,0 +1,3 @@
+C05 — Semantic Notes Vault MCP 0.12.9
+
+Plugin HTTP natif. vault multiplexe les actions : list/search/read/create/update… Pour une lecture complète vérifiable : vault(action=read,path=...,raw=true,returnFullFile=true), dont result.content contient le fichier entier. Le défaut est un affichage Markdown. edit(action=window,path=...,oldText=...,newText=...,fuzzyThreshold=...) remplace un passage ; seuil par défaut 0.7, seuil 1 disponible pour une correspondance exacte. edit append/patch/at_line et propriétés via texte sont possibles. Aucun jeton de révision ni statut durable établi dans ce catalogue. Respecter les retouches contradictoires et relire après mutation ou réponse perdue. Les actions système, réseau et plugins sont interdites.

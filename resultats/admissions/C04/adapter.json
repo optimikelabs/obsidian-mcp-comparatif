@@ -1,0 +1,47 @@
+{
+  "candidate": "C04",
+  "transport": "stdio",
+  "mutation_tools": [
+    "obsidian_write_note",
+    "obsidian_append_to_note",
+    "obsidian_patch_note",
+    "obsidian_replace_in_note",
+    "obsidian_manage_frontmatter",
+    "obsidian_manage_tags",
+    "obsidian_delete_note"
+  ],
+  "preparation_tools": [],
+  "read_tools": [
+    "obsidian_get_note"
+  ],
+  "read_mappings": {
+    "obsidian_get_note": {
+      "source": "structuredContent",
+      "format": "json",
+      "content_key": [
+        "result",
+        "content"
+      ],
+      "path_key": [
+        "target",
+        "path"
+      ]
+    }
+  },
+  "enabled_tools": [
+    "obsidian_get_note",
+    "obsidian_list_notes",
+    "obsidian_list_tags",
+    "obsidian_search_notes",
+    "obsidian_write_note",
+    "obsidian_append_to_note",
+    "obsidian_patch_note",
+    "obsidian_replace_in_note",
+    "obsidian_manage_frontmatter",
+    "obsidian_manage_tags"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json"
+  ]
+}

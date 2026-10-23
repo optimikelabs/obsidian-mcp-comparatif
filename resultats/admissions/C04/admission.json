@@ -1,0 +1,15 @@
+{
+  "candidate": "C04",
+  "status": "ADMIS",
+  "nonceVerified": true,
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>"
+  ],
+  "mode": "stdio Node 24 vers REST HTTP 5.5.2 ; Obsidian ouvert",
+  "reason": "Nonce, création et lecture entière via structuredContent qualifiés sur note d’admission.",
+  "artifact_sha256": "cd6f1017f96dc6be2aa5d52e9cc6707de6190e0f4ee53e35d9e4b696f86820ac",
+  "catalog_sha256": "4ded09ec05dadbb980d8a7b6e2a1f649596b019ef391725b72bef0bbbbd8812e",
+  "adapter_sha256": "08e174c4b0a9942c88d022a06e851ec8e6da79e67b18d08ae7c46fb6d3028764",
+  "utc": "2026-10-23T07:45:18.785433+00:00"
+}

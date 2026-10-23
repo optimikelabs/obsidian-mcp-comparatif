@@ -29,12 +29,21 @@
       "pid": 51976,
       "port": 27341
     },
-    "status": "ADMISSION_A_REVALIDER_CONFIG",
-    "reason": "Nonce et schémas acquis ; reprise requise sans Margelle Hub (identifiant elysia-os) selon préparation commune.",
+    "status": "ADMIS",
+    "reason": "Nonce et schémas acquis ; revalidation en configuration commune sans Hub réussie avant mesure.",
     "catalog_sha256": "27174de20398060f5e83f6de7c5f6997c2fb715cf003b6d8ea33f127e692a211",
     "adapter_sha256": "9bc9c05aaed09513273c2cf554aa2496e43eaa4ed934aa6af2cb85b1c07966ce",
     "mode": "Plugin Obsidian ouvert, MCP HTTP natif",
-    "utc": "2026-10-23T07:19:58.796998+00:00"
+    "utc": "2026-10-23T07:40:24.918634+00:00",
+    "configuration": [
+      "quickadd",
+      "templater-obsidian",
+      "journals",
+      "notebook-navigator",
+      "frontmatter-date-manager",
+      "obsidian-local-rest-api"
+    ],
+    "runtime_admission": "<CHEMIN_PRIVE>"
   },
   {
     "candidate": "C02",
@@ -54,29 +63,86 @@
   },
   {
     "candidate": "C03",
-    "status": "ATTENTE_MEMOIRE_AVANT_ADMISSION",
-    "reason": "Version 0.2.3 et dépendances installées ; gate 4 Gio refusé avant création du bac et avant serveur. Aucun nonce ni catalogue acquis.",
-    "nonceVerified": false
+    "status": "ADMIS",
+    "reason": "Nonce et mapping JSON-string vérifiés ; création et append sur note d’admission distincte.",
+    "nonceVerified": true,
+    "command": [
+      "<CHEMIN_PRIVE>",
+      "-X",
+      "utf8",
+      "-c",
+      "import mcp_obsidian;mcp_obsidian.main()"
+    ],
+    "mode": "stdio Python vers REST HTTP 5.5.2 ; Obsidian ouvert",
+    "artifact_sha256": "573491093065f0af7546c8a26b884974997e8d91f148cb9d8471d4857c1b6286",
+    "catalog_sha256": "b2d08736b55f38b2dbfc4f451708db12e8de148cbbbbe2959ad6400f562df672",
+    "adapter_sha256": "afbc2f976062056788c9b19d07b91d038fa190b8ebd9266fba2fe4e83df277d7",
+    "utc": "2026-10-23T07:41:26.652619+00:00"
   },
   {
     "candidate": "C04",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "ADMIS",
+    "nonceVerified": true,
+    "command": [
+      "node",
+      "<CHEMIN_PRIVE>"
+    ],
+    "mode": "stdio Node 24 vers REST HTTP 5.5.2 ; Obsidian ouvert",
+    "reason": "Nonce, création et lecture entière via structuredContent qualifiés sur note d’admission.",
+    "artifact_sha256": "cd6f1017f96dc6be2aa5d52e9cc6707de6190e0f4ee53e35d9e4b696f86820ac",
+    "catalog_sha256": "4ded09ec05dadbb980d8a7b6e2a1f649596b019ef391725b72bef0bbbbd8812e",
+    "adapter_sha256": "08e174c4b0a9942c88d022a06e851ec8e6da79e67b18d08ae7c46fb6d3028764",
+    "utc": "2026-10-23T07:45:18.785433+00:00"
   },
   {
     "candidate": "C05",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "ADMIS",
+    "nonceVerified": true,
+    "operation_key": "action",
+    "mode": "Plugin Obsidian HTTP natif /mcp",
+    "reason": "Nonce, création, remplacement et relecture intégrale raw:true qualifiés sur note d’admission.",
+    "artifacts": [
+      {
+        "name": "main.js",
+        "size": 4379595,
+        "sha256": "c5750633003f252f289c29442e0052e13df5220d5804e8549400bd04fafb45f3",
+        "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/main.js"
+      },
+      {
+        "name": "manifest.json",
+        "size": 442,
+        "sha256": "c97651e992d033b345a5df95d4007e529b73e2c7b3192df75a678d949ef6febb",
+        "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/manifest.json"
+      },
+      {
+        "name": "styles.css",
+        "size": 7564,
+        "sha256": "abab77a83974ccb853765c0b45e1040d740e51349f191053937e7d241c8eb4bf",
+        "url": "https://github.com/aaronsb/obsidian-mcp-plugin/releases/download/0.12.9/styles.css"
+      }
+    ],
+    "catalog_sha256": "87bfd16cf453c57ec929349d517d92c62e11765d1d176cd0b82c94d7340644de",
+    "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
+    "utc": "2026-10-23T07:49:25.585210+00:00"
   },
   {
     "candidate": "C06",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "NON_EXECUTE_ENVIRONNEMENT",
+    "nonceVerified": false,
+    "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+    "source_commit": "a932c9e0e690e88063f23a2dd93814afc921947d",
+    "runner_sha256": "52e9c56aac804add732c5ee08015aea52bf106a20bebff109bb117e351dfadaf",
+    "installed": false,
+    "mode": "CLI Obsidian",
+    "utc": "2026-10-23T07:50:07.811033+00:00"
   },
   {
     "candidate": "C07",
-    "status": "A_INSTRUIRE",
-    "reason": "Admission non achevée ; aucun résultat de cellule."
+    "status": "SCHEMAS_A_QUALIFIER",
+    "nonceVerified": true,
+    "source_commit": "8696687e1a449f5f74550331ac902b0b358b4ccf",
+    "mode": "Proxy stdio operational / backend HTTP full propre au run, REST 5.5.2 + Atomic 0.8.1",
+    "backend_port": 27349
   },
   {
     "candidate": "C08",

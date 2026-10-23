@@ -1,0 +1,41 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {
+        "name": "comparatif-admission",
+        "version": "1.1"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "logging": {},
+        "resources": {
+          "listChanged": true,
+          "subscribe": true
+        },
+        "tools": {
+          "listChanged": true
+        },
+        "prompts": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "obsidian-mcp-server",
+        "version": "3.7.0",
+        "title": "obsidian-mcp-server"
+      },
+      "instructions": "Use the `obsidian_*` tools to access the Obsidian vault via the Local REST API plugin: search, read, write, and patch notes, including targeted edits to headings, blocks, and YAML frontmatter. Notes are addressed by vault-relative path including the file extension (e.g. `Folder/Note.md`); tags support hierarchical `parent/child` notation, and counts roll up to parents."
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "obsidian_write_note",
+      "arguments": {
+        "target": {
+          "type": "path",
+          "path": "Admission — schémas C04.md"
+        },
+        "content": "---\nrang: 1\ninconnu: café\n---\nEssai A.\n",
+        "overwrite": false
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "**Created Admission — schémas C04.md**\n*Size:* 0 → 40 bytes\n*Section targeted:* false\n*Created:* true"
+        }
+      ],
+      "structuredContent": {
+        "path": "Admission — schémas C04.md",
+        "sectionTargeted": false,
+        "created": true,
+        "previousSizeInBytes": 0,
+        "currentSizeInBytes": 40
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

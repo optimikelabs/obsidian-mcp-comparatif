@@ -126,3 +126,7 @@ def read_matches(event, blob):
             return typed(event.get('properties'),props) and event.get('body_sha256')==sha(body.encode())
         except (ValueError,UnicodeError,yaml.YAMLError):return False
     return event.get('content_sha256')==sha(blob)
+
+def field(obj, key):
+    for part in (key if isinstance(key,list) else [key]):obj=obj[part]
+    return obj

@@ -1,0 +1,32 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {
+        "name": "comparatif-admission",
+        "version": "1.1"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        },
+        "resources": {}
+      },
+      "serverInfo": {
+        "name": "Semantic Notes Vault MCP",
+        "version": "0.12.9"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  }
+}

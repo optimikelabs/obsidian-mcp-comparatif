@@ -1,0 +1,11 @@
+{
+  "candidate": "C06",
+  "status": "NON_EXECUTE_ENVIRONNEMENT",
+  "nonceVerified": false,
+  "reason": "Isolation CLI non démontrée : runner.py transmet un exécutable OBSIDIAN_PATH et vault=nom, sans identité PID/profil. Aucun nonce lu par le chemin CLI ; appel non lancé pour préserver l’instance quotidienne. Aucun échec de concurrence déduit.",
+  "source_commit": "a932c9e0e690e88063f23a2dd93814afc921947d",
+  "runner_sha256": "52e9c56aac804add732c5ee08015aea52bf106a20bebff109bb117e351dfadaf",
+  "installed": false,
+  "mode": "CLI Obsidian",
+  "utc": "2026-10-23T07:50:07.811033+00:00"
+}

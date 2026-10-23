@@ -1,0 +1,10 @@
+{
+  "candidate": "C04",
+  "status": "SCHEMAS_A_QUALIFIER",
+  "nonceVerified": true,
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>"
+  ],
+  "mode": "stdio Node 24 vers REST HTTP 5.5.2 ; Obsidian ouvert"
+}

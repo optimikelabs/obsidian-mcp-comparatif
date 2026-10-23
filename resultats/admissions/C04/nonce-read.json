@@ -1,0 +1,19 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "**Admission — nonce C04.md** (format: content)\n\nADMISSION-C04-6b49248aa89b766d467b041f3732ae0aa4e8d6cf"
+      }
+    ],
+    "structuredContent": {
+      "result": {
+        "format": "content",
+        "path": "Admission — nonce C04.md",
+        "content": "ADMISSION-C04-6b49248aa89b766d467b041f3732ae0aa4e8d6cf"
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

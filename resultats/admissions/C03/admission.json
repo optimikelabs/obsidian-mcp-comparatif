@@ -1,0 +1,18 @@
+{
+  "candidate": "C03",
+  "status": "ADMIS",
+  "reason": "Nonce et mapping JSON-string vérifiés ; création et append sur note d’admission distincte.",
+  "nonceVerified": true,
+  "command": [
+    "<CHEMIN_PRIVE>",
+    "-X",
+    "utf8",
+    "-c",
+    "import mcp_obsidian;mcp_obsidian.main()"
+  ],
+  "mode": "stdio Python vers REST HTTP 5.5.2 ; Obsidian ouvert",
+  "artifact_sha256": "573491093065f0af7546c8a26b884974997e8d91f148cb9d8471d4857c1b6286",
+  "catalog_sha256": "b2d08736b55f38b2dbfc4f451708db12e8de148cbbbbe2959ad6400f562df672",
+  "adapter_sha256": "afbc2f976062056788c9b19d07b91d038fa190b8ebd9266fba2fe4e83df277d7",
+  "utc": "2026-10-23T07:41:26.652619+00:00"
+}

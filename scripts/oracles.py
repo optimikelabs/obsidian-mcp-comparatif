@@ -84,8 +84,14 @@ def verify(case):
     need(all(isinstance(k,str) and not any(c in k for c in '*?') and not k.endswith(('.md','main.js','manifest.json')) for k in technical),'MASQUE_TECHNIQUE_INVALIDE')
     unwanted=[k for k in changed if k not in allowed and k not in technical]
     need(not unwanted,'HORS_CIBLE')
+    first_unwanted=[];first_technical=[]
+    if first and human:
+        first_changed=[k for k in set(first)|set(human) if first.get(k)!=human.get(k)]
+        first_unwanted=[k for k in first_changed if k!=path and k not in technical]
+        first_technical=[k for k in first_changed if k in technical]
+        need(not first_unwanted,'PREMIERE_MUTATION_HORS_CIBLE')
     if task in ('T5','T7','T7b'):
-            need(first==human,'PREMIERE_MUTATION_PERTE')
+            need(bool(first and human and first.get(path)==human.get(path)),'PREMIERE_MUTATION_PERTE')
     if task=='T6' and first and human:
         try:
             need(HNEW in data(first,P).decode('utf-8'),'PREMIERE_MUTATION_PERTE')
@@ -131,11 +137,12 @@ def verify(case):
         errors.append('YAML_OU_UTF8_INVALIDE:'+str(e))
     errors=list(dict.fromkeys(errors))
     verdict=('INJECTION_INVALIDE' if 'INJECTION_INVALIDE' in errors or 'INJECTION_CONTENU' in errors else
-             'EFFET_NON_VOULU' if unwanted or any('PERTE' in e or e=='HUMAIN_PERDU' for e in errors) else
+             'EFFET_NON_VOULU' if unwanted or first_unwanted or any('PERTE' in e or e=='HUMAIN_PERDU' for e in errors) else
              'ECHEC_FONCTIONNEL' if errors else
              'PROTEGE_NON_ACCOMPLI' if task in ('T5','T7','T7b') else 'REUSSI_VERIFIE')
     return {'task':task,'verdict':verdict,'errors':errors,'changed':sorted(changed),
             'unwanted':sorted(unwanted),'format_differences':fmt,'technical_changes':[k for k in changed if k in technical],
+            'first_unwanted':sorted(first_unwanted),'first_technical_changes':sorted(first_technical),
             'dates':dates,
             'dates_policy':'Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.'}
 

@@ -56,9 +56,15 @@ def project():
         p=RUN/rel
         if p.exists():sanitize_file(p,public/rel)
     for cid in (f'C{i:02}' for i in range(1,11)):
-        for name in ('admission.json','admission-partielle.json','adapter.json','catalogue.json','fiche-technique.md','incident.json','nonce-read.json','preparation-applicative.json','controller.jsonl'):
+        for name in ('admission.json','admission-partielle.json','adapter.json','catalogue.json','fiche-technique.md','incident.json','nonce-read.json','preparation-applicative.json','identity.json','qualification-summary.json','qualification-incident.json','controller.jsonl'):
             p=RUN/'admissions'/cid/name
             if p.exists():sanitize_file(p,public/'admissions'/cid/name)
+        for pattern in ('rpc-*.json','qualification-rpc-*.json'):
+            for p in (RUN/'admissions'/cid).glob(pattern):sanitize_file(p,public/'admissions'/cid/p.name)
+    for cid,attempt in (('C01','revalidation-sans-hub'),('C02','attempt-02')):
+        for name in ('identity.json','nonce-read.json','preparation-applicative.json','controller.jsonl'):
+            p=RUN/'admissions'/cid/attempt/name
+            if p.exists():sanitize_file(p,public/'admissions'/cid/attempt/name)
     # Aucun profil, coffre commercial, config privée, auth ou artefact candidat dans cette projection.
 
 if __name__=='__main__':build();project()

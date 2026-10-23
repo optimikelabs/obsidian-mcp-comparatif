@@ -1,0 +1,26 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "vault",
+      "arguments": {
+        "action": "read",
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"result\": {\"content\": \"NOTE HUMAINE À CONSERVER\\n\"}}"
+        }
+      ]
+    }
+  }
+}

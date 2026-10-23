@@ -1,0 +1,28 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "vault",
+      "arguments": {
+        "action": "read",
+        "path": "Admission — schémas C05.md",
+        "returnFullFile": true,
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"result\": {\n    \"path\": \"Admission — schémas C05.md\",\n    \"content\": \"---\\nrang: 1\\ninconnu: café\\n---\\nEssai B.\\n\",\n    \"frontmatter\": {\n      \"rang\": 1,\n      \"inconnu\": \"café\"\n    },\n    \"tags\": [],\n    \"metadata\": {\n      \"path\": \"Admission — schémas C05.md\",\n      \"totalLines\": 6,\n      \"bytes\": 39\n    },\n    \"pagination\": {\n      \"paginated\": false,\n      \"page\": 1,\n      \"pageLineStart\": 1,\n      \"pageLineEnd\": 6,\n      \"totalLines\": 6,\n      \"bytes\": 39,\n      \"hasMore\": false,\n      \"nextPage\": null\n    }\n  },\n  \"workflow\": {\n    \"message\": \"Explore connections and references for deeper context.\",\n    \"suggested_next\": [\n      {\n        \"description\": \"Explore graph connections from this file\",\n        \"command\": \"graph(action='neighbors', sourcePath='Admission — schémas C05.md')\",\n        \"reason\": \"Find directly connected files\"\n      },\n      {\n        \"description\": \"Find files that reference this one\",\n        \"command\": \"graph(action='backlinks', sourcePath='Admission — schémas C05.md')\",\n        \"reason\": \"See where this file is mentioned or linked\"\n      }\n    ]\n  },\n  \"context\": {\n    \"current_file\": \"Admission — schémas C05.md\",\n    \"buffer_available\": false,\n    \"file_history\": [\n      \"Admission — schémas C05.md\"\n    ],\n    \"has_file_content\": true,\n    \"has_links\": false,\n    \"has_tags\": false,\n    \"linked_files\": [],\n    \"tags\": []\n  }\n}"
+        }
+      ]
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

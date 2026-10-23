@@ -1,0 +1,28 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "method": "tools/call",
+    "params": {
+      "name": "vault_write",
+      "arguments": {
+        "path": "Admission — schémas C01.md",
+        "content": "NE DOIT PAS PASSER",
+        "ifMatch": "03cd73"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "If-Match named \"03cd73\", but the file is now at version \"907514\"."
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 6
+  }
+}
