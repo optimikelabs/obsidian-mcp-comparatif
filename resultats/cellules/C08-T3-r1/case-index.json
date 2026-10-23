@@ -1,0 +1,202 @@
+{
+  "task": "T3",
+  "events": [
+    {
+      "event": "bootstrap_response",
+      "seq": 1,
+      "monotonic_ns": 6886984000000,
+      "utc": 1792763888.5450993,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 2,
+      "monotonic_ns": 6886984000000,
+      "utc": 1792763888.5450993,
+      "id": 0
+    },
+    {
+      "event": "response_delivered",
+      "seq": 3,
+      "monotonic_ns": 6887000000000,
+      "utc": 1792763888.5685265,
+      "id": 1
+    },
+    {
+      "event": "tool_request",
+      "seq": 4,
+      "monotonic_ns": 6894406000000,
+      "utc": 1792763895.9635935,
+      "id": 2,
+      "tool": "obsidian_read_note",
+      "arguments_sha256": "13d6f9c41c55484e6751fbe21ef9768ff978feef2dae624107ee262e3871b90e"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 5,
+      "monotonic_ns": 6894406000000,
+      "utc": 1792763895.970564,
+      "id": 2,
+      "tool": "obsidian_read_note",
+      "duration_s": 0.0,
+      "bytes": 1933,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 6,
+      "monotonic_ns": 6894406000000,
+      "utc": 1792763895.9715707,
+      "id": 2,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 7,
+      "monotonic_ns": 6894406000000,
+      "utc": 1792763895.9725811,
+      "id": 2,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "content_sha256": "72448768494a374d87adae1a4b795a10aec32f2ac40cf6e857ba071d4b165e6a",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 8,
+      "monotonic_ns": 6894406000000,
+      "utc": 1792763895.9725811,
+      "id": 2
+    },
+    {
+      "event": "tool_request",
+      "seq": 9,
+      "monotonic_ns": 6899062000000,
+      "utc": 1792763900.621273,
+      "id": 3,
+      "tool": "obsidian_edit_note",
+      "arguments_sha256": "3a0b907b14541b2e4819945f1fd2ea9b47fe759cb8b398ce950bedc1359c45be"
+    },
+    {
+      "event": "mutation_dispatch",
+      "seq": 10,
+      "monotonic_ns": 6899062000000,
+      "utc": 1792763900.6222746,
+      "id": 3,
+      "request_sha256": "58b040328469ffc99292b1a8aeb4be39d7d220eeaf55faad65dc60b8cdb7907c"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 11,
+      "monotonic_ns": 6899078000000,
+      "utc": 1792763900.6489463,
+      "id": 3,
+      "tool": "obsidian_edit_note",
+      "duration_s": 0.016000000000531145,
+      "bytes": 566,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 12,
+      "monotonic_ns": 6899078000000,
+      "utc": 1792763900.6489463,
+      "id": 3,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "technical_transaction_receipt",
+      "seq": 13,
+      "monotonic_ns": 6899078000000,
+      "utc": 1792763900.6499426,
+      "id": 3,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "transaction_id_sha256": "1a0d24a5aea9190eac53fa3a669ab0f97f1054b18e0a86d3b125f41d8ed09397"
+    },
+    {
+      "event": "response_delivered",
+      "seq": 14,
+      "monotonic_ns": 6899078000000,
+      "utc": 1792763900.6499426,
+      "id": 3
+    },
+    {
+      "event": "tool_request",
+      "seq": 15,
+      "monotonic_ns": 6902718000000,
+      "utc": 1792763904.2807953,
+      "id": 4,
+      "tool": "obsidian_read_note",
+      "arguments_sha256": "13d6f9c41c55484e6751fbe21ef9768ff978feef2dae624107ee262e3871b90e"
+    },
+    {
+      "event": "upstream_response",
+      "seq": 16,
+      "monotonic_ns": 6902718000000,
+      "utc": 1792763904.283801,
+      "id": 4,
+      "tool": "obsidian_read_note",
+      "duration_s": 0.0,
+      "bytes": 1933,
+      "is_error": false
+    },
+    {
+      "event": "candidate_note_access",
+      "seq": 17,
+      "monotonic_ns": 6902718000000,
+      "utc": 1792763904.283801,
+      "id": 4,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "response_received": true
+    },
+    {
+      "event": "mcp_read_response",
+      "seq": 18,
+      "monotonic_ns": 6902718000000,
+      "utc": 1792763904.283801,
+      "id": 4,
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "content_sha256": "37e333380582ee5ac7246b2d99bbbd91b876e586c65b23303af081d8dca9900a",
+      "response_received": true
+    },
+    {
+      "event": "response_delivered",
+      "seq": 19,
+      "monotonic_ns": 6902718000000,
+      "utc": 1792763904.2853074,
+      "id": 4
+    }
+  ],
+  "response": {
+    "task_id": "T3",
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "etat": "applique",
+    "extrait": null,
+    "proprietes": {
+      "rang": 2
+    },
+    "message": "Rang passé de 1 à 2, vérifié par relecture MCP. Tout le reste est préservé."
+  },
+  "expected_before_tree_sha256": "b0e6c3c65f78b5039c65a82c391d00557ea4e318b684568754151f4ef29b02e5",
+  "technical_paths": [
+    ".obsidian-mcp/locks/write/owner.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json",
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    ".obsidian/workspace.json"
+  ],
+  "date_evidence": [],
+  "window_start": 1792763886.1653156,
+  "window_end": 1792763914.2896414,
+  "protocol_version": "1.3",
+  "fdm_cache_policy": "fdm-cache-v1.2",
+  "fdm_opened_notes": [
+    "Efforts/Projets/Projet témoin — Test MCP.md",
+    "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+  ],
+  "technical_receipts_policy": "c08-transactions-v1",
+  "snapshot_files": {
+    "before": "relay/before.json",
+    "after": "after.json"
+  }
+}

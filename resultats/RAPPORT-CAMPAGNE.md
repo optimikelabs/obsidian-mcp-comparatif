@@ -1,4 +1,4 @@
-Série 1 : 8 cellules jouées ; 72 non jouées (sur 80).
+Série 1 : 9 cellules jouées ; 71 non jouées (sur 80).
 Série 2 : 0 cellules jouées ; 110 non jouées (sur 110).
 Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T13:56:51.326729+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T13:58:35.399698+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "6e137f06571c7a21f8301a447ab28fb7c542dbbf", "remote_verified": true, "utc": "2026-10-23T13:55:31.561934+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "f454953f7be76667fc91ba8eeedfe5cdb92fef3e", "remote_verified": true, "utc": "2026-10-23T13:57:24.131269+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -102,14 +102,14 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 ```json
 {
   "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T13:56:51.289482+00:00",
-  "next_cell": "C08-T3-r1",
+  "utc": "2026-10-23T13:58:35.328203+00:00",
+  "next_cell": "C08-T4-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T2-r1",
+  "last_cell": "C08-T3-r1",
   "last_result": "REUSSI_VERIFIE",
   "last_reason": "",
   "incident_cell": null
@@ -118,4 +118,4 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ## Pilotage
 
-État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C08-T3-r1. Aucune tâche du coffre modifiée.
+État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C08-T4-r1. Aucune tâche du coffre modifiée.

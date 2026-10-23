@@ -1,0 +1,23 @@
+[
+  {
+    "path": ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/0.bin",
+    "before_sha256": null,
+    "after_sha256": "72448768494a374d87adae1a4b795a10aec32f2ac40cf6e857ba071d4b165e6a",
+    "before_size": null,
+    "after_size": 613
+  },
+  {
+    "path": ".obsidian-mcp/transactions/<IDENTIFIANT_MASQUE>/manifest.json",
+    "before_sha256": null,
+    "after_sha256": "7ae432fd60768394f2cb14a14e2aae47fdbcd9dc1be5176395fe1f9cee51f757",
+    "before_size": null,
+    "after_size": 700
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "before_sha256": "72448768494a374d87adae1a4b795a10aec32f2ac40cf6e857ba071d4b165e6a",
+    "after_sha256": "37e333380582ee5ac7246b2d99bbbd91b876e586c65b23303af081d8dca9900a",
+    "before_size": 613,
+    "after_size": 613
+  }
+]

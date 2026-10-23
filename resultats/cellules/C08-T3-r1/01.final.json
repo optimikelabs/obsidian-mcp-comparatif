@@ -1,0 +1,10 @@
+{
+  "task_id": "T3",
+  "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+  "etat": "applique",
+  "extrait": null,
+  "proprietes": {
+    "rang": 2
+  },
+  "message": "Rang passé de 1 à 2, vérifié par relecture MCP. Tout le reste est préservé."
+}
