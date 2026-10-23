@@ -1,0 +1,301 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "policy": "fdm-cache-v1.2",
+  "checks": [
+    {
+      "transport": "stdio",
+      "case": "lastAccessed",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "stdio",
+      "case": "hash",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "stdio",
+      "case": "both",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "stdio",
+      "case": "editor_opened_note",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "stdio",
+      "case": "no_opened_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "added_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "removed_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "other_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "added_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "removed_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "other_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "bool_timestamp",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "duplicate_key",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "missing_cache",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "transient_repaired",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "stdio",
+      "case": "no_policy",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "lastAccessed",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "http",
+      "case": "hash",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "http",
+      "case": "both",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "http",
+      "case": "editor_opened_note",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "http",
+      "case": "no_opened_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "added_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "removed_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "other_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "added_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "removed_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "other_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "bool_timestamp",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "duplicate_key",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "missing_cache",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "transient_repaired",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "http",
+      "case": "no_policy",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "lastAccessed",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "sse",
+      "case": "hash",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "sse",
+      "case": "both",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "sse",
+      "case": "editor_opened_note",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE"
+    },
+    {
+      "transport": "sse",
+      "case": "no_opened_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "added_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "removed_entry",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "other_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "added_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "removed_field",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "other_note",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "bool_timestamp",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "duplicate_key",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "missing_cache",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "transient_repaired",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    },
+    {
+      "transport": "sse",
+      "case": "no_policy",
+      "expected": "EFFET_NON_VOULU",
+      "observed": "EFFET_NON_VOULU"
+    }
+  ],
+  "transports": [
+    "stdio",
+    "http",
+    "sse"
+  ],
+  "scope": "Serveur factice uniquement ; JSON-RPC en processus pour la qualification légère, ou transports explicitement listés. Aucun résultat candidat."
+}

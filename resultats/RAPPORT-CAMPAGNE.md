@@ -2,20 +2,30 @@ Série 1 : 3 cellules jouées ; 77 non jouées (sur 80).
 Série 2 : 0 cellules jouées ; 110 non jouées (sur 110).
 Candidats admis : C01, C02, C03, C04, C05, C07, C08, C09, C10.
 Candidats non admis ou admission à achever : C06.
-T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; aucune cellule jouée à cet arrêt.
-T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; aucune cellule jouée à cet arrêt.
+T5, T6, T7, T7b : trois répétitions prévues pour collision et retouches concurrentes ; 0 cellules jouées.
+T8 : trois répétitions prévues pour effet appliqué/réponse perdue et reprise ; 0 cellules jouées.
 Incidents consignés : 7 ; voir détails et journaux, sans attribution automatique au candidat.
 Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tree/main/resultats
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T09:37:50.879352+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T09:50:22.175258+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "ebcd4e0c05749f084bafe8bdbc4d5e505874ab3c", "remote_verified": true, "utc": "2026-10-23T09:33:41.654367+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "7c47e3ddc8e430630b0be18f02d9e705a7a6900d", "remote_verified": true, "utc": "2026-10-23T09:38:09.517935+00:00"}.
 
-## État de la campagne et diagnostic
+## Reprise sous v1.2
+
+Oracle v1.2 qualifié : 48 contrôles sur le serveur factice en stdio, HTTP et SSE. Les changements lastAccessed/hash sont acceptés ; entrées ajoutées/retirées, autre champ, autre note et écart temporaire réparé sont refusés. Les trois verdicts v1.1 restent identiques. Aucun nouveau départ candidat sous le seuil mémoire. La reprise exige le commit v1.2 publié et vérifié sur main.
+
+C05-T2-r1 et C05-T3-r1 restent REUSSI_VERIFIE ; C05-T4-r1 reste EFFET_NON_VOULU. Ces trois cellules ont été jouées sous la règle v1.1. Note au verdict de C05-T4-r1 : « dû au cache FDM, surface déclarée par l’amendement v1.2 après cet essai ». Cette note ne reclasse pas le verdict et ne prouve pas le writer runtime.
+
+Le cache FDM est déclaré pour les dix candidats sous la règle conditionnelle v1.2 : seulement lastAccessed et hash des entrées des notes ouvertes ou modifiées ; aucune entrée ajoutée/retirée, aucun autre champ ni autre note. Contrôle à chaque snapshot, y compris les écarts temporaires. Voir AMENDEMENT-V1.2-C5.md, preuves/tests-fdm-cache.json et la note adjacente à C05-T4-r1.
+
+## Historique — diagnostic et arrêt sous v1.1
+
+Les nombres et le point de reprise de cette section décrivent l’arrêt historique ; l’état courant figure en tête et dans Reprise exacte.
 
 # Arrêt sur incident du périmètre technique — C05-T4-r1
 
@@ -84,8 +94,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ARRET_INCIDENT_PERIMETRE_TECHNIQUE_NON_GELE",
-  "utc": "2026-10-23T09:32:08.309864+00:00",
+  "state": "ATTENTE_MEMOIRE_4GIO_APRES_QUALIFICATION_V12",
+  "utc": "2026-10-23T09:47:54.891226+00:00",
   "last_cell": "C05-T4-r1",
   "last_order": 4,
   "last_status": "JOUE",
@@ -100,18 +110,17 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "obsidian_instance_active": false,
   "lock_present": false,
   "memory": {
-    "utc": "2026-10-23T09:32:08.310865+00:00",
-    "commitFreeBytes": 1474990080,
-    "availableBytes": 4088852480,
+    "utc": "2026-10-23T09:47:54.891226+00:00",
+    "commitFreeBytes": 3076468736,
+    "availableBytes": 2158723072,
     "admitted": false,
-    "stop": true
+    "stop": false
   },
-  "reason": "hash-cache.json FDM hors liste technique gelée ; pas de nouvelle exemption après score. Rejet de création observé séparément.",
+  "reason": "Seuil mémoire de démarrage non atteint ; aucun programme de Mike fermé",
   "required_before_resume": [
-    "Qualifier le writer et le traitement du cache FDM",
-    "Figer publiquement une nouvelle version/série distincte avant nouveaux départs",
-    "Préserver les trois résultats acquis et le NON_JOUE C05-T1 sans rejeu sélectif",
-    "Vérifier tous les ports propres au run, dont backend C07 27349"
+    "Publication v1.2 vérifiée sur main",
+    "Marge engagement ET RAM disponible au moins 4 Gio",
+    "Verrou absent et ports propres au run libres, dont 27349"
   ],
   "existing_guard": "campaign_run refuse de passer C05-T4-r1 sans amendement public ; aucun amendement dérogatoire créé.",
   "preserved_cell_folders": [
@@ -123,10 +132,12 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "other_preserved_state": "Les dix dossiers d’admission, leurs incidents et les qualifications factices restent conservés. Aucun autre dossier de cellule créé.",
   "source_freeze": "e3477a8b02441f73ac3d22b19d78766428887bbd",
   "amendment_v11": "1e698f62401034c74dd70a1019146e45c8dc821f",
-  "last_result_publication": "598263d36bda8aef24e1bea177ea803207ba8624"
+  "last_result_publication": "598263d36bda8aef24e1bea177ea803207ba8624",
+  "next_action": "publier et vérifier v1.2 puis attendre les deux marges de 4 Gio avant C05-T5-r1",
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel de campagne : arrêt sur incident de périmètre technique non qualifié. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Prochaine action : qualifier le cache FDM et figer publiquement une nouvelle version/série avant tout nouveau départ ; prochaine ligne C05-T5-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ATTENTE_MEMOIRE_4GIO_APRES_QUALIFICATION_V12. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : publier et vérifier v1.2 puis attendre les deux marges de 4 Gio avant C05-T5-r1. Aucune tâche du coffre modifiée.

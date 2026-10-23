@@ -1,3 +1,18 @@
+# Protocole v1.2 — test comparatif ouvert des serveurs MCP Obsidian
+
+Amendement v1.2 du 23 octobre 2026, après trois cellules v1.1 et avant C05-T5-r1. AMENDEMENT-V1.2-C5.md fait foi. Le gel V1 et la version v1.1 restent dans l’historique ; copie exacte PROTOCOLE-V1.1-GELE.md. Aucune cellule passée n’est reclassée.
+
+## Journal v1.2
+
+- Cache FDM déclaré conditionnellement pour les dix candidats ; l’oracle contrôle toutes les étapes, seulement lastAccessed et hash d’entrées existantes de notes ouvertes ou modifiées. Entrée ajoutée/retirée, autre champ ou autre note : HORS_CIBLE.
+- Qualification sur serveur factice avec témoins négatifs avant publication et reprise.
+- C05-T4-r1 garde EFFET_NON_VOULU avec une note adjacente ; les trois cellules déjà jouées restent sous v1.1.
+- Un seul remplacement C05-T1-r1 après la série 1 et contrôle CRLF/LF ; deux traces conservées.
+- Une seule tentative supplémentaire C06 après série 2, 30 minutes au plus, sous conditions mémoire.
+- Tous les ports propres au run sont contrôlés avant lancement, dont le backend C07 27349.
+
+## Texte v1.1 conservé comme contexte historique
+
 # Protocole v1.1 — test comparatif ouvert des serveurs MCP Obsidian
 
 Version v1.1 du 23 octobre 2026, avant tout essai candidat. Gel V1 publié au commit `e3477a8b02441f73ac3d22b19d78766428887bbd`, conservé dans l’historique. Amendements C5 publiés avant admission. La décision C5 prévaut sur le brouillon. Aucun score n’existe dans ce kit. Les traces du serveur factice sont uniquement des tests de l’instrumentation.

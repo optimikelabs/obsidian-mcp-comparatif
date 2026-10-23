@@ -13,7 +13,7 @@ from common import *
 RUN=KIT.parent/'resultats'
 LOCK=KIT.parents[1]/'VERROU-OBSIDIAN-TEST.txt'
 EXE=Path('C:/Program Files/Obsidian/Obsidian.exe')
-PORTS={'cdp':27346,'rest':27341,'secure':27342,'native':27344,'relay':27348}
+PORTS={'cdp':27346,'rest':27341,'secure':27342,'native':27344,'relay':27348,'native_secure':27345,'c07_backend':27349}
 
 class Perf(ctypes.Structure):
     _fields_=[('cb',wintypes.DWORD)]+[(n,ctypes.c_size_t) for n in ('CommitTotal','CommitLimit','CommitPeak','PhysicalTotal','PhysicalAvailable','SystemCache','KernelTotal','KernelPaged','KernelNonpaged','PageSize')]+[(n,wintypes.DWORD) for n in ('HandleCount','ProcessCount','ThreadCount')]
@@ -127,9 +127,10 @@ def launch(cfg):
         while time.monotonic()<deadline:
             if memory()['stop']:raise RuntimeError('ARRET_MEMOIRE_SOUS_2GIO')
             try:
-                result=cdp(cfg,'(async()=>{await new Promise(r=>app.workspace.onLayoutReady(r));if(!app.plugins.isEnabled())await app.plugins.setEnable(true);await app.plugins.loadManifests();for(const id of '+json.dumps(cfg['plugins'])+'){if(!app.plugins.enabledPlugins.has(id))await app.plugins.enablePluginAndSave(id);if(!app.plugins.plugins[id])await app.plugins.loadPlugin(id);}document.querySelectorAll(".modal-close-button").forEach(b=>b.click());return {vault:app.vault.adapter.basePath,plugins:Object.fromEntries(Object.entries(app.plugins.plugins).map(([id,p])=>[id,p.manifest.version]))};})()','activate')
+                result=cdp(cfg,'(async()=>{await new Promise(r=>app.workspace.onLayoutReady(r));if(!app.plugins.isEnabled())await app.plugins.setEnable(true);await app.plugins.loadManifests();for(const id of '+json.dumps(cfg['plugins'])+'){if(!app.plugins.enabledPlugins.has(id))await app.plugins.enablePluginAndSave(id);if(!app.plugins.plugins[id])await app.plugins.loadPlugin(id);}document.querySelectorAll(".modal-close-button").forEach(b=>b.click());return {vault:app.vault.adapter.basePath,openedNotes:app.workspace.getLeavesOfType("markdown").map(l=>l.view.file?.path).filter(Boolean),plugins:Object.fromEntries(Object.entries(app.plugins.plugins).map(([id,p])=>[id,p.manifest.version]))};})()','activate')
                 assert result['plugins']['frontmatter-date-manager']=='1.6.0'
                 assert all(x in result['plugins'] for x in cfg['plugins'])
+                cfg['opened_notes']=result['openedNotes'];writej(out/'obsidian.json',cfg)
                 writej(out/'identity.json',result);record(out,'obsidian_started',pid=cfg['pid']);return
             except (RuntimeError,AssertionError,ValueError) as e:last=str(e);time.sleep(.5)
         raise TimeoutError('Instance isolée non prête : '+last)
@@ -148,6 +149,7 @@ def stop(cfg):
 def prepare_application(cfg,note=P,prefix='preparation-applicative'):
     out=Path(cfg['out']);vault=Path(cfg['vault']);p=target(vault,note);before=p.read_bytes()
     result=cdp(cfg,'(async()=>{const f=app.vault.getAbstractFileByPath('+json.dumps(note)+');const leaf=app.workspace.getLeaf(false);await leaf.openFile(f,{state:{mode:"source"}});app.workspace.setActiveLeaf(leaf,{focus:true});if(app.workspace.getActiveFile()?.path!==f.path)throw Error("Fiche non active");const result=await app.commands.executeCommandById("editor:save-file");return {command:"editor:save-file",result,note:f.path,active:app.workspace.getActiveFile()?.path};})()',prefix+'-native-save')
+    cfg['opened_notes']=sorted(set(cfg.get('opened_notes',[]))|{result['note']});writej(out/'obsidian.json',cfg)
     deadline=time.monotonic()+60;fallback=False;last=None;since=time.monotonic()
     while time.monotonic()<deadline:
         if memory()['stop']:raise RuntimeError('ARRET_MEMOIRE_SOUS_2GIO')

@@ -18,7 +18,7 @@ def project_cells(public):
     for p in sorted((RUN/'cellules').glob('*')):
         if not p.is_dir():continue
         dest=public/'resultats/cellules'/p.name
-        for name in ('result.json','oracle.json','incident.json','diff-complet.json','case-index.json','prompt.json','catalogue.json','client-config-proof.json','effective-config.json','controller.jsonl','preparation-applicative.json','identity.json','fdm-observer-evidence.json','01.exit.json','02.exit.json','01.final.json','02.final.json'):
+        for name in ('result.json','oracle.json','incident.json','diff-complet.json','case-index.json','prompt.json','catalogue.json','client-config-proof.json','effective-config.json','controller.jsonl','preparation-applicative.json','identity.json','fdm-observer-evidence.json','01.exit.json','02.exit.json','01.final.json','02.final.json','NOTE-V1.2.md'):
             if (p/name).exists():sanitize_file(p/name,dest/name)
         index=readj(p/'case-index.json') if (p/'case-index.json').exists() else {}
         witnesses={};inventories={}
@@ -45,12 +45,12 @@ def project_cells(public):
 def main():
     build();project();public=KIT/'public';project_cells(public)
     names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
-           'fdm_observer.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py']
+           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py']
     for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
-    for name in ('PROTOCOLE-V1.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','DIAGNOSTIC-C05-T4-r1.md'):
+    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md'):
         if (KIT/name).exists():sanitize_file(KIT/name,public/name)
     count=0
-    for stem in ('factice','t7b','read-mappings','native-mappings','technical-receipts','date-stages'):
+    for stem in ('factice','t7b','read-mappings','native-mappings','technical-receipts','date-stages','fdm-cache'):
         meta=KIT/'preuves'/('tests-'+stem+'.json')
         if not meta.exists():continue
         sanitize_file(meta,public/'preuves'/meta.name);root=Path(readj(meta)['root']);dest=public/'preuves'/(stem+'-qualification-campagne')
@@ -66,6 +66,8 @@ def main():
                 assert redact(verify(redact(obj['case'])))==redact(obj['oracle']);count+=1
     for name in ('CLIENT-QUALIFICATION.json','CLIENT-T8-QUALIFICATION.json','FDM-QUALIFICATION.json'):
         if (RUN/name).exists():sanitize_file(RUN/name,public/'resultats'/name)
+    if (RUN/'V12-ETAT.json').exists():sanitize_file(RUN/'V12-ETAT.json',public/'resultats/V12-ETAT.json')
+    if (KIT/'preuves/v12-preservation-v11.json').exists():sanitize_file(KIT/'preuves/v12-preservation-v11.json',public/'preuves/v12-preservation-v11.json')
     for p in (RUN/'publication').glob('incident-*.json'):sanitize_file(p,public/'resultats/publication'/p.name)
     for p in (RUN/'incidents').glob('*.json'):sanitize_file(p,public/'resultats/incidents'/p.name)
     for cid in (f'C{i:02}' for i in range(1,11)):

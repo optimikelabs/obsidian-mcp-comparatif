@@ -1,6 +1,6 @@
 {
-  "state": "ARRET_INCIDENT_PERIMETRE_TECHNIQUE_NON_GELE",
-  "utc": "2026-10-23T09:32:08.309864+00:00",
+  "state": "ATTENTE_MEMOIRE_4GIO_APRES_QUALIFICATION_V12",
+  "utc": "2026-10-23T09:47:54.891226+00:00",
   "last_cell": "C05-T4-r1",
   "last_order": 4,
   "last_status": "JOUE",
@@ -15,18 +15,17 @@
   "obsidian_instance_active": false,
   "lock_present": false,
   "memory": {
-    "utc": "2026-10-23T09:32:08.310865+00:00",
-    "commitFreeBytes": 1474990080,
-    "availableBytes": 4088852480,
+    "utc": "2026-10-23T09:47:54.891226+00:00",
+    "commitFreeBytes": 3076468736,
+    "availableBytes": 2158723072,
     "admitted": false,
-    "stop": true
+    "stop": false
   },
-  "reason": "hash-cache.json FDM hors liste technique gelée ; pas de nouvelle exemption après score. Rejet de création observé séparément.",
+  "reason": "Seuil mémoire de démarrage non atteint ; aucun programme de Mike fermé",
   "required_before_resume": [
-    "Qualifier le writer et le traitement du cache FDM",
-    "Figer publiquement une nouvelle version/série distincte avant nouveaux départs",
-    "Préserver les trois résultats acquis et le NON_JOUE C05-T1 sans rejeu sélectif",
-    "Vérifier tous les ports propres au run, dont backend C07 27349"
+    "Publication v1.2 vérifiée sur main",
+    "Marge engagement ET RAM disponible au moins 4 Gio",
+    "Verrou absent et ports propres au run libres, dont 27349"
   ],
   "existing_guard": "campaign_run refuse de passer C05-T4-r1 sans amendement public ; aucun amendement dérogatoire créé.",
   "preserved_cell_folders": [
@@ -38,5 +37,7 @@
   "other_preserved_state": "Les dix dossiers d’admission, leurs incidents et les qualifications factices restent conservés. Aucun autre dossier de cellule créé.",
   "source_freeze": "e3477a8b02441f73ac3d22b19d78766428887bbd",
   "amendment_v11": "1e698f62401034c74dd70a1019146e45c8dc821f",
-  "last_result_publication": "598263d36bda8aef24e1bea177ea803207ba8624"
+  "last_result_publication": "598263d36bda8aef24e1bea177ea803207ba8624",
+  "next_action": "publier et vérifier v1.2 puis attendre les deux marges de 4 Gio avant C05-T5-r1",
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1"
 }

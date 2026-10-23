@@ -49,6 +49,9 @@ def play(row):
         except (ValueError,OSError):response={}
         case={'task':row['task'],'before':relay.before,'after':after,'events':copy.deepcopy(relay.events),'response':response,
               'expected_before_tree_sha256':manifest(relay.before)['tree_sha256'],'technical_paths':adapter.get('technical_paths',[]),'date_evidence':dates,'window_start':window_start,'window_end':time.time()}
+        case['protocol_version']='1.2';case['fdm_cache_policy']='fdm-cache-v1.2'
+        case['technical_paths']=sorted(set(case['technical_paths'])|{'.obsidian/plugins/frontmatter-date-manager/hash-cache.json'})
+        case['fdm_opened_notes']=candidate.cfg.get('opened_notes',[])
         if adapter.get('technical_receipts_policy'):case['technical_receipts_policy']=adapter['technical_receipts_policy']
         for name in ('human','first','cut'):
             if getattr(relay,name) is not None:case[name]=getattr(relay,name)
@@ -64,7 +67,7 @@ def play(row):
         if any(t['forbidden_tool_events'] for t in turns):verdict['verdict']='NON_EXECUTE_ENVIRONNEMENT';verdict['errors'].append('OUTIL_INTERDIT_CLIENT')
         if any(t['stop_reason'] and t['stop_reason']!='T8_REPLY_LOST' or t['returncode'] and t['stop_reason']!='T8_REPLY_LOST' for t in turns):verdict['verdict']='NON_EXECUTE_ENVIRONNEMENT';verdict['errors'].append('CLIENT_INTERROMPU')
         writej(out/'oracle.json',verdict)
-        result={**row,'status':'NON_JOUE' if verdict['verdict'] in ('NON_EXECUTE_ENVIRONNEMENT','INJECTION_INVALIDE') else 'JOUE','verdict':verdict['verdict'],'reason':'; '.join(verdict['errors']),'started_utc':started,'finished_utc':time.time(),'turns':turns,
+        result={**row,'protocol_version':'1.2','status':'NON_JOUE' if verdict['verdict'] in ('NON_EXECUTE_ENVIRONNEMENT','INJECTION_INVALIDE') else 'JOUE','verdict':verdict['verdict'],'reason':'; '.join(verdict['errors']),'started_utc':started,'finished_utc':time.time(),'turns':turns,
                 'adapter_sha256':sha((RUN/'admissions'/row['candidate']/'adapter.json').read_bytes()),'candidate_calls':sum(e['event']=='tool_request' for e in relay.events),'wall_s':time.time()-started,
                 'used_tools':[e['tool'] for e in relay.events if e['event']=='tool_request'],'catalogue_bytes':len(json.dumps(catalog,ensure_ascii=False).encode()),'catalogue_tools':len(catalog['result']['tools']),
                 'model_s':time.monotonic()-model_start,'planned_editor_s':relay.held_seconds,'price_usd':None,'interventions':{'setup':1,'planned_editor':int(relay.injected and row['task'] in ('T5','T6','T7','T7b')),'planned_reconnect':int(len(turns)>1),'human_help':0,'repair_by_controller':0},

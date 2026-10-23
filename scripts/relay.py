@@ -204,6 +204,12 @@ class Relay:
             upstream_start=time.monotonic();reply=self.upstream.rpc(req)
             if call:self.event('upstream_response',id=req.get('id'),tool=name,duration_s=time.monotonic()-upstream_start,
                                bytes=len(json.dumps(reply,ensure_ascii=False).encode()),is_error=bool(reply.get('error') or reply.get('result',{}).get('isError')) if reply else None)
+            if (read or mutation or preparation) and reply and not reply.get('error') and not reply.get('result',{}).get('isError'):
+                try:
+                    rel=field(args,self.adapter.get('read_mappings',{}).get(name,{}).get('path_key',self.adapter.get('path_key','path')))
+                    if isinstance(rel,str) and rel.endswith('.md'):
+                        self.event('candidate_note_access',id=req.get('id'),path=rel,response_received=True)
+                except (KeyError,TypeError):pass
             writej(self.out/f'rpc-{len(self.events):04}-{req.get("id","notification")}.json',{'request':req,'response':reply})
             if mutation and self.adapter.get('technical_receipts_policy')=='c08-transactions-v1':
                 try:

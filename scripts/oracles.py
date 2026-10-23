@@ -2,6 +2,7 @@
 import argparse
 from common import *
 from technical_receipts import transaction_paths
+from fdm_cache import CACHE, qualify as qualify_cache
 
 def same_typed(a,b):
     if type(a) is not type(b): return False
@@ -12,6 +13,8 @@ def same_typed(a,b):
 def verify(case):
     task=case['task']; before=case['before']; after=case['after']; events=case.get('events',[])
     final=case.get('response',{}); errors=[]; fmt=[];dates=[]
+    cache=qualify_cache(case)
+    cache_paths={CACHE} if cache and cache['allowed'] else set()
     def need(cond,reason):
         if not cond: errors.append(reason)
     for label in ('before','after','human','first','cut'):
@@ -76,7 +79,7 @@ def verify(case):
             expected[path]={'size':0,'sha256':'','base64':''}
             expected_bytes=HUMAN.encode() if task=='T5' else data(before,P).replace((HOLD if task=='T6' else OLD).encode(),(HNEW if task=='T6' else CONFLICT).encode())
             need(path in human and content_equal(data(human,path),expected_bytes,path,human),'INJECTION_CONTENU')
-            need(all(before.get(k)==human.get(k) for k in set(before)|set(human) if k!=path and k not in case.get('technical_paths',[])),'INJECTION_HORS_CIBLE')
+            need(all(before.get(k)==human.get(k) for k in set(before)|set(human) if k!=path and k not in (set(case.get('technical_paths',[]))-{CACHE})|cache_paths),'INJECTION_HORS_CIBLE')
     if task=='T8':
         needed=['dispatch','response_held','effect_disk_verified','client_disconnected','client_reconnected']
         valid=all(names.count(x)==1 for x in needed)
@@ -93,8 +96,10 @@ def verify(case):
     technical=case.get('technical_paths',[])
     need(all(isinstance(k,str) and not any(c in k for c in '*?') and not k.endswith(('.md','main.js','manifest.json')) for k in technical),'MASQUE_TECHNIQUE_INVALIDE')
     receipt_paths,receipt_errors=transaction_paths(case)
-    errors.extend(receipt_errors);technical=sorted(set(technical)|set(receipt_paths))
+    errors.extend(receipt_errors);technical=sorted((set(technical)-{CACHE})|set(receipt_paths)|cache_paths)
     unwanted=[k for k in changed if k not in allowed and k not in technical]
+    if cache and not cache['allowed']:
+        unwanted=sorted(set(unwanted)|{CACHE});need(False,'FDM_CACHE_HORS_CIBLE')
     need(not unwanted,'HORS_CIBLE')
     first_unwanted=[];first_technical=[]
     if first and human:
@@ -153,12 +158,14 @@ def verify(case):
              'EFFET_NON_VOULU' if unwanted or first_unwanted or any('PERTE' in e or e=='HUMAIN_PERDU' for e in errors) else
              'ECHEC_FONCTIONNEL' if errors else
              'PROTEGE_NON_ACCOMPLI' if task in ('T5','T7','T7b') else 'REUSSI_VERIFIE')
-    return {'task':task,'verdict':verdict,'errors':errors,'changed':sorted(changed),
+    result={'task':task,'verdict':verdict,'errors':errors,'changed':sorted(changed),
             'unwanted':sorted(unwanted),'format_differences':fmt,'technical_changes':sorted(k for k in changed if k in technical),
             'first_unwanted':sorted(first_unwanted),'first_technical_changes':sorted(first_technical),
             'technical_receipt_paths':receipt_paths,
             'dates':dates,
             'dates_policy':'Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.'}
+    if cache is not None:result['fdm_cache']=cache
+    return result
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('case');p.add_argument('--out',required=True);a=p.parse_args()

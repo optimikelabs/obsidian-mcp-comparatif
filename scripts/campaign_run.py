@@ -24,10 +24,13 @@ def checkpoint(state,next_row,**kw):
           'command':'python -X utf8 scripts/campaign_run.py','preservation':'Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.',**kw})
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);parser.add_argument('--after-incident');a=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--max-cells',type=int);parser.add_argument('--after-incident');parser.add_argument('--series',type=int,choices=(1,2));a=parser.parse_args()
     rows=readj(KIT/'manifestes/cellules-190.json');done=0
     assert readj(RUN/'CLIENT-QUALIFICATION.json')['qualified'] and readj(RUN/'CLIENT-T8-QUALIFICATION.json')['qualified'] and readj(RUN/'FDM-QUALIFICATION.json')['qualified']
     assert not LOCK.exists(),'Verrou occupé : aucune suppression autorisée'
+    assert readj(KIT/'preuves/tests-fdm-cache.json')['success']
+    assert git('show','HEAD:AMENDEMENT-V1.2-C5.md')
+    assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD')
     boundary=0
     if a.after_incident:
         incident=next(r for r in rows if r['cell_id']==a.after_incident);boundary=incident['order']
@@ -37,6 +40,7 @@ def main():
         assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD'),'Amendement non publié'
     for i,row in enumerate(rows):
         if row['order']<=boundary:continue
+        if a.series and row['series']!=a.series:continue
         p=RUN/'cellules'/row['cell_id']
         admission=readj(RUN/'admissions'/row['candidate']/'admission.json')
         if admission['status']!='ADMIS':continue
@@ -58,7 +62,8 @@ def main():
         print(json.dumps({'finished':row['cell_id'],'verdict':result['verdict'],'stop_campaign':result['stop_campaign'],'published':head},ensure_ascii=False),flush=True)
         if result['stop_campaign']:return
         if a.max_cells and done>=a.max_cells:return
-    checkpoint('SERIES_TERMINEES',None);publish('Campagne: toutes les cellules admissibles traitées')
+    checkpoint('SERIE_'+str(a.series)+'_TERMINEE' if a.series else 'SERIES_TERMINEES',None)
+    publish('Campagne: cellules admissibles de la sélection traitées')
 
 if __name__=='__main__':
     import sys

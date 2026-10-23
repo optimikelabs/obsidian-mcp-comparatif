@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "checks": [
+    {
+      "cell": "C05-T2-r1",
+      "unchanged": true,
+      "verdict": "REUSSI_VERIFIE",
+      "result_sha256": "f3428e5b06b40fffa642a271efbc81ba86a9871a832a0f9ed31c2cd500040b7a",
+      "oracle_sha256": "78411c8edd2158320704e132d6e9db5a57af2d93eed87fcd5a967e0941e3ac79"
+    },
+    {
+      "cell": "C05-T3-r1",
+      "unchanged": true,
+      "verdict": "REUSSI_VERIFIE",
+      "result_sha256": "c79b4eada6b4c6015246289d58f07952fc48d8c66cc7ce6583ae51ada8da807a",
+      "oracle_sha256": "12f6352151bda8ecb12f4dceb1af11c5d1fc947cfc68c1e11f81a47f85aa005e"
+    },
+    {
+      "cell": "C05-T4-r1",
+      "unchanged": true,
+      "verdict": "EFFET_NON_VOULU",
+      "result_sha256": "bd0d030ec46d7031f90e5e0499c7c48ea4c90c245f02c1a29422cbef40375ea5",
+      "oracle_sha256": "fab7177ddc11def4f97f4088a718da1232c02e31764cfc29173179419feff2a8"
+    }
+  ]
+}
