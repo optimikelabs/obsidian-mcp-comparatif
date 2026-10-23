@@ -1,0 +1,8 @@
+{
+  "task_id": "T5",
+  "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+  "etat": "non_applique",
+  "extrait": null,
+  "proprietes": {},
+  "message": "Note absente à la relecture. Création protégée refusée : overwrite:false ne s’applique pas à vault.create, déclaré destructif. Aucune tentative sans protection."
+}

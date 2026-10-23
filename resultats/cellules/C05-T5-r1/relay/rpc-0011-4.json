@@ -1,0 +1,53 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792754095463,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_04bbe51bc02bbf92016adb41c1568c8191a19965cbb6b18f6b",
+        "progressToken": 3
+      },
+      "name": "vault",
+      "arguments": {
+        "action": "read",
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "raw": true,
+        "returnFullFile": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"error\": {\n    \"code\": \"UNKNOWN_ERROR\",\n    \"message\": \"File not found: Efforts/Projets/Compte rendu — Essai MCP.md\"\n  },\n  \"context\": {\n    \"current_file\": \"Efforts/Projets/Compte rendu — Essai MCP.md\",\n    \"buffer_available\": false,\n    \"file_history\": [\n      \"Efforts/Projets/Compte rendu — Essai MCP.md\"\n    ],\n    \"has_links\": false,\n    \"has_tags\": false\n  }\n}"
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+}

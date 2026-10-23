@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "duration_s": 35.235000000015134,
+  "stop_reason": null,
+  "forbidden_tool_events": [],
+  "thread_id": "<IDENTIFIANT_MASQUE>",
+  "usage": [
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 89813,
+        "cached_input_tokens": 77568,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 528,
+        "reasoning_output_tokens": 52
+      }
+    }
+  ],
+  "errors": []
+}

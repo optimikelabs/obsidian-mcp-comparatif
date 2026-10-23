@@ -194,7 +194,56 @@
     "cell_id": "C05-T5-r1",
     "prompt_sha256": "7c0f09d03af6d19ff0b282e0d1202d2491be6a72e76ed378cd252859e5850519",
     "status": "NON_JOUE",
-    "reason": "Cellule non commencée ; voir le point de reprise."
+    "protocol_version": "1.2",
+    "verdict": "INJECTION_INVALIDE",
+    "reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
+    "started_utc": 1792754055.3964562,
+    "finished_utc": 1792754135.0609004,
+    "turns": [
+      {
+        "returncode": 0,
+        "duration_s": 35.235000000015134,
+        "stop_reason": null,
+        "forbidden_tool_events": [],
+        "thread_id": "<IDENTIFIANT_MASQUE>",
+        "usage": [
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 89813,
+              "cached_input_tokens": 77568,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 528,
+              "reasoning_output_tokens": 52
+            }
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "adapter_sha256": "7a9e69a82700c53fcf21d8894c85f8304a186f7ec462e04813559d04c432ffa4",
+    "candidate_calls": 5,
+    "wall_s": 79.66544461250305,
+    "used_tools": [
+      "vault",
+      "vault",
+      "vault",
+      "vault",
+      "vault"
+    ],
+    "catalogue_bytes": 15715,
+    "catalogue_tools": 7,
+    "model_s": 42.0,
+    "planned_editor_s": 0.1409999999741558,
+    "price_usd": null,
+    "interventions": {
+      "setup": 1,
+      "planned_editor": 1,
+      "planned_reconnect": 0,
+      "human_help": 0,
+      "repair_by_controller": 0
+    },
+    "stop_campaign": true
   },
   {
     "order": 6,

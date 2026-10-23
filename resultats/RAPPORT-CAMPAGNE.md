@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T11:13:33.321445+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T11:15:38.701209+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "b05b1c50fcf5805266e1e4199ecb4e9764e3fdb0", "remote_verified": true, "utc": "2026-10-23T11:08:41.850723+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "f09b7a4da34fb81edec98ea8c0722bb2a73f319f", "remote_verified": true, "utc": "2026-10-23T11:14:10.731532+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -95,58 +95,21 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PRET_REPRISE_APRES_G1",
-  "utc": "2026-10-23T11:13:33.224905+00:00",
-  "next_cell": "C05-T5-r1",
+  "state": "ARRET_INCIDENT",
+  "utc": "2026-10-23T11:15:38.666209+00:00",
+  "next_cell": "C05-T6-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
-  "lock_present": true,
-  "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1",
+  "lock_present": false,
+  "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "memory": {
-    "utc": "2026-10-23T11:13:33.225371+00:00",
-    "commitFreeBytes": 9250115584,
-    "availableBytes": 7578705920,
-    "admitted": true,
-    "stop": false
-  },
-  "next_order": 5,
-  "last_cell": "C05-T4-r1",
-  "last_status": "JOUE",
-  "last_verdict": "EFFET_NON_VOULU",
-  "next_action": "Reprendre C05-T5-r1 avec le modèle figé ; attente mémoire 10 minutes, deux heures au plus.",
-  "replacement_C05_T1": "Non tenté ; uniquement après la série 1 et contrôle CRLF/LF de la fixture préparée",
-  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire",
-  "resume_cwd": "test-comparatif/kit",
-  "stop_trigger_memory": {
-    "utc": "2026-10-23T11:05:33.177759+00:00",
-    "commitFreeBytes": 1908097024,
-    "availableBytes": 5447811072,
-    "admitted": false,
-    "stop": true
-  },
-  "reason": "Verrou G1 observé libéré ; seuils mémoire favorables. Aucun candidat lancé pendant la préparation.",
-  "orchestrator_model": "gpt-6-astra",
-  "measurement_model": "gpt-6.1-sol",
-  "measurement_effort": "high",
-  "measurement_service_tier": "default",
-  "measurement_cli_version_observed": "0.160.1",
-  "measurement_model_availability": "Non testée : aucun client de mesure lancé avant le contrôle mémoire favorable. Aucun modèle de substitution.",
-  "cells_played_this_resume": 0,
-  "series_1_played": 3,
-  "series_2_played": 0,
-  "existing_cell_directories": [
-    "C05-T1-r1",
-    "C05-T2-r1",
-    "C05-T3-r1",
-    "C05-T4-r1"
-  ],
-  "campaign_processes_observed": [],
-  "previous_interruptions_reported_by_user": "Arrêt fournisseur à 12 h 10 pendant attente mémoire ; relance 12 h 25 non démarrée, annulée au redémarrage vers 13 h 03. Historique déclaré par Mike, non revérifié dans les journaux fournisseur.",
-  "next_check_policy": "Avant chaque cellule ; surveillance chaque seconde pendant cellule ; attente mémoire toutes les 10 minutes, 2 heures au plus."
+  "last_cell": "C05-T5-r1",
+  "last_result": "INJECTION_INVALIDE",
+  "last_reason": "INJECTION_INVALIDE; PREMIERE_MUTATION_PERTE; CIBLE_ABSENTE; YAML_OU_UTF8_INVALIDE:absente",
+  "incident_cell": "C05-T5-r1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PRET_REPRISE_APRES_G1. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Reprendre C05-T5-r1 avec le modèle figé ; attente mémoire 10 minutes, deux heures au plus.. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_INCIDENT. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C05-T6-r1. Aucune tâche du coffre modifiée.

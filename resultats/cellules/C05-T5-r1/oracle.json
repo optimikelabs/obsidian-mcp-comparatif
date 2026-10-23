@@ -1,0 +1,59 @@
+{
+  "task": "T5",
+  "verdict": "INJECTION_INVALIDE",
+  "errors": [
+    "INJECTION_INVALIDE",
+    "PREMIERE_MUTATION_PERTE",
+    "CIBLE_ABSENTE",
+    "YAML_OU_UTF8_INVALIDE:absente"
+  ],
+  "changed": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "unwanted": [],
+  "format_differences": [],
+  "technical_changes": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "first",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      },
+      {
+        "from": "first",
+        "to": "after",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792754095463,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_04bbe51bc02bbf92016adb41c594888191b8bb66aad0517e20",
+        "progressToken": 4
+      },
+      "name": "vault",
+      "arguments": {
+        "action": "create",
+        "path": "Efforts/Projets/Compte rendu — Essai MCP.md",
+        "overwrite": false,
+        "content": "---\ntype: note\nparent: \"[[Projet témoin — Test MCP]]\"\n---\n# Compte rendu — Essai MCP\n\nTrois captures triées.\n",
+        "raw": true
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"error\": {\n    \"code\": \"INVALID_PARAMETERS\",\n    \"message\": \"Parameter 'overwrite' does not apply to vault.create. Rejected rather than silently ignored, because vault.create is destructive. Accepted parameters: path, content.\",\n    \"rejected\": [\n      {\n        \"parameter\": \"overwrite\",\n        \"hint\": \"'overwrite' applies to vault.move and vault.copy. vault.update always replaces the entire file contents. To modify part of a file use edit.patch or edit.window.\"\n      }\n    ]\n  }\n}"
+        }
+      ],
+      "isError": true
+    },
+    "jsonrpc": "2.0",
+    "id": 5
+  }
+}
