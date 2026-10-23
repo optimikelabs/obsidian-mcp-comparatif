@@ -1,14 +1,19 @@
 {
-  "state": "PRET_CELLULE_SUIVANTE",
-  "utc": "2026-10-23T13:58:35.328203+00:00",
-  "next_cell": "C08-T4-r1",
+  "state": "ARRET_INCIDENT_FERMETURE_A_INSTRUIRE",
+  "utc": "2026-10-23T14:02:19.860545+00:00",
+  "next_cell": "C08-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
-  "command": "python -X utf8 scripts/campaign_run.py",
+  "command": "python -X utf8 scripts/campaign_run.py --after-incident C08-T4-r1 --series 1 --max-cells 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T3-r1",
-  "last_result": "REUSSI_VERIFIE",
-  "last_reason": "",
-  "incident_cell": null
+  "last_cell": "C08-T4-r1",
+  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
+  "last_reason": "Fermeture du profil isole non confirmee a temps; aucun candidat ni client lance. Controle differe: aucun processus restant, verrou propre libere.",
+  "incident_cell": "C08-T4-r1",
+  "resume_requires_public_amendment": true,
+  "amendment_v13_commit": "71b70f866a113d3b2739cf5a0dceb775c084181e",
+  "amendment_v13_published": true,
+  "next_action": "C5 instruit fermeture-C08-T4-r1 avant reprise a C08-T5-r1. Ne pas rejouer C08-T4-r1.",
+  "replacements": "C05-T1-r1 et C05-T5-r1: un seul remplacement chacun apres la serie 1; C06: une nouvelle admission apres la serie 2."
 }

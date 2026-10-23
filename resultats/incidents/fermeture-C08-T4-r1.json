@@ -1,0 +1,27 @@
+{
+  "cell_id": "C08-T4-r1",
+  "utc": "2026-10-23T14:01:50.591849+00:00",
+  "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+  "phase": "preparation avant lancement du candidat et du client",
+  "reason": "La fermeture observe encore 4 processus Obsidian du profil isole apres 500 ms, puis leve deux fois. Aucun processus de ce profil ne subsiste lors du controle differe.",
+  "root_pid": 7436,
+  "owned_profile": "<CHEMIN_PRIVE>",
+  "remaining_processes": [],
+  "processes_terminated_by_this_recovery": [],
+  "original_stop_stdout": "4\n",
+  "original_stop_stdout_sha256": "7c468f5e59f2871b946e051445493bbcace531d597edbbcc9935e7d02d025114",
+  "lock_token_match": true,
+  "lock_released": true,
+  "candidate_invoked": false,
+  "client_invoked": false,
+  "memory": {
+    "utc": "2026-10-23T14:01:50.592357+00:00",
+    "commitFreeBytes": 10171412480,
+    "availableBytes": 5784240128,
+    "admitted": true,
+    "stop": false
+  },
+  "decision": "Arret de campagne; aucun rejeu; instruction C5 requise avant C08-T5-r1.",
+  "hypothesis": "Delai de fermeture des processus enfants; cause exacte non etablie.",
+  "lock_present_after": false
+}

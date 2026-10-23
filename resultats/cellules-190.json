@@ -611,7 +611,11 @@
     "cell_id": "C08-T4-r1",
     "prompt_sha256": "6831e3a92baed78162ee81af1698ec51dd2c04145bc36a6db0e1ff26fa5f6c14",
     "status": "NON_JOUE",
-    "reason": "Cellule non commencée ; voir le point de reprise."
+    "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+    "reason": "Instance de campagne encore active ; verrou conservé",
+    "started_utc": 1792763988.0670545,
+    "finished_utc": 1792764015.2057128,
+    "stop_campaign": true
   },
   {
     "order": 13,

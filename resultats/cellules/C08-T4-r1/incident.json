@@ -1,0 +1,6 @@
+{
+  "error": "Instance de campagne encore active ; verrou conservé",
+  "traceback": "Traceback (most recent call last):\n  File \"<CHEMIN_PRIVE>\", line 24, in play\n    adapter=readj(RUN/'admissions'/row['candidate']/'adapter.json');candidate.start();mon.check()\n                                                                    ^^^^^^^^^^^^^^^^^\n  File \"<CHEMIN_PRIVE>\", line 24, in start\n    stop(cfg);self.open=False\n    ^^^^^^^^^\n  File \"<CHEMIN_PRIVE>\", line 145, in stop\n    if remaining:raise RuntimeError('Instance de campagne encore active ; verrou conservé')\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Instance de campagne encore active ; verrou conservé\n",
+  "utc": 1792764015.2057128,
+  "cell_id": "C08-T4-r1"
+}
