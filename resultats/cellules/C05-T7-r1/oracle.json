@@ -1,0 +1,61 @@
+{
+  "task": "T7",
+  "verdict": "PROTEGE_NON_ACCOMPLI",
+  "errors": [],
+  "changed": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T04:38",
+      "after": "2026-10-23T15:50",
+      "attribution": "FDM prouvée"
+    }
+  ],
+  "dates_policy": "Aucune exemption implicite. Écart FDM à attribuer et borner séparément avant verdict de campagne.",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "human",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      },
+      {
+        "from": "human",
+        "to": "first",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      },
+      {
+        "from": "first",
+        "to": "after",
+        "changed": false,
+        "allowed": true,
+        "reason": null,
+        "fields": []
+      }
+    ]
+  }
+}
