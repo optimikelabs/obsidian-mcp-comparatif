@@ -1,0 +1,42 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792768178646,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0e08894efa59c3ed016adb78bcecd081919505212c8353a9e5",
+        "progressToken": 4
+      },
+      "name": "vault_read",
+      "arguments": {
+        "path": "Archives/Historique.md"
+      }
+    }
+  },
+  "response": {
+    "projection": "octets_hors_temoin_omis",
+    "sha256": "1e862f85744ca4794ca87cff5b5583f64911a25316ba874084e5d9dcfe010eb9",
+    "bytes": 491
+  }
+}

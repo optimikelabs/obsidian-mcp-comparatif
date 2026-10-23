@@ -1,0 +1,49 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "_meta": {
+        "callId": "exec-<IDENTIFIANT_MASQUE>",
+        "x-codex-turn-metadata": {
+          "session_id": "<MASQUE>",
+          "thread_id": "<IDENTIFIANT_MASQUE>",
+          "reasoning_effort": "high",
+          "turn_id": "<IDENTIFIANT_MASQUE>",
+          "model": "gpt-6.1-sol",
+          "thread_source": "user",
+          "turn_trigger": "exec",
+          "sandbox": "windows_sandbox",
+          "sandbox_mode": "read-only",
+          "auto_review_enabled": false,
+          "node_repl_auto_review_required": true,
+          "node_repl_disabled": false,
+          "turn_started_at_unix_ms": 1792768178646,
+          "codex_version": "0.160.1"
+        },
+        "threadId": "<IDENTIFIANT_MASQUE>",
+        "sessionId": "<MASQUE>",
+        "windowId": "<IDENTIFIANT_MASQUE>:0",
+        "itemId": "ctc_0e08894efa59c3ed016adb78bab1488191b6d01e4425acd981",
+        "progressToken": 2
+      },
+      "name": "search_query",
+      "arguments": {
+        "query": {
+          "in": [
+            "MARGELLE-TEST-2406",
+            {
+              "var": "content"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "response": {
+    "projection": "octets_hors_temoin_omis",
+    "sha256": "7940a0967720fcb71659810cf96e406feef10ce18a02c0c2b2873f41df4188c4",
+    "bytes": 269
+  }
+}

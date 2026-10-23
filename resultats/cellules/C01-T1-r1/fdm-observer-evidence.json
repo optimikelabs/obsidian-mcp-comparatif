@@ -1,0 +1,24 @@
+[
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "création",
+    "value": "2026-10-23T17:09",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "4cbb78040c71c30664ebc42ad41990b04d17463f4554f0b4437ffea07a73c1c8",
+    "observed_utc": 1792768161.794,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  },
+  {
+    "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+    "key": "modification",
+    "value": "2026-10-23T04:38",
+    "previous_value": "None",
+    "plugin": "frontmatter-date-manager",
+    "version": "1.6.0",
+    "after_sha256": "4cbb78040c71c30664ebc42ad41990b04d17463f4554f0b4437ffea07a73c1c8",
+    "observed_utc": 1792768161.794,
+    "stack_sha256": "91a0763ac7509b89ae53f8f5fe9268be6842990c521074a192875fe42a3fe651"
+  }
+]

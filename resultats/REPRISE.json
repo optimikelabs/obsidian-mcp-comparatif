@@ -1,15 +1,14 @@
 {
-  "state": "PRET_APRES_INCIDENT_BANC",
-  "utc": "2026-10-23T15:07:40.313154+00:00",
-  "next_cell": "C01-T1-r1",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T15:10:13.737917+00:00",
+  "next_cell": "C01-T2-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
   "lock_present": false,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
-  "last_cell": "C08-T8-r1",
-  "last_result": "NON_EXECUTE_ENVIRONNEMENT",
-  "last_reason": "Timeout de préparation applicative native-save avant candidat et client ; règle générale C5 16 h 04 appliquée.",
-  "replacement_registered": true,
-  "next_action": "Reprendre C01-T1-r1 ; remplacement C08-T8-r1 en fin de série 1 ; priorité produit 1.0.7."
+  "last_cell": "C01-T1-r1",
+  "last_result": "ECHEC_FONCTIONNEL",
+  "last_reason": "REPONSE_EXTRAIT",
+  "incident_cell": null
 }

@@ -1,0 +1,51 @@
+{
+  "task": "T1",
+  "verdict": "ECHEC_FONCTIONNEL",
+  "errors": [
+    "REPONSE_EXTRAIT"
+  ],
+  "changed": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "unwanted": [],
+  "format_differences": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "technical_changes": [
+    ".obsidian/plugins/frontmatter-date-manager/hash-cache.json"
+  ],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [],
+  "dates_policy": "fdm-dates-v1.4",
+  "fdm_cache": {
+    "policy": "fdm-cache-v1.2",
+    "path": ".obsidian/plugins/frontmatter-date-manager/hash-cache.json",
+    "opened_or_modified_notes": [
+      "Archives/Historique.md",
+      "Efforts/Projets/Projet témoin — Test MCP.md",
+      "Le guide du premier soir — utiliser ÉLYSIA avec ou sans agent.md"
+    ],
+    "allowed": true,
+    "checks": [
+      {
+        "from": "before",
+        "to": "after",
+        "changed": true,
+        "allowed": true,
+        "reason": null,
+        "fields": [
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "hash"
+          },
+          {
+            "note": "Efforts/Projets/Projet témoin — Test MCP.md",
+            "field": "lastAccessed"
+          }
+        ]
+      }
+    ]
+  }
+}

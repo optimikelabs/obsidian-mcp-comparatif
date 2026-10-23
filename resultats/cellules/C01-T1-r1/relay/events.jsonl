@@ -1,0 +1,24 @@
+{"event": "bootstrap_response", "seq": 1, "monotonic_ns": 11177000000000, "utc": 1792768178.6073892, "id": 0}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 11177000000000, "utc": 1792768178.6073892, "id": 0}
+{"event": "response_delivered", "seq": 3, "monotonic_ns": 11177015000000, "utc": 1792768178.6228604, "id": 1}
+{"event": "tool_request", "seq": 4, "monotonic_ns": 11183453000000, "utc": 1792768185.0616202, "id": 2, "tool": "search_simple", "arguments_sha256": "54a20ac7780b7291fc29f63b9b19d392a349b6a3acd3c5dbf7ce5e8fc351e316"}
+{"event": "upstream_response", "seq": 5, "monotonic_ns": 11183578000000, "utc": 1792768185.1789806, "id": 2, "tool": "search_simple", "duration_s": 0.125, "bytes": 84, "is_error": false}
+{"event": "response_delivered", "seq": 6, "monotonic_ns": 11183578000000, "utc": 1792768185.1810505, "id": 2}
+{"event": "tool_request", "seq": 7, "monotonic_ns": 11185718000000, "utc": 1792768187.3254704, "id": 3, "tool": "search_query", "arguments_sha256": "62c6a634fb1985f0f19c9465f63a029d73f3c5cb2706ca9939165cbfe4567ea0"}
+{"event": "upstream_response", "seq": 8, "monotonic_ns": 11185765000000, "utc": 1792768187.3725705, "id": 3, "tool": "search_query", "duration_s": 0.046999999998661224, "bytes": 269, "is_error": false}
+{"event": "response_delivered", "seq": 9, "monotonic_ns": 11185765000000, "utc": 1792768187.374219, "id": 3}
+{"event": "tool_request", "seq": 10, "monotonic_ns": 11189062000000, "utc": 1792768190.6650798, "id": 5, "tool": "vault_read", "arguments_sha256": "26f073f7059c1492bb626c7d6722ad4921fec3f689452e6b9f7233ac90c8ea58"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 11189062000000, "utc": 1792768190.6752627, "id": 5, "tool": "vault_read", "duration_s": 0.0, "bytes": 491, "is_error": false}
+{"event": "candidate_note_access", "seq": 12, "monotonic_ns": 11189062000000, "utc": 1792768190.6752627, "id": 5, "path": "Archives/Historique.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 13, "monotonic_ns": 11189062000000, "utc": 1792768190.676792, "id": 5, "path": "Archives/Historique.md", "content_sha256": "e707f730ecdb2f5aa0dbf0316886011a1627cdb7c8f1ade903bd33446e443da7", "response_received": true}
+{"event": "response_delivered", "seq": 14, "monotonic_ns": 11189062000000, "utc": 1792768190.676792, "id": 5}
+{"event": "tool_request", "seq": 15, "monotonic_ns": 11189078000000, "utc": 1792768190.6783414, "id": 4, "tool": "vault_read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 16, "monotonic_ns": 11189078000000, "utc": 1792768190.6865, "id": 4, "tool": "vault_read", "duration_s": 0.0, "bytes": 1934, "is_error": false}
+{"event": "candidate_note_access", "seq": 17, "monotonic_ns": 11189078000000, "utc": 1792768190.6865, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 18, "monotonic_ns": 11189078000000, "utc": 1792768190.6885064, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "4cbb78040c71c30664ebc42ad41990b04d17463f4554f0b4437ffea07a73c1c8", "response_received": true}
+{"event": "response_delivered", "seq": 19, "monotonic_ns": 11189078000000, "utc": 1792768190.6885064, "id": 4}
+{"event": "tool_request", "seq": 20, "monotonic_ns": 11193015000000, "utc": 1792768194.6267805, "id": 6, "tool": "vault_read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 21, "monotonic_ns": 11193031000000, "utc": 1792768194.6439114, "id": 6, "tool": "vault_read", "duration_s": 0.01600000000144064, "bytes": 1934, "is_error": false}
+{"event": "candidate_note_access", "seq": 22, "monotonic_ns": 11193031000000, "utc": 1792768194.6439114, "id": 6, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 23, "monotonic_ns": 11193031000000, "utc": 1792768194.6449122, "id": 6, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "4cbb78040c71c30664ebc42ad41990b04d17463f4554f0b4437ffea07a73c1c8", "response_received": true}
+{"event": "response_delivered", "seq": 24, "monotonic_ns": 11193031000000, "utc": 1792768194.6449122, "id": 6}
