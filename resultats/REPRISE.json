@@ -1,6 +1,6 @@
 {
-  "state": "ATTENTE_MEMOIRE",
-  "utc": "2026-10-23T10:02:23.666082+00:00",
+  "state": "ARRET_MEMOIRE_AVANT_REPRISE",
+  "utc": "2026-10-23T11:06:40.103710+00:00",
   "next_cell": "C05-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -8,10 +8,9 @@
   "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "memory": {
-    "utc": "2026-10-23T10:02:23.666082+00:00",
-    "event": "memory_10min",
-    "commitFreeBytes": 1986236416,
-    "availableBytes": 6396112896,
+    "utc": "2026-10-23T11:06:40.103710+00:00",
+    "commitFreeBytes": 1150599168,
+    "availableBytes": 3581976576,
     "admitted": false,
     "stop": true
   },
@@ -19,8 +18,34 @@
   "last_cell": "C05-T4-r1",
   "last_status": "JOUE",
   "last_verdict": "EFFET_NON_VOULU",
-  "next_action": "attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1",
-  "next_check_utc": "2026-10-23T10:12:23+00:00",
+  "next_action": "Contrôler la mémoire et attendre le verrou libre ; reprendre C05-T5-r1 seulement avec au moins 4 Gio de RAM disponible et de marge engagement.",
   "replacement_C05_T1": "Non tenté ; uniquement après la série 1 et contrôle CRLF/LF de la fixture préparée",
-  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire"
+  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire",
+  "resume_cwd": "test-comparatif/kit",
+  "stop_trigger_memory": {
+    "utc": "2026-10-23T11:05:33.177759+00:00",
+    "commitFreeBytes": 1908097024,
+    "availableBytes": 5447811072,
+    "admitted": false,
+    "stop": true
+  },
+  "reason": "Contrôle initial sous 2 Gio de marge engagement : arrêt avant toute cellule. Aucun candidat ni instance Obsidian lancé pendant cette reprise.",
+  "orchestrator_model": "gpt-6-astra",
+  "measurement_model": "gpt-6.1-sol",
+  "measurement_effort": "high",
+  "measurement_service_tier": "default",
+  "measurement_cli_version_observed": "0.160.1",
+  "measurement_model_availability": "Non testée : aucun client de mesure lancé avant le contrôle mémoire favorable. Aucun modèle de substitution.",
+  "cells_played_this_resume": 0,
+  "series_1_played": 3,
+  "series_2_played": 0,
+  "existing_cell_directories": [
+    "C05-T1-r1",
+    "C05-T2-r1",
+    "C05-T3-r1",
+    "C05-T4-r1"
+  ],
+  "campaign_processes_observed": [],
+  "previous_interruptions_reported_by_user": "Arrêt fournisseur à 12 h 10 pendant attente mémoire ; relance 12 h 25 non démarrée, annulée au redémarrage vers 13 h 03. Historique déclaré par Mike, non revérifié dans les journaux fournisseur.",
+  "next_check_policy": "Au prochain lancement, puis toutes les 10 minutes en attente mémoire selon le protocole ; aucun contrôleur ne reste actif après cette reprise."
 }

@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T10:03:33.773040+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T11:06:40.301486+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "ed4579ec0bee479cc462605ec0b0421cccd5a3d4", "remote_verified": true, "utc": "2026-10-23T09:52:23.663903+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "8676c308602e20f95296f00baa41e5834ebaa30d", "remote_verified": true, "utc": "2026-10-23T10:04:13.804841+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -95,8 +95,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ATTENTE_MEMOIRE",
-  "utc": "2026-10-23T10:02:23.666082+00:00",
+  "state": "ARRET_MEMOIRE_AVANT_REPRISE",
+  "utc": "2026-10-23T11:06:40.103710+00:00",
   "next_cell": "C05-T5-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -104,10 +104,9 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "command": "python -X utf8 scripts/campaign_run.py --after-incident C05-T4-r1 --series 1",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "memory": {
-    "utc": "2026-10-23T10:02:23.666082+00:00",
-    "event": "memory_10min",
-    "commitFreeBytes": 1986236416,
-    "availableBytes": 6396112896,
+    "utc": "2026-10-23T11:06:40.103710+00:00",
+    "commitFreeBytes": 1150599168,
+    "availableBytes": 3581976576,
     "admitted": false,
     "stop": true
   },
@@ -115,13 +114,39 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "last_cell": "C05-T4-r1",
   "last_status": "JOUE",
   "last_verdict": "EFFET_NON_VOULU",
-  "next_action": "attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1",
-  "next_check_utc": "2026-10-23T10:12:23+00:00",
+  "next_action": "Contrôler la mémoire et attendre le verrou libre ; reprendre C05-T5-r1 seulement avec au moins 4 Gio de RAM disponible et de marge engagement.",
   "replacement_C05_T1": "Non tenté ; uniquement après la série 1 et contrôle CRLF/LF de la fixture préparée",
-  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire"
+  "C06": "Non tenté ; unique nouvelle admission uniquement après série 2, au plus 30 minutes et sous conditions mémoire",
+  "resume_cwd": "test-comparatif/kit",
+  "stop_trigger_memory": {
+    "utc": "2026-10-23T11:05:33.177759+00:00",
+    "commitFreeBytes": 1908097024,
+    "availableBytes": 5447811072,
+    "admitted": false,
+    "stop": true
+  },
+  "reason": "Contrôle initial sous 2 Gio de marge engagement : arrêt avant toute cellule. Aucun candidat ni instance Obsidian lancé pendant cette reprise.",
+  "orchestrator_model": "gpt-6-astra",
+  "measurement_model": "gpt-6.1-sol",
+  "measurement_effort": "high",
+  "measurement_service_tier": "default",
+  "measurement_cli_version_observed": "0.160.1",
+  "measurement_model_availability": "Non testée : aucun client de mesure lancé avant le contrôle mémoire favorable. Aucun modèle de substitution.",
+  "cells_played_this_resume": 0,
+  "series_1_played": 3,
+  "series_2_played": 0,
+  "existing_cell_directories": [
+    "C05-T1-r1",
+    "C05-T2-r1",
+    "C05-T3-r1",
+    "C05-T4-r1"
+  ],
+  "campaign_processes_observed": [],
+  "previous_interruptions_reported_by_user": "Arrêt fournisseur à 12 h 10 pendant attente mémoire ; relance 12 h 25 non démarrée, annulée au redémarrage vers 13 h 03. Historique déclaré par Mike, non revérifié dans les journaux fournisseur.",
+  "next_check_policy": "Au prochain lancement, puis toutes les 10 minutes en attente mémoire selon le protocole ; aucun contrôleur ne reste actif après cette reprise."
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ATTENTE_MEMOIRE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : attendre marge engagement ET RAM disponible au moins 4 Gio, puis C05-T5-r1. Aucune tâche du coffre modifiée.
+État opérationnel : ARRET_MEMOIRE_AVANT_REPRISE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Contrôler la mémoire et attendre le verrou libre ; reprendre C05-T5-r1 seulement avec au moins 4 Gio de RAM disponible et de marge engagement.. Aucune tâche du coffre modifiée.
