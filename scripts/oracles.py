@@ -56,9 +56,9 @@ def verify(case):
             valid=valid and fs.get('snapshot_sha256')==manifest(first or {})['tree_sha256']
             if task=='T7b':
                 read=events[positions[0]]
-                valid=valid and read.get('content_sha256')==before.get(P,{}).get('sha256')
+                valid=valid and P in before and read_matches(read,data(before,P))
                 valid=valid and any(e.get('event')=='mcp_read_response' and e.get('id')==read.get('id')
-                    and e.get('path')==P and e.get('response_received') is True for e in events[:positions[0]])
+                    and e.get('path')==P and e.get('response_received') is True and read_matches(e,data(before,P)) for e in events[:positions[0]])
                 valid=valid and not any(e.get('event') in ('mutation_dispatch','dispatch') for e in events[:positions[1]])
         need(bool(valid and human and first),'INJECTION_INVALIDE')
         if human:
@@ -126,7 +126,7 @@ def verify(case):
         # La réponse de lecture doit provenir de l'amont et correspondre aux octets finaux.
         barrier=max((i for i,e in enumerate(events) if e.get('event') in ('dispatch','mutation_dispatch','client_reconnected')),default=-1)
         reads=[e for i,e in enumerate(events) if i>barrier and e.get('event')=='mcp_read_response' and e.get('path')==path]
-        need(any(e.get('content_sha256')==sha(actual) and e.get('response_received') is True for e in reads),'RELECTURE_MCP_ABSENTE')
+        need(any(read_matches(e,actual) and e.get('response_received') is True for e in reads),'RELECTURE_MCP_ABSENTE')
     except (ValueError,KeyError,UnicodeError,yaml.YAMLError) as e:
         errors.append('YAML_OU_UTF8_INVALIDE:'+str(e))
     errors=list(dict.fromkeys(errors))

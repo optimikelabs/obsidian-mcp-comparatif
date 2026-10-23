@@ -111,3 +111,18 @@ def wait_bytes(path, expected, timeout=60):
             return sha(expected)
         time.sleep(.05)  # sondage d'une condition, jamais preuve par délai
     raise TimeoutError('Sauvegarde disque non observée')
+
+def read_matches(event, blob):
+    if event.get('projection')=='body_frontmatter':
+        try:
+            text=blob.decode('utf-8')
+            props,body=split(blob) if text.replace('\r\n','\n').startswith('---\n') else ({},text)
+            # Comparaison typée sans fabriquer un texte complet depuis le disque.
+            def typed(a,b):
+                if type(a) is not type(b):return False
+                if isinstance(a,dict):return a.keys()==b.keys() and all(typed(a[k],b[k]) for k in a)
+                if isinstance(a,list):return len(a)==len(b) and all(typed(x,y) for x,y in zip(a,b))
+                return a==b
+            return typed(event.get('properties'),props) and event.get('body_sha256')==sha(body.encode())
+        except (ValueError,UnicodeError,yaml.YAMLError):return False
+    return event.get('content_sha256')==sha(blob)

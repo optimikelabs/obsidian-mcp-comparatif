@@ -1,0 +1,37 @@
+{
+  "candidate": "C01",
+  "nonceVerified": true,
+  "catalogueTools": 24,
+  "artifacts": [
+    {
+      "name": "main.js",
+      "size": 4462163,
+      "sha256": "90494b6444c5fede5d12f97346aab839265b5c7a09520fe87b4efc22360b6cd8",
+      "url": "https://github.com/coddingtonbear/obsidian-local-rest-api/releases/download/5.5.2/main.js"
+    },
+    {
+      "name": "manifest.json",
+      "size": 313,
+      "sha256": "2ce46dfa1ee9b6150dd8dd0dbcc68636ee15d5433f9a3fa24e9b6cc8446ebe25",
+      "url": "https://github.com/coddingtonbear/obsidian-local-rest-api/releases/download/5.5.2/manifest.json"
+    },
+    {
+      "name": "styles.css",
+      "size": 4830,
+      "sha256": "19956deaf4d14142381f81fdf92cae8241fd0aa08a1a3a5464b0d007bae1924d",
+      "url": "https://github.com/coddingtonbear/obsidian-local-rest-api/releases/download/5.5.2/styles.css"
+    }
+  ],
+  "isolation": {
+    "vault": "<CHEMIN_PRIVE>",
+    "profile": "<CHEMIN_PRIVE>",
+    "pid": 51976,
+    "port": 27341
+  },
+  "status": "ADMISSION_A_REVALIDER_CONFIG",
+  "reason": "Nonce et schémas acquis ; reprise requise sans Margelle Hub (identifiant elysia-os) selon préparation commune.",
+  "catalog_sha256": "27174de20398060f5e83f6de7c5f6997c2fb715cf003b6d8ea33f127e692a211",
+  "adapter_sha256": "9bc9c05aaed09513273c2cf554aa2496e43eaa4ed934aa6af2cb85b1c07966ce",
+  "mode": "Plugin Obsidian ouvert, MCP HTTP natif",
+  "utc": "2026-10-23T07:19:58.796998+00:00"
+}

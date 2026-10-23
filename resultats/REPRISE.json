@@ -1,0 +1,23 @@
+{
+  "phase": "ADMISSIONS_ATTENTE_MEMOIRE",
+  "next_admission": "C03",
+  "next_cell": "C05-T1-r1",
+  "cells_played": 0,
+  "candidate_active": null,
+  "lock_taken_by_campaign": false,
+  "C01": "Nonce/schémas vérifiés ; revalidation sans Hub requise avant mesure",
+  "C02": "Admis, bac attempt-02 arrêté ; schéma lecture structurée à qualifier dans le relais",
+  "C03": "Wheel et dépendances installés ; aucun bac ni serveur démarré (gate 4 Gio refusé)",
+  "C04_C10": "Admissions non commencées",
+  "memory": {
+    "utc": "2026-10-23T07:29:42.184847+00:00",
+    "commitFreeBytes": 3820830720,
+    "availableBytes": 3726245888,
+    "admitted": false,
+    "stop": false
+  },
+  "next_check_utc": "2026-10-23T07:39:42.185849+00:00",
+  "resume_command": "python -X utf8 scripts/admit_c03.py",
+  "resume_cwd": "test-comparatif/kit",
+  "no_daily_application_closed": true
+}

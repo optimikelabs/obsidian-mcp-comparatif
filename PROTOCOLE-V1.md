@@ -269,3 +269,11 @@ Sources normatives : AMENDEMENTS-C5-AVANT-CAMPAGNE.md, puis DECISIONS-C5.md. Sou
 - Limites déclarées : un seul agent Codex ; corpus commercial Margelle vendu par l’auteur ; corpus synthétique publié mais non rejoué en campagne ; T1–T4 non répétés ; aucun contact préalable avec les mainteneurs. Trois répétitions n’établissent aucun taux de risque rare.
 - Seuil utilisateur du 23/10 : 4 Gio engagement et RAM avant départ ; aucun nouveau départ sous 2 Gio sur l’un ou l’autre. Aucun programme de Mike fermé.
 - Le gel e3477a8 demeure accessible. Ce delta, ses tests et le manifeste 190 sont publiés ensemble avant les admissions. Aucun résultat candidat à cette étape.
+
+## Amendement d’instrumentation à l’admission — avant toute cellule
+
+Le catalogue C02 retourne, pour read_note, deux composantes natives : fm (propriétés) et content (corps), sans sérialisation originale du frontmatter. Le mapping conserve séparément les propriétés typées et le hash du corps effectivement reçu par MCP ; l’oracle les compare au YAML et au corps du snapshot disque. Aucun contenu de réponse n’est inventé depuis le disque. Les différences de format restent contrôlées sur les snapshots. read_note_lines permet aussi une lecture brute complète ; les deux formes sont autorisées. Cette règle de mapping est disponible pour tous les candidats qui exposent une forme équivalente. Une forme inconnue reste non prouvée.
+
+T7b exige que cette projection de lecture initiale soit égale à B0 et qu’une réponse de lecture correspondante soit réellement enregistrée avant le premier plan/écriture. Témoins factices : type de propriété erroné, corps erroné, réponse non reçue et divergence entre preuve initiale et réponse ; aucun de ces cas n’est accepté.
+
+Incidents de préparation avant mesure : un premier bac C02 n’a pas atteint l’état daté sous 60 s ; aucun serveur candidat n’y était lancé. La méthode attend maintenant la sauvegarde disque, vérifie la fiche active et exécute la commande FDM seulement si les dates manquent. L’identifiant de Margelle Hub est elysia-os (nom Margelle Hub), identifié par son manifest ; désactivation identique dans toutes les copies. C01 est marqué à revalider dans cette configuration commune. Aucun score candidat n’a été acquis ni corrigé. Les essais et journaux initiaux restent conservés.

@@ -1,0 +1,2 @@
+{"utc": "2026-10-23T07:26:59.449618+00:00", "event": "memory_gate", "reason": "before_python_install", "commitFreeBytes": 8373014528, "availableBytes": 6502309888, "admitted": true, "stop": false}
+{"utc": "2026-10-23T07:28:58.009618+00:00", "event": "memory_gate", "reason": "before_admission", "commitFreeBytes": 3949207552, "availableBytes": 3903524864, "admitted": false, "stop": false}

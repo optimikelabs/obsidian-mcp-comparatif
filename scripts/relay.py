@@ -11,9 +11,9 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from common import *
 
 class Stdio:
-    def __init__(self,command,cwd,stderr):
+    def __init__(self,command,cwd,stderr,env=None):
         self.err=open(scoped(stderr),'a',encoding='utf-8')
-        self.p=subprocess.Popen(command,cwd=cwd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,text=True,encoding='utf-8',bufsize=1)
+        self.p=subprocess.Popen(command,cwd=cwd,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,text=True,encoding='utf-8',bufsize=1)
         self.q=queue.Queue();self.lock=threading.Lock()
         threading.Thread(target=self._reader,daemon=True).start()
     def _reader(self):
@@ -145,7 +145,7 @@ class Relay:
             if selected:
                 if self.task=='T7b':
                     if self.initial_read is None:raise RuntimeError('T7b : aucune lecture MCP de P livrée avant plan/écriture')
-                    if sha((self.vault/P).read_bytes())!=self.initial_read['content_sha256']:raise RuntimeError('T7b : disque divergent avant injection')
+                    if not read_matches(self.initial_read,(self.vault/P).read_bytes()):raise RuntimeError('T7b : disque divergent avant injection')
                 self.injected=True
                 if self.task!='T8':
                     self.event('request_held',id=req.get('id'),request_sha256=digest)
@@ -187,13 +187,17 @@ class Relay:
             if read and reply and not reply.get('error') and not reply.get('result',{}).get('isError'):
                 try:
                     raw=reply['result']['content'][0]['text']
-                    obj=json.loads(raw) if self.adapter.get('read_format','json')=='json' else None
+                    mapping=self.adapter.get('read_mappings',{}).get(name,{})
+                    form=mapping.get('format',self.adapter.get('read_format','json'))
+                    obj=json.loads(raw) if form!='raw' else None
                     # Mapping explicite ; jamais lecture disque fabriquée comme relecture MCP.
-                    content=raw if obj is None else obj[self.adapter.get('read_content_key','content')]
-                    rel=args[self.adapter.get('path_key','path')]
-                    self.event('mcp_read_response',id=req.get('id'),path=rel,content_sha256=sha(content.encode()),response_received=True)
+                    content=raw if obj is None else obj if form=='json_string' else obj[mapping.get('content_key',self.adapter.get('read_content_key','content'))]
+                    rel=args[mapping.get('path_key',self.adapter.get('path_key','path'))]
+                    projection=({'projection':'body_frontmatter','properties':obj[mapping['frontmatter_key']],'body_sha256':sha(content.encode())}
+                                if form=='body_frontmatter' else {'content_sha256':sha(content.encode())})
+                    self.event('mcp_read_response',id=req.get('id'),path=rel,**projection,response_received=True)
                     if self.task=='T7b' and not self.injected and rel==P:
-                        self.initial_read={'id':req.get('id'),'content_sha256':sha(content.encode())}
+                        self.initial_read={'id':req.get('id'),**projection}
                         self.event('agent_read_delivered',**self.initial_read)
                 except (KeyError,ValueError,TypeError,IndexError):self.event('readback_unmapped',id=req.get('id'))
             if reply:self.event('response_delivered',id=req.get('id'))

@@ -1,0 +1,4 @@
+{
+  "error": "Préparation applicative non stable/LF/datée en 60 s",
+  "traceback": "Traceback (most recent call last):\n  File \"<CHEMIN_PRIVE>\", line 10, in main\n    launch(cfg);prepare_application(cfg);stop(cfg)\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<CHEMIN_PRIVE>\", line 157, in prepare_application\n    raise TimeoutError('Préparation applicative non stable/LF/datée en 60 s')\nTimeoutError: Préparation applicative non stable/LF/datée en 60 s\n"
+}

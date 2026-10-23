@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"fm\":{},\"content\":\"ADMISSION-C02-1bb70650a8a8c28f811f766ff31490bf49c37a52\"}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

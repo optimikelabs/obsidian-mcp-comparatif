@@ -1,0 +1,869 @@
+{
+  "result": {
+    "tools": [
+      {
+        "name": "vault_list",
+        "description": "List files and subdirectories inside a vault directory. Returns an array of names; directory entries end with '/'. Omit path or pass an empty string to list the vault root.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Directory path relative to vault root (default: root)"
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_read",
+        "description": "Read a vault file's content and metadata. Returns a JSON object with: content (full markdown text), path, tags (array of tag strings), frontmatter (parsed YAML front-matter as an object), stat ({ctime, mtime, size}), links (array of vault-relative paths this file links to), backlinks (array of vault-relative paths of files that link here), unresolvedLinks (array of link text in this file that does not resolve to an existing vault file), and version (the file's version token -- pass it back as ifMatch to vault_write, vault_append, vault_patch, vault_delete, vault_move or vault_copy so that write fails, rather than overwriting someone else's change, if the file has changed in between). Throws if the file does not exist. The three link fields reflect Obsidian's metadata cache as it stands and may be incomplete while Obsidian is still indexing the vault after startup; the server-status resource (obsidian://local-rest-api/status) reports, under state.metadataCache, when the plugin last heard the cache resolve and when it last heard any indexing activity.\n\nWhen targetType and target are both provided, returns only the matched section as a plain string (markdown) or JSON value (frontmatter) instead of the full object. To save context, call vault_get_document_map first to identify headings, block IDs, or frontmatter keys, and prefer targeted reads over full reads for anything but short files.\n\nThis tool reads text. A file whose bytes are not valid UTF-8 — an image, a PDF, any attachment — is refused rather than returned as the lossy string decoding it would produce; read those with vault_read_binary instead.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "targetType": {
+              "type": "string",
+              "enum": [
+                "heading",
+                "block",
+                "frontmatter"
+              ],
+              "description": "Type of section to extract: 'heading', 'block' reference, or 'frontmatter' key"
+            },
+            "target": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Section to extract. For a heading: an array of heading texts naming the path from the top level down to the target (e.g. [\"Heading 1\",\"Subheading\"]) — a bare string is rejected, even for a single top-level heading. If a heading is a duplicate of an earlier sibling, its map key carries an extra non-printable marker suffix; copy that key verbatim from vault_get_document_map, don't retype it. For a block: the bare block id without '^' — likewise, a duplicate block id's later occurrence carries the same kind of marker suffix in vault_get_document_map's blocks list. For a frontmatter field: the key name. Use vault_get_document_map to discover valid heading paths and block ids."
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "content",
+                "marker",
+                "markerAndContent"
+              ],
+              "description": "Which part of the target to read (default 'content'), mirroring vault_patch's scopes: what a scope returns is exactly what a 'replace' at that scope consumes. 'content': the node's body — a heading's body with levels made relative to it, a block's text, a frontmatter value. 'marker': the label — a heading's raw text (no '#'s, no duplicate-marker suffix), a block's bare id, a frontmatter key. 'markerAndContent': the whole node — a heading's subtree with its own line as '# Title' (levels relative to its parent), a block's full span including its '^id', a frontmatter entry as a {key: value} object. Requires targetType and target."
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_write",
+        "description": "Create or overwrite a vault file with the given content. Text only: a path whose extension names an image, audio, video, font, PDF or archive type is refused, as is content containing a NUL byte, because writing text there would corrupt the file -- upload those bytes with vault_get_upload_url, or PUT /vault/<path> over the REST API. Creates any missing parent directories automatically. Overwrites without warning if the file already exists, unless you pass ifMatch (overwrite only the version you read) or ifNoneMatch '*' (create only). Returns the written file's new version token.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "content": {
+              "type": "string",
+              "description": "Full file content (markdown text)"
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Make this call conditional on the file being unchanged: pass the version token from vault_read's or vault_get_document_map's 'version', or from the 'version' a previous write returned. If the file has changed since, or no longer exists, the call fails and nothing is written -- read the file again and redo your edit against what is there now. '*' instead means \"only if the file exists\"."
+            },
+            "ifNoneMatch": {
+              "type": "string",
+              "const": "*",
+              "description": "Pass '*' to make this call create-only: it fails, writing nothing, if the file already exists."
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_read_binary",
+        "description": "Read a non-text vault file: an image, PDF, audio, any attachment. A raster image comes back as an image block (downscaled to fit 1568px) plus a text block with its path, mimeType, size, width, and height. An image still larger than 524288 bytes once downscaled comes back as a resource_link instead, the same as any other oversized file -- or, when signed URLs are off and there is no link to give, is refused with a pointer at the REST endpoint. Since many clients do not show a resource_link to the person, do not leave them with nothing: if you can fetch a URL and put a local file in front of them, download the link to scratch space and show them that file -- the picture reaches them without its bytes passing through your context, and do not read the download back in yourself. Failing that, say why they are getting a link and repeat it in your reply. An SVG comes back unchanged, as its source text in a resource block. Anything else comes back as a resource_link to a signed download URL when signed URLs are enabled, or embedded base64 when they are not and the file is under 524288 bytes.\n\nas overrides that: 'bytes' embeds the raw bytes (under 524288 bytes only); 'link' returns a signed download URL instead of any bytes. Throws if the file does not exist.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "as": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "bytes",
+                "link"
+              ],
+              "description": "How to return the file: 'auto' (default), 'bytes', or 'link'"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_append",
+        "description": "Append content to the end of a vault file. Creates the file if it does not already exist. Text only, on the same terms as vault_write: a path whose extension names a binary type is refused, as is content containing a NUL byte. ifMatch and ifNoneMatch make the append conditional, as for vault_write. Returns the file's new version token.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "content": {
+              "type": "string",
+              "description": "Content to append"
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Make this call conditional on the file being unchanged: pass the version token from vault_read's or vault_get_document_map's 'version', or from the 'version' a previous write returned. If the file has changed since, or no longer exists, the call fails and nothing is written -- read the file again and redo your edit against what is there now. '*' instead means \"only if the file exists\"."
+            },
+            "ifNoneMatch": {
+              "type": "string",
+              "const": "*",
+              "description": "Pass '*' to make this call create-only: it fails, writing nothing, if the file already exists."
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_patch",
+        "description": "Edit a vault file with a single structured instruction: an operation applied to a scope of a target node.\n\n- operation: 'replace', 'prepend', 'append', or 'delete'.\n- scope (default 'content'): 'content' = the node's body; 'marker' = its label (heading line / block '^id' / frontmatter key); 'markerAndContent' = the whole node/subtree; 'parent' = the node's place in the tree (heading move only).\n- The payload rides in exactly one field, chosen by what it is: 'content' (a markdown/text string), 'value' (arbitrary JSON — a frontmatter value, or a 2-D array of row cells to write table rows on a block target's 'content' cell), or 'destination' (where a moved heading lands).\n\nHeading levels inside a 'content' string are relative to the target (a leading '#' becomes a direct child), so you never count '#'s. To discover valid heading paths and block IDs first, call vault_get_document_map.\n\nTo continue an existing block instead of starting a new one, add 'within' (heading targets only): an index picking one of the section's top-level body blocks (0-based, negative from the end; isolated '^id' lines are not counted). 'content'-scope edits then splice literally into that block — append with '\\n- item' extends a list — and 'markerAndContent' prepend/append insert a new block beside it. Read the file first to count blocks, and pair with 'ifMatch'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "targetType": {
+              "type": "string",
+              "enum": [
+                "heading",
+                "block",
+                "frontmatter"
+              ],
+              "description": "The kind of node to edit."
+            },
+            "target": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "The node to edit. For a heading: an array of heading texts from the top level down to the target (e.g. [\"Overview\",\"Details\"]), or null/[] for the document root. If a heading is a duplicate of an earlier sibling under the same parent, its address carries an extra non-printable marker suffix appended by the server — copy that address verbatim from wherever the document's heading structure was discovered, never retype or reconstruct it. For a block: the bare block id, without the leading `^` (letters, numbers, hyphens, and underscores only) — a duplicate block id's later occurrence carries the same kind of marker suffix, copied verbatim the same way. For a frontmatter field: the key."
+            },
+            "within": {
+              "type": "integer",
+              "description": "Refines a heading target to one of the section's direct-body top-level blocks (a paragraph, list, table, code fence, blockquote, …): 0 is the first block in document order, and a negative index counts from the end (-1 = last). Isolated `^id` lines are not counted, so indices match the rendered blocks. With scope `content`, the edit is a literal splice into that block — you own the joint, so `append` *continues* the block (e.g. content `\\n- item` extends a list) — and `delete` removes the block. With scope `markerAndContent`, `prepend`/`append` insert a new block immediately before/after it, with library-owned blank-line separators. Heading targets only; cannot be combined with `createTargetIfMissing`."
+            },
+            "operation": {
+              "type": "string",
+              "enum": [
+                "replace",
+                "prepend",
+                "append",
+                "delete"
+              ],
+              "description": "What happens to the scoped span: replace it, insert before (`prepend`) or after (`append`), or `delete` it."
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "content",
+                "marker",
+                "markerAndContent",
+                "parent"
+              ],
+              "default": "content",
+              "description": "Which part of the target the operation acts on (default `content`). `content`: the node body — for a heading, its whole subtree below the heading line. `marker`: the label only — a heading line, a block `^id`, or a frontmatter key (`replace` renames it). `markerAndContent`: the whole node/subtree (`prepend`/`append` insert a sibling). `parent`: a heading's place in the tree — only with operation `replace`, carrying a `destination` (a move)."
+            },
+            "content": {
+              "type": "string",
+              "description": "String payload: a heading/block body or label, a new block id for a block `marker` rename (letters, numbers, hyphens, and underscores only), or a new frontmatter key name for a frontmatter `marker` rename. Heading levels are relative to the edited span (a leading `#` becomes a direct child). For heading writes, whitespace is library-owned: leading/trailing blank lines here are ignored, and the engine supplies the blank line that keeps inserted content a separate block — never add newlines to control spacing. (Block-target `content` is the exception: it is spliced literally for inline edits.) A heading `marker` rename may not contain a line break. Provide exactly one of `content`, `value`, or `destination`."
+            },
+            "value": {
+              "description": "Structured JSON payload: a frontmatter value (any JSON — string, number, boolean, array, object, null; for `prepend`/`append` this merges: list concat, dict merge, string concat), or table rows on a `block` target's `content` cell (a 2-D array of strings, one row per entry — `replace` swaps the body rows, `prepend`/`append` insert before/after the existing ones; each row's length must match the table's column count). Table cells are content, not table source: a `|` is escaped for you, and a cell containing a line break is rejected, since a row is a single line. Provide exactly one of `content`, `value`, or `destination`."
+            },
+            "destination": {
+              "type": "object",
+              "properties": {
+                "parent": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "The section's new parent heading address, or null/[] for the document root."
+                },
+                "place": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "first",
+                        "last"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "before": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/properties/destination/properties/parent/anyOf/0"
+                            },
+                            {
+                              "$ref": "#/properties/destination/properties/parent/anyOf/1"
+                            }
+                          ],
+                          "description": "A heading's containment path: the ancestor heading texts from the top level down (e.g. [\"Overview\",\"Details\"]), or null/[] for the document root."
+                        }
+                      },
+                      "required": [
+                        "before"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "after": {
+                          "$ref": "#/properties/destination/properties/place/anyOf/1/properties/before"
+                        }
+                      },
+                      "required": [
+                        "after"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ],
+                  "description": "Position among the new parent's children: \"first\", \"last\", or { before } / { after } a sibling heading address."
+                }
+              },
+              "required": [
+                "parent",
+                "place"
+              ],
+              "additionalProperties": false,
+              "description": "For a heading move (operation `replace`, scope `parent`): where the section is re-parented. Provide exactly one of `content`, `value`, or `destination`."
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Optimistic-concurrency token (the `version` from a prior document map). If set and the document has changed since, the patch fails with a precondition error without modifying the file."
+            },
+            "createTargetIfMissing": {
+              "type": "boolean",
+              "default": false,
+              "description": "Create the target (heading path, block id, or frontmatter key) if it does not already exist."
+            },
+            "rejectIfContentPreexists": {
+              "type": "boolean",
+              "default": false,
+              "description": "Fail a `prepend`/`append` when the string content already appears in the target span (makes those operations idempotent on retry)."
+            }
+          },
+          "required": [
+            "path",
+            "targetType",
+            "target",
+            "operation"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_delete",
+        "description": "Delete a file from the vault. Throws if the file does not exist. By default, moves the file to trash (following the user's Obsidian \"Deleted files\" preference — either the \".trash\" folder or the system trash) rather than deleting it permanently. Pass ifMatch to delete only the version you read.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "permanent": {
+              "type": "boolean",
+              "description": "If true, permanently deletes the file instead of moving it to trash (default: false)."
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Make this call conditional on the file being unchanged: pass the version token from vault_read's or vault_get_document_map's 'version', or from the 'version' a previous write returned. If the file has changed since, or no longer exists, the call fails and nothing is written -- read the file again and redo your edit against what is there now. '*' instead means \"only if the file exists\"."
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_move",
+        "description": "Move (rename) a vault file to a new path. Creates any missing parent directories at the destination automatically. Preserves file history and updates internal Obsidian links. Throws if the source file does not exist.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Source file path relative to vault root"
+            },
+            "destination": {
+              "type": "string",
+              "description": "Destination path relative to vault root; must not escape the vault root. May end with '/' to preserve the source filename in the target directory (e.g. destination 'archive/' moves 'notes/todo.md' to 'archive/todo.md')."
+            },
+            "allowOverwrite": {
+              "type": "boolean",
+              "description": "If true, move proceeds even when a file already exists at the destination; otherwise the move throws (default: false)."
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Make this move conditional on the source file being unchanged: pass the version token from vault_read's or vault_get_document_map's 'version'. If the source has changed since, the call fails and nothing is moved."
+            }
+          },
+          "required": [
+            "path",
+            "destination"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_copy",
+        "description": "Copy a vault file to a new path. Creates any missing parent directories at the destination automatically. Throws if the source file does not exist.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Source file path relative to vault root"
+            },
+            "destination": {
+              "type": "string",
+              "description": "Destination path relative to vault root; must not escape the vault root. May end with '/' to preserve the source filename in the target directory (e.g. destination 'archive/' copies 'notes/todo.md' to 'archive/todo.md')."
+            },
+            "allowOverwrite": {
+              "type": "boolean",
+              "description": "If true, copy proceeds even when a file already exists at the destination; otherwise the copy throws (default: false)."
+            },
+            "ifMatch": {
+              "type": "string",
+              "description": "Make this copy conditional on the source file being unchanged: pass the version token from vault_read's or vault_get_document_map's 'version'. If the source has changed since, the call fails and nothing is copied."
+            }
+          },
+          "required": [
+            "path",
+            "destination"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_get_document_map",
+        "description": "Return the structure of a vault file as a document map: its heading tree, block reference IDs, and frontmatter field names, plus a version token. Use this before vault_read or vault_patch with targeting to discover what targets are available without parsing the full markdown content yourself.\n\nheadings is a nested object mirroring the document's heading nesting: each heading's text maps to an object of its child headings, and a leaf heading maps to {} (e.g. {\"Overview\": {\"Details\": {}}}). To target a heading, use the path of keys from the top level down to it (e.g. ['Overview', 'Details']) as a vault_patch or vault_read heading target. Every occurrence of a heading gets its own key, even a duplicate: the first occurrence keeps its plain text, and each later occurrence's key has an opaque, non-printable marker suffix appended by the server — given '## Log' twice, the tree is {\"Log\": {}, \"Log<marker>\": {}}, and both are separately addressable. Always copy such a key verbatim from this response into a vault_read/vault_patch target array; never retype or reconstruct one yourself. blocks are bare reference IDs (no '^'), one entry per block in document order; a duplicate block id gets the same disambiguation treatment as a heading — the first occurrence's entry is the plain id, and each later occurrence's entry carries the same kind of marker suffix, again to be copied verbatim. frontmatterFields are top-level key names. version is a content hash of the file — pass it back as vault_patch's ifMatch to make an edit conditional on the file being unchanged.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "active_file_get_path",
+        "description": "Return the vault-relative path of the file currently open in Obsidian. Use this path with vault_read, vault_write, vault_append, vault_patch, vault_get_document_map, or vault_delete to operate on the active file. Throws if no file is active.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "search_query",
+        "description": "Search vault files using a JsonLogic query evaluated against each note's metadata.\n\nThe query is a JSON object evaluated against a NoteJson object for each file; files where the result is truthy are returned. Falsy results are false, null, undefined, 0, NaN, \"\", [], and {}. So a query that selects a value rather than testing a condition, like {\"var\": \"frontmatter.aliases\"}, leaves out notes where that field is empty ([], \"\", false, 0) exactly as it leaves out notes without the field: absence from the results does not mean the field is absent. To test for presence use {\"!\": {\"missing\": [\"frontmatter.aliases\"]}}; note that missing also counts a field whose value is \"\" or null as missing.\n\nExample NoteJson shape:\n{\n  \"path\": \"journal/2024-01-15.md\",\n  \"content\": \"# My note\\n\\nSome content here.\",\n  \"tags\": [\"daily\", \"work\"],\n  \"frontmatter\": { \"status\": \"done\", \"url\": \"https://example.com\", \"priority\": 2 },\n  \"stat\": { \"ctime\": 1705276800000, \"mtime\": 1705363200000, \"size\": 1024 },\n  \"links\": [\"projects/foo.md\"],\n  \"backlinks\": [\"index.md\"],\n  \"unresolvedLinks\": [\"not-yet-created.md\"]\n}\n\nCall vault_read on any file (without targeting) to see the exact shape for a real file in this vault, including its actual frontmatter fields.\n\nUseful JsonLogic operators:\n- {\"==\": [a, b]} — equal\n- {\"!=\": [a, b]} — not equal\n- {\"in\": [value, array]} — array contains value\n- {\"<\": [a, b]}, {\">\": [a, b]}, {\"<=\": [a, b]}, {\">=\": [a, b]} — numeric/string comparison\n- {\"and\": [...]}, {\"or\": [...]}, {\"!\": expr} — boolean logic\n- {\"var\": \"path\"} — access a field (use dot notation for nested: \"frontmatter.status\")\n- {\"if\": [cond, then, else]} — conditional\n\nExtra operators beyond standard JsonLogic:\n- {\"glob\": [\"*.foo\", {\"var\": \"path\"}]} — glob pattern match\n- {\"regexp\": [\"^daily/\", {\"var\": \"path\"}]} — regular expression match\n\nReturns an array of {filename, result} objects where result is the truthy value the query produced for that file.\n\nExamples:\n- Find by tag: {\"in\": [\"myTag\", {\"var\": \"tags\"}]}\n- Find by frontmatter field: {\"==\": [{\"var\": \"frontmatter.status\"}, \"done\"]}\n- Find by path glob: {\"glob\": [\"journal/*\", {\"var\": \"path\"}]}\n- Modified after a date: {\">\": [{\"var\": \"stat.mtime\"}, 1704067200000]}\n- Notes without a frontmatter field: {\"missing\": [\"frontmatter.aliases\"]}\n- Multiple conditions: {\"and\": [{\"in\": [\"work\", {\"var\": \"tags\"}]}, {\"==\": [{\"var\": \"frontmatter.status\"}, \"done\"]}]}",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "JsonLogic query object to evaluate against each note"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "search_simple",
+        "description": "Search vault files using Obsidian's built-in simple search. Returns an array of {filename, score, matches, totalMatches} objects sorted by relevance score. Each match includes the matched text and surrounding context characters (controlled by contextLength). Obsidian matches each word of the query separately, so common words match nearly everywhere; prefer distinctive terms. Results are limited to the 20 highest-scoring files and the first 10 matches in each unless maxResults or maxMatchesPerFile say otherwise; each file's totalMatches gives how many matches it had in all, and a second text block says how much was left out whenever anything was.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Search query string"
+            },
+            "contextLength": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 500,
+              "description": "Number of characters of surrounding context to return per match, at most 500 (default: 100)"
+            },
+            "maxResults": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "description": "The most files to return, keeping the highest-scoring ones (default: 20)"
+            },
+            "maxMatchesPerFile": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "description": "The most matches to return for each file, in document order (default: 10)"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "tag_list",
+        "description": "Return all tags used across the vault, each with a usage count. Tag names do not include the leading '#'. This tool is read-only. To add a tag to a specific file, use vault_patch with targetType 'frontmatter', target 'tags', operation 'append', and value [\"tag-name\"] (set createTargetIfMissing to true if the file may have no tags yet). To remove a tag, read the current tags list with vault_read, filter client-side, then replace the whole field with vault_patch using operation 'replace' and value set to the filtered list. For full examples, read the OpenAPI spec resource at obsidian://local-rest-api/openapi.yaml.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "command_list",
+        "description": "Return all registered Obsidian commands. Each entry has an 'id' and a human-readable 'name'. Pass the 'id' to command_execute to run a command.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "command_execute",
+        "description": "Execute an Obsidian command by its ID. Use command_list to discover available command IDs. Throws if the command ID does not exist.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "commandId": {
+              "type": "string",
+              "description": "The command ID to execute (e.g. 'editor:toggle-bold')"
+            }
+          },
+          "required": [
+            "commandId"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "open_file",
+        "description": "Open a file in the Obsidian UI. If the file does not exist, Obsidian will create a new document at that path. Set newLeaf to true to open in a new pane rather than the current one.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            },
+            "newLeaf": {
+              "type": "boolean",
+              "description": "Open in a new leaf/pane (default: false)"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_get_download_url",
+        "description": "Return a signed, expiring URL for GET /vault/<path> as a resource_link, plus a markdown link. The URL needs no API key, so it can be opened in a browser or fetched with curl, and the bytes never pass through this conversation. Many clients do not surface a resource_link to the person at all, so when the file is for them rather than for you: if you can fetch a URL and put a local file in front of them, download it to scratch space and show them that file. The bytes then go from the vault to their screen without passing through your context, which is the cheapest route and the one this link exists to enable -- so do not read the downloaded file back in yourself, which would pay exactly the token cost the link avoids. Failing that, repeat the markdown link in your own reply, where it renders as something clickable, noting that this gets them a link rather than a picture: a markdown image does not display inline in a terminal client. Over HTTPS the browser must trust the plugin's certificate; the plain-HTTP port avoids that. Throws if the file does not exist.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "File path relative to vault root"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "vault_get_upload_url",
+        "description": "Return a signed, single-use URL for PUT /vault/<path>, for uploading a file that exists on your host. The result includes a ready-to-run curl command. The Content-Type is informational: a signed upload stores exactly the bytes you send, whatever type you declare, so a pretty-printed .json keeps its whitespace instead of being reparsed and re-serialized. The URL needs no API key and expires; the request that succeeds consumes it. Creates missing parent directories and overwrites an existing file without warning.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Destination file path relative to vault root"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "events_get_listener_url",
+        "description": "Subscribe to one Obsidian event and return a signed URL that streams matching occurrences as Server-Sent Events (text/event-stream). The URL needs no API key, so a process on your host can follow it -- `curl -N <url>`, or an EventSource in a browser -- and act on each event as it arrives. Each message's `event:` field is the event name, its `id:` is `<epoch>-<counter>` (a new epoch or a gap in the counter means events were missed; nothing is replayed), and its data is a JSON object. For the built-in emitters that object is {emitter, event, path, file}, where file is the NoteJson search_query evaluates (without content unless your filter reads file.content), plus oldPath on vault rename, isFolder on vault events, previous ({frontmatter, tags}) on metadataCache deleted, and viewType on workspace active-leaf-change. An extension's events carry whatever payload that extension defines, which need not have path or file.\n\nStreamable events -- vault: create, modify, delete, rename; metadataCache: changed, deleted, resolve, resolved; workspace: file-open, active-leaf-change, layout-change. Plugins extending this server can add their own, with their plugin id as the emitter and a payload they define; ask for an emitter or event that does not exist and the error lists everything currently available. For \"a note's frontmatter changed\", prefer metadataCache changed over vault modify: vault modify fires before Obsidian has re-read the file's metadata.\n\nThe optional filter is a JsonLogic expression evaluated against that data object, with the same extra operators as search_query (glob, regexp); only events for which it is truthy are sent. Examples: {\"glob\": [\"journal/*\", {\"var\": \"path\"}]}; {\"==\": [{\"var\": \"file.frontmatter.status\"}, \"done\"]}. The URL expires after ttlSeconds (default: the server's signed-URL lifetime); a stream opened before then stays open, but reconnecting after it is refused and needs a new URL. At most 16 streams may be open at once. Anyone holding the URL sees the path and metadata of every matching event, and note content if the filter reads file.content.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "emitter": {
+              "type": "string",
+              "description": "The Obsidian object whose event to follow (vault, metadataCache, workspace), or the plugin id of an extension that registered events"
+            },
+            "event": {
+              "type": "string",
+              "description": "The event name, one of those listed for the emitter"
+            },
+            "filter": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "JsonLogic expression events must satisfy; omit to receive every occurrence"
+            },
+            "ttlSeconds": {
+              "type": "integer",
+              "description": "How long the URL stays valid, in seconds (clamped to 10-86400)"
+            }
+          },
+          "required": [
+            "emitter",
+            "event"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "journal_list",
+        "description": "Lists the journals in this vault with their write type, notelet types and the questions each asks before creating a note. Call this first to learn journal names and what answers journal_note_ensure and journal_notelet_create take.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "journal_notes",
+        "description": "Finds a journal's existing notes and notelets for one day or a date range, without creating anything. A single date also finds the week, month or other period note that contains it. Returns vault paths; read or edit a note with vault_read, vault_patch or vault_append.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "journal": {
+              "type": "string",
+              "description": "The journal's name, as journal_list reports it."
+            },
+            "from": {
+              "type": "string",
+              "description": "A day: \"today\", \"YYYY-MM-DD\", or a shift such as \"+1w\" or \"-1d\"."
+            },
+            "to": {
+              "type": "string",
+              "description": "A day: \"today\", \"YYYY-MM-DD\", or a shift such as \"+1w\" or \"-1d\"."
+            },
+            "type": {
+              "type": "string",
+              "description": "Only notelets of this type."
+            }
+          },
+          "required": [
+            "journal",
+            "from"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "journal_note_ensure",
+        "description": "Returns the journal's note for the period containing a date, creating it from the journal's template first if it does not exist yet. Returns the vault path and whether it was created; read or edit it with vault_read, vault_patch or vault_append.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "journal": {
+              "type": "string",
+              "description": "The journal's name, as journal_list reports it."
+            },
+            "date": {
+              "type": "string",
+              "description": "A day: \"today\", \"YYYY-MM-DD\", or a shift such as \"+1w\" or \"-1d\"."
+            },
+            "answers": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "Answers to the journal's questions, keyed by each question's variable (journal_list lists them). A date answer is YYYY-MM-DD; a note answer is an existing vault path."
+            }
+          },
+          "required": [
+            "journal",
+            "date"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "journal_notelet_create",
+        "description": "Creates a new notelet of a type for a date. Every call creates another notelet, so do not retry a call that succeeded. Returns the new note's vault path; edit it with vault_patch or vault_append.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "journal": {
+              "type": "string",
+              "description": "The journal's name, as journal_list reports it."
+            },
+            "date": {
+              "type": "string",
+              "description": "A day: \"today\", \"YYYY-MM-DD\", or a shift such as \"+1w\" or \"-1d\"."
+            },
+            "type": {
+              "type": "string",
+              "description": "The notelet type's name."
+            },
+            "answers": {
+              "type": "object",
+              "additionalProperties": {},
+              "description": "Answers to the journal's questions, keyed by each question's variable (journal_list lists them). A date answer is YYYY-MM-DD; a note answer is an existing vault path."
+            }
+          },
+          "required": [
+            "journal",
+            "date",
+            "type"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

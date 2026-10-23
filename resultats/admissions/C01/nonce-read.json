@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"tags\": [],\n  \"frontmatter\": {},\n  \"stat\": {\n    \"ctime\": 1792739808294,\n    \"mtime\": 1792739808294,\n    \"size\": 54\n  },\n  \"path\": \"Admission — nonce C01.md\",\n  \"content\": \"ADMISSION-C01-b66052880449682e3098605c4a1c45b2ad69bf81\",\n  \"links\": [],\n  \"backlinks\": [],\n  \"unresolvedLinks\": [],\n  \"version\": \"c15de6\"\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 3
+}

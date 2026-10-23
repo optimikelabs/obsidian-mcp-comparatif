@@ -34,6 +34,8 @@ class Fake:
                     self.call('patch' if name=='deferred_patch' else 'append',args);self.state='committed'
             thread=threading.Thread(target=work,daemon=True);thread.start();self.threads.append(thread)
             value={'state':'pending','operation_id':'fake-operation'}
+        elif name=='read_structured':
+            props,body=split(p.read_bytes());value={'fm':props,'content':body}
         elif name=='read':value={'path':args['path'],'content':p.read_text(encoding='utf-8'),'etag':sha(p.read_bytes())}
         else:
             if args.get('etag') and (not p.exists() or sha(p.read_bytes())!=args['etag']):raise ValueError('REVISION_CONFLICT')

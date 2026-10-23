@@ -1,0 +1,35 @@
+{
+  "candidate": "C01",
+  "transport": "http",
+  "mutation_tools": [
+    "vault_write",
+    "vault_append",
+    "vault_patch",
+    "vault_delete",
+    "vault_move",
+    "vault_copy"
+  ],
+  "preparation_tools": [],
+  "read_tools": [
+    "vault_read"
+  ],
+  "read_format": "json",
+  "read_content_key": "content",
+  "path_key": "path",
+  "status_tools": [],
+  "enabled_tools": [
+    "vault_read",
+    "vault_list",
+    "search_simple",
+    "search_query",
+    "tag_list",
+    "vault_get_document_map",
+    "vault_write",
+    "vault_append",
+    "vault_patch"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json"
+  ]
+}

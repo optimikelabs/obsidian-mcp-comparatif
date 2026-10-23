@@ -1,0 +1,48 @@
+{
+  "candidate": "C02",
+  "transport": "stdio",
+  "mutation_tools": [
+    "write_note",
+    "patch_note",
+    "delete_note",
+    "move_note",
+    "move_file",
+    "update_frontmatter",
+    "manage_tags"
+  ],
+  "preparation_tools": [],
+  "read_tools": [
+    "read_note",
+    "read_note_lines"
+  ],
+  "read_mappings": {
+    "read_note": {
+      "format": "body_frontmatter",
+      "content_key": "content",
+      "frontmatter_key": "fm"
+    },
+    "read_note_lines": {
+      "format": "raw"
+    }
+  },
+  "path_key": "path",
+  "enabled_tools": [
+    "read_note",
+    "read_note_lines",
+    "get_note_outline",
+    "write_note",
+    "patch_note",
+    "list_directory",
+    "search_notes",
+    "update_frontmatter",
+    "get_frontmatter",
+    "get_notes_info",
+    "get_vault_stats",
+    "list_all_tags",
+    "wiki_link"
+  ],
+  "technical_paths": [
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/frontmatter-date-manager/data.json"
+  ]
+}

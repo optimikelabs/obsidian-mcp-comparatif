@@ -1,0 +1,16 @@
+{
+  "candidate": "C02",
+  "status": "ADMIS",
+  "nonceVerified": true,
+  "reason": "Nonce et schémas lecture brute/structurée, patch et frontmatter qualifiés sur notes distinctes.",
+  "mode": "Fichiers sans Obsidian, hors préparation et T5/T6/T7/T7b",
+  "command": [
+    "node",
+    "<CHEMIN_PRIVE>",
+    "<CHEMIN_PRIVE>"
+  ],
+  "artifact_sha256": "2ab928fb36a37ff5002c2755d4b019024b1588d6aa14fed75cdfdd00bac57e0f",
+  "catalog_sha256": "c5728c43815aa15b29d3ef3c65c5a98565a19002f10d74fec9b8909ae5c718f9",
+  "adapter_sha256": "8dbd9928be10f53e3a88ba5a8c24f00d86e53b92355097ab0bcf1378ceae0659",
+  "utc": "2026-10-23T07:27:10.016645+00:00"
+}
