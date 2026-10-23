@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T14:32:36.051286+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T14:42:00.130958+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "634a5c9723a5664a8b2d6e1b646bac2a4ed6bfeb", "remote_verified": true, "utc": "2026-10-23T14:30:59.248400+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "30078e16fd2ccf086d8b2a2aeb9452b99fa7d3d6", "remote_verified": true, "utc": "2026-10-23T14:33:34.985399+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -30,6 +30,10 @@ C05-T5-r1 reste INJECTION_INVALIDE : défaut du banc d’essai (cibles N/P absen
 ## Note d’exploitation C5 du 23 octobre, 16 h 04
 
 C08-T4-r1 reste NON_EXECUTE_ENVIRONNEMENT. Un remplacement unique en fin de série 1 est ajouté à ceux de C05-T1-r1 et C05-T5-r1. Les incidents du banc sans modification métier prouvée, clairement attribués au banc et sans remplacement antérieur peuvent être publiés puis différés en fin de série sans nouvel arbitrage. Tout doute, modification métier inattendue ou deuxième incident impose un arrêt. Registre : manifestes/remplacements-autorises.json. Journal secondaire tronqué conservé ; aucun oracle candidat ne le lit (preuves/exploitation-journal-audit.json). Fermeture native bornée à deux demandes de 15 secondes, profil et exécutable vérifiés. Priorité au fil produit 1.0.7 pour le verrou.
+
+## Validation après instantané : C08-T5-r1
+
+VALIDEE / PROTEGE_NON_ACCOMPLI : dates ajoutées par FDM après l’instantané, hors jugement. Voir validations-post-instantane/C08-T5-r1.json. Résultat brut et instantané inchangés.
 
 ## Historique — diagnostic et arrêt sous v1.1
 
@@ -108,8 +112,8 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "ARRET_ECART_POST_FERMETURE_DEMANDE_C5",
-  "utc": "2026-10-23T14:32:35.984478+00:00",
+  "state": "PRET_CELLULE_SUIVANTE",
+  "utc": "2026-10-23T14:41:16.436906+00:00",
   "next_cell": "C08-T6-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
@@ -118,14 +122,12 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C08-T5-r1",
   "last_result": "PROTEGE_NON_ACCOMPLI",
-  "last_reason": "Verdict brut avant fermeture préservé. Ajout de création/modification à N après cet instantané ; corps humain intact ; writer non attribué par preuve FDM.",
-  "incident_cell": "C08-T5-r1",
-  "next_action": "Décision C5 requise sur post-fermeture-C08-T5-r1 avant toute reprise à C08-T6-r1.",
-  "operating_note_commit": "7b419b449a895b08a9f764938fdea7c579453827",
+  "last_reason": "dates ajoutées par FDM après l’instantané, hors jugement",
+  "next_action": "Reprendre C08-T6-r1 après publication de la décision C5 16 h 35 ; priorité produit 1.0.7.",
   "replacement_registered": false
 }
 ```
 
 ## Pilotage
 
-État opérationnel : ARRET_ECART_POST_FERMETURE_DEMANDE_C5. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Décision C5 requise sur post-fermeture-C08-T5-r1 avant toute reprise à C08-T6-r1.. Aucune tâche du coffre modifiée.
+État opérationnel : PRET_CELLULE_SUIVANTE. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : Reprendre C08-T6-r1 après publication de la décision C5 16 h 35 ; priorité produit 1.0.7.. Aucune tâche du coffre modifiée.

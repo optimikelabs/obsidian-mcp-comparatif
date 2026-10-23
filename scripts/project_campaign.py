@@ -45,11 +45,11 @@ def project_cells(public):
 def main():
     build();project();public=KIT/'public';project_cells(public)
     names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
-           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py','test_closure_operation.py','close_owned_cdp.mjs']
+           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py','test_closure_operation.py','close_owned_cdp.mjs','observe_post_snapshot.py','test_post_snapshot.py']
     for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
-    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md','NOTE-EXPLOITATION-20261023-C5.md','DECISIONS-C5-20261023.md','AMENDEMENT-C08-T4-r1.md'):
+    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md','NOTE-EXPLOITATION-20261023-C5.md','DECISIONS-C5-20261023.md','AMENDEMENT-C08-T4-r1.md','NOTE-EXPLOITATION-20261023-FDM-C5.md','DECISIONS-C5-20261023-1635.md'):
         if (KIT/name).exists():sanitize_file(KIT/name,public/name)
-    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json','tests-fermeture.json','tests-fermeture-ui.json','exploitation-journal-audit.json','exploitation-resultats-preserves.json','fermeture-native-incident.json'):
+    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json','tests-fermeture.json','tests-fermeture-ui.json','exploitation-journal-audit.json','exploitation-resultats-preserves.json','fermeture-native-incident.json','tests-post-instantane.json'):
         p=KIT/'preuves'/name
         if p.exists():sanitize_file(p,public/'preuves'/name)
     sanitize_file(KIT/'manifestes/remplacements-autorises.json',public/'manifestes/remplacements-autorises.json')
@@ -103,6 +103,7 @@ def main():
     if (RUN/'V12-ETAT.json').exists():sanitize_file(RUN/'V12-ETAT.json',public/'resultats/V12-ETAT.json')
     if (KIT/'preuves/v12-preservation-v11.json').exists():sanitize_file(KIT/'preuves/v12-preservation-v11.json',public/'preuves/v12-preservation-v11.json')
     for p in (RUN/'publication').glob('incident-*.json'):sanitize_file(p,public/'resultats/publication'/p.name)
+    for p in (RUN/'validations-post-instantane').glob('*.json'):sanitize_file(p,public/'resultats/validations-post-instantane'/p.name)
     for p in (RUN/'incidents').glob('*.json'):sanitize_file(p,public/'resultats/incidents'/p.name)
     for cid in (f'C{i:02}' for i in range(1,11)):
         base=RUN/'admissions'/cid
