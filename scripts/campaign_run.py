@@ -71,6 +71,11 @@ def main():
     for name,digest in readj(KIT/'preuves/v14-code-qualifie.json')['files'].items():
         assert sha((KIT/name).read_bytes())==digest,'Code différent de la qualification v1.4 : '+name
     assert readj(KIT/'preuves/tests-fermeture-ui.json')['success']
+    assert readj(KIT/'preuves/tests-fermeture-timeout.json')['success']
+    assert readj(KIT/'preuves/tests-stockage-lourd.json')['success']
+    assert readj(KIT/'preuves/tests-stockage-lourd.json').get('after_complete_transfer') is True,'Rejeu factice final après transfert encore requis'
+    for name,digest in readj(KIT/'preuves/tests-stockage-lourd.json')['files'].items():
+        assert sha((KIT/name).read_bytes())==digest,'Code différent de la qualification stockage : '+name
     assert readj(KIT/'preuves/tests-injection-v13.json')['success']
     assert readj(KIT/'preuves/tests-injection-v13-ui.json')['success']
     assert git('ls-remote','origin','refs/heads/main').split()[0]==git('rev-parse','HEAD')

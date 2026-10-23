@@ -1,6 +1,7 @@
 {
   "success": true,
   "fake_cases_replayed_after_redaction": 216,
+  "storage_cases_replayed_after_redaction": 61,
   "candidate_scores_rewritten": false,
-  "utc": 1792770810.2920556
+  "utc": 1792775772.3892179
 }

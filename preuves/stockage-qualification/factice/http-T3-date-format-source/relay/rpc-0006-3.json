@@ -1,0 +1,25 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "rank",
+      "arguments": {
+        "path": "Efforts/Projets/Projet témoin — Test MCP.md"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\": \"Efforts/Projets/Projet témoin — Test MCP.md\", \"ok\": true}"
+        }
+      ]
+    }
+  }
+}

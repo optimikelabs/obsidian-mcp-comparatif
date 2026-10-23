@@ -84,7 +84,9 @@ def prepare(out,plugin_sources=()):
     assert out.resolve().is_relative_to(KIT.parent.resolve())
     out.mkdir(parents=True,exist_ok=True);vault=out/'vault';profile=out/'profile'
     if vault.exists():raise RuntimeError('Bac existant : ne pas réutiliser')
-    shutil.copytree(KIT/'fixtures/Margelle-1.0.6',vault);profile.mkdir()
+    from heavy_storage import empty_directory
+    empty_directory(out,'vault');empty_directory(out,'profile')
+    shutil.copytree(KIT/'fixtures/Margelle-1.0.6',vault,dirs_exist_ok=True)
     plugins=readj(vault/'.obsidian/community-plugins.json')
     plugins=[p for p in plugins if p!='elysia-hub']
     # Les identifiants exacts livrés sont contrôlés, sans hypothèse sur le nom Hub.

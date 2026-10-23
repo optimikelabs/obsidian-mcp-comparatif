@@ -1,0 +1,313 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "tools": [
+        {
+          "name": "read",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "create",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "write",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "patch",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "append",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "rank",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "refuse",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "deferred_patch",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "deferred_refuse",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "deferred_append",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "name": "status",
+          "description": "FAKE qualification only",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "old": {
+                "type": "string"
+              },
+              "new": {
+                "type": "string"
+              },
+              "etag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

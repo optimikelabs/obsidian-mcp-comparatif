@@ -45,11 +45,12 @@ def project_cells(public):
 def main():
     build();project();public=KIT/'public';project_cells(public)
     names=['common.py','relay.py','oracles.py','technical_receipts.py','client_cli.py','campaign_runtime.py','candidate_runtime.py','campaign_cell.py','campaign_reporting.py','project_campaign.py','validate_projection.py',
-           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py','test_closure_operation.py','close_owned_cdp.mjs','observe_post_snapshot.py','test_post_snapshot.py','fdm_dates_v14.py','oracles_v13.py','test_fdm_dates_v14.py','audit_fdm_v14.py']
+           'fdm_observer.py','fdm_cache.py','test_fdm_cache.py','qualify_client.py','qualify_client_t8.py','test_kit.py','test_t7b.py','test_read_mappings.py','test_native_mappings.py','test_technical_receipts.py','test_dates_stages.py','campaign_cdp.mjs','campaign_run.py','ui_cdp.mjs','test_injection_v13.py','campaign_replacements.py','test_closure_operation.py','close_owned_cdp.mjs','observe_post_snapshot.py','test_post_snapshot.py','fdm_dates_v14.py','oracles_v13.py','test_fdm_dates_v14.py','audit_fdm_v14.py','heavy_storage.py','test_heavy_storage.py','finalize_heavy_storage.py','finish_installations_migration.py','complete_verified_installations.py','qualify_storage_after_transfer.py','publish_storage_pause.py']
     for name in names:sanitize_file(KIT/'scripts'/name,public/'scripts'/name)
-    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md','NOTE-EXPLOITATION-20261023-C5.md','DECISIONS-C5-20261023.md','AMENDEMENT-C08-T4-r1.md','NOTE-EXPLOITATION-20261023-FDM-C5.md','DECISIONS-C5-20261023-1635.md','AMENDEMENT-V1.4-C5.md','AMENDEMENT-C08-T6-r1.md','AMENDEMENT-C08-T8-r1.md','PROTOCOLE-V1.3-GELE.md','DECISIONS-C5-20261023-1650.md','NOTE-EXPLOITATION-20261023-PAUSE.md'):
+    (public/'scripts/migrate_heavy_storage.ps1').write_bytes((KIT/'scripts/migrate_heavy_storage.ps1').read_bytes())
+    for name in ('PROTOCOLE-V1.md','PROTOCOLE-V1.1-GELE.md','README.md','AMENDEMENT-ADMISSIONS-ET-CLIENT.md','AMENDEMENT-C05-T1-r1.md','AMENDEMENT-C05-T4-r1.md','AMENDEMENT-V1.2-C5.md','DIAGNOSTIC-C05-T4-r1.md','AMENDEMENT-V1.3-C5.md','AMENDEMENT-C05-T5-r1.md','PROTOCOLE-V1.2-GELE.md','QUALIFICATION-V1.3.md','NOTE-EXPLOITATION-20261023-C5.md','DECISIONS-C5-20261023.md','AMENDEMENT-C08-T4-r1.md','NOTE-EXPLOITATION-20261023-FDM-C5.md','DECISIONS-C5-20261023-1635.md','AMENDEMENT-V1.4-C5.md','AMENDEMENT-C08-T6-r1.md','AMENDEMENT-C08-T8-r1.md','PROTOCOLE-V1.3-GELE.md','DECISIONS-C5-20261023-1650.md','NOTE-EXPLOITATION-20261023-PAUSE.md','NOTE-EXPLOITATION-STOCKAGE.md','REPRISE-APRES-QUOTA.md'):
         if (KIT/name).exists():sanitize_file(KIT/name,public/name)
-    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json','tests-fermeture.json','tests-fermeture-ui.json','tests-fermeture-timeout.json','exploitation-journal-audit.json','exploitation-resultats-preserves.json','fermeture-native-incident.json','tests-post-instantane.json','v14-audit-equite.json','v14-code-qualifie.json'):
+    for name in ('v13-audit-cellules.json','v13-resultats-preserves.json','v13-code-qualifie.json','v13-client-preserve.json','v13-ui-sortie.json','tests-injection-v13.json','tests-injection-v13-ui.json','tests-fermeture.json','tests-fermeture-ui.json','tests-fermeture-timeout.json','tests-stockage-lourd.json','stockage-migration-resume.json','exploitation-journal-audit.json','exploitation-resultats-preserves.json','fermeture-native-incident.json','tests-post-instantane.json','v14-audit-equite.json','v14-code-qualifie.json'):
         p=KIT/'preuves'/name
         if p.exists():sanitize_file(p,public/'preuves'/name)
     sanitize_file(KIT/'manifestes/remplacements-autorises.json',public/'manifestes/remplacements-autorises.json')
@@ -98,6 +99,22 @@ def main():
             obj=readj(p)
             if isinstance(obj,dict) and 'case' in obj and 'oracle' in obj:
                 assert redact(verify(redact(obj['case'])))==redact(obj['oracle']);count+=1
+    storage_count=0
+    storage_meta=KIT/'preuves/tests-stockage-lourd.json'
+    if storage_meta.exists():
+        storage_root=Path(readj(storage_meta)['root'])
+        for section in ('factice','v14'):
+            root=storage_root/section;dest=public/'preuves/stockage-qualification'/section
+            for p in root.rglob('*'):
+                if p.is_file() and p.suffix in ('.json','.jsonl') and 'vault' not in p.relative_to(root).parts:
+                    sanitize_file(p,dest/p.relative_to(root))
+            for p in root.rglob('case.json'):
+                c=readj(p);v=readj(p.with_name('oracle.json'));assert verify(c)==v
+                assert redact(verify(redact(c)))==redact(v);storage_count+=1
+            for p in root.rglob('*.json'):
+                obj=readj(p)
+                if isinstance(obj,dict) and 'case' in obj and 'oracle' in obj:
+                    assert redact(verify(redact(obj['case'])))==redact(obj['oracle']);storage_count+=1
     for name in ('CLIENT-QUALIFICATION.json','CLIENT-T8-QUALIFICATION.json','FDM-QUALIFICATION.json'):
         if (RUN/name).exists():sanitize_file(RUN/name,public/'resultats'/name)
     if (RUN/'V12-ETAT.json').exists():sanitize_file(RUN/'V12-ETAT.json',public/'resultats/V12-ETAT.json')
@@ -105,6 +122,8 @@ def main():
     for p in (RUN/'publication').glob('incident-*.json'):sanitize_file(p,public/'resultats/publication'/p.name)
     for p in (RUN/'validations-post-instantane').glob('*.json'):sanitize_file(p,public/'resultats/validations-post-instantane'/p.name)
     for p in (RUN/'incidents').glob('*.json'):sanitize_file(p,public/'resultats/incidents'/p.name)
+    for name in ('qualification-finale-etat.json','attente-memoire-qualification.json','memoire-avant-qualification-finale.json'):
+        if (RUN/'migration-stockage'/name).exists():sanitize_file(RUN/'migration-stockage'/name,public/'resultats/migration-stockage'/name)
     for cid in (f'C{i:02}' for i in range(1,11)):
         base=RUN/'admissions'/cid
         for name in ('configuration-parametres.json','configuration-plugins.json'):
@@ -126,7 +145,7 @@ def main():
             writej(dest/'fdm-observer-raw.json',redact([r for r in readj(p/'fdm-observer-raw.json') if r['path']==P]))
         if 'T8' in meta:
             for q in (p/'relay').glob('*.json*'):sanitize_file(q,dest/'relay'/q.name)
-    writej(public/'preuves/validation-projection-campagne.json',{'success':True,'fake_cases_replayed_after_redaction':count,'candidate_scores_rewritten':False,'utc':time.time()})
-    print(json.dumps({'projected':True,'fake_cases_replayed':count}))
+    writej(public/'preuves/validation-projection-campagne.json',{'success':True,'fake_cases_replayed_after_redaction':count,'storage_cases_replayed_after_redaction':storage_count,'candidate_scores_rewritten':False,'utc':time.time()})
+    print(json.dumps({'projected':True,'fake_cases_replayed':count,'storage_cases_replayed':storage_count}))
 
 if __name__=='__main__':main()

@@ -55,9 +55,10 @@ def guard():
 
 def scoped(path):
     p = Path(path).resolve()
-    if not p.is_relative_to(KIT.parent) or p == KIT.parent:
-        raise ValueError('Écriture hors test-comparatif interdite')
-    return p
+    if p.is_relative_to(KIT.parent) and p != KIT.parent:return p
+    from heavy_storage import is_archive_path
+    if is_archive_path(p):return p
+    raise ValueError('Écriture hors test-comparatif ou archive reliée interdite')
 
 def target(vault, rel):
     root = Path(vault).resolve()

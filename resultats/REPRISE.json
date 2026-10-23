@@ -1,14 +1,18 @@
 {
-  "state": "PAUSE_C5_RECETTE_1_0_7",
-  "utc": "2026-10-23T15:52:39.515733+00:00",
+  "state": "PAUSE_C5_QUOTA_ET_RECETTE_1_0_7",
+  "utc": "2026-10-23T17:13:53.315616+00:00",
   "next_cell": "C01-T8-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
-  "lock_present": false,
+  "lock_present": true,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C01-T7-r1",
   "last_result": "PROTEGE_NON_ACCOMPLI",
-  "resume_requires": "Nouveau message explicite de C5",
+  "resume_requires": "Quota suffisant et nouveau message explicite de C5 ; mémoire, verrou libre et rejeu factice final publié",
+  "resume_note": "REPRISE-APRES-QUOTA.md",
+  "storage_transferred_bytes": 2134202799,
+  "storage_directories": 47,
+  "qualification_finale": "NON_EXECUTEE_ARRET_MEMOIRE_SOUS_2GIO",
   "resume_command": "python -X utf8 scripts/campaign_run.py --after-incident C08-T8-r1 --series 1 --max-cells 1"
 }

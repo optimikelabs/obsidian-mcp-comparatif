@@ -1,0 +1,26 @@
+{
+  "task": "T6",
+  "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+  "errors": [
+    "YAML_VALEUR_OU_TYPE"
+  ],
+  "changed": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [],
+  "technical_changes": [],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T00:00",
+      "after": "2026-10-23T18:03",
+      "attribution": "indéterminée"
+    }
+  ],
+  "dates_policy": "fdm-dates-v1.4"
+}

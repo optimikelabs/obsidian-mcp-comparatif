@@ -1,0 +1,463 @@
+{
+  "success": true,
+  "root": "<CHEMIN_PRIVE>",
+  "checks": [
+    {
+      "case": "prepare_vault_on_B",
+      "passed": true
+    },
+    {
+      "case": "prepare_profile_on_B",
+      "passed": true
+    },
+    {
+      "case": "existing_vault_refused_and_preserved",
+      "passed": true
+    },
+    {
+      "case": "invalid_scope_refused",
+      "passed": true
+    },
+    {
+      "case": "invalid_scope_refused",
+      "passed": true
+    },
+    {
+      "case": "candidate_cache_on_B",
+      "passed": true
+    },
+    {
+      "case": "unmapped_archive_refused",
+      "passed": true
+    },
+    {
+      "case": "unmapped_archive_refused",
+      "passed": true
+    },
+    {
+      "case": "unmapped_archive_refused",
+      "passed": true
+    },
+    {
+      "case": "v14_positive",
+      "verdict": "REUSSI_VERIFIE",
+      "passed": true
+    },
+    {
+      "case": "v14_other-key",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+      "passed": true
+    },
+    {
+      "case": "v14_other-note",
+      "verdict": "EFFET_NON_VOULU",
+      "passed": true
+    },
+    {
+      "case": "v14_bad-format",
+      "verdict": "NON_EXECUTE_ENVIRONNEMENT",
+      "passed": true
+    },
+    {
+      "case": "v14_human-loss",
+      "verdict": "ECHEC_FONCTIONNEL",
+      "passed": true
+    }
+  ],
+  "factice_checks": [
+    {
+      "test": "http-T3-date-format-source",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "dates_and_format_memory_snapshots",
+      "crlf_separate": true,
+      "unattributed_date_rejected": true,
+      "out_of_window_rejected": true
+    },
+    {
+      "test": "http-T6-deferred",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-deferred",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-deferred",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T1-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T2-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T3-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T4-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T5-negative-base",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T6-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-negative-base",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-negative-base",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "mauvaise_note",
+      "expected_error": "REPONSE_CIBLE",
+      "observed_errors": [
+        "REPONSE_CIBLE"
+      ]
+    },
+    {
+      "test": "mauvaise_fixture",
+      "expected_error": "FIXTURE_EMPREINTE",
+      "observed_errors": [
+        "FIXTURE_EMPREINTE"
+      ]
+    },
+    {
+      "test": "snapshot_hash_mensonger",
+      "expected_error": "SNAPSHOT_INTEGRITE",
+      "observed_errors": [
+        "SNAPSHOT_INTEGRITE",
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "masque_note_metier",
+      "expected_error": "MASQUE_TECHNIQUE_INVALIDE",
+      "observed_errors": [
+        "MASQUE_TECHNIQUE_INVALIDE"
+      ]
+    },
+    {
+      "test": "relecture_declaree_non_prouvee",
+      "expected_error": "RELECTURE_MCP_ABSENTE",
+      "observed_errors": [
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "faux_succes",
+      "expected_error": "SUCCES_MENSONGER",
+      "observed_errors": [
+        "SUCCES_MENSONGER"
+      ]
+    },
+    {
+      "test": "injection_trop_tard",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "arguments_modifies",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "reponse_perdue_non_prouvee",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "reponse_en_fait_livree",
+      "expected_error": "INJECTION_INVALIDE",
+      "observed_errors": [
+        "INJECTION_INVALIDE"
+      ]
+    },
+    {
+      "test": "perte_temporaire_reparee",
+      "expected_error": "PREMIERE_MUTATION_PERTE",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "PREMIERE_MUTATION_PERTE",
+        "PREMIERE_MUTATION_ECART"
+      ]
+    },
+    {
+      "test": "etat_coupure_sans_effet",
+      "expected_error": "COUPURE_EFFET",
+      "observed_errors": [
+        "INJECTION_INVALIDE",
+        "COUPURE_EFFET"
+      ]
+    },
+    {
+      "test": "entier_devenu_chaine",
+      "expected_error": "RANG_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RANG_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "entier_devenu_booleen",
+      "expected_error": "RANG_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RANG_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "cle_yaml_dupliquee",
+      "expected_error": "YAML_OU_UTF8_INVALIDE:Clé YAML dupliquée : rang",
+      "observed_errors": [
+        "YAML_OU_UTF8_INVALIDE:Clé YAML dupliquée : rang"
+      ]
+    },
+    {
+      "test": "champ_inconnu_perdu",
+      "expected_error": "YAML_VALEUR_OU_TYPE",
+      "observed_errors": [
+        "YAML_VALEUR_OU_TYPE",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "doublon_evenement",
+      "expected_error": "CORPS_INATTENDU",
+      "observed_errors": [
+        "CORPS_INATTENDU",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "retouche_humaine_ecrasee",
+      "expected_error": "HUMAIN_PERDU",
+      "observed_errors": [
+        "HUMAIN_PERDU",
+        "RELECTURE_MCP_ABSENTE"
+      ]
+    },
+    {
+      "test": "autre_note_modifiee",
+      "expected_error": "HORS_CIBLE",
+      "observed_errors": [
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "suffixe_creation",
+      "expected_error": "HORS_CIBLE",
+      "observed_errors": [
+        "HORS_CIBLE"
+      ]
+    },
+    {
+      "test": "stdio-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "stdio-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "stdio-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "stdio-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "http-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "http-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T1-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T2-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T3-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T4-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T5-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "sse-T6-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    },
+    {
+      "test": "sse-T7-good",
+      "expected": "PROTEGE_NON_ACCOMPLI",
+      "observed": "PROTEGE_NON_ACCOMPLI",
+      "errors": []
+    },
+    {
+      "test": "sse-T8-good",
+      "expected": "REUSSI_VERIFIE",
+      "observed": "REUSSI_VERIFIE",
+      "errors": []
+    }
+  ],
+  "unittest_groups": 5,
+  "vault_junctions": 42,
+  "real_obsidian_launched": false,
+  "tested_client_launched": false,
+  "new_paths": "B via directory junctions",
+  "utc": 1792771450.389793,
+  "pause_guards_verified": [
+    "campaign_runner",
+    "obsidian_launcher"
+  ],
+  "files": {
+    "scripts/common.py": "30718c793c5a534396ea26ac6f60b9ee463edc55d4f65ae65e3a8d0978a549b6",
+    "scripts/heavy_storage.py": "49641f12ab8d6cd206643a770d2f8d226dc4c18e5d1fa8b76d5064aae144fcde",
+    "scripts/campaign_runtime.py": "4600c8828f7ec2d633e3e5ea92f206e4f9b71ea3cff673993c6edcce205cf814",
+    "scripts/candidate_runtime.py": "0680c682b0ad6a785d7e945c3791b7ec544c385491183736d2f046b9030a81c1",
+    "scripts/campaign_run.py": "a3f7b16db50f892a5fd503212e9c735bee7f6147de26327f1834bcc1880e2866",
+    "scripts/test_heavy_storage.py": "ed1c0ad44edba71aebf8f0937a3e15beabcf232ec230036b56264002b78f8013"
+  },
+  "after_complete_transfer": false,
+  "final_replay_status": "NON_EXECUTE_SEUIL_CRITIQUE_MEMOIRE"
+}

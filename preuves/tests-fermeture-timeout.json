@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "checks": [
+    {
+      "case": "already_closed",
+      "passed": true,
+      "requests": 0,
+      "elapsed_simulated_s": 0
+    },
+    {
+      "case": "slow_8s",
+      "passed": true,
+      "requests": 1,
+      "elapsed_simulated_s": 8.0
+    },
+    {
+      "case": "retry_22s",
+      "passed": true,
+      "requests": 2,
+      "elapsed_simulated_s": 22.0
+    },
+    {
+      "case": "still_active",
+      "passed": true,
+      "requests": 2,
+      "elapsed_simulated_s": 30.0
+    },
+    {
+      "case": "timeout_then_closed",
+      "passed": true,
+      "requests": 1,
+      "elapsed_simulated_s": 8.0
+    },
+    {
+      "case": "timeout_then_retry_closed",
+      "passed": true,
+      "requests": 2,
+      "elapsed_simulated_s": 22.0
+    },
+    {
+      "case": "timeout_still_active",
+      "passed": true,
+      "requests": 2,
+      "elapsed_simulated_s": 30.0
+    },
+    {
+      "case": "own_exact",
+      "passed": true
+    },
+    {
+      "case": "foreign_profile",
+      "passed": true
+    },
+    {
+      "case": "prefix_collision",
+      "passed": true
+    },
+    {
+      "case": "foreign_executable",
+      "passed": true
+    },
+    {
+      "case": "missing_command",
+      "passed": true
+    },
+    {
+      "case": "reexecuted_main_pid",
+      "passed": true
+    },
+    {
+      "case": "no_third_request_lock_retained",
+      "passed": true
+    },
+    {
+      "case": "owned_lock_released_after_empty",
+      "passed": true
+    },
+    {
+      "case": "foreign_lock_preserved",
+      "passed": true
+    }
+  ],
+  "root": "<CHEMIN_PRIVE>",
+  "real_ui": false
+}

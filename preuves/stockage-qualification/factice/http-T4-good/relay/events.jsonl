@@ -1,0 +1,12 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 14392578000000, "utc": 1792771394.197325, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 14392578000000, "utc": 1792771394.2043247, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 14392578000000, "utc": 1792771394.207837, "id": 3, "tool": "create", "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"}
+{"event": "mutation_dispatch", "seq": 4, "monotonic_ns": 14392578000000, "utc": 1792771394.208839, "id": 3, "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716"}
+{"event": "upstream_response", "seq": 5, "monotonic_ns": 14392593000000, "utc": 1792771394.223876, "id": 3, "tool": "create", "duration_s": 0.015000000001236913, "bytes": 157, "is_error": false}
+{"event": "candidate_note_access", "seq": 6, "monotonic_ns": 14392593000000, "utc": 1792771394.223876, "id": 3, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "response_received": true}
+{"event": "response_delivered", "seq": 7, "monotonic_ns": 14392593000000, "utc": 1792771394.2248755, "id": 3}
+{"event": "tool_request", "seq": 8, "monotonic_ns": 14392609000000, "utc": 1792771394.2278774, "id": 4, "tool": "read", "arguments_sha256": "1f5174a45672c333ba9a814d77b8a24bb73d45f5eb02904ffdfd096a41171d0b"}
+{"event": "upstream_response", "seq": 9, "monotonic_ns": 14392609000000, "utc": 1792771394.232976, "id": 4, "tool": "read", "duration_s": 0.0, "bytes": 371, "is_error": false}
+{"event": "candidate_note_access", "seq": 10, "monotonic_ns": 14392609000000, "utc": 1792771394.232976, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 11, "monotonic_ns": 14392609000000, "utc": 1792771394.2339742, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "content_sha256": "8dc6c5eea913830e5d13015611e85c68c68b22f5881ffc5de6f602b80258b6f4", "response_received": true}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 14392609000000, "utc": 1792771394.2348242, "id": 4}

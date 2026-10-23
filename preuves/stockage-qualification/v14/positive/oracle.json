@@ -1,0 +1,38 @@
+{
+  "task": "T6",
+  "verdict": "REUSSI_VERIFIE",
+  "errors": [],
+  "changed": [
+    "Efforts/Projets/Projet témoin — Test MCP.md"
+  ],
+  "unwanted": [],
+  "format_differences": [],
+  "technical_changes": [],
+  "first_unwanted": [],
+  "first_technical_changes": [],
+  "technical_receipt_paths": [],
+  "dates": [
+    {
+      "path": "Efforts/Projets/Projet témoin — Test MCP.md",
+      "key": "modification",
+      "before": "2026-10-23T00:00",
+      "after": "2026-10-23T18:03",
+      "attribution": "FDM prouvée",
+      "proof": {
+        "policy": "fdm-dates-v1.4",
+        "chain": [
+          {
+            "observed_utc": 1792771437.1138303,
+            "after_sha256": "d3d6172f3a6d1a648c1ba32e8dc459d7bac69bc512824cad58afd80fd6da0c69",
+            "changed_keys": [
+              "modification"
+            ],
+            "basis": "delai_FDM",
+            "cache_passage": null
+          }
+        ]
+      }
+    }
+  ],
+  "dates_policy": "fdm-dates-v1.4"
+}

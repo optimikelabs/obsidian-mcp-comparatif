@@ -1,0 +1,14 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 14396734000000, "utc": 1792771398.3530996, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 14396734000000, "utc": 1792771398.3648908, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 14396750000000, "utc": 1792771398.3687623, "id": 3, "tool": "create", "arguments_sha256": "4777f7e033403db20262195592b6fedafc0bbba193d9a244b386ba3ef1544a8c"}
+{"event": "request_held", "seq": 4, "monotonic_ns": 14396750000000, "utc": 1792771398.3687623, "id": 3, "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716"}
+{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 14396765000000, "utc": 1792771398.3959606, "snapshot_sha256": "8a71be580fa48b259c83c558275c96dfde6acb9c3614a05d1436e2a018e639e8"}
+{"event": "dispatch", "seq": 6, "monotonic_ns": 14396765000000, "utc": 1792771398.3964665, "id": 3, "request_sha256": "9aad12173cc344dc51a5af5343ee15bc49036896dbeeed1e0c087ad51cfb4716", "kind": "mutation"}
+{"event": "upstream_response", "seq": 7, "monotonic_ns": 14396781000000, "utc": 1792771398.3996122, "id": 3, "tool": "create", "duration_s": 0.01600000000144064, "bytes": 321, "is_error": true}
+{"event": "first_snapshot", "seq": 8, "monotonic_ns": 14396781000000, "utc": 1792771398.4071012, "snapshot_sha256": "8a71be580fa48b259c83c558275c96dfde6acb9c3614a05d1436e2a018e639e8"}
+{"event": "response_delivered", "seq": 9, "monotonic_ns": 14396781000000, "utc": 1792771398.4071012, "id": 3}
+{"event": "tool_request", "seq": 10, "monotonic_ns": 14396781000000, "utc": 1792771398.409803, "id": 4, "tool": "read", "arguments_sha256": "1f5174a45672c333ba9a814d77b8a24bb73d45f5eb02904ffdfd096a41171d0b"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 14396796000000, "utc": 1792771398.424105, "id": 4, "tool": "read", "duration_s": 0.0, "bytes": 270, "is_error": false}
+{"event": "candidate_note_access", "seq": 12, "monotonic_ns": 14396796000000, "utc": 1792771398.4246094, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 13, "monotonic_ns": 14396796000000, "utc": 1792771398.4254737, "id": 4, "path": "Efforts/Projets/Compte rendu — Essai MCP.md", "content_sha256": "15325dabbb45638a835f8cad82a90d9452796698713b7f3f9b120f49e3666b2d", "response_received": true}
+{"event": "response_delivered", "seq": 14, "monotonic_ns": 14396796000000, "utc": 1792771398.426002, "id": 4}

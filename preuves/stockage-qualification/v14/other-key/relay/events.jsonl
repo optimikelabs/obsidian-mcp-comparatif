@@ -1,0 +1,28 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 14438062000000, "utc": 1792771439.687752, "id": 1}
+{"event": "tool_request", "seq": 2, "monotonic_ns": 14438062000000, "utc": 1792771439.6944866, "id": 2, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 3, "monotonic_ns": 14438093000000, "utc": 1792771439.712908, "id": 2, "tool": "read", "duration_s": 0.031000000000858563, "bytes": 945, "is_error": false}
+{"event": "candidate_note_access", "seq": 4, "monotonic_ns": 14438093000000, "utc": 1792771439.712908, "id": 2, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 5, "monotonic_ns": 14438093000000, "utc": 1792771439.7159035, "id": 2, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "ddc58f4cc4d42595f37ff482e9a97dc5f624c04895f806bb39406ee40791fd27", "response_received": true}
+{"event": "response_delivered", "seq": 6, "monotonic_ns": 14438093000000, "utc": 1792771439.7169044, "id": 2}
+{"event": "tool_request", "seq": 7, "monotonic_ns": 14438093000000, "utc": 1792771439.7209044, "id": 3, "tool": "write", "arguments_sha256": "0ce6a161034a40082423ba4c73b6a7ed0133f16cfb2fb5979f86a4ef08be5a5f"}
+{"event": "request_held", "seq": 8, "monotonic_ns": 14438093000000, "utc": 1792771439.7209044, "id": 3, "request_sha256": "05218ebee66107f9c67a0448b2e13121e84dabaf45f361b3bf54ae1b1fddefc7"}
+{"event": "ui_disk_verified", "seq": 9, "monotonic_ns": 14438125000000, "utc": 1792771439.7502575, "snapshot_sha256": "e2b4e351da4d972e04d250e3d193fb8433e32c1d61ef23692ad5635353d6316e"}
+{"event": "dispatch", "seq": 10, "monotonic_ns": 14438125000000, "utc": 1792771439.7502575, "id": 3, "request_sha256": "05218ebee66107f9c67a0448b2e13121e84dabaf45f361b3bf54ae1b1fddefc7", "kind": "mutation"}
+{"event": "upstream_response", "seq": 11, "monotonic_ns": 14438140000000, "utc": 1792771439.7585144, "id": 3, "tool": "write", "duration_s": 0.014999999999417923, "bytes": 116, "is_error": true}
+{"event": "first_snapshot", "seq": 12, "monotonic_ns": 14438140000000, "utc": 1792771439.7660327, "snapshot_sha256": "e2b4e351da4d972e04d250e3d193fb8433e32c1d61ef23692ad5635353d6316e"}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 14438140000000, "utc": 1792771439.7660327, "id": 3}
+{"event": "tool_request", "seq": 14, "monotonic_ns": 14438156000000, "utc": 1792771439.7750626, "id": 4, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 15, "monotonic_ns": 14438171000000, "utc": 1792771439.789545, "id": 4, "tool": "read", "duration_s": 0.014999999999417923, "bytes": 947, "is_error": false}
+{"event": "candidate_note_access", "seq": 16, "monotonic_ns": 14438171000000, "utc": 1792771439.789545, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 17, "monotonic_ns": 14438171000000, "utc": 1792771439.7905447, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "759a36c3a33a2675007d88af437711ae8e6398637a58bb8f2a8fade1e279f785", "response_received": true}
+{"event": "response_delivered", "seq": 18, "monotonic_ns": 14438171000000, "utc": 1792771439.7905447, "id": 4}
+{"event": "tool_request", "seq": 19, "monotonic_ns": 14438171000000, "utc": 1792771439.7940512, "id": 5, "tool": "patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "mutation_dispatch", "seq": 20, "monotonic_ns": 14438171000000, "utc": 1792771439.796566, "id": 5, "request_sha256": "08cbdb6da241563d5af4c722bf99da2bafc0d004f4b47b111850495381a101e5"}
+{"event": "upstream_response", "seq": 21, "monotonic_ns": 14438187000000, "utc": 1792771439.8067245, "id": 5, "tool": "patch", "duration_s": 0.01599999999962165, "bytes": 158, "is_error": false}
+{"event": "candidate_note_access", "seq": 22, "monotonic_ns": 14438187000000, "utc": 1792771439.8077261, "id": 5, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "response_delivered", "seq": 23, "monotonic_ns": 14438187000000, "utc": 1792771439.8082325, "id": 5}
+{"event": "tool_request", "seq": 24, "monotonic_ns": 14438187000000, "utc": 1792771439.8117495, "id": 6, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 25, "monotonic_ns": 14438203000000, "utc": 1792771439.8247933, "id": 6, "tool": "read", "duration_s": 0.01599999999962165, "bytes": 950, "is_error": false}
+{"event": "candidate_note_access", "seq": 26, "monotonic_ns": 14438203000000, "utc": 1792771439.8251712, "id": 6, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 27, "monotonic_ns": 14438203000000, "utc": 1792771439.8256779, "id": 6, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "126432ea351f60b684bad6c8e8a5780bcff684be2a9244e952f4097a2160cf15", "response_received": true}
+{"event": "response_delivered", "seq": 28, "monotonic_ns": 14438203000000, "utc": 1792771439.8266857, "id": 6}

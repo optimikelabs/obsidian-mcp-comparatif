@@ -1,0 +1,12 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 14386546000000, "utc": 1792771388.1752315, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 14386562000000, "utc": 1792771388.181563, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 14386562000000, "utc": 1792771388.1840787, "id": 3, "tool": "patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "mutation_dispatch", "seq": 4, "monotonic_ns": 14386562000000, "utc": 1792771388.1840787, "id": 3, "request_sha256": "8cab1bdee569e186ff14f18eee9ac2de61064815df065f10fca01e57499da389"}
+{"event": "upstream_response", "seq": 5, "monotonic_ns": 14386562000000, "utc": 1792771388.1890788, "id": 3, "tool": "patch", "duration_s": 0.0, "bytes": 158, "is_error": false}
+{"event": "candidate_note_access", "seq": 6, "monotonic_ns": 14386562000000, "utc": 1792771388.190077, "id": 3, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "response_delivered", "seq": 7, "monotonic_ns": 14386562000000, "utc": 1792771388.191078, "id": 3}
+{"event": "tool_request", "seq": 8, "monotonic_ns": 14386562000000, "utc": 1792771388.1940768, "id": 4, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 9, "monotonic_ns": 14386578000000, "utc": 1792771388.1986387, "id": 4, "tool": "read", "duration_s": 0.0, "bytes": 885, "is_error": false}
+{"event": "candidate_note_access", "seq": 10, "monotonic_ns": 14386578000000, "utc": 1792771388.199645, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 11, "monotonic_ns": 14386578000000, "utc": 1792771388.2006469, "id": 4, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "56fe129988958fdb16c688dca167f58c7d2d65b8cfa455c93956ab524064c131", "response_received": true}
+{"event": "response_delivered", "seq": 12, "monotonic_ns": 14386578000000, "utc": 1792771388.2006469, "id": 4}

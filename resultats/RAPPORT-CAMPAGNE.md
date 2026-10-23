@@ -9,11 +9,11 @@ Résultats publiés : https://github.com/optimikelabs/obsidian-mcp-comparatif/tr
 
 # Rapport de campagne — état courant
 
-État horodaté : 2026-10-23T15:52:39.990104+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
+État horodaté : 2026-10-23T17:14:43.154036+00:00. Publication préalable v1.1 : `1e698f62401034c74dd70a1019146e45c8dc821f`. Gel V1 `e3477a8b02441f73ac3d22b19d78766428887bbd` conservé. Clone frais : 580 fichiers du manifeste vérifiés, aucun écart.
 
 Qualification de l’instrumentation : suite T1–T8 (5 groupes) passée ; 30 contrôles T7b stdio/HTTP/SSE passés et rejugés après masquage. Ce sont des essais factices, aucun résultat candidat. Manifeste 190 : 160 lignes d’origine préservées, puis 30 T7b en série 2.
 
-Dernière publication vérifiée avant cette actualisation : {"head": "8801b6b4f4c791b408d259aaa347e6a94a91a620", "remote_verified": true, "utc": "2026-10-23T15:44:12.858669+00:00"}.
+Dernière publication vérifiée avant cette actualisation : {"head": "ab1e0f768eb7e632ea21c052c6068df9df7e95ac", "remote_verified": true, "utc": "2026-10-23T15:55:47.110366+00:00"}.
 
 ## Reprise sous v1.2
 
@@ -154,21 +154,25 @@ Un agent Codex CLI 0.160.1, gpt-6.1-sol high, serviceTier default. Corpus Margel
 
 ```json
 {
-  "state": "PAUSE_C5_RECETTE_1_0_7",
-  "utc": "2026-10-23T15:52:39.515733+00:00",
+  "state": "PAUSE_C5_QUOTA_ET_RECETTE_1_0_7",
+  "utc": "2026-10-23T17:13:53.315616+00:00",
   "next_cell": "C01-T8-r1",
   "candidate_active": false,
   "obsidian_instance_active": false,
-  "lock_present": false,
+  "lock_present": true,
   "command": "python -X utf8 scripts/campaign_run.py",
   "preservation": "Ne rejouer ni effacer un dossier de cellule existant. Les bacs et reçus sont conservés.",
   "last_cell": "C01-T7-r1",
   "last_result": "PROTEGE_NON_ACCOMPLI",
-  "resume_requires": "Nouveau message explicite de C5",
+  "resume_requires": "Quota suffisant et nouveau message explicite de C5 ; mémoire, verrou libre et rejeu factice final publié",
+  "resume_note": "REPRISE-APRES-QUOTA.md",
+  "storage_transferred_bytes": 2134202799,
+  "storage_directories": 47,
+  "qualification_finale": "NON_EXECUTEE_ARRET_MEMOIRE_SOUS_2GIO",
   "resume_command": "python -X utf8 scripts/campaign_run.py --after-incident C08-T8-r1 --series 1 --max-cells 1"
 }
 ```
 
 ## Pilotage
 
-État opérationnel : PAUSE_C5_RECETTE_1_0_7. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T8-r1. Aucune tâche du coffre modifiée.
+État opérationnel : PAUSE_C5_QUOTA_ET_RECETTE_1_0_7. Aucun changement de statut canonique recommandé : coffre quotidien non audité et hors périmètre. Next action : reprendre à C01-T8-r1. Aucune tâche du coffre modifiée.

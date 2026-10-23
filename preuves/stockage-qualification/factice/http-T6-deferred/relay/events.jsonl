@@ -1,0 +1,34 @@
+{"event": "response_delivered", "seq": 1, "monotonic_ns": 14327468000000, "utc": 1792771329.087978, "id": 1}
+{"event": "response_delivered", "seq": 2, "monotonic_ns": 14327468000000, "utc": 1792771329.095996, "id": 2}
+{"event": "tool_request", "seq": 3, "monotonic_ns": 14327468000000, "utc": 1792771329.0990171, "id": 3, "tool": "deferred_patch", "arguments_sha256": "da2a6d9a5b3eaeba2d9025530affbe127175cf4aa74e1f41f097ffc57edfa41d"}
+{"event": "request_held", "seq": 4, "monotonic_ns": 14327468000000, "utc": 1792771329.100026, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b"}
+{"event": "ui_disk_verified", "seq": 5, "monotonic_ns": 14327500000000, "utc": 1792771329.1188796, "snapshot_sha256": "f385a5d3921d3c6acde03057b2831900af20b2605043045ea400ccb7eba5c235"}
+{"event": "dispatch", "seq": 6, "monotonic_ns": 14327500000000, "utc": 1792771329.1188796, "id": 3, "request_sha256": "5b94e9a3915ef39262d7fe27cfba83a79c06505194d5f96d8cc5e074254c859b", "kind": "mutation"}
+{"event": "upstream_response", "seq": 7, "monotonic_ns": 14327500000000, "utc": 1792771329.1228802, "id": 3, "tool": "deferred_patch", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "candidate_note_access", "seq": 8, "monotonic_ns": 14327500000000, "utc": 1792771329.1228802, "id": 3, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "first_mutation_pending", "seq": 9, "monotonic_ns": 14327500000000, "utc": 1792771329.1238806, "id": 3}
+{"event": "response_delivered", "seq": 10, "monotonic_ns": 14327500000000, "utc": 1792771329.1258805, "id": 3}
+{"event": "tool_request", "seq": 11, "monotonic_ns": 14327500000000, "utc": 1792771329.128387, "id": 4, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 12, "monotonic_ns": 14327515000000, "utc": 1792771329.132024, "id": 4, "tool": "status", "duration_s": 0.014999999999417923, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 13, "monotonic_ns": 14327515000000, "utc": 1792771329.133039, "id": 4}
+{"event": "tool_request", "seq": 14, "monotonic_ns": 14327531000000, "utc": 1792771329.1472406, "id": 5, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 15, "monotonic_ns": 14327531000000, "utc": 1792771329.1527548, "id": 5, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 16, "monotonic_ns": 14327531000000, "utc": 1792771329.153262, "id": 5}
+{"event": "tool_request", "seq": 17, "monotonic_ns": 14327546000000, "utc": 1792771329.1661782, "id": 6, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 18, "monotonic_ns": 14327546000000, "utc": 1792771329.1715646, "id": 6, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 19, "monotonic_ns": 14327546000000, "utc": 1792771329.1715646, "id": 6}
+{"event": "tool_request", "seq": 20, "monotonic_ns": 14327562000000, "utc": 1792771329.1854064, "id": 7, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 21, "monotonic_ns": 14327562000000, "utc": 1792771329.188681, "id": 7, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 22, "monotonic_ns": 14327562000000, "utc": 1792771329.1896865, "id": 7}
+{"event": "tool_request", "seq": 23, "monotonic_ns": 14327578000000, "utc": 1792771329.2041693, "id": 8, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 24, "monotonic_ns": 14327578000000, "utc": 1792771329.2075226, "id": 8, "tool": "status", "duration_s": 0.0, "bytes": 144, "is_error": false}
+{"event": "response_delivered", "seq": 25, "monotonic_ns": 14327578000000, "utc": 1792771329.2085228, "id": 8}
+{"event": "tool_request", "seq": 26, "monotonic_ns": 14327593000000, "utc": 1792771329.2216454, "id": 9, "tool": "status", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 27, "monotonic_ns": 14327609000000, "utc": 1792771329.2266734, "id": 9, "tool": "status", "duration_s": 0.01599999999962165, "bytes": 146, "is_error": false}
+{"event": "first_snapshot", "seq": 28, "monotonic_ns": 14327609000000, "utc": 1792771329.2385252, "snapshot_sha256": "2eea6b3683cab8772c1a2b6aa3e4f86d3fdf0e1ec8be9b2a815d0f1077c4b8c0"}
+{"event": "response_delivered", "seq": 29, "monotonic_ns": 14327609000000, "utc": 1792771329.2390525, "id": 9}
+{"event": "tool_request", "seq": 30, "monotonic_ns": 14327609000000, "utc": 1792771329.240601, "id": 10, "tool": "read", "arguments_sha256": "6d4d4df08908473f06593890b8a4703b88cde6ecd08d044f1fefe4cd1f6c01eb"}
+{"event": "upstream_response", "seq": 31, "monotonic_ns": 14327625000000, "utc": 1792771329.2446084, "id": 10, "tool": "read", "duration_s": 0.0, "bytes": 887, "is_error": false}
+{"event": "candidate_note_access", "seq": 32, "monotonic_ns": 14327625000000, "utc": 1792771329.245608, "id": 10, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "response_received": true}
+{"event": "mcp_read_response", "seq": 33, "monotonic_ns": 14327625000000, "utc": 1792771329.2466092, "id": 10, "path": "Efforts/Projets/Projet témoin — Test MCP.md", "content_sha256": "9317ed79eeb3c68af430592a9e1bcc5a385d21e739b686203b505b8af6772940", "response_received": true}
+{"event": "response_delivered", "seq": 34, "monotonic_ns": 14327625000000, "utc": 1792771329.2466092, "id": 10}

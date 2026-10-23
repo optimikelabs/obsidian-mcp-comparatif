@@ -2,6 +2,7 @@
 from campaign_runtime import *
 from relay import Stdio,HTTP,LegacySSE
 from fdm_observer import install
+from heavy_storage import empty_directory
 
 class Candidate:
     def __init__(self,cid,out,task):self.cid=cid;self.out=out;self.task=task;self.cfg=None;self.up=None;self.backend=False;self.open=False
@@ -32,10 +33,10 @@ class Candidate:
             env.update(OBSIDIAN_API_KEY=key,OBSIDIAN_HOST='127.0.0.1',OBSIDIAN_PORT='27341',OBSIDIAN_PROTOCOL='http',PYTHONUTF8='1')
         elif cid=='C04':
             cmd=['node',str(base/'C04/node_modules/obsidian-mcp-server/dist/index.js')]
-            state=out/'server-state';state.mkdir()
+            state=empty_directory(out,'server-state')
             env.update(OBSIDIAN_API_KEY=key,OBSIDIAN_BASE_URL='http://127.0.0.1:27341',MCP_TRANSPORT_TYPE='stdio',MCP_LOG_LEVEL='warning',OBSIDIAN_ENABLE_COMMANDS='false',MCP_LOGS_DIR=str(state/'logs'),MCP_STORAGE_PATH=str(state/'storage'))
         elif cid=='C07':
-            private=readj(RUN/'admissions/C07/server-private.json');old=str(RUN/'admissions/C07');state=out/'server-state'
+            private=readj(RUN/'admissions/C07/server-private.json');old=str(RUN/'admissions/C07');state=empty_directory(out,'server-state')
             for name in ('tmp','localappdata','home'):(state/name).mkdir(parents=True)
             for k,value in private['env'].items():env[k]=value.replace(old,str(out))
             env['OBSIDIAN_API_KEY']=key;env['OBSIDIAN_VAULT']=str(v)

@@ -1,0 +1,29 @@
+{
+  "state": "ARRET_MEMOIRE_SOUS_2GIO",
+  "returncode": null,
+  "checks": [
+    {
+      "utc": "2026-10-23T16:48:07.434976+00:00",
+      "commitFreeBytes": 3635089408,
+      "availableBytes": 4396924928,
+      "admitted": false,
+      "stop": false
+    },
+    {
+      "utc": "2026-10-23T16:58:07.776402+00:00",
+      "commitFreeBytes": 2852651008,
+      "availableBytes": 5775372288,
+      "admitted": false,
+      "stop": false
+    },
+    {
+      "utc": "2026-10-23T17:08:07.935382+00:00",
+      "commitFreeBytes": 1515261952,
+      "availableBytes": 4720640000,
+      "admitted": false,
+      "stop": true
+    }
+  ],
+  "final_fake_server_replay_executed": false,
+  "utc": "2026-10-23T17:12:42.565867+00:00"
+}
