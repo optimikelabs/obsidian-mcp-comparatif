@@ -11,3 +11,5 @@ La publication automatique de l'incident a ensuite échoué : l'ordre de deux ch
 Reprise après publication de cet amendement : C05-T2-r1, puis l'ordre restant du manifeste. `--after-incident C05-T1-r1` vérifie que l'amendement est présent sur le main distant avant de passer la ligne arrêtée. Aucune répétition sélective, aucun effacement de bac.
 
 La comparaison T1 reste donc incomplète pour C05. Ce manque reste dans tous les tableaux et dénominateurs.
+
+Précision de comptage avant tout appel de mesure : une cellule interrompue par l'environnement, une attribution non qualifiée ou une injection invalide reste NON_JOUE pour le comparatif, même si des appels partiels sont conservés. Une cellule achevée avec un échec fonctionnel ou un effet non voulu est JOUE. Les tableaux gardent les deux champs status/verdict et les reçus ; une tentative incomplète ne devient pas une mesure acquise.

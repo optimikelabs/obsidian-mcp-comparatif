@@ -13,8 +13,8 @@
       "sha256": "547f72c43dd6f96652d8d1d4fd4a4179c17eb68fddfbacbd8d42393b064e8dcd"
     },
     "AMENDEMENT-C05-T1-r1.md": {
-      "size": 1953,
-      "sha256": "438898238218b201ceae50976fd563a7a32b9c6c60404902a8f5b18bad788318"
+      "size": 2398,
+      "sha256": "92c7dedd5ecbaa4faa53300cf2f69e81036827873bffb04e3567d236357d9624"
     },
     "AMENDEMENT-INSTRUMENTATION-ADMISSION.md": {
       "size": 1712,
@@ -6117,8 +6117,8 @@
       "sha256": "af1b11f46e6fcc02e072597ba7d25c4dbd08874440cc5e033a7d526fb6ca8636"
     },
     "preuves/validation-projection-campagne.json": {
-      "size": 141,
-      "sha256": "cac8b698623073633f35d50fa31f020903a201abc3c289155d22a48a3e9e245a"
+      "size": 142,
+      "sha256": "428e26aa7f643041600b38a2af1d312cb78a01a350999d3083cd07806c5f3c74"
     },
     "preuves/validation-v1.1.json": {
       "size": 256,
@@ -7441,8 +7441,8 @@
       "sha256": "333e19f4f1d078fb35e592134045fb799c0f8be8890aa864310eafca3f792d08"
     },
     "resultats/RAPPORT-CAMPAGNE.md": {
-      "size": 5534,
-      "sha256": "4aa48bc5636c349541e8b26c9320ae8d9935aec107094970fdb53e96b66248e7"
+      "size": 5523,
+      "sha256": "4d31299262cabb755f75fcfac2d9aa43b186b8c89269fc9887a1e80d77eab38b"
     },
     "resultats/REPRISE.json": {
       "size": 716,
@@ -7481,8 +7481,8 @@
       "sha256": "a64d7c8bb423fec144fdf7a3cfe92f4806b647c73d2bf5f6fa3d9ed1dcf4faa5"
     },
     "scripts/campaign_cell.py": {
-      "size": 7768,
-      "sha256": "88a5266cc0ba0e2765c0d9a47f380ce9c2f5d13fef92000bf5668712c930b012"
+      "size": 7860,
+      "sha256": "dcf8eacc9efbe7f56c551a8388053dbac7a7e0ac5d9ed4e0e9380399e1734217"
     },
     "scripts/campaign_reporting.py": {
       "size": 7122,
@@ -7625,5 +7625,5 @@
       "sha256": "696bb673051e99e36de37273352b6b3a062e4a6bbb8bfa5eb07e4f9ebfb83c2f"
     }
   },
-  "tree_sha256": "3b0992ec10f91e17d06ccb64c78a9a1f76a33afd5ead8fb42bc66918d8ab1c1b"
+  "tree_sha256": "b1ffe7736318eb9f04971cc6519f9ffa2689d6542cea52a714246275c8d6a2f8"
 }
